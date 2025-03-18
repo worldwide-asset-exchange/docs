@@ -6,6 +6,8 @@ You may have noticed that indexing a new node from block 64000000 will certainly
 
 This guide will discuss restoring the postgres database from a pre existing node’s backup as well as how to optimise postgres memory management.
 
+_This article has been updated to reflect the current Atomic API Node deployment in March 2025._
+
 # Optimise & Restore a WAX Atomic API Node
 
 ## **postgres optimised configuration**
@@ -16,11 +18,9 @@ I was actually pointed to an excellent config tuning tool call  [PGTune](https:/
 
 In this example we have a node with 64GB RAM and 8 CPU Cores:
 
-![](https://miro.medium.com/max/700/1*160Dd0q2PP4BKtbJBTmiAQ.png)
+![image](https://github.com/user-attachments/assets/3f5cc062-e60b-4318-8cdd-fea2bedab244)
 
-Generated PGTune Configuration
-
-In the  [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/)  environment we have had success in changing only six of these settings which were derived from guidance from the  [Pink.gg](https://pink.gg/)  Team
+In the  [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/)  environment we have had success in changing only six of these settings which were derived from guidance from the Pink.gg Team.
 
 **_shared_buffers_**_,_ memory directly allocated the postgres service internal buffer.  
 **_effective_cache_size_**, how much cache memory is available for the database.  
@@ -29,14 +29,14 @@ In the  [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/)  
 **_effective_io_concurrency_**, the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously.  
 **_work_mem_**, how much memory is available for complex sort operations.
 
-Configure PostgreSQL 14 as below:
+Configure PostgreSQL 17 as below:
 
 ```
 ***Stop the Atomic API PM2 services***  
 > pm2 stop all
 
 ***64GB RAM Assumed***
-> sudo nano /etc/postgresql/14/main/postgresql.conf
+> sudo nano /etc/postgresql/17/main/postgresql.conf
 
 shared_buffers = '32GB';  
 effective_cache_size = '48GB';  
@@ -62,7 +62,7 @@ In order to  **create**  a compressed backup follow the process below:
 ```
 > sudo su - postgres
 
-> pg_dump -Fc api-wax-mainnet-atomic-1 > api-wax-mainnet-atomic-1_163Mil.dump
+> pg_dump -Fc api-wax-mainnet-atomic-1 > api-wax-mainnet-atomic-1_358Mil.dump
 
 ***This may take some time***
 ```
@@ -79,22 +79,22 @@ postgres=# DROP DATABASE "api-wax-mainnet-atomic-1";
 postgres=# \q
 
 ***Perfom the restore***
-> pg_restore -d api-wax-mainnet-atomic-1 api-wax-mainnet-atomic-1_218Mil.dump
+> pg_restore -d api-wax-mainnet-atomic-1 api-wax-mainnet-atomic-1_358Mil.dump
 
 ***This may take some time***
 ```
 
 ## Atomic API Server optimisations
 
-Recently the Pink.gg Team added two excellent features to the API Server that enables the service to be more resilient to heavy public use.
+Ensure these two features on the API Server are configured which enable the service to be more resilient to heavy public use. They are already configured in the latest ```v1.3.24``` build.
 
-I have copied and pasted the Pink Team community update details on these features below:
+I have copied and pasted the origninal community update details on these features below:
 
 **"bill_execution_time”: true**  // This changes rate limiting to a CPU like approach, so expensive queries will use more from the available rate limit. This means people spamming a lot of expensive queries are rate limited faster but this change should not affect anyone that only sends fast and optimized calls
 
 **“disable_v1_sales”: true**  // This will route /v2/sales to /v1/sales because its much faster. This is a breaking change because /v1/sales wont return cancelled sales anymore but this will reduce load a lot and not many people are interested in cancelled sales. For those who are, there is a new /v0/sales endpoint which still serves the old API
 
-I captured these updated features in the  [previous guide](https://medium.com/eosphere/wax-technical-how-to-9-f7d22bfa4e2b)  , but for completeness the configuration is below:
+I captured these updated features in the  [previous guide](https://docs.wax.io/operate/wax-infrastructure/atomic-api-guide)  , but for completeness the configuration is below:
 
 ```
 > cd  ~/eosio-contract-api/config
@@ -152,9 +152,9 @@ I captured these updated features in the  [previous guide](https://medium.com/eo
 
 ## Load Balancing and Redundancy
 
-Currently there isn’t a  [Pink.gg](https://pink.gg/)  [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api)  available feature that enables multiple filler services to the same db cluster.
+Currently there isn’t a [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) available feature that enables multiple filler services to the same db cluster.
 
-As the complete Atomic API server is still only around 1.2TB (27th December 2022), we have had success and suggest that you load balance your public API service to multiple completely synced and self standing Atomic API servers.
+We have had success and suggest that you load balance your public API service to multiple completely synced and self standing Atomic API servers.
 
 ---
 
