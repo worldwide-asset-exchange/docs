@@ -3,13 +3,15 @@ title: How to Set Up a WAX Atomic API Node
 order: 4
 ---
 
-The AtomicAssets NFT standard developed by  [Pink.gg](https://pink.gg/)  has become synonymous with the WAX Protocol Network and the widely utilised  [WAX Atomic Hub](https://wax.atomichub.io/).
+The AtomicAssets NFT standard orginally developed by Pink.gg has become synonymous with the WAX Protocol Network and the widely utilised  [WAX Atomic Hub](https://wax.atomichub.io/).
 
-The AtomicAssets NFT standard stands apart from it’s alternatives by not requiring any RAM from users and offering native two sided trade offers as well as backing NFTs with tokens. You can read more about the standard at  [https://atomicassets.io/](https://atomicassets.io/).
+The AtomicAssets NFT standard stands apart from it’s alternatives by not requiring any RAM from users and offering native two sided trade offers as well as backing NFTs with tokens.
 
-Of course no awesome NFT framework would be complete without the ability for users and developers to access real-time data in a simple and effective way through a scalable API. This is where  [Pink.gg](https://pink.gg/)  developed the e[osio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) also known as the  **Atomic API**.
+Of course no awesome NFT framework would be complete without the ability for users and developers to access real-time data in a simple and effective way through a scalable API. This is where Pink.gg developed the [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) also known as the  **Atomic API**.
 
-This guide will walk through the process of building and running a WAX Atomic API Node enabling you as a Guild or Developer to offer a very useful API service for the ecosystem… or maybe just for you.
+This guide will walk through the process of building and running a WAX Atomic API Node enabling a Guild or Developer to offer a very useful API service for the ecosystem… or maybe just for you.
+
+_This article has been updated to reflect the current Atomic API Node deployment in March 2025._
 
 # How to Set Up a WAX Atomic API Node
 
@@ -24,19 +26,19 @@ This guide goes through the process of building the application dependencies and
 **Hardware**
 
 -   8 Core CPU / 5_Ghz+ recommended_
--   1TB+ Disk /  _Enterprise Grade SSD or NVMe_
+-   2TB+ Disk /  _Enterprise Grade SSD or NVMe_
 
-Currently (November 2022) a complete node uses approximately  **859GB**  of Disk space with the postgres DB currently  **849GB**.
+Currently (March 2025) a full Atomic API Node postgres DB is **1.1TB**
 
 -   64GB+ RAM
 
 **Operating System**
 
--   Ubuntu 20.04  **_(Recommended)_**
+-   Ubuntu 22.04  **_(Recommended)_**
 
 **SHIP Node**
 
--   Access to an up to date v2.0.12–13 or v3.1.x WAX State-History node
+-   Access to an up to date v5.0.3wax01 WAX State-History node
 -   SHIP node on the same LAN  **_(Highly Recommended)_**
 
 **Network**
@@ -46,33 +48,53 @@ Currently (November 2022) a complete node uses approximately  **859GB**  of Disk
 
 # Build the Software
 
-At time of writing the current version of the  [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api)  is  `v1.3.17`
+At time of writing the current version of the  [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api)  is  `v1.3.24`
 
 Application Dependencies **_(Some our our recommendations)_**
 
--   NodeJS >= 16.0
--   PM2
--   PostgreSQL >= 14.0
--   Redis >= 5.0
--   Yarn
+-   NodeJS >= 22.14.0
+-   PM2 >= 5.4.3
+-   PostgreSQL >= 17.0
+-   Redis >= 7.4.2
+-   Yarn >= 1.22.22
 
 ## Application Installation and Configuration Process
 
 **NodeJS**
 
 ```
-> curl -fsSL [https://deb.nodesource.com/setup_16.x](https://deb.nodesource.com/setup_16.x) | sudo -E bash -> sudo apt install -y nodejs
+#Download and import the Nodesource GPG key#
+> sudo apt update
 
-#Check Version#  
+> sudo apt install -y ca-certificates curl gnupg
+
+> sudo mkdir -p /etc/apt/keyrings
+
+> curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+#Create .deb repository#
+> NODE_MAJOR=22
+
+> echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+#Install Node.js#
+> sudo apt update 
+
+> sudo apt-get install -y nodejs
+
+**Check Version**
 > node -v
 ```
 
 **PM2**
 
 ```
-> sudo npm install pm2 -g
+> sudo apt update
 
-#Check Version#  
+#Install PM2#
+> sudo npm install pm2@latest -g
+
+**Check Version**
 > pm2 -v
 ```
 
@@ -127,6 +149,8 @@ postgres=# \q (quit)
 
 > sudo apt install redis
 
+> sudo systemctl enable redis-server
+
 #Check Version#  
 > redis-server --version
 
@@ -145,7 +169,7 @@ postgres=# \q (quit)
 
 ## Atomic API
 
-The latest building instructions can always be found at the  [Pink.gg Github](https://github.com/pinknetworkx/eosio-contract-api)
+The latest build can be found on the  [Pink.gg Github](https://github.com/pinknetworkx/eosio-contract-api), ```v1.3.24``` must just be built from the master branch.
 
 **Installation**
 
@@ -169,7 +193,7 @@ readers.config.json
 
 Below are basic configurations for this example please tailor to your own deployment:
 
-_connections.config.json_
+**_connections.config.json_**
 
 ```
 > cd  ~/eosio-contract-api/config
@@ -198,7 +222,7 @@ _connections.config.json_
 }
 ```
 
-_server.config.json_
+**_server.config.json_**
 
 ```
 > cd  ~/eosio-contract-api/config
@@ -262,7 +286,9 @@ _server.config.json_
 }
 ```
 
-_readers.config.json_
+**_NB:_** _Pay special attention to the rate limit : requests this policy is based on the number request per IP address. If your Atomic API node is behind a reverse proxy the policy may detect all requests from a single IP and start blocking before you anticipate._
+
+**_readers.config.json_**
 
 Advice from the Pink team was that indexing only needs to start from block 64000000
 
@@ -276,7 +302,7 @@ Advice from the Pink team was that indexing only needs to start from block 64000
   {
     "name": "atomic-1",
 "server_addr": "0.0.0.0",
-    "server_port": 9001,
+    "server_port": 9000,
 "start_block": 64000000,
     "stop_block": 0,
     "irreversible_only": false,
@@ -323,6 +349,8 @@ Advice from the Pink team was that indexing only needs to start from block 64000
 ## Start/Stop the Atomic API Service
 
 In this example the Atomic API Service will start indexing from block 64000000 and will build a fresh postgres database to the current headblock.
+
+This indexing action will take a significant amount of time for the WAX Mainnet (Months), it is advisable to rather restore the postgres db from a [Trusted Guild Backup](https://snapshots.eosphere.io) as described in [Optimise & Restore a WAX Atomic API Node](https://docs.wax.io/operate/atomic-assets/optimise-restore-wax-atomic-api-node).
 
 This will take sometime and it is advisable to ensure indexing has caught up before you start offering the API publicly.
 
