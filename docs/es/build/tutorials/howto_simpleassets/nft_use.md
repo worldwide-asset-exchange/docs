@@ -57,7 +57,7 @@ En este ejemplo, escribiremos un contrato inteligente que crea un NFT de Pegatin
    	    name category = "sticker"_n;
    	    name owner = "waxnftowner1"_n;
    	    std::string idata = R"json({"name": "Colmena de Desarrolladores de WAX", "desc" : "Pegatina de la Colmena de Desarrolladores de WAX" })json";
-   	    std::string mdata = R"json({"color": "negro", "img" : "https://developer.wax.io/images/wax_sticker.png" })json";
+   	    std::string mdata = R"json({"color": "negro", "img" : "https://docs.wax.io/images/wax_sticker.png" })json";
    	    bool requireClaim = false;
 
            //llamar a la acción create de simpleassets

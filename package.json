@@ -1,7 +1,7 @@
 {
-  "name": "wax-developer",
-  "description": "WAX Blockchain Documentation - Resources for developers building on WAX",
-  "version": "0.3.0",
+  "name": "wax-docs",
+  "description": "WAX Blockchain Documentation - Your toolkit for Web3 development & NFT creation on the WAX Blockchain",
+  "version": "3.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",

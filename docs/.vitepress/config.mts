@@ -7,8 +7,8 @@ import VitepressThemeOverride from 'vitepress-plugin-theme-override';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "WAX Developer Portal",
-  description: "WAX Blockchain Documentation - Resources for developers building on WAX",
+  title: "WAX Blockchain Documentation",
+  description: "Comprehensive toolkit for developers and creators building dApps, NFTs, and Web3 experiences on the WAX Blockchain",
 
   rewrites: {
     'en/:rest*': ':rest*'
@@ -50,7 +50,7 @@ export default defineConfig({
     root: enLocale,
     es: esLocale,
     cn: cnLocale,
-  },
+  } as any,
   head: [
     [
       'meta',
@@ -88,7 +88,7 @@ export default defineConfig({
       {
         rel: 'alternate',
         hreflang: 'es',
-        href: 'https://developer.wax.io/es',
+        href: 'https://docs.wax.io/es',
       },
     ],
     [
@@ -96,14 +96,14 @@ export default defineConfig({
       {
         rel: 'alternate',
         hreflang: 'zh',
-        href: 'https://developer.wax.io/cn',
+        href: 'https://docs.wax.io/cn',
       },
     ],
     [
       'link',
       {
         rel: 'alternate',
-        href: `https://developer.wax.io/docs/public/favicon.ico`,
+        href: `https://docs.wax.io/docs/public/favicon.ico`,
         type: 'image/x-icon',
       },
     ],

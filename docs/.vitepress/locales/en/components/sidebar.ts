@@ -34,6 +34,16 @@ export default [
     {
         text: 'Build',
         items: [
+            // {
+            //     text: 'Getting Started',
+            //     link: '/build/getting-started/',
+            //     collapsed: true,
+            //     items: [
+            //         {text: 'Quick Start', link: '/build/getting-started/quick-start'},
+            //         {text: 'Installation', link: '/build/getting-started/installation'},
+            //         {text: 'Wallets', link: '/build/getting-started/wallets'},
+            //     ],
+            // },
             {
                 text: 'dApp Development',
                 link: '/build/dapp-development/',
@@ -112,7 +122,7 @@ export default [
                 collapsed: true,
                 items: [
                     {
-                        text: 'wax.js',
+                        text: 'waxjs',
                         link: '/build/cloud-wallet/waxjs/',
                         collapsed: true,
                         items: [
@@ -297,6 +307,34 @@ export default [
         ],
     },
     {
+        text: 'Create',
+        items: [
+            {
+              text: 'WAX Labs',
+              link: '/create/wax-labs',
+              collapsed: true,
+              items: [
+                  {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
+              ],
+            },
+            {
+              text: 'Community',
+              link: '/create/community',
+              collapsed: true,
+            },
+            {
+              text: 'Awesome WAX',
+              link: '/create/awesome-wax',
+              collapsed: true,
+            },
+            {
+              text: 'Documentation',
+              link: '/create/docs',
+              collapsed: true,
+            },
+        ],
+    },
+    {
         text: 'Operate',
         items: [
             {
@@ -367,34 +405,6 @@ export default [
                 text: 'WAX API Services',
                 link: '/operate/wax-api-services',
                 collapsed: true,
-            },
-        ],
-    },
-    {
-        text: 'Create',
-        items: [
-            {
-              text: 'WAX Labs',
-              link: '/create/wax-labs',
-              collapsed: true,
-              items: [
-                  {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
-              ],
-            },
-            {
-              text: 'Community',
-              link: '/create/community',
-              collapsed: true,
-            },
-            {
-              text: 'Awesome WAX',
-              link: '/create/awesome-wax',
-              collapsed: true,
-            },
-            {
-              text: 'Documentation',
-              link: '/create/docs',
-              collapsed: true,
             },
         ],
     },

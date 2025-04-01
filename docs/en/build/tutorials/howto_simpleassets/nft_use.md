@@ -57,7 +57,7 @@ In this example, we'll write a smart contract that creates a WAX NFT Sticker usi
    	    name category = "sticker"_n;
    	    name owner = "waxnftowner1"_n;
    	    std::string idata = R"json({"name": "WAX Developer Hive", "desc" : "WAX Developer Hive Sticker" })json";
-   	    std::string mdata = R"json({"color": "black", "img" : "https://developer.wax.io/images/wax_sticker.png" })json";
+   	    std::string mdata = R"json({"color": "black", "img" : "https://docs.wax.io/images/wax_sticker.png" })json";
    	    bool requireClaim = false;
 
            //call the simpleassets create action

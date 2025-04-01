@@ -25,9 +25,9 @@ hero:
 
 features:
 - title: Our Mission
-  details: Empowering developers like you to build innovative applications, NFT marketplaces, decentralized finance (DeFi) tools, and community-driven experiences on the WAX blockchain.
+  details: Guiding developers and creators to build innovative dApps, NFT collections, GameFi projects, and DeFi solutions on the carbon-neutral WAX Blockchain.
 - title: Resources
-  details: From detailed documentation and tutorials to practical examples and best practices, we've got you covered.
+  details: Comprehensive guides, code examples, and best practices tailored for both technical developers and creative professionals entering the WAX ecosystem.
 - title: Explore
-  details: Explore the fundamental concepts of the WAX blockchain, learn about its consensus mechanism, understand the role of the WAXP token, and discover how to leverage WAX's governance and interoperability features.
+  details: Navigate WAX's powerful infrastructure, learn its unique consensus model, tokenomics, and creator-friendly tools designed to bring your Web3 vision to life.
 ---

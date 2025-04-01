@@ -6,12 +6,12 @@ export default {
   label: 'English',
   lang: 'en-EN',
   title: 'WAX Blockchain Documentation',
-  description: "WAX Blockchain Documentation – Your resource hub for developers, creators, and project to build, launch, and learn everything about WAX, NFTs, and the ecosystem.",
+  description: "WAX Blockchain Documentation – Comprehensive toolkit for developers and creators building dApps, NFTs, and Web3 experiences on the WAX Blockchain",
   themeConfig: {
     nav,
     sidebar,
     footer: {
       navigation: footer
-    }  
+    }
   }
 }

@@ -18,7 +18,7 @@ Esta guía repasará los conceptos básicos para comenzar a utilizar el módulo 
 
 Puedes leer más sobre [Filebeat en la documentación de Elasticsearch](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html).
 
-Se asume que ya estás usando HAProxy en tu entorno, puedes leer más sobre cómo desplegar HAProxy en nuestra [Guía para configurar un balanceador de carga confiable en WAX](https://developer.wax.io/operate/wax-infrastructure/wax-mainnet-node-load-balancer.html).
+Se asume que ya estás usando HAProxy en tu entorno, puedes leer más sobre cómo desplegar HAProxy en nuestra [Guía para configurar un balanceador de carga confiable en WAX](https://docs.wax.io/operate/wax-infrastructure/wax-mainnet-node-load-balancer.html).
 
 # Instalación, configuración y ejecución
 
