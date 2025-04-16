@@ -76,8 +76,8 @@ module.exports = { getSDKSingleUseToken };
 {
   "services": {
     "mycloudwallet": {
-      "sdkAuthorizationEndpoint": "https://stg-api-login.waxstg.net/v1/wcw", // Base API URL
-      "clientSecret": "982b355283fe37488380408098a502361ad61374f55b2b9eb6ab563508c6573f", // Client secret
+      "sdkAuthorizationEndpoint": "https://login-api.mycloudwallet.com/v1/wcw", // Base API URL
+      "clientSecret": "your-client-secret", // Client secret
       "clientId": "your-client-id" // Optional: Default client ID if not provided in request
     }
   }
