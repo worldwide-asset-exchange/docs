@@ -13,7 +13,7 @@ description: Installation and Usage
   - Android: https://play.google.com/store/apps/details?id=com.waxcloudwalletmobile
 - Backend requirements (for WebSocket mode)
 
-## Started
+## Getting Started
 
 Install the SDK package using npm:
 ```sh
