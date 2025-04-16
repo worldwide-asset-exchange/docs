@@ -83,7 +83,7 @@ In this example, we'll write a smart contract that creates a WAX NFT Sticker usi
 2. From the command line, use WAX-CDT to build your NFT smart contract:
 
    ```shell
-   eosio-cpp -abigen waxnft.cpp -o waxnft.wasm
+   cdt-cpp -abigen waxnft.cpp -o waxnft.wasm
    ```
 
 Your NFT smart contract is now ready to be deployed to the WAX mainnet.

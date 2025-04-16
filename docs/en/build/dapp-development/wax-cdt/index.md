@@ -31,9 +31,9 @@ WAX-CDT includes various **eosio** commands, built around the <a href="https://c
 
 - Sample contracts and customizable **make** scripts to automatically generate WASM and ABI files.
 - <a href="https://clang.llvm.org/" target="_blank">Clang</a> based tools , including
-  - **eosio-cpp:** C++ WebAssembly Compiler
-  - **eosio-ld:** WebAssembly Linker
-  - **eosio-abigen:** C++ ABI Generator
+  - **cdt-cpp:** C++ WebAssembly Compiler
+  - **cdt-ld:** WebAssembly Linker
+  - **cdt-abigen:** C++ ABI Generator
 
 ## How it Works
 

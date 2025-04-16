@@ -17,7 +17,7 @@ In this tutorial, you'll learn how to use the **make** scripts to build the Hell
 
 :::warning
 
-**Note:** These samples were created with **eosio-init** (part of the [WAX-CDT Options](/build/tools/cdt_options) suite of tools). Refer to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) to customize these scripts for your smart contracts.
+**Note:** These samples were created with **cdt-init** (part of the [WAX-CDT Options](/build/tools/cdt_options) suite of tools). Refer to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) to customize these scripts for your smart contracts.
 
 :::
 
@@ -38,8 +38,8 @@ To compile the Hello World example:
     ```
 
 :::warning
-**Note:** By default, **eosio-init** creates a build directory. Because this directory is empty, 
-it's not uploaded to Git. If you use **eosio-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), 
+**Note:** By default, **cdt-init** creates a build directory. Because this directory is empty, 
+it's not uploaded to Git. If you use **cdt-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), 
 you'll be able to skip this step.
 :::
 
@@ -110,7 +110,7 @@ You should now be able to locate the **hello.wasm** and **hello.abi** files in t
 
 <!--## Modify the Scripts and Build Your Project
 
-If you didn't use eosio-init to create a smart contracts template (recommended), you can still use the CMake scripts to build your smart contract by making just a few modifications.
+If you didn't use cdt-init to create a smart contracts template (recommended), you can still use the CMake scripts to build your smart contract by making just a few modifications.
 
 In the example below, we'll use the following directory structure:
 

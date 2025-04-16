@@ -51,7 +51,7 @@ Para completar estos pasos, asegúrate de que tu billetera esté abierta y desbl
 1. Desde una sesión interactiva de Docker bash, navega a tu directorio de contratos inteligentes y construye tu contrato inteligente.
 
     ```shell
-    eosio-cpp -abigen waxnft.cpp -o waxnft.wasm 
+    cdt-cpp -abigen waxnft.cpp -o waxnft.wasm 
     ```
 
 2. Si estás llamando acciones de contratos externos desde tu contrato inteligente (por ejemplo, WAX RNG o Simple Assets), asegúrate de elevar los permisos de tu cuenta:

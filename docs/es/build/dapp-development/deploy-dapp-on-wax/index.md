@@ -45,7 +45,7 @@ Si prefieres, puedes desplegar tus contratos inteligentes desde la línea de com
 ### Ventajas
 
 - Permite un mayor control sobre el proceso de construcción y los parámetros de despliegue. Consulta [Opciones de WAX-CDT](/es/build/tools/cdt_options) para más información.
-- Si usaste **eosio-init** para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world/) y desplegarlo en tu blockchain local, esta podría ser una buena opción para ti.
+- Si usaste **cdt-init** para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world/) y desplegarlo en tu blockchain local, esta podría ser una buena opción para ti.
 - Compatible para usuarios de Windows.
 
 ### Lo que Necesitarás

@@ -7,12 +7,12 @@ order: 110
 
 Below is a list of common WAX-CDT tools and parameters. You can use these tools to generate WASM and ABI files for your smart contracts.
 
-## eosio-abidiff
+## cdt-abidiff
 Compares the differences between two ABI files. A report prints out to the console.
 
 ```shell
-USAGE: eosio-abidiff [options] [input file1] ... [input file2] ...
-EXAMPLE: eosio-abidiff hello.abi old_hello.abi   
+USAGE: cdt-abidiff [options] [input file1] ... [input file2] ...
+EXAMPLE: cdt-abidiff hello.abi old_hello.abi   
 
 OPTIONS:
 
@@ -23,12 +23,12 @@ Generic Options:
   -version   - Display the version of this program
 ```
 
-## eosio-cpp
+## cdt-cpp
 Generates WASM and ABI files for your smart contracts.
 
 ```shell
-USAGE: eosio-cpp [options] [input file] ...
-EXAMPLE: eosio-cpp -abigen wax.cpp -o wax.wasm
+USAGE: cdt-cpp [options] [input file] ...
+EXAMPLE: cdt-cpp -abigen wax.cpp -o wax.wasm
 
 OPTIONS:
   -C                       - Include comments in preprocessed output
@@ -77,12 +77,12 @@ Generic Options:
   -version                 - Display the version of this program
 ```
 
-## eosio-init
+## cdt-init
 Creates a smart contract template and directory structure. Includes CMake build scripts by default.
 
 ```shell
-USAGE: eosio-init [options]
-EXAMPLE: eosio-init -project wax
+USAGE: cdt-init [options]
+EXAMPLE: cdt-init -project wax
 
 OPTIONS:
 
@@ -92,7 +92,7 @@ Generic Options:
   -help-list        - Display list of available options (-help-list-hidden for more)
   -version          - Display the version of this program
 
-eosio-init:
+cdt-init:
 generates an eosio smart contract project
 
   -bare             - produces only a skeleton smart contract without CMake support
@@ -100,11 +100,11 @@ generates an eosio smart contract project
   -project=[string] - output project name
 ```
 
-## eosio-ld
+## cdt-ld
 WebAssembly linker.
 
 ```shell
-USAGE: eosio-ld [options] [input file] ...
+USAGE: cdt-ld [options] [input file] ...
 
 OPTIONS:
 
@@ -114,7 +114,7 @@ Generic Options:
   -help-list        - Display list of available options (-help-list-hidden for more)
   -version          - Display the version of this program
 
-eosio.ld options:
+cdt.ld options:
 
   -L=[string]       - Add directory to library search path
   -fno-cfl-aa       - Disable CFL Alias Analysis
@@ -126,10 +126,10 @@ eosio.ld options:
   -o=[string]       - Write output to [file]
 ```
 
-<!--### eosio-abigen
+<!--### cdt-abigen
 
 ```bash
-USAGE: eosio-abigen [options] <source0> [... <sourceN>]
+USAGE: cdt-abigen [options] <source0> [... <sourceN>]
 
 OPTIONS:
 
@@ -139,7 +139,7 @@ Generic Options:
   -help-list                 - Display list of available options (-help-list-hidden for more)
   -version                   - Display the version of this program
 
-eosio-abigen:
+cdt-abigen:
 generates an ABI from C++ project input
 
   -extra-arg=<string>        - Additional argument to append to the compiler command line

@@ -7,24 +7,24 @@ order: 53
 
 WAX-CDT incluye varios comandos **eosio**, construidos alrededor del front-end y la infraestructura de herramientas de <a href="https://clang.llvm.org/" target="_blank">Clang</a>. Esta colección incluye varias herramientas para construir archivos WASM optimizados y de alto rendimiento. Consulta [Opciones de WAX-CDT](/es/build/tools/cdt_options) para más información.
 
-Se recomienda que utilices **eosio-init** para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world). Esta herramienta proporciona scripts para organizar y construir fácilmente tu proyecto.
+Se recomienda que utilices **cdt-init** para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world). Esta herramienta proporciona scripts para organizar y construir fácilmente tu proyecto.
 
-Si estos scripts no satisfacen tus necesidades, también puedes usar el comando **eosio-cpp** para compilar tus contratos inteligentes.
+Si estos scripts no satisfacen tus necesidades, también puedes usar el comando **cdt-cpp** para compilar tus contratos inteligentes.
 
-## Uso de eosio-cpp
+## Uso de cdt-cpp
 
 Para generar un archivo WASM y ABI para tu contrato inteligente:
 
 1. Desde la línea de comandos, navega a la carpeta de tus contratos inteligentes.
 
-2. Ejecuta el comando de construcción **eosio-cpp** con el parámetro **-abigen**.
+2. Ejecuta el comando de construcción **cdt-cpp** con el parámetro **-abigen**.
 
 :::tip
-<strong>eosio-cpp</strong> también incluye términos ricardianos en tu archivo ABI. Consulta [Contratos Ricardianos](/es/build/tools/ricardian_contract) y [Cláusulas Ricardianas](/es/build/tools/ricardian_clause) para más información.
+<strong>cdt-cpp</strong> también incluye términos ricardianos en tu archivo ABI. Consulta [Contratos Ricardianos](/es/build/tools/ricardian_contract) y [Cláusulas Ricardianas](/es/build/tools/ricardian_clause) para más información.
 :::
 
 ```
-eosio-cpp -abigen wax.cpp -o wax.wasm
+cdt-cpp -abigen wax.cpp -o wax.wasm
 ```
 
 Esto generará dos archivos en el directorio de tu contrato:

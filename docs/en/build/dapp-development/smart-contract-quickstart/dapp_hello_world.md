@@ -5,21 +5,21 @@ order: 62
 
 # Create a Smart Contract
 
-In this section, you'll learn how to write and compile a WAX smart contract using **eosio-init**.
+In this section, you'll learn how to write and compile a WAX smart contract using **cdt-init**.
 
 ## How it Works
 
-**eosio-init** is a WAX-CDT tool that creates the following smart contract template/directory structure:
+**cdt-init** is a WAX-CDT tool that creates the following smart contract template/directory structure:
 
 - **include** folder: This includes a sample **.hpp** file.
 - **ricardian** folder: This includes a sample Ricardian contract markdown file.
 - **src** folder: This includes a sample **.cpp** smart contract file.
 
-The template files are named after the project name you specify when you use **eosio-init** from the command line. 
+The template files are named after the project name you specify when you use **cdt-init** from the command line. 
 
-## Use eosio-init
+## Use cdt-init
 
-To create your first WAX smart contract using **eosio-init**:
+To create your first WAX smart contract using **cdt-init**:
 
 1. Create a smart contracts directory. For this tutorial, we'll use a folder named **mycontracts**.
 
@@ -31,13 +31,13 @@ To create your first WAX smart contract using **eosio-init**:
     cd mycontracts
     ```
 
-2. From the command line, use **eosio-init** with the `-project` parameter.
+2. From the command line, use **cdt-init** with the `-project` parameter.
 
     ```
-    eosio-init -project wax
+    cdt-init -project wax
     ```
 
-    **eosio-init** uses the `-project` name to create the following directory structure:
+    **cdt-init** uses the `-project` name to create the following directory structure:
 
     - mycontracts/wax/include 
     - mycontracts/wax/ricardian 

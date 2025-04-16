@@ -45,7 +45,7 @@ If you prefer, you can deploy your smart contracts from the command line using W
 ### Advantages
 
 - Allows more control over the build process and deployment parameters. Refer to [WAX-CDT Options](/build/tools/cdt_options)for more information.
-- If you used **eosio-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world/)and deploy to your local blockchain, this might be a good option for you.
+- If you used **cdt-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world/)and deploy to your local blockchain, this might be a good option for you.
 - Compatible for Windows users.
 
 ### What You'll Need
