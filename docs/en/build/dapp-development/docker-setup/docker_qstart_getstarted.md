@@ -20,27 +20,19 @@ To run the **waxteam/dev** Docker image:
     **Linux**
 
     ```shell
-    docker run -it --name waxdev -v /c/wax:/wax waxteam/dev bash
-    ```
-
-    ```shell
-    docker run -it --name waxcdt -v /c/wax:/wax waxteam/cdt bash
+    docker run -it --name cdt -v ./wax:/wax waxteam/waxdev /bin/bash
     ```
 
     **Windows 10**
 
     ```shell
-    docker run -it --name waxdev -v c:\wax:/wax waxteam/dev bash
-    ```
-
-    ```shell
-    docker run -it --name waxcdt -v c:\wax:/wax waxteam/cdt bash
+    docker run -it --name waxdev -v c:\wax:/wax waxteam/waxdev bash
     ```
 
     The console prints something similar to:
 
     ```shell
-    root@b6e444e3cc33:/#
+    root@f54f701d7eb9:/tmp/wax-cdt
     ```
 
 You should now have a running container with an active bash session. You can use this bash session to follow along with our Quickstart guides and tutorials.

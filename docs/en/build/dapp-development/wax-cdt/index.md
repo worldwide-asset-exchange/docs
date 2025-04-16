@@ -9,7 +9,7 @@ The <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank
 
 WAX-CDT tools are included in the **waxteam/dev** Docker image, and we also provide a standalone **waxteam/cdt** Docker image. To start an interactive WAX-CDT container, you can use the following commands:
 
-```shell run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
+```docker run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
 
 Refer to our [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.
 

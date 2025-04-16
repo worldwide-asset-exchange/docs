@@ -16,7 +16,9 @@ Each project includes two **CMakeLists.txt** files: one in the project's root di
 In this tutorial, you'll learn how to use the **make** scripts to build the Hello World example.
 
 :::warning
-<strong>Note:</strong> These samples were created with **eosio-init** (part of the [WAX-CDT Options](/build/tools/cdt_options) suite of tools). Refer to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) to customize these scripts for your smart contracts.
+
+**Note:** These samples were created with **eosio-init** (part of the [WAX-CDT Options](/build/tools/cdt_options) suite of tools). Refer to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) to customize these scripts for your smart contracts.
+
 :::
 
 ## Compile Hello World
@@ -36,7 +38,9 @@ To compile the Hello World example:
     ```
 
 :::warning
-    <strong>Note:</strong> By default, <strong>eosio-init</strong> creates a build directory. Because this directory is empty, it's not uploaded to Git. If you use <strong>eosio-init</strong> to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), you'll be able to skip this step. 
+**Note:** By default, **eosio-init** creates a build directory. Because this directory is empty, 
+it's not uploaded to Git. If you use **eosio-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), 
+you'll be able to skip this step.
 :::
 
 3. Navigate to the **build** directory.
