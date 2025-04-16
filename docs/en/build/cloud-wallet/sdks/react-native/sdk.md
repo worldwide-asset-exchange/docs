@@ -1,17 +1,19 @@
 ---
 layout: doc
-title: Installation & how to use React Native SDK
-description: Installation & how to use React Native SDK
+title: Installation and Usage
+description: Installation and Usage
 ---
 
-# Installation & how to use React Native SDK
+# Installation & usage of React Native SDK
 
 ## Prerequisites
-- React Native v0.71.4 or higher (recommended to avoid performance issues on Android)
-- Basic understanding of React Native development
-- Basic understanding of WAX blockchain concepts
+- Required development environment
+- WAX Cloud Wallet App installed
+  - iOS: https://apps.apple.com/us/app/my-cloud-wallet/id6473984457
+  - Android: https://play.google.com/store/apps/details?id=com.waxcloudwalletmobile
+- Backend requirements (for WebSocket mode)
 
-## Installation
+## Started
 
 Install the SDK package using npm:
 ```sh
@@ -78,8 +80,8 @@ export default function App() {
       }}
       getSingleUseToken={getSingleUseToken}
       activationEndpoint="https://your-activation-endpoint.com"
-      relayEndpoint="https://your-relay-endpoint.com"
-      relayRegion="your-region"
+      relayEndpoint="https://queue-relay.mycloudwallet.com/graphql"
+      relayRegion="us-east-2"
     >
       {/* Your app components */}
     </WaxDeeplinkProvider>

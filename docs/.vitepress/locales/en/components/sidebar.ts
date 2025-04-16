@@ -148,7 +148,9 @@ export default [
                                 link: '/build/cloud-wallet/sdks/react-native/',
                                 collapsed: true,
                                 items: [
-                                    { text: 'Installation & how to use', link: '/build/cloud-wallet/sdks/react-native/sdk' },
+                                    { text: 'Repository', link: '/build/cloud-wallet/sdks/react-native/repository' },
+                                    { text: 'dApp Backend Requirements', link: '/build/cloud-wallet/sdks/react-native/dapp-backend' },
+                                    { text: 'Installation & Usage', link: '/build/cloud-wallet/sdks/react-native/sdk' },
                                     { text: 'Sample Mobile App', link: '/build/cloud-wallet/sdks/react-native/sample-dapp' },
                                 ],
                             },
