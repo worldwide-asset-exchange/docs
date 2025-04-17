@@ -9,7 +9,7 @@ WAX-CDT includes various **cdt** commands, built around the <a href="https://cla
 
 It's recommended that you use **cdt-init** to [Create a Smart Contract](/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world). This tool provides scripts to easily organize and build your project. 
 
-If these scripts do not meet your needs, you can also use the **eosi-cpp** command to compile your smart contracts.
+If these scripts do not meet your needs, you can also use the **cdt-cpp** command to compile your smart contracts.
 
 ## Use cdt-cpp
 
