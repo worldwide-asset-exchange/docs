@@ -95,7 +95,8 @@ module.exports = { getSDKSingleUseToken };
 ![Input 2FA Code](./../../../../../public/assets/sdks/react-native/dapp-backend/input-2fa-code.png)
 6. Pending for approval
 ![Pending for approval](./../../../../../public/assets/sdks/react-native/dapp-backend/pending-for-approval.png)
-7. Once Approval/ Deny , there will be a notification appear on top header, right corner
-8. Once request is approved, click on the request item again to view the secret key. plz aware that secret key **can be viewed only once**!
+1. Once Approval/ Deny , there will be a notification appear on top header, right corner
+![approval notification](./../../../../../public/assets/sdks/react-native/dapp-backend/approval-notification.png)
+1. Once request is approved, click on the request item again to view the secret key. plz aware that secret key **can be viewed only once**!
 ![Reuest approved](./../../../../../public/assets/sdks/react-native/dapp-backend/reuest-approved-1.png)
 ![View oAuth Secret Key](./../../../../../public/assets/sdks/react-native/dapp-backend/view-oauth-secret-key.png)
