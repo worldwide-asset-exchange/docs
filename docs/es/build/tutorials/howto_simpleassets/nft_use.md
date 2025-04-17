@@ -83,7 +83,7 @@ En este ejemplo, escribiremos un contrato inteligente que crea un NFT de Pegatin
 2. Desde la línea de comandos, utiliza WAX-CDT para construir tu contrato inteligente NFT:
 
    ```shell
-   eosio-cpp -abigen waxnft.cpp -o waxnft.wasm
+   cdt-cpp -abigen waxnft.cpp -o waxnft.wasm
    ```
 
 Tu contrato inteligente NFT está ahora listo para ser desplegado en la red principal de WAX.

@@ -19,18 +19,18 @@ It's also important where you store your Ricardian markdown file (in relation to
 
 ## Use WAX-CDT
 
-If you use **eosio-init** to create a smart contract template, a folder is automatically created for you under your project directory (e.g., wax/ricardian). By default, this folder contains a sample Ricardian contract: wax.contracts.md.
+If you use **cdt-init** to create a smart contract template, a folder is automatically created for you under your project directory (e.g., wax/ricardian). By default, this folder contains a sample Ricardian contract: wax.contracts.md.
 
 The CMake scripts will automatically include the files listed in the **ricardian** directory.
 
 Refer to [Create a Smart Contract](/build/dapp-development/smart-contract-quickstart/dapp_hello_world)for more information.
 
-## Use eosio-cpp
+## Use cdt-cpp
 
-If you use [eosio-cpp](/build/dapp-development/wax-cdt/)to compile your contract, your Ricardian markdown file must be in the same directory as wax.cpp and must be the same name: wax.contracts.md.
+If you use [cdt-cpp](/build/dapp-development/wax-cdt/)to compile your contract, your Ricardian markdown file must be in the same directory as wax.cpp and must be the same name: wax.contracts.md.
 
 ```shell
-eosio-cpp -abigen wax.cpp -o wax.wasm
+cdt-cpp -abigen wax.cpp -o wax.wasm
 ```
 
 ## Example Ricardian Contract

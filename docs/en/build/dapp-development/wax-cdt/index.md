@@ -9,7 +9,7 @@ The <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank
 
 WAX-CDT tools are included in the **waxteam/dev** Docker image, and we also provide a standalone **waxteam/cdt** Docker image. To start an interactive WAX-CDT container, you can use the following commands:
 
-```shell run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
+```docker run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
 
 Refer to our [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.
 
@@ -31,9 +31,9 @@ WAX-CDT includes various **eosio** commands, built around the <a href="https://c
 
 - Sample contracts and customizable **make** scripts to automatically generate WASM and ABI files.
 - <a href="https://clang.llvm.org/" target="_blank">Clang</a> based tools , including
-  - **eosio-cpp:** C++ WebAssembly Compiler
-  - **eosio-ld:** WebAssembly Linker
-  - **eosio-abigen:** C++ ABI Generator
+  - **cdt-cpp:** C++ WebAssembly Compiler
+  - **cdt-ld:** WebAssembly Linker
+  - **cdt-abigen:** C++ ABI Generator
 
 ## How it Works
 

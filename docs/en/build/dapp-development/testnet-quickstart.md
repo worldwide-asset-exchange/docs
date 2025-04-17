@@ -51,7 +51,7 @@ To complete these steps, make sure that your wallet is opened and unlocked. Refe
 1. From an interactive Docker bash session, navigate to your smart contracts directory and build your smart contract.
 
     ```shell
-    eosio-cpp -abigen waxnft.cpp -o waxnft.wasm 
+    cdt-cpp -abigen waxnft.cpp -o waxnft.wasm 
     ```
 
 2. If you're calling external contract actions from your smart contract (e.g., WAX RNG or Simple Assets), make sure to elevate your account permissions:
