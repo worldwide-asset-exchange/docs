@@ -138,6 +138,24 @@ export default [
                             {text: 'Integration Guide', link: '/build/cloud-wallet/wallet-connect/walletconnect-integration-guide'},
                         ],
                     },
+                    {
+                        text: 'SDKs',
+                        link: '/build/cloud-wallet/sdks/react-native',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: 'React Native',
+                                link: '/build/cloud-wallet/sdks/react-native/',
+                                collapsed: true,
+                                items: [
+                                    { text: 'Repository', link: '/build/cloud-wallet/sdks/react-native/repository' },
+                                    { text: 'dApp Backend Requirements', link: '/build/cloud-wallet/sdks/react-native/dapp-backend' },
+                                    { text: 'Installation & Usage', link: '/build/cloud-wallet/sdks/react-native/sdk' },
+                                    { text: 'Sample Mobile App', link: '/build/cloud-wallet/sdks/react-native/sample-dapp' },
+                                ],
+                            },
+                        ],
+                    },
                 ],
             },
             {
@@ -238,7 +256,7 @@ export default [
                         link: '/build/tutorials/howto_blockexplorer'
                     },
                     {
-                        text: 'How to Airdrop Tokens and NFTs', 
+                        text: 'How to Airdrop Tokens and NFTs',
                         link: '/build/tutorials/howto_airdrop'
                     }
                 ],
