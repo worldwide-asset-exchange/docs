@@ -95,6 +95,7 @@ export default [
               { text: 'Desinstalar WAX-CDT', link: '/es/build/dapp-development/wax-cdt/cdt_uninstall' },
               { text: 'Contratos de muestra', link: '/es/build/dapp-development/wax-cdt/cdt_use' },
               { text: 'Herramientas de construcción', link: '/es/build/dapp-development/wax-cdt/cdt_cpp' },
+              { text: 'Opciones de WAX-CDT', link: '/es/build/tools/cdt_options' },
             ],
           },
           {
@@ -324,6 +325,13 @@ export default [
           { text: 'Permisos Personalizados de Cuentas WAX', link: '/es/operate/wax-infrastructure/wax-account-custom-permissions' },
           { text: 'Configurar API Hyperion', link: '/es/operate/wax-infrastructure/hyperion-guide' },
           { text: 'Configurar API Atomic', link: '/es/operate/wax-infrastructure/atomic-api-guide' },
+          { text: 'Optimizar la Utilización del Disco con Deduplicación ZFS', link: '/es/operate/wax-infrastructure/wax-optimise-disk-utilisation-zfs-dedup' },
+          { text: 'Cómo enrutar consultas de API específicas entre nodos', link: '/es/operate/wax-infrastructure/wax-route-specific-api-queries' },
+          { text: 'Configurar Balanceador de Websocket', link: '/es/operate/wax-infrastructure/wax-websocket-load-balancer' },
+          { text: 'Emparejamiento Seguro con Wireguard', link: '/es/operate/wax-infrastructure/wax-secure-wireguard-peering' },
+          { text: 'Automatizar Snapshots de WAX', link: '/es/operate/wax-infrastructure/wax-automate-snapshots' },
+          { text: 'Configurar un servicio de precios de WAX', link: '/es/operate/wax-infrastructure/creating-a-wax-price-oracle-service-bash-python' },
+          { text: 'Monitorizar/Desregistrar productor de WAX con systemd', link: '/es/operate/wax-infrastructure/monitor-and-unregister-wax-producer-with-systemd-while-you-sleep' },
         ],
       },
       {

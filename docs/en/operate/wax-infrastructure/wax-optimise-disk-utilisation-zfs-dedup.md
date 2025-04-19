@@ -1,3 +1,7 @@
+---
+title: Optimise Disk Utilisation with ZFS Deduplication
+---
+
 Running WAX Mainnet production nodes can be very resource intensive. Considering that many operators endeavour to provide Full nodes with a complete history of blocks, storage requirements can be a challenge as they are constantly expanding.
 
 This guide will walk through how to optimise disk utilisation utilising ZFS Deduplication across multiple WAX nodes.
