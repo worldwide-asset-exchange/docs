@@ -17,9 +17,9 @@ Para realizar esta verificación, necesitaremos acceder a la tabla _signvals.a_ 
 
 1. Desde la línea de comandos, navega a tu directorio de contratos inteligentes. Para este ejemplo, usaremos **mycontracts**.
 
-2. Usa **eosio-init** con el parámetro `-project` para crear la plantilla de tu contrato inteligente.
+2. Usa **cdt-init** con el parámetro `-project` para crear la plantilla de tu contrato inteligente.
 
-   `$ eosio-init -project rngtest`
+   `$ cdt-init -project rngtest`
 
 3. Desde tu carpeta de contratos inteligentes, abre **rngtest/include/rngtest.hpp** y pega lo siguiente:
 

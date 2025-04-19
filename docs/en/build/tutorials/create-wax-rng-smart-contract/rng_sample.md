@@ -17,9 +17,9 @@ To perform this check we will need to access the _signvals.a_ table of the WAX R
 
 1. From the command line, navigate to your smart contracts directory. For this example, we'll use **mycontracts**.
 
-2. Use **eosio-init** with the `-project` parameter to create your smart contract template.
+2. Use **cdt-init** with the `-project` parameter to create your smart contract template.
 
-   `$ eosio-init -project rngtest`
+   `$ cdt-init -project rngtest`
 
 3. From your smart contracts folder, open **rngtest/include/rngtest.hpp** and paste the following:
 

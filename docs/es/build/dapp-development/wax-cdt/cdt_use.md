@@ -16,7 +16,7 @@ Cada proyecto incluye dos archivos **CMakeLists.txt**: uno en el directorio raí
 En este tutorial, aprenderás a usar los scripts de **make** para construir el ejemplo de Hola Mundo.
 
 :::warning
-<strong>Nota:</strong> Estas muestras se crearon con **eosio-init** (parte de la suite de herramientas [Opciones de WAX-CDT](/es/build/tools/cdt_options)). Consulta [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) para personalizar estos scripts para tus contratos inteligentes.
+<strong>Nota:</strong> Estas muestras se crearon con **cdt-init** (parte de la suite de herramientas [Opciones de WAX-CDT](/es/build/tools/cdt_options)). Consulta [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world) para personalizar estos scripts para tus contratos inteligentes.
 :::
 
 ## Compilar Hola Mundo
@@ -36,7 +36,7 @@ Para compilar el ejemplo de Hola Mundo:
     ```
 
 :::warning
-<strong>Nota:</strong> Por defecto, <strong>eosio-init</strong> crea un directorio de construcción. Como este directorio está vacío, no se sube a Git. Si usas <strong>eosio-init</strong> para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), podrás saltarte este paso.
+**Nota:** Por defecto, **cdt-init** crea un directorio de construcción. Como este directorio está vacío, no se sube a Git. Si usas **cdt-init** para [Crear un Contrato Inteligente](/es/build/dapp-development/wax-cdt/cdt_use.html#compile-hello-world), podrás saltarte este paso.
 :::
 
 3. Navega al directorio **build**.

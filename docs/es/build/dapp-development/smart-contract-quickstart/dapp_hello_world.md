@@ -5,21 +5,21 @@ order: 62
 
 # Crear un Contrato Inteligente
 
-En esta sección, aprenderás cómo escribir y compilar un contrato inteligente WAX utilizando **eosio-init**.
+En esta sección, aprenderás cómo escribir y compilar un contrato inteligente WAX utilizando **cdt-init**.
 
 ## Cómo Funciona
 
-**eosio-init** es una herramienta de WAX-CDT que crea la siguiente estructura de directorios/plantilla para contratos inteligentes:
+**cdt-init** es una herramienta de WAX-CDT que crea la siguiente estructura de directorios/plantilla para contratos inteligentes:
 
 - Carpeta **include**: Incluye un archivo **.hpp** de ejemplo.
 - Carpeta **ricardian**: Incluye un archivo de contrato Ricardian en formato markdown.
 - Carpeta **src**: Incluye un archivo de contrato inteligente **.cpp** de ejemplo.
 
-Los archivos de plantilla se nombran según el nombre del proyecto que especifiques cuando usas **eosio-init** desde la línea de comandos.
+Los archivos de plantilla se nombran según el nombre del proyecto que especifiques cuando usas **cdt-init** desde la línea de comandos.
 
-## Usar eosio-init
+## Usar cdt-init
 
-Para crear tu primer contrato inteligente WAX usando **eosio-init**:
+Para crear tu primer contrato inteligente WAX usando **cdt-init**:
 
 1. Crea un directorio para contratos inteligentes. Para este tutorial, usaremos una carpeta llamada **mycontracts**.
 
@@ -31,13 +31,13 @@ Para crear tu primer contrato inteligente WAX usando **eosio-init**:
     cd mycontracts
     ```
 
-2. Desde la línea de comandos, usa **eosio-init** con el parámetro `-project`.
+2. Desde la línea de comandos, usa **cdt-init** con el parámetro `-project`.
 
     ```
-    eosio-init -project wax
+    cdt-init -project wax
     ```
 
-    **eosio-init** usa el nombre `-project` para crear la siguiente estructura de directorios:
+    **cdt-init** usa el nombre `-project` para crear la siguiente estructura de directorios:
 
     - mycontracts/wax/include 
     - mycontracts/wax/ricardian 

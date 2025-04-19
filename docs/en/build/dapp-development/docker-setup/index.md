@@ -24,8 +24,9 @@ Below is a list of our core Docker images. For a complete list, refer to [waxtea
 
 | Docker Image | Description |
 |--------------|-------------|
-| [waxteam/dev](https://hub.docker.com/r/waxteam/dev) | This **development** image includes everything you need to get the WAX Blockchain up and running. You can use this image to run a WAX node, create a local development environment, and create and compile smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/). |
+| [waxteam/waxnode-dev](https://hub.docker.com/r/waxteam/waxnode-dev) | This **development** image includes everything you need to get the WAX Blockchain up and running. You can use this image to run a WAX node, create a local development environment, and create and compile smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/). |
 | [waxteam/cdt](https://hub.docker.com/r/waxteam/cdt) | Use this image to create and compile smart contracts using the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/). This image does **not** allow you to run a WAX node or use [Blockchain Tools](/build/tools/blockchain_tools). |
-| [waxteam/production](https://hub.docker.com/r/waxteam/production) | It's recommended that you use our [production docker images](https://hub.docker.com/r/waxteam/production) to run a production node. Refer to [Running a WAX node](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/mainnet) for more information. |
+|[waxteam/waxdev](https://hub.docker.com/r/waxteam/waxdev)|This Docker image includes complied code of the WAX blockchain tools as well as the Smart Contract Development Toolkit.|
+| [waxteam/waxnode](https://hub.docker.com/r/waxteam/waxnode) | It's recommended that you use our [production docker images](https://hub.docker.com/r/waxteam/waxnode) to run a production node. Refer to [Running a WAX node](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/main/samples/mainnet) for more information. |
 
 <ChildTableOfContents :max="2" title="More inside this section" />
