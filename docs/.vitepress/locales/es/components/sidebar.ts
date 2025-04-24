@@ -328,7 +328,7 @@ export default [
           { text: 'Optimizar la Utilización del Disco con Deduplicación ZFS', link: '/es/operate/wax-infrastructure/wax-optimise-disk-utilisation-zfs-dedup' },
           { text: 'Cómo enrutar consultas de API específicas entre nodos', link: '/es/operate/wax-infrastructure/wax-route-specific-api-queries' },
           { text: 'Configurar Balanceador de Websocket', link: '/es/operate/wax-infrastructure/wax-websocket-load-balancer' },
-          { text: 'Emparejamiento Seguro con Wireguard', link: '/es/operate/wax-infrastructure/wax-secure-wireguard-peering' },
+          { text: 'Emparejamiento Seguro con Wireguard', link: '/es/operate/wax-infrastructure/wax-securely-peer-with-wireguard' },
           { text: 'Automatizar Snapshots de WAX', link: '/es/operate/wax-infrastructure/wax-automate-snapshots' },
           { text: 'Configurar un servicio de precios de WAX', link: '/es/operate/wax-infrastructure/creating-a-wax-price-oracle-service-bash-python' },
           { text: 'Monitorizar/Desregistrar productor de WAX con systemd', link: '/es/operate/wax-infrastructure/monitor-and-unregister-wax-producer-with-systemd-while-you-sleep' },
