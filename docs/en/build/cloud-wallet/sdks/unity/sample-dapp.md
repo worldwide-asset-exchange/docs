@@ -18,13 +18,13 @@ Contains the demo implementation of the Cloud Wallet plugin to showcase its feat
 
 | Activation | Deactivation |
 |-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| ![Activation](../../../../../../public/assets/sdks/unity/sample-dapp/mobile-activation-success.gif) | ![Deactivation](../../../../../../public/assets/sdks/unity/sample-dapp/mobile-deactivation.gif)                         |
+| ![Activation](../../../../../public/assets/sdks/unity/sample-dapp/mobile-activation-success.gif) | ![Deactivation](../../../../../public/assets/sdks/unity/sample-dapp/mobile-deactivation.gif)                         |
 
 #### Non-Mobile Platforms
 
 | Activation | Activation with time out |Deactivation |
 |--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| ![Activation](../../../../../../public/assets/sdks/unity/sample-dapp/desktop-activation-success.gif)         | ![Activation](../../../../../../public/assets/sdks/unity/sample-dapp/desktop-activation-timeout-newcode.gif) | ![Deactivation](../../../../../../public/assets/sdks/unity/sample-dapp/desktop-deactivation.gif)                         |
+| ![Activation](../../../../../public/assets/sdks/unity/sample-dapp/desktop-activation-success.gif)         | ![Activation](../../../../../public/assets/sdks/unity/sample-dapp/desktop-activation-timeout-newcode.gif) | ![Deactivation](../../../../../public/assets/sdks/unity/sample-dapp/desktop-deactivation.gif)                         |
 
 
 ### Sign Transaction
@@ -32,10 +32,10 @@ Contains the demo implementation of the Cloud Wallet plugin to showcase its feat
 #### Mobile Platforms
 | Approved | Rejected |
 |---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| ![Approved](../../../../../../public/assets/sdks/unity/sample-dapp/mobile-sign-transaction-success.gif) | ![Rejected](../../../../../../public/assets/sdks/unity/sample-dapp/mobile-sign-transaction-rejected.gif) |
+| ![Approved](../../../../../public/assets/sdks/unity/sample-dapp/mobile-sign-transaction-success.gif) | ![Rejected](../../../../../public/assets/sdks/unity/sample-dapp/mobile-sign-transaction-rejected.gif) |
 
 
 #### Non-Mobile Platforms
 | Approved | Rejected |
 |----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| ![Approved](../../../../../../public/assets/sdks/unity/sample-dapp/desktop-sign-transaction-success.gif) | ![Rejected](../../../../../../public/assets/sdks/unity/sample-dapp/desktop-sign-transaction-rejected.gif) |
+| ![Approved](../../../../../public/assets/sdks/unity/sample-dapp/desktop-sign-transaction-success.gif) | ![Rejected](../../../../../public/assets/sdks/unity/sample-dapp/desktop-sign-transaction-rejected.gif) |
