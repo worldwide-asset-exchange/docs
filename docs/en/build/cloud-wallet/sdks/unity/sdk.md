@@ -97,7 +97,7 @@ The script runs as part of Unity's post-processing build step. This means it aut
 
 **Code**
 
-Please check the [IOSPostProcessBuild class](./BuildProcesses/IOSPostBuildProcess.cs) to see the implementation.
+Please check the [IOSPostProcessBuild class](https://github.com/worldwide-asset-exchange/cloudwallet-unity-sdk/blob/main/Assets/CloudWalletPlugin/BuildProcesses/IOSPostBuildProcess.cs) to see the implementation.
 
 ## Initial Setup
 
