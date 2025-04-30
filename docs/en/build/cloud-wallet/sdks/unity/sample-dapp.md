@@ -18,7 +18,7 @@ Contains the demo implementation of the Cloud Wallet plugin to showcase its feat
 
 | Activation | Deactivation |
 |-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
-| ![Activation](../../../../../public/assets/sdks/unity/sample-dapp/mobile-activation-success.gif) | ![Deactivation](../../../../../public/assets/sdks/unity/sample-dapp/mobile-deactivation.gif)                         |
+| <img src="../../../../../public/assets/sdks/unity/sample-dapp/mobile-activation-success.gif" with="284" /> | <img src="../../../../../public/assets/sdks/unity/sample-dapp/mobile-deactivation.gif" width=284 />|
 
 #### Non-Mobile Platforms
 

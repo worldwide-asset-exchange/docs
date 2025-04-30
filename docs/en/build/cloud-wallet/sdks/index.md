@@ -21,7 +21,7 @@ WAX Cloud Wallet provides SDKs for various platforms to help developers integrat
 |---------|-----------------|-----------|
 | Cross-Platform Support | ✅ iOS, Android | ✅ iOS, Android, Desktop |
 | WebSocket Mode | ✅ | ✅ |
-| Direct Mode | ✅ | ✅ |
+| Direct Mode | ✅ | ❌ |
 | QR Code Support | ✅ | ✅ |
 | Transaction Signing | ✅ | ✅ |
 | User Authentication | ✅ | ✅ |

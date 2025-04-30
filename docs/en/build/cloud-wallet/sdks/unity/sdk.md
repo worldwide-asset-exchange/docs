@@ -115,7 +115,7 @@ public sealed class DemoScript : MonoBehaviour
     public CloudWalletConnector cloudWalletConnector;
     private void Start()
     {
-        cloudWalletPluginConnector = CloudWalletPluginConnector.Initialize(
+        connector = CloudWalletPluginConnector.Initialize(
             dappName: "DappUnityTestName",
             origin: "dappunitytestname.com",
             icon: "https://picsum.photos/200",
@@ -192,7 +192,7 @@ public async void ConnectWallet()
    try
    {
         string randomNonce = Guid.NewGuid().ToString();
-        await cloudWalletPluginConnector.Activate(randomNonce);
+        await connector.Activate(randomNonce);
    }
    catch (System.Exception e)
    {
@@ -264,13 +264,13 @@ public async void SignTransaction()
                 {
                     new
                     {
-                        actor = cloudWalletPluginConnector.WalletAccount,
+                        actor = connector.WalletAccount,
                         permission = "active"
                     }
                 },
                 data = new
                 {
-                    from = cloudWalletPluginConnector.WalletAccount,
+                    from = connector.WalletAccount,
                     to = "cc.wam",
                     quantity = "1.00000001 WAX",
                     memo = "WAX Transfer From Demo MCW Plugin"
@@ -286,7 +286,7 @@ public async void SignTransaction()
             BlocksBehind: 3,
             ExpireSeconds: 30000
         );
-        Subscribe2ChannelDataMessageContent response = await cloudWalletPluginConnector.SignTransaction(actions, namedParams);
+        Subscribe2ChannelDataMessageContent response = await connector.SignTransaction(actions, namedParams);
         loadingIndicator.SetActive(false);
     }
     catch (Exception e)
