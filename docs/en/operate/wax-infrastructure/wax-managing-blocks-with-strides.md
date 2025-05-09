@@ -17,7 +17,7 @@ Configuring  `blocks-log-stride`  will break the  `blocks.log`  and  `blocks.ind
 `blocks-log-stride =`
 
 _Split the block log file when the head block number is the multiple of the stride.  
-When the stride is reached, the current block log and index will be renamed ‘<blocks-retained-dir>/blocks-<start num>-<end num>.log/index’  
+When the stride is reached, the current block log and index will be renamed `<blocks-retained-dir>/blocks-<start num>-<end num>.log/index`  
 and a new current block log and index will be created with the most recent block. All files following this format will be used to construct an extended block log._
 
 Below is an example of a Full WAX Mainnet Node that was configured at around block 275,000,000 to use a stride of 1,000,000 blocks. As the blockchain progresses at each 1,000,000 block milestone a new stride  `.index`  and  `.log`  will be created. Take note that the next stride always starts off in the normal  `blocks.log`  and  `blocks.index`  format.
