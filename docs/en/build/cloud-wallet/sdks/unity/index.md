@@ -18,6 +18,8 @@ The SDK abstracts the complexity of blockchain interactions, allowing developers
 - **Desktop Platforms**: QR code-based authentication for desktop applications
 - **Automatic Platform Configuration**: Handles platform-specific setup automatically
 
+> ⚠️ **Note**: WebGL is not supported in this version. Stay tuned for an upcoming update!
+
 ### Transaction Management
 **1. Secure Transaction Signing**
   - End-to-end encrypted communication
