@@ -1,34 +1,43 @@
 # Cloud Wallet Unity SDK
 
-## Structure
+## Introduction
+The **CloudWallet** plugin for Unity enables dApp developers to seamlessly establish the connection between the dapp with the Cloud Wallet. This plugin provides essential features such as wallet activation, wallet deactivation, and transaction signing.
 
-The core plugin containing all the necessary components for the Cloud Wallet integration.
+This repository has the Unity Plugin and a Demo that shows how to implement it.
 
-| Folder                                                          | Description                                                                  |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `Assets/CloudWalletPlugin`                                      | Contains the assets and scripts for the main Cloud Wallet plugin.            |
-| `Assets/CloudWalletPlugin/Components`                           | Houses the main functional components of the plugin.                         |
-| `Assets/CloudWalletPlugin/Components/WalletConnection`          | Activation and Deactivation functionalities are contained in this component. |
-| `Assets/CloudWalletPlugin/Components/SignTransaction`           | Transaction signing functionality.                                           |
-| `Assets/CloudWalletPlugin/Components/CloudWalletAppInteraction` | The service that allows the interaction with the Cloud Wallet Application.   |
-| `Assets/CloudWalletPlugin/Common`                               | Contains common models.                                                      |
-| `Assets/CloudWalletPlugin/Infrastructure`                       | Handles HTTP requests and the GraphQL Client creation.                       |
+## Project Structure
 
-### Internal Dependencies
+| Folder                            | Description                                                                 |
+|-----------------------------------|-----------------------------------------------------------------------------|
+| `Assets/CloudWalletDemo`          | Contains the dapp that uses the SDK as an example of the implementation     |
+| `Assets/CloudWalletPlugin`        | Houses the SDK itself                                                       |
+
+## Cloud Wallet Demo
+
+Please check the [Cloud Wallet Demo](./Assets/CloudWalletDemo/README.md) documentation for further information about the Demo.
+
+## Cloud Wallet Plugin
+
+Please check the [Cloud Wallet Plugin](./Assets/CloudWalletPlugin/README.md) documentation for further information about the Plugin.
+
+### Summary
+
+#### Dependencies
+The Cloud Wallet Plugin requires the following dependencies:
 
 The internal dependencies required for the Cloud Wallet plugin to function properly.
 
-| Dependency                                  | Description                                                                                                 |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `GraphQL.Client.Abstractions.dll`           | Provides abstractions for handling GraphQL queries, mutations, and subscriptions.                           |
-| `GraphQL.Client.Abstractions.Websocket.dll` | Adds WebSocket support to the GraphQL client for handling subscriptions.                                    |
-| `GraphQL.Client.Serializer.Newtonsoft.dll`  | Integrates Newtonsoft JSON as the serializer for the GraphQL client.                                        |
-| `GraphQL.Client.dll`                        | Core library for making GraphQL requests, including queries and mutations.                                  |
-| `GraphQL.Primitives.dll`                    | Contains primitive types used in GraphQL to support the client's operations.                                |
-| `Microsoft.Bcl.AsyncInterfaces.dll`         | Provides asynchronous interfaces like `IAsyncEnumerable<T>` for .NET Framework compatibility.               |
-| `Newtonsoft.Json.dll`                       | Widely-used JSON library for serialization and deserialization in .NET applications.                        |
-| `System.Reactive.dll`                       | Enables reactive programming by composing asynchronous and event-based programs using observable sequences. |
-| `System.Reactive.*`                         | Additional libraries in the Reactive Extensions suite, supporting various reactive programming patterns.    |
+| Dependency                               | Description                                                                |
+|------------------------------------------|----------------------------------------------------------------------------|
+| `GraphQL.Client.Abstractions.dll`        | Provides abstractions for handling GraphQL queries, mutations, and subscriptions. |
+| `GraphQL.Client.Abstractions.Websocket.dll` | Adds WebSocket support to the GraphQL client for handling subscriptions.    |
+| `GraphQL.Client.Serializer.Newtonsoft.dll` | Integrates Newtonsoft JSON as the serializer for the GraphQL client.        |
+| `GraphQL.Client.dll`                     | Core library for making GraphQL requests, including queries and mutations.  |
+| `GraphQL.Primitives.dll`                 | Contains primitive types used in GraphQL to support the client's operations.|
+| `Microsoft.Bcl.AsyncInterfaces.dll`      | Provides asynchronous interfaces like `IAsyncEnumerable<T>` for .NET Framework compatibility. |
+| `Newtonsoft.Json.dll`                    | Widely-used JSON library for serialization and deserialization in .NET applications. |
+| `System.Reactive.dll`                    | Enables reactive programming by composing asynchronous and event-based programs using observable sequences. |
+| `System.Reactive.*`                      | Additional libraries in the Reactive Extensions suite, supporting various reactive programming patterns. |
 
 > ⚠️ **Warning**: Make sure to have these dependencies installed; the plugin will not work without them.
 
@@ -313,3 +322,78 @@ public async void SignTransaction()
 | **UserCreateDate** | Returns the creation date of the logged-in user, and null if no user is logged in.                             |
 | **UserKeys**       | Returns a list of keys of the logged-in user, and null if no user is logged in.                                |
 | **UserTrustScore** | Returns the trust score of the logged-in user, and null if no user is logged in.                               |
+
+### Direct Connect
+
+This function provides a direct connection to the Cloud Wallet without requiring the full activation flow. It's useful for scenarios where you want to quickly connect to a wallet without the full authentication process.
+
+```csharp
+// DemoScript : MonoBehaviour Class
+public async void DirectConnect()
+{
+    try
+    {
+        string account = await cloudWalletPluginConnector.DirectConnect();
+        if (!string.IsNullOrEmpty(account))
+        {
+            // Handle successful connection
+            ShowSuccessMessage($"Connected to account: {account}");
+        }
+    }
+    catch (Exception e)
+    {
+        ShowErrors(e.Message);
+    }
+}
+```
+
+### Direct Transact
+
+This function allows for direct transaction signing without going through the full activation flow. It's particularly useful when you want to perform transactions quickly after a direct connection. The function takes the same parameters as `SignTransaction` but uses a more streamlined process.
+
+```csharp
+// DemoScript : MonoBehaviour Class
+public async void DirectTransact()
+{
+    try
+    {
+        object[] actions = new[]
+        {
+            new
+            {
+                account = "eosio.token",
+                name = "transfer",
+                authorization = new[]
+                {
+                    new
+                    {
+                        actor = cloudWalletPluginConnector.UserAccount,
+                        permission = "active"
+                    }
+                },
+                data = new
+                {
+                    from = cloudWalletPluginConnector.UserAccount,
+                    to = "recipient.account",
+                    quantity = "1.00000001 WAX",
+                    memo = "Direct transaction from Cloud Wallet"
+                }
+            }
+        };
+
+        NamedParams namedParams = new(
+            BlocksBehind: 3,
+            ExpireSeconds: 30000
+        );
+
+        TransactionApprovedResult response = await cloudWalletPluginConnector.DirectTransact(
+            actions,
+            namedParams
+        );
+    }
+    catch (Exception e)
+    {
+        ShowErrors(e.Message);
+    }
+}
+```
