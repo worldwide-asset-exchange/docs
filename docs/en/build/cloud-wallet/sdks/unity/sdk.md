@@ -12,14 +12,6 @@ This repository has the Unity Plugin and a Demo that shows how to implement it.
 | `Assets/CloudWalletDemo`          | Contains the dapp that uses the SDK as an example of the implementation     |
 | `Assets/CloudWalletPlugin`        | Houses the SDK itself                                                       |
 
-## Cloud Wallet Demo
-
-Please check the [Cloud Wallet Demo](./Assets/CloudWalletDemo/README.md) documentation for further information about the Demo.
-
-## Cloud Wallet Plugin
-
-Please check the [Cloud Wallet Plugin](./Assets/CloudWalletPlugin/README.md) documentation for further information about the Plugin.
-
 ### Summary
 
 #### Dependencies
