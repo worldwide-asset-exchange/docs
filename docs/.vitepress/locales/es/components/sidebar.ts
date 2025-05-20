@@ -135,6 +135,25 @@ export default [
             collapsed: true,
             sidebarDepth: 1,
           },
+          {
+            text: 'SDKs',
+            link: '/es/build/cloud-wallet/sdks/react-native',
+            collapsed: true,
+            sidebarDepth: 1,
+            items: [
+              {
+                text: 'React Native',
+                link: '/es/build/cloud-wallet/sdks/react-native/',
+                collapsed: true,
+                items: [
+                  { text: 'Repositorio', link: '/es/build/cloud-wallet/sdks/react-native/repository' },
+                  { text: 'Requisitos del Backend de la dApp', link: '/es/build/cloud-wallet/sdks/react-native/dapp-backend' },
+                  { text: 'Instalación y Uso', link: '/es/build/cloud-wallet/sdks/react-native/sdk' },
+                  { text: 'dApp de ejemplo', link: '/es/build/cloud-wallet/sdks/react-native/sample-dapp' },
+                ],
+              },
+            ],
+          },
         ],
       },
       {
