@@ -5,7 +5,7 @@ order: 25
 
 # WAX-CDT API
 
-All of your smart contracts inherit from the C++ API files available in the [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/)library. These files are used to define your smart contract's actions, structures, and data types. 
+All of your smart contracts inherit from the C++ API files available in the [WAX Contract Development Toolkit (WAX-CDT)](https://github.com/worldwide-asset-exchange/wax-cdt-legacy) library. These files are used to define your smart contract's actions, structures, and data types. 
 
 This smart contract API can be grouped into three key modules:
 
@@ -80,7 +80,7 @@ Your smart contracts can use the following data types:
 * symbol_code
 * asset
 
-Refer to EOSIO's <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Types</a> for more information.
+Refer to AntelopeIO's <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Types</a> for more information.
 
 ## Type Definitions
 
@@ -98,4 +98,4 @@ WAX-CDT also includes a custom library of type definitions:
 
 ## Additional Information
 
-For a complete list of features available from the smart contract C++ API, refer to EOSIO's <a href="https://eosio.github.io/eosio.cdt" target="_blank">C/C++ API</a>.
+For a complete list of features available from the smart contract C++ API, refer to AntelopeIO's <a href="https://github.com/AntelopeIO/cdt" target="_blank">C/C++ API</a>.
