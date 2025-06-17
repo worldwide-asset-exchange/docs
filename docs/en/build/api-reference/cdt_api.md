@@ -5,7 +5,7 @@ order: 25
 
 # WAX-CDT API
 
-All of your smart contracts inherit from the C++ API files available in the [WAX Contract Development Toolkit (WAX-CDT)](https://github.com/worldwide-asset-exchange/wax-cdt-legacy) library. These files are used to define your smart contract's actions, structures, and data types. 
+All of your smart contracts inherit from the C++ API files available in the [WAX Contract Development Toolkit (WAX-CDT)](https://docs.wax.io/build/dapp-development/wax-cdt/) library. These files are used to define your smart contract's actions, structures, and data types. 
 
 This smart contract API can be grouped into three key modules:
 
