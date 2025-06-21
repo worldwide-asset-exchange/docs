@@ -1,14 +1,14 @@
 ---
-title: WAX-CDT Options
+title: Opciones de WAX-CDT
 order: 110
 ---
 
-# WAX-CDT Options
+# Opciones de WAX-CDT
 
-Below is a list of common WAX-CDT tools and parameters. You can use these tools to generate WASM and ABI files for your smart contracts.
+A continuación se muestra una lista de herramientas y parámetros comunes de WAX-CDT. Puedes usar estas herramientas para generar archivos WASM y ABI para tus contratos inteligentes.
 
 ## cdt-abidiff
-Compares the differences between two ABI files. A report prints out to the console.
+Compara las diferencias entre dos archivos ABI. Un reporte se imprime en la consola.
 
 ```shell
 USAGE: cdt-abidiff [options] [input file1] ... [input file2] ...
@@ -18,67 +18,67 @@ OPTIONS:
 
 Generic Options:
 
-  -help      - Display available options (-help-hidden for more)
-  -help-list - Display list of available options (-help-list-hidden for more)
-  -version   - Display the version of this program
+  -help      - Mostrar opciones disponibles (-help-hidden para más)
+  -help-list - Mostrar lista de opciones disponibles (-help-list-hidden para más)
+  -version   - Mostrar la versión de este programa
 ```
 
 ## cdt-cpp
-Generates WASM and ABI files for your smart contracts.
+Genera archivos WASM y ABI para tus contratos inteligentes.
 
 ```shell
 USAGE: cdt-cpp [options] [input file] ...
 EXAMPLE: cdt-cpp -abigen wax.cpp -o wax.wasm
 
 OPTIONS:
-  -C                       - Include comments in preprocessed output
-  -CC                      - Include comments from within macros in preprocessed output
-  -D=[string]              - Define [macro] to [value] (or 1 if [value] omitted)
-  -E                       - Only run the preprocessor
-  -I=[string]              - Add directory to include search path
-  -L=[string]              - Add directory to library search path
-  -O=[string]              - Optimization level s, 0-3
-  -S                       - Only run preprocess and compilation steps
-  -U=[string]              - Undefine macro [macro]
-  -W=[string]              - Enable the specified warning
-  -c                       - Only run preprocess, compile, and assemble steps
-  -dD                      - Print macro definitions in -E mode in addition to normal output
-  -dI                      - Print include directives in -E mode in addition to normal outpu
-  -dM                      - Print macro definitions in -E mode instead to normal output
-  -emit-ast                - Emit Clang AST files for source inputs
-  -emit-llvm               - Use the LLVM representation for assembler and object files
-  -faligned-allocation     - Enable C++17 aligned allocation functions
-  -fcoroutine-ts           - Enable support for the C++ Coroutines TS
-  -finline-functions       - Inline suitable functions
-  -finline-hint-functions  - Inline functions which are (explicitly or implicitly) marked inline
-  -fmerge-all-constants    - Allow merging of constants
-  -fno-cfl-aa              - Disable CFL Alias Analysis
-  -fno-elide-constructors  - Disable C++ copy constructor elision
-  -fno-lto                 - Disable LTO
-  -fstack-protector        - Enable stack protectors for functions potentially vulnerable to stack smashing
-  -fstack-protector-all    - Force the usage of stack protectors for all functions
-  -fstack-protector-strong - Use a strong heuristic to apply stack protectors to functions
-  -fstrict-enums           - Enable optimizations based on the strict definition of an enum's value range
-  -fstrict-return          - Always treat control flow paths that fall off the end of a non-void function as unreachable
-  -fstrict-vtable-pointers - Enable optimizations based on the strict rules for overwriting polymorphic C++ objects
-  -include=[string]        - Include file before parsing
-  -isysroot=[string]       - Set the system root directory (usually /)
-  -l=[string]              - Root name of library to link
-  -lto-opt=[string]        - LTO Optimization level (O0-O3)
-  -o=[string]              - Write output to [file]
-  -std=[string]            - Language standard to compile for
-  -v                       - Show commands to run and use verbose output
-  -w                       - Suppress all warnings
+  -C                       - Incluir comentarios en la salida preprocesada
+  -CC                      - Incluir comentarios de dentro de macros en la salida preprocesada
+  -D=[string]              - Definir [macro] a [valor] (o 1 si se omite [valor])
+  -E                       - Solo ejecutar el preprocesador
+  -I=[string]              - Agregar directorio a la ruta de búsqueda de includes
+  -L=[string]              - Agregar directorio a la ruta de búsqueda de librerías
+  -O=[string]              - Nivel de optimización s, 0-3
+  -S                       - Solo ejecutar pasos de preprocesamiento y compilación
+  -U=[string]              - Indefinir macro [macro]
+  -W=[string]              - Habilitar la advertencia especificada
+  -c                       - Solo ejecutar pasos de preprocesamiento, compilación y ensamblado
+  -dD                      - Imprimir definiciones de macros en modo -E además de la salida normal
+  -dI                      - Imprimir directivas include en modo -E además de la salida normal
+  -dM                      - Imprimir definiciones de macros en modo -E en lugar de la salida normal
+  -emit-ast                - Emitir archivos AST de Clang para entradas de código fuente
+  -emit-llvm               - Usar la representación LLVM para archivos de ensamblador y objeto
+  -faligned-allocation     - Habilitar funciones de asignación alineada de C++17
+  -fcoroutine-ts           - Habilitar soporte para C++ Coroutines TS
+  -finline-functions       - Hacer inline a funciones adecuadas
+  -finline-hint-functions  - Hacer inline a funciones que están marcadas inline (explícita o implícitamente)
+  -fmerge-all-constants    - Permitir fusión de constantes
+  -fno-cfl-aa              - Deshabilitar Análisis de Alias CFL
+  -fno-elide-constructors  - Deshabilitar elisión de constructor de copia de C++
+  -fno-lto                 - Deshabilitar LTO
+  -fstack-protector        - Habilitar protectores de pila para funciones potencialmente vulnerables a stack smashing
+  -fstack-protector-all    - Forzar el uso de protectores de pila para todas las funciones
+  -fstack-protector-strong - Usar una heurística fuerte para aplicar protectores de pila a funciones
+  -fstrict-enums           - Habilitar optimizaciones basadas en la definición estricta del rango de valores de un enum
+  -fstrict-return          - Siempre tratar las rutas de flujo de control que caen del final de una función no-void como inalcanzables
+  -fstrict-vtable-pointers - Habilitar optimizaciones basadas en las reglas estrictas para sobrescribir objetos polimórficos de C++
+  -include=[string]        - Incluir archivo antes del análisis sintáctico
+  -isysroot=[string]       - Establecer el directorio raíz del sistema (usualmente /)
+  -l=[string]              - Nombre raíz de la librería a enlazar
+  -lto-opt=[string]        - Nivel de optimización LTO (O0-O3)
+  -o=[string]              - Escribir salida a [archivo]
+  -std=[string]            - Estándar de lenguaje para compilar
+  -v                       - Mostrar comandos a ejecutar y usar salida detallada
+  -w                       - Suprimir todas las advertencias
 
 Generic Options:
 
-  -help                    - Display available options (-help-hidden for more)
-  -help-list               - Display list of available options (-help-list-hidden for more)
-  -version                 - Display the version of this program
+  -help                    - Mostrar opciones disponibles (-help-hidden para más)
+  -help-list               - Mostrar lista de opciones disponibles (-help-list-hidden para más)
+  -version                 - Mostrar la versión de este programa
 ```
 
 ## cdt-init
-Creates a smart contract template and directory structure. Includes CMake build scripts by default.
+Crea una plantilla de contrato inteligente y estructura de directorios. Incluye scripts de construcción CMake por defecto.
 
 ```shell
 USAGE: cdt-init [options]
@@ -88,20 +88,20 @@ OPTIONS:
 
 Generic Options:
 
-  -help             - Display available options (-help-hidden for more)
-  -help-list        - Display list of available options (-help-list-hidden for more)
-  -version          - Display the version of this program
+  -help             - Mostrar opciones disponibles (-help-hidden para más)
+  -help-list        - Mostrar lista de opciones disponibles (-help-list-hidden para más)
+  -version          - Mostrar la versión de este programa
 
 cdt-init:
-generates an eosio smart contract project
+genera un proyecto de contrato inteligente eosio
 
-  -bare             - produces only a skeleton smart contract without CMake support
-  -path=[string]    - directory to place the project
-  -project=[string] - output project name
+  -bare             - produce solo un esqueleto de contrato inteligente sin soporte CMake
+  -path=[string]    - directorio donde colocar el proyecto
+  -project=[string] - nombre del proyecto de salida
 ```
 
 ## cdt-ld
-WebAssembly linker.
+Enlazador WebAssembly.
 
 ```shell
 USAGE: cdt-ld [options] [input file] ...
@@ -110,20 +110,20 @@ OPTIONS:
 
 Generic Options:
 
-  -help             - Display available options (-help-hidden for more)
-  -help-list        - Display list of available options (-help-list-hidden for more)
-  -version          - Display the version of this program
+  -help             - Mostrar opciones disponibles (-help-hidden para más)
+  -help-list        - Mostrar lista de opciones disponibles (-help-list-hidden para más)
+  -version          - Mostrar la versión de este programa
 
 cdt.ld options:
 
-  -L=[string]       - Add directory to library search path
-  -fno-cfl-aa       - Disable CFL Alias Analysis
-  -fno-lto          - Disable LTO
-  -fno-post-pass    - Don't run post processing pass
-  -fno-stack-first  - Don't set the stack first in memory
-  -l=[string]       - Root name of library to link
-  -lto-opt=[string] - LTO Optimization level (O0-O3)
-  -o=[string]       - Write output to [file]
+  -L=[string]       - Agregar directorio a la ruta de búsqueda de librerías
+  -fno-cfl-aa       - Deshabilitar Análisis de Alias CFL
+  -fno-lto          - Deshabilitar LTO
+  -fno-post-pass    - No ejecutar el pase de post-procesamiento
+  -fno-stack-first  - No establecer la pila primero en memoria
+  -l=[string]       - Nombre raíz de la librería a enlazar
+  -lto-opt=[string] - Nivel de optimización LTO (O0-O3)
+  -o=[string]       - Escribir salida a [archivo]
 ```
 
 <!--### cdt-abigen
@@ -135,15 +135,15 @@ OPTIONS:
 
 Generic Options:
 
-  -help                      - Display available options (-help-hidden for more)
-  -help-list                 - Display list of available options (-help-list-hidden for more)
-  -version                   - Display the version of this program
+  -help                      - Mostrar opciones disponibles (-help-hidden para más)
+  -help-list                 - Mostrar lista de opciones disponibles (-help-list-hidden para más)
+  -version                   - Mostrar la versión de este programa
 
 cdt-abigen:
-generates an ABI from C++ project input
+genera un ABI desde entrada de proyecto C++
 
-  -extra-arg=<string>        - Additional argument to append to the compiler command line
-  -extra-arg-before=<string> - Additional argument to prepend to the compiler command line
-  -output=<string>           - Set the output filename and fullpath
-  -p=<string>                - Build path
+  -extra-arg=<string>        - Argumento adicional a agregar al final de la línea de comandos del compilador
+  -extra-arg-before=<string> - Argumento adicional a anteponer a la línea de comandos del compilador
+  -output=<string>           - Establecer el nombre de archivo de salida y ruta completa
+  -p=<string>                - Ruta de construcción
 ```-->
