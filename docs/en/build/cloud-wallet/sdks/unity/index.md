@@ -16,9 +16,10 @@ The SDK abstracts the complexity of blockchain interactions, allowing developers
 ### Cross-Platform Support
 - **Mobile Platforms**: Android and iOS support with native integration
 - **Desktop Platforms**: QR code-based authentication for desktop applications
+- **WebGL**: Remote signing support for web-based applications
 - **Automatic Platform Configuration**: Handles platform-specific setup automatically
 
-> ⚠️ **Note**: WebGL is not supported in this version. Stay tuned for an upcoming update!
+> ⚠️ **Note**: WebGL is now supported but only for remote signing. Stay tuned for additional WebGL features in upcoming updates!
 
 ### Transaction Management
 **1. Secure Transaction Signing**
@@ -167,15 +168,6 @@ public async void SignTransaction()
 - Wallet sessions are managed securely
 - Platform-specific security measures are implemented automatically
 
-## Error Handling
-
-The SDK throws exceptions for various error conditions:
-
-- `WalletNotConnectedException`: When attempting operations without an active wallet connection
-- `TransactionSigningException`: When transaction signing fails
-- `AuthenticationException`: When authentication-related errors occur
-- `PlatformNotSupportedException`: When running on an unsupported platform
-
 ## Best Practices
 
 1. Always initialize the SDK before use
@@ -190,7 +182,3 @@ For support, please:
 1. Check the [GitHub Issues](https://github.com/worldwide-asset-exchange/cloudwallet-unity-sdk/issues)
 2. Review the documentation
 3. Contact support at support@wax.io
-
-## License
-
-This SDK is licensed under the MIT License. See the LICENSE file for details.
