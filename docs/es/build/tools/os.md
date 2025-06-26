@@ -1,38 +1,26 @@
 ---
-title: Supported Operating Systems
+title: Sistemas Operativos Compatibles
 order: 100
 ---
 
-# Supported Operating Systems
+# Sistemas Operativos Compatibles
 
-WAX currently supports the following operating systems:
+WAX actualmente soporta los siguientes sistemas operativos:
 
-* Amazon 2017.09 and higher
-* Centos 7
-* Ubuntu 16.04
-* Ubuntu 18.04
-* MacOS 10.14.x and higher 
+* Ubuntu 22.04 Jammy
+* Ubuntu 20.04 Focal
+* Ubuntu 18.04 Bionic
 
-## Deprecated Operating Systems
+## Máquinas Virtuales
 
-Support is no longer available for the following operating systems:
+Si estás usando una máquina virtual para desarrollo, debe estar configurada con al menos 2 CPUs (no tienen que ser dos físicas) y 8G de memoria.
 
-* Mint 18
-* Fedora 27
-* Amazon Linux 1
-* macOS versions earlier than 10.14 (such as High Sierra)
+## Usuarios de Windows
 
-## Virtual Machines
+La forma más rápida y sencilla de ejecutar la Blockchain de WAX en Windows es usar nuestras imágenes de Docker. Consulta [Inicio Rápido con Docker](/es/build/dapp-development/docker-setup/) para comenzar.
 
-If you're using a virtual machine, it should be configured with at least 2 CPUs (does not have to be two physical ones) and 8G of memory.
+Si eres un desarrollador avanzado de Windows con conocimiento de Linux, tienes otras opciones:
 
-## Windows Users
-
-The quickest, easiest way to run the WAX Blockchain on Windows is to use our Docker images. Refer to [Docker Quickstart](/build/dapp-development/docker-setup/) to get started. 
-
-If you're an advanced Window's developer with an understanding of Linux, you do have other options:
-
-* Use <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> (or a similar app) to create a Linux virtual machine
-* Use Microsoft's <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Introduction to Hyper-V on Windows 10</a> to create a Linux virtual machine
-* Use Microsoft's <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank">Windows Subsystem for Linux</a>
-
+* Usar el <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank">Subsistema de Windows para Linux</a> de Microsoft
+* Usar <a href="https://www.virtualbox.org/" target="_blank">VirtualBox</a> (o una aplicación similar) para crear una máquina virtual Linux
+* Usar <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/" target="_blank">Hyper-V en Windows 10</a> de Microsoft para crear una máquina virtual Linux
