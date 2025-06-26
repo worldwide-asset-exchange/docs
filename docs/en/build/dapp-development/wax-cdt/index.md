@@ -7,7 +7,7 @@ order: 50
 
 The <a href="https://github.com/worldwide-asset-exchange/wax-cdt" target="_blank">WAX Contract Development Toolkit (WAX-CDT)</a> includes a C/C++ API and a <a href="https://clang.llvm.org/" target="_blank">Clang</a> based set of tools used to build and deploy your smart contracts.
 
-WAX-CDT tools are included in the **waxteam/dev** Docker image, and we also provide a standalone **waxteam/cdt** Docker image. To start an interactive WAX-CDT container, you can use the following commands:
+WAX-CDT tools are included in the **waxteam/waxdev** Docker image, and we also provide a standalone **waxteam/cdt** Docker image. To start an interactive WAX-CDT container, you can use the following commands:
 
 ```docker run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash```
 

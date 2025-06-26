@@ -15,7 +15,7 @@ WAX provides two ways to accomplish these deployment steps. You can use our cust
 
 ## Custom Deploy Scripts
 
-The <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Source Code Repository</a> includes a **hello-world** sample contract, along with **make** scripts that provide an easy, automated way to build and deploy your smart contracts. These scripts use the <a href="https://hub.docker.com/r/waxteam/dev" target="_blank">WAX Docker Development image</a> to:
+The <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Source Code Repository</a> includes a **hello-world** sample contract, along with **make** scripts that provide an easy, automated way to build and deploy your smart contracts. These scripts use the <a href="https://hub.docker.com/r/waxteam/waxdev" target="_blank">WAX Docker Development image</a> to:
 
 - Create a WASM and ABI file
 - Create a WAX Blockchain Account for your smart contract
