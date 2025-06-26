@@ -337,6 +337,7 @@ export default [
                     {text: 'Securely peer with WireGuard', link: '/operate/wax-infrastructure/wax-securely-peer-with-wireguard'},
                     {text: 'Automate WAX Snapshots', link: '/operate/wax-infrastructure/wax-automate-snapshots'},
                     {text: 'Managing WAX Blocks Data with Strides', link: '/operate/wax-infrastructure/wax-managing-blocks-with-strides'},
+                    {text: 'Implement TCP BBR Congestion Control', link: '/operate/wax-infrastructure/wax-implement-tcp-bbr'},
                     {text: 'Creating a WAX Price Oracle Service', link: '/operate/wax-infrastructure/creating-a-wax-price-oracle-service-bash-python'},
                     {text: 'Monitor/Unregister WAX Producer with systemd', link: '/operate/wax-infrastructure/monitor-and-unregister-wax-producer-with-systemd-while-you-sleep'}
                 ],
