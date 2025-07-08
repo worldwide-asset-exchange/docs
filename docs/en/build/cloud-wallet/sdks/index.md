@@ -21,12 +21,14 @@ WAX Cloud Wallet provides SDKs for various platforms to help developers integrat
 |---------|-----------------|-----------|
 | Cross-Platform Support | ✅ iOS, Android | ✅ iOS, Android, Desktop |
 | WebSocket Mode | ✅ | ✅ |
-| Direct Mode | ✅ | ❌ |
+| Direct Mode | ✅ | ✅ (*) |
 | QR Code Support | ✅ | ✅ |
 | Transaction Signing | ✅ | ✅ |
 | User Authentication | ✅ | ✅ |
 | Secure Communication | ✅ | ✅ |
 | Automatic Platform Configuration | ✅ | ✅ |
+
+> (*) ⚠️ Note: WebGL is now supported but only for remote signing.
 
 ## Getting Started
 
