@@ -15,7 +15,7 @@ WAX proporciona dos maneras de lograr estos pasos de despliegue. Puedes usar nue
 
 ## Scripts Personalizados de Despliegue
 
-El <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">Repositorio de Código Fuente de WAX</a> incluye un contrato de muestra **hello-world**, junto con scripts **make** que proporcionan una manera fácil y automatizada de construir y desplegar tus contratos inteligentes. Estos scripts utilizan la <a href="https://hub.docker.com/r/waxteam/dev" target="_blank">imagen de Desarrollo Docker de WAX</a> para:
+El <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">Repositorio de Código Fuente de WAX</a> incluye un contrato de muestra **hello-world**, junto con scripts **make** que proporcionan una manera fácil y automatizada de construir y desplegar tus contratos inteligentes. Estos scripts utilizan la <a href="https://hub.docker.com/r/waxteam/waxdev" target="_blank">imagen de Desarrollo Docker de WAX</a> para:
 
 - Crear un archivo WASM y ABI
 - Crear una cuenta en la Blockchain de WAX para tu contrato inteligente

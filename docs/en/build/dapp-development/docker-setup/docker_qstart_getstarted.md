@@ -5,7 +5,7 @@ order: 22
 
 # Run a WAX Container
 
-To run the **waxteam/dev** Docker image:
+To run the **waxteam/waxdev** Docker image:
 
 1. Install <a href="https://www.docker.com/get-started" target="_blank">Docker</a> (if you haven't done so already). 
 

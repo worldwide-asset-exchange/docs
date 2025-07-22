@@ -5,7 +5,7 @@ order: 22
 
 # Ejecutar un Contenedor WAX
 
-Para ejecutar la imagen Docker **waxteam/dev**:
+Para ejecutar la imagen Docker **waxteam/waxdev**:
 
 1. Instala <a href="https://www.docker.com/get-started" target="_blank">Docker</a> (si aún no lo has hecho).
 
@@ -20,7 +20,7 @@ Para ejecutar la imagen Docker **waxteam/dev**:
     **Linux**
 
     ```shell
-    docker run -it --name waxdev -v /c/wax:/wax waxteam/dev bash
+    docker run -it --name waxdev -v /c/wax:/wax waxteam/waxdev bash
     ```
 
     ```shell
@@ -30,7 +30,7 @@ Para ejecutar la imagen Docker **waxteam/dev**:
     **Windows 10**
 
     ```shell
-    docker run -it --name waxdev -v c:\wax:/wax waxteam/dev bash
+    docker run -it --name waxdev -v c:\wax:/wax waxteam/waxdev bash
     ```
 
     ```shell

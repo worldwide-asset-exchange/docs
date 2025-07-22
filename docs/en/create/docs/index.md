@@ -6,7 +6,7 @@ author: false
 ---
 
 TL;DR 
-[How to contribute](https://github.com/wax-office-of-inspector-general/wax-developer/wiki)
+[How to contribute](https://github.com/worldwide-asset-exchange/docs/wiki)
 
 # Help to improve the docs
 

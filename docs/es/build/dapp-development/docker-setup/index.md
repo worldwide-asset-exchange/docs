@@ -24,8 +24,8 @@ A continuación, se muestra una lista de nuestras imágenes centrales de Docker.
 
 | Imagen de Docker | Descripción |
 |------------------|-------------|
-| [waxteam/dev](https://hub.docker.com/r/waxteam/dev) | Esta imagen de **desarrollo** incluye todo lo necesario para poner en funcionamiento la Blockchain de WAX. Puedes utilizar esta imagen para ejecutar un nodo de WAX, crear un entorno de desarrollo local y crear y compilar contratos inteligentes utilizando el [Kit de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/). |
+| [waxteam/waxdev](https://hub.docker.com/r/waxteam/waxdev) | Esta imagen de **desarrollo** incluye todo lo necesario para poner en funcionamiento la Blockchain de WAX. Puedes utilizar esta imagen para ejecutar un nodo de WAX, crear un entorno de desarrollo local y crear y compilar contratos inteligentes utilizando el [Kit de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/). |
 | [waxteam/cdt](https://hub.docker.com/r/waxteam/cdt) | Utiliza esta imagen para crear y compilar contratos inteligentes utilizando el [Kit de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/). Esta imagen **no** permite ejecutar un nodo de WAX ni utilizar [Herramientas de Blockchain](/es/build/tools/blockchain_tools). |
-| [waxteam/production](https://hub.docker.com/r/waxteam/production) | Se recomienda utilizar nuestras [imágenes de docker de producción](https://hub.docker.com/r/waxteam/production) para ejecutar un nodo de producción. Consulta [Ejecutando un nodo de WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/mainnet) para más información. |
+| [waxteam/waxnode](https://hub.docker.com/r/waxteam/waxnode) | Se recomienda utilizar nuestras [imágenes de docker de producción](https://hub.docker.com/r/waxteam/waxnode) para ejecutar un nodo de producción. Consulta [Ejecutando un nodo de WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/mainnet) para más información. |
 
 <ChildTableOfContents :max="2" title="Más contenido de esta sección" />

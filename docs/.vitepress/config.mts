@@ -31,12 +31,12 @@ export default defineConfig({
     siteTitle: 'Developer',
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/wax-office-of-inspector-general/wax-developer' },
+      { icon: 'github', link: 'https://github.com/worldwide-asset-exchange/docs' },
       { icon: 'x', link: 'https://x.com/WAX_io' },
     ],
 
     editLink: {
-      pattern: 'https://github.com/wax-office-of-inspector-general/wax-developer/edit/main/docs/:path',
+      pattern: 'https://github.com/worldwide-asset-exchange/docs/edit/main/docs/:path',
       text: 'Improve this page on GitHub'
     },
 
