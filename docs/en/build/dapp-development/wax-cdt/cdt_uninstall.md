@@ -11,17 +11,17 @@ If you have a previous version of WAX-CDT installed (Version : wax-1.4.1-1.0.0),
 
 This script will remove the following tools:
 
-* eosio-cpp
-* eosio-cc
-* eosio-ld
-* eosio-init
-* eosio-abidiff
-* eosio-wasm2wast
-* eosio-wast2wasm
-* eosio-ranlib
-* eosio-ar
-* eosio-objdump
-* eosio-readelf
+* cdt-cpp
+* cdt-cc
+* cdt-ld
+* cdt-init
+* cdt-abidiff
+* cdt-wasm2wast
+* cdt-wast2wasm
+* cdt-ranlib
+* cdt-ar
+* cdt-objdump
+* cdt-readelf
 
 :::tip
 If you created folders or modified any files in this directory, they will remain intact after the uninstall script runs. This script only removes the WAX-CDT tools.
