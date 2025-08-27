@@ -27,11 +27,18 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     useOpenapi({
-      spec,
+      spec: {
+        ...spec,
+        servers: servers.map(item => ({
+          url: `${item}/v1/chain`,
+        })).sort((a, b) => {
+          // if url contains greymass, it should be the first server
+          if (a.url.includes('greymass')) return -1
+          if (b.url.includes('greymass')) return 1
+          return 0
+        })
+      },
       config: {
-        path: {
-          showBaseURL: true,
-        },
         operation: {
           defaultBaseUrl: 'https://wax.greymass.com/v1/chain',
         },
@@ -39,10 +46,7 @@ export default {
           groupByTags: false,
         },
         server: {
-          // allowCustomServer: true,
-          // getServers({ path }) {
-          //   return servers.map(item => `${item}/v1/chain${path}`)
-          // },
+          allowCustomServer: true,
         },
       },
     }),
