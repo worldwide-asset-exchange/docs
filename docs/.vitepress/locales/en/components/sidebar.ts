@@ -289,8 +289,8 @@ export default [
                 link: '/build/api-reference/',
                 collapsed: true,
                 items: [
-                    {text: 'WAX-RPC API', link: '/build/api-reference/rpc_api'},
-                    {text: 'WAX-CDT API', link: '/build/api-reference/cdt_api'},
+                    {text: 'Chain API', link: '/build/api-reference/rpc_api'},
+                    {text: 'CDT', link: '/build/api-reference/cdt_api'},
                     {
                         text: 'dFuse',
                         link: '/build/api-reference/dfuse',

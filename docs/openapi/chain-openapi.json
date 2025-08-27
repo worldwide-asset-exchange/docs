@@ -1,0 +1,2823 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Chain API",
+    "description": "The WAX Blockchain Chain API includes public endpoints used to get block information, block history, node information, and node producer information. Exposed through **nodeos** plugins, this API is available on the WAX mainnet, testnet, and your local development environment. ",
+    "version": "5.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://wax.greymass.com/v1/chain",
+      "description": "WAX mainnet"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "NamePrivileged": {
+        "type": "string",
+        "description": "String representation of privileged EOSIO name type",
+        "pattern": "^(eosio[\\.][a-z1-5]{1,6})([a-j]{1})?$",
+        "title": "NamePrivileged"
+      },
+      "NameBasic": {
+        "type": "string",
+        "description": "String representation of basic EOSIO name type, must be 12 characters and contain only a-z and 0-5",
+        "pattern": "^([a-z]{1}[a-z1-5]{11})([a-j]{1})?$",
+        "title": "NameBasic"
+      },
+      "NameBid": {
+        "type": "string",
+        "description": "String representation of EOSIO bid name type, 1-12 characters and only a-z and 0-5 are allowed",
+        "pattern": "^([a-z1-5]{1,12})([a-j]{1})?$",
+        "title": "NameBid"
+      },
+      "NameCatchAll": {
+        "type": "string",
+        "description": "String representation of EOSIO name type",
+        "pattern": "^([a-z1-5]{1}[a-z1-5\\.]{0,10}[a-z1-5]{1})([a-j]{1})?$",
+        "title": "NameCatchAll"
+      },
+      "Name": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/NamePrivileged"
+          },
+          {
+            "$ref": "#/components/schemas/NameBasic"
+          },
+          {
+            "$ref": "#/components/schemas/NameBid"
+          },
+          {
+            "$ref": "#/components/schemas/NameCatchAll"
+          }
+        ],
+        "title": "Name"
+      },
+      "DateTimeSeconds": {
+        "type": "string",
+        "description": "Date/time string in the format YYYY-MM-DDTHH:MM:SS.sss",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}$",
+        "title": "DateTimeSeconds"
+      },
+      "Symbol": {
+        "type": "string",
+        "description": "A string representation of an EOSIO symbol, composed of a float with a precision of 4, and a symbol composed of capital letters between 1-7 letters separated by a space, example `1.0000 ABC`.",
+        "pattern": "^([0-9]{1,32}.[0-9]{4} [A-Z]{1,7})$",
+        "title": "Symbol"
+      },
+      "RefundRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 4,
+        "required": [
+          "owner",
+          "request_time",
+          "net_amount",
+          "cpu_amount"
+        ],
+        "properties": {
+          "owner": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "request_time": {
+            "type": "string"
+          },
+          "net_amount": {
+            "$ref": "#/components/schemas/Symbol"
+          },
+          "cpu_amount": {
+            "$ref": "#/components/schemas/Symbol"
+          }
+        },
+        "title": "RefundRequest",
+        "nullable": true
+      },
+      "WholeNumber": {
+        "description": "A whole number",
+        "anyOf": [
+          {
+            "type": "string",
+            "pattern": "^\\d+$"
+          },
+          {
+            "type": "integer"
+          }
+        ],
+        "title": "WholeNumber"
+      },
+      "ResourceLimits": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 3,
+        "required": [
+          "max",
+          "available",
+          "used"
+        ],
+        "properties": {
+          "max": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "available": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "used": {
+            "$ref": "#/components/schemas/WholeNumber"
+          }
+        },
+        "title": "ResourceLimits"
+      },
+      "ResourceOverview": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 4,
+        "required": [
+          "owner",
+          "ram_bytes",
+          "net_weight",
+          "cpu_weight"
+        ],
+        "properties": {
+          "owner": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "ram_bytes": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "net_weight": {
+            "$ref": "#/components/schemas/Symbol"
+          },
+          "cpu_weight": {
+            "$ref": "#/components/schemas/Symbol"
+          }
+        },
+        "title": "ResourceOverview"
+      },
+      "ResourceDelegation": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 4,
+        "required": [
+          "from",
+          "to",
+          "net_weight",
+          "cpu_weight"
+        ],
+        "properties": {
+          "from": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "to": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "net_weight": {
+            "$ref": "#/components/schemas/Symbol"
+          },
+          "cpu_weight": {
+            "$ref": "#/components/schemas/Symbol"
+          }
+        },
+        "title": "ResourceDelegation",
+        "nullable": true
+      },
+      "Wait": {
+        "type": "object",
+        "minProperties": 2,
+        "additionalProperties": false,
+        "required": [
+          "wait_sec",
+          "weight"
+        ],
+        "properties": {
+          "wait_sec": {
+            "type": "integer"
+          },
+          "weight": {
+            "type": "integer"
+          }
+        },
+        "title": "Wait"
+      },
+      "PublicKey": {
+        "type": "string",
+        "description": "Base58 encoded EOSIO public key",
+        "pattern": "^(EOS|PUB_([RK]1|WA)_)[1-9A-HJ-NP-Za-km-z]+$",
+        "title": "PublicKey"
+      },
+      "KeyAuthority": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key",
+          "weight"
+        ],
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/PublicKey"
+          },
+          "weight": {
+            "type": "integer"
+          }
+        },
+        "title": "KeyAuthority"
+      },
+      "Authority": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 2,
+        "required": [
+          "actor",
+          "permission"
+        ],
+        "properties": {
+          "actor": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "permission": {
+            "$ref": "#/components/schemas/Name"
+          }
+        },
+        "title": "Authority"
+      },
+      "AccountAuthority": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "weight",
+          "permission"
+        ],
+        "properties": {
+          "weight": {
+            "type": "integer"
+          },
+          "permission": {
+            "$ref": "#/components/schemas/Authority"
+          }
+        },
+        "title": "AccountAuthority"
+      },
+      "RequiredAuthority": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 4,
+        "required": [
+          "waits",
+          "keys",
+          "threshold",
+          "accounts"
+        ],
+        "properties": {
+          "waits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Wait"
+            }
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KeyAuthority"
+            }
+          },
+          "threshold": {
+            "type": "integer"
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountAuthority"
+            }
+          }
+        },
+        "title": "RequiredAuthority"
+      },
+      "Permission": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 3,
+        "required": [
+          "parent",
+          "perm_name",
+          "required_auth"
+        ],
+        "properties": {
+          "parent": {
+            "description": "The parent of this permission, if any",
+            "type": "string"
+          },
+          "perm_name": {
+            "description": "Name of this permission",
+            "type": "string"
+          },
+          "required_auth": {
+            "$ref": "#/components/schemas/RequiredAuthority"
+          }
+        },
+        "title": "Permission"
+      },
+      "EmptyString": {
+        "type": "string",
+        "maxLength": 0,
+        "title": "EmptyString"
+      },
+      "VoterInfo": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 10,
+        "required": [
+          "owner",
+          "proxy",
+          "producers",
+          "staked",
+          "last_vote_weight",
+          "proxied_vote_weight",
+          "is_proxy",
+          "flags1",
+          "reserved2",
+          "reserved3"
+        ],
+        "properties": {
+          "owner": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "proxy": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Name"
+              },
+              {
+                "$ref": "#/components/schemas/EmptyString"
+              }
+            ]
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Name"
+            }
+          },
+          "staked": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "last_vote_weight": {
+            "type": "string"
+          },
+          "proxied_vote_weight": {
+            "type": "string"
+          },
+          "is_proxy": {
+            "description": "1 if true, 0 if false.",
+            "type": "integer"
+          },
+          "flags1": {
+            "type": "integer"
+          },
+          "reserved2": {
+            "type": "integer"
+          },
+          "reserved3": {
+            "$ref": "#/components/schemas/Symbol"
+          }
+        },
+        "title": "VoterInfo",
+        "nullable": true
+      },
+      "Account": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 18,
+        "required": [
+          "account_name",
+          "head_block_num",
+          "head_block_time",
+          "last_code_update",
+          "created",
+          "refund_request",
+          "ram_quota",
+          "net_limit",
+          "cpu_limit",
+          "total_resources",
+          "core_liquid_balance",
+          "self_delegated_bandwidth",
+          "net_weight",
+          "cpu_weight",
+          "ram_usage",
+          "privileged",
+          "permissions",
+          "voter_info"
+        ],
+        "properties": {
+          "account_name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "head_block_num": {
+            "type": "integer"
+          },
+          "head_block_time": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "last_code_update": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "created": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "refund_request": {
+            "$ref": "#/components/schemas/RefundRequest"
+          },
+          "ram_quota": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "net_limit": {
+            "$ref": "#/components/schemas/ResourceLimits"
+          },
+          "cpu_limit": {
+            "$ref": "#/components/schemas/ResourceLimits"
+          },
+          "total_resources": {
+            "$ref": "#/components/schemas/ResourceOverview"
+          },
+          "core_liquid_balance": {
+            "$ref": "#/components/schemas/Symbol"
+          },
+          "self_delegated_bandwidth": {
+            "$ref": "#/components/schemas/ResourceDelegation"
+          },
+          "net_weight": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "cpu_weight": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "ram_usage": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "privileged": {
+            "type": "boolean"
+          },
+          "permissions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Permission"
+            }
+          },
+          "voter_info": {
+            "$ref": "#/components/schemas/VoterInfo"
+          }
+        },
+        "title": "Account"
+      },
+      "Sha256": {
+        "type": "string",
+        "pattern": "^[0-9A-Fa-f]{64}$",
+        "title": "Sha256"
+      },
+      "ProducerAuthorityList": {
+        "type": "array",
+        "description": "Array that has as first element the version of the authority json objects and then the objects themselves.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "threshold": {
+              "type": "integer",
+              "description": "The threshold value for the producer's authority."
+            },
+            "keys": {
+              "type": "array",
+              "description": "An array of producers keys definition.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "description": "The public key associated with the producer."
+                  },
+                  "weight": {
+                    "type": "integer",
+                    "description": "The weight of the key in the producer's authority."
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProducerSchedule": {
+        "type": "object",
+        "description": "A json object that encapsulates the list of producers schedule and its version.",
+        "properties": {
+          "version": {
+            "type": "integer",
+            "description": "The version of the producers schedule list. Version is an integer subsequently incremented."
+          },
+          "producers": {
+            "type": "array",
+            "description": "The list of producers.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "producer_name": {
+                  "type": "string",
+                  "description": "The name of the producer."
+                },
+                "authority": {
+                  "$ref": "#/components/schemas/ProducerAuthorityList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Extension": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "title": "Extension"
+      },
+      "Signature": {
+        "type": "string",
+        "description": "Base58 encoded EOSIO cryptographic signature",
+        "pattern": "^SIG_([RK]1|WA)_[1-9A-HJ-NP-Za-km-z]+$",
+        "title": "Signature"
+      },
+      "DateTime": {
+        "type": "string",
+        "description": "Date/time string in the format YYYY-MM-DDTHH:MM:SS",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$",
+        "title": "DateTime"
+      },
+      "Action": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 5,
+        "required": [
+          "account",
+          "name",
+          "authorization",
+          "data",
+          "hex_data"
+        ],
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "authorization": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Authority"
+            }
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "hex_data": {
+            "type": "string"
+          }
+        },
+        "title": "Action"
+      },
+      "Transaction": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 8,
+        "required": [
+          "expiration",
+          "ref_block_num",
+          "ref_block_prefix",
+          "max_net_usage_words",
+          "max_cpu_usage_ms",
+          "delay_sec",
+          "context_free_actions",
+          "actions"
+        ],
+        "properties": {
+          "expiration": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "ref_block_num": {
+            "type": "integer"
+          },
+          "ref_block_prefix": {
+            "description": "32-bit portion of block ID",
+            "type": "integer"
+          },
+          "max_net_usage_words": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "max_cpu_usage_ms": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "delay_sec": {
+            "type": "integer"
+          },
+          "context_free_actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Action"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Action"
+            }
+          },
+          "transaction_extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Extension"
+            }
+          }
+        },
+        "title": "Transaction"
+      },
+      "PackedTransaction": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 7,
+        "required": [
+          "id",
+          "signatures",
+          "compression",
+          "packed_context_free_data",
+          "context_free_data",
+          "packed_trx",
+          "transaction"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "signatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Signature"
+            }
+          },
+          "compression": {
+            "type": "string"
+          },
+          "packed_context_free_data": {
+            "type": "string"
+          },
+          "context_free_data": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "packed_trx": {
+            "type": "string"
+          },
+          "transaction": {
+            "$ref": "#/components/schemas/Transaction"
+          }
+        },
+        "title": "PackedTransaction"
+      },
+      "TransactionVariant": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          {
+            "$ref": "#/components/schemas/PackedTransaction"
+          }
+        ],
+        "title": "TransactionVariant"
+      },
+      "TransactionReceipt": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 4,
+        "required": [
+          "status",
+          "cpu_usage_us",
+          "net_usage_words",
+          "trx"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "executed",
+              "soft_fail",
+              "hard_fail",
+              "delayed",
+              "expired"
+            ],
+            "description": "status:\n  * `executed` - Succeed, no error handler executed\n  * `soft_fail` - Objectively failed (not executed), error handler executed\n  * `hard_fail` - Objectively failed and error handler objectively failed thus no state change\n  * `delayed` - Used by delayed-user transactions for timer-based executions\n  * `expired` - Transaction expired and storage space refunded to user\n"
+          },
+          "cpu_usage_us": {
+            "type": "integer"
+          },
+          "net_usage_words": {
+            "type": "integer"
+          },
+          "trx": {
+            "$ref": "#/components/schemas/TransactionVariant"
+          }
+        },
+        "title": "TransactionReceipt"
+      },
+      "Block": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 9,
+        "required": [
+          "timestamp",
+          "producer",
+          "confirmed",
+          "previous",
+          "transaction_mroot",
+          "action_mroot",
+          "schedule_version",
+          "new_producers",
+          "producer_signature"
+        ],
+        "properties": {
+          "timestamp": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "producer": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/EmptyString"
+              },
+              {
+                "$ref": "#/components/schemas/Name"
+              }
+            ]
+          },
+          "confirmed": {
+            "description": "number of prior blocks confirmed by this block producer in current schedule",
+            "type": "integer"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "transaction_mroot": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "action_mroot": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "schedule_version": {
+            "description": "number of times producer schedule has changed since genesis",
+            "type": "integer"
+          },
+          "new_producers": {
+            "$ref": "#/components/schemas/ProducerSchedule"
+          },
+          "header_extensions": {
+            "$ref": "#/components/schemas/Extension"
+          },
+          "new_protocol_features": {
+            "description": "list of new protocol features",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "producer_signature": {
+            "$ref": "#/components/schemas/Signature"
+          },
+          "transactions": {
+            "description": "list of valid transaction receipts included in block",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TransactionReceipt"
+            }
+          },
+          "block_extensions": {
+            "$ref": "#/components/schemas/Extension"
+          },
+          "id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "block_num": {
+            "description": "height of this block in the chain",
+            "type": "integer"
+          },
+          "ref_block_prefix": {
+            "description": "32-bit portion of block ID",
+            "type": "integer"
+          }
+        },
+        "title": "Block"
+      },
+      "BlockInfo": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 12,
+        "required": [
+          "block_num",
+          "ref_block_num",
+          "id",
+          "timestamp",
+          "producer",
+          "confirmed",
+          "previous",
+          "transaction_mroot",
+          "action_mroot",
+          "schedule_version",
+          "producer_signature",
+          "ref_block_prefix"
+        ],
+        "properties": {
+          "block_num": {
+            "description": "height of this block in the chain",
+            "type": "integer"
+          },
+          "ref_block_num": {
+            "description": "least significant 16 bits of block number",
+            "type": "integer"
+          },
+          "id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "producer": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/EmptyString"
+              },
+              {
+                "$ref": "#/components/schemas/Name"
+              }
+            ]
+          },
+          "confirmed": {
+            "description": "number of prior blocks confirmed by the producer of this block in current producer schedule",
+            "type": "integer"
+          },
+          "previous": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "transaction_mroot": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "action_mroot": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "schedule_version": {
+            "description": "number of times producer schedule has changed since genesis",
+            "type": "integer"
+          },
+          "producer_signature": {
+            "$ref": "#/components/schemas/Signature"
+          },
+          "ref_block_prefix": {
+            "description": "32-bit portion of block ID",
+            "type": "integer"
+          }
+        },
+        "title": "BlockInfo"
+      },
+      "Info": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "server_version",
+          "chain_id",
+          "head_block_num",
+          "head_block_id",
+          "head_block_time",
+          "head_block_producer",
+          "last_irreversible_block_num",
+          "last_irreversible_block_id",
+          "virtual_block_cpu_limit",
+          "virtual_block_net_limit",
+          "block_cpu_limit",
+          "block_net_limit",
+          "server_version_string",
+          "fork_db_head_block_num",
+          "fork_db_head_block_id"
+        ],
+        "properties": {
+          "server_version": {
+            "type": "string",
+            "description": "Hash representing the last commit in the tagged release"
+          },
+          "chain_id": {
+            "type": "string",
+            "description": "Hash representing the ID of the chain"
+          },
+          "head_block_num": {
+            "type": "integer",
+            "description": "Highest block number on the chain"
+          },
+          "head_block_id": {
+            "type": "string",
+            "description": "Highest block ID on the chain"
+          },
+          "head_block_time": {
+            "type": "string",
+            "description": "Highest block unix timestamp"
+          },
+          "head_block_producer": {
+            "type": "string",
+            "description": "Producer that signed the highest block (head block)"
+          },
+          "last_irreversible_block_num": {
+            "type": "integer",
+            "description": "Highest block number on the chain that has been irreversibly applied to state"
+          },
+          "last_irreversible_block_id": {
+            "type": "string",
+            "description": "Highest block ID on the chain that has been irreversibly applied to state"
+          },
+          "virtual_block_cpu_limit": {
+            "type": "integer",
+            "description": "CPU limit calculated after each block is produced, approximately 1000 times block_cpu_limit"
+          },
+          "virtual_block_net_limit": {
+            "type": "integer",
+            "description": "NET limit calculated after each block is produced, approximately 1000 times block_net_limit"
+          },
+          "block_cpu_limit": {
+            "type": "integer",
+            "description": "Actual maximum CPU limit"
+          },
+          "block_net_limit": {
+            "type": "integer",
+            "description": "Actual maximum NET limit"
+          },
+          "server_version_string": {
+            "type": "string",
+            "description": "String representation of server version - Majorish-Minorish-Patchy - Warning - Not actually SEMVER!"
+          },
+          "fork_db_head_block_num": {
+            "type": "integer",
+            "description": "Sequential block number representing the best known head in the fork database tree"
+          },
+          "fork_db_head_block_id": {
+            "type": "string",
+            "description": "Hash representing the best known head in the fork database tree"
+          }
+        },
+        "title": "Info"
+      },
+      "BlockrootMerkle": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 2,
+        "required": [
+          "_active_nodes",
+          "_node_count"
+        ],
+        "properties": {
+          "_active_nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Sha256"
+            }
+          },
+          "_node_count": {
+            "$ref": "#/components/schemas/WholeNumber"
+          }
+        },
+        "title": "BlockrootMerkle"
+      },
+      "BlockHeaderState": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 16,
+        "required": [
+          "id",
+          "block_num",
+          "header",
+          "dpos_proposed_irreversible_blocknum",
+          "dpos_irreversible_blocknum",
+          "bft_irreversible_blocknum",
+          "pending_schedule_lib_num",
+          "pending_schedule_hash",
+          "pending_schedule",
+          "active_schedule",
+          "blockroot_merkle",
+          "producer_to_last_produced",
+          "producer_to_last_implied_irb",
+          "block_signing_key",
+          "confirm_count",
+          "confirmations"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of block"
+          },
+          "block_num": {
+            "description": "height of this block in the chain",
+            "type": "integer"
+          },
+          "header": {
+            "$ref": "#/components/schemas/Block"
+          },
+          "dpos_proposed_irreversible_blocknum": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "dpos_irreversible_blocknum": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "bft_irreversible_blocknum": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "pending_schedule_lib_num": {
+            "$ref": "#/components/schemas/WholeNumber"
+          },
+          "pending_schedule_hash": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "pending_schedule": {
+            "$ref": "#/components/schemas/ProducerSchedule"
+          },
+          "active_schedule": {
+            "$ref": "#/components/schemas/ProducerSchedule"
+          },
+          "blockroot_merkle": {
+            "$ref": "#/components/schemas/BlockrootMerkle"
+          },
+          "producer_to_last_produced": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  {
+                    "$ref": "#/components/schemas/WholeNumber"
+                  }
+                ]
+              }
+            }
+          },
+          "producer_to_last_implied_irb": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  {
+                    "$ref": "#/components/schemas/WholeNumber"
+                  }
+                ]
+              }
+            }
+          },
+          "block_signing_key": {
+            "$ref": "#/components/schemas/PublicKey"
+          },
+          "confirm_count": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WholeNumber"
+            }
+          },
+          "confirmations": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "title": "BlockHeaderState"
+      },
+      "CppSignature": {
+        "type": "string",
+        "description": "C++ variable signature",
+        "pattern": "^([a-z1-9]{1}[a-z1-9_]{0,30}[a-z1-9]{1})$",
+        "title": "CppSignature"
+      },
+      "Type": {
+        "type": "string",
+        "description": "Native and EOSIO types",
+        "enum": [
+          "uint8",
+          "uint16",
+          "uint32",
+          "uint64",
+          "uint128",
+          "float32",
+          "float64",
+          "float128",
+          "bytes",
+          "name",
+          "string",
+          "time_point",
+          "time_point_sec",
+          "symbol_code",
+          "symbol",
+          "asset",
+          "checksum160",
+          "checksum256",
+          "checksum521",
+          "public_key",
+          "private_key",
+          "signature",
+          "account_name",
+          "action_name"
+        ],
+        "title": "Type"
+      },
+      "AbiType": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 2,
+        "required": [
+          "new_type_name",
+          "type"
+        ],
+        "properties": {
+          "new_type_name": {
+            "$ref": "#/components/schemas/CppSignature"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          }
+        },
+        "title": "AbiType"
+      },
+      "AbiStructFields": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 2,
+        "required": [
+          "name",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/CppSignature"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          }
+        },
+        "title": "AbiStructFields"
+      },
+      "AbiStruct": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 3,
+        "required": [
+          "name",
+          "base",
+          "fields"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/CppSignature"
+          },
+          "base": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbiStructFields"
+            }
+          }
+        },
+        "title": "AbiStruct"
+      },
+      "AbiAction": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type",
+          "ricardian_contract"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "ricardian_contract": {
+            "type": "string",
+            "minLength": 0
+          }
+        },
+        "title": "AbiAction"
+      },
+      "IndexType": {
+        "type": "string",
+        "enum": [
+          "i64"
+        ],
+        "title": "IndexType"
+      },
+      "KeyType": {
+        "type": "string",
+        "enum": [
+          "uint64",
+          "double"
+        ],
+        "title": "KeyType"
+      },
+      "AbiTable": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 5,
+        "required": [
+          "name",
+          "index_type"
+        ],
+        "properties": {
+          "name": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "index_type": {
+            "$ref": "#/components/schemas/IndexType"
+          },
+          "key_names": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CppSignature"
+            }
+          },
+          "key_types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/KeyType"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/CppSignature"
+          }
+        },
+        "title": "AbiTable"
+      },
+      "Abi": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "types",
+          "structs",
+          "actions",
+          "tables",
+          "abi_extensions",
+          "error_messages",
+          "ricardian_clauses",
+          "variants"
+        ],
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbiType"
+            }
+          },
+          "structs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbiStruct"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbiAction"
+            }
+          },
+          "tables": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AbiTable"
+            }
+          },
+          "abi_extensions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Extension"
+            }
+          },
+          "error_messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ricardian_clauses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "title": "Abi"
+      },
+      "Producer": {
+        "type": "object",
+        "description": "A json object that describes a producer.",
+        "properties": {
+          "owner": {
+            "type": "string",
+            "description": "The name of the producer."
+          },
+          "producer_authority": {
+            "$ref": "#/components/schemas/ProducerAuthorityList"
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL of the producer."
+          },
+          "total_votes": {
+            "type": "string",
+            "description": "The total number of votes this producer has."
+          },
+          "producer_key": {
+            "type": "string",
+            "description": "The producer public key registered with the EOS blockchain."
+          }
+        }
+      },
+      "TableScope": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 5,
+        "required": [
+          "code",
+          "scope",
+          "table",
+          "payer",
+          "count"
+        ],
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "table": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "payer": {
+            "$ref": "#/components/schemas/Name"
+          },
+          "count": {
+            "description": "Number of matching items.",
+            "type": "integer"
+          }
+        },
+        "title": "TableScope"
+      },
+      "TransactionStatus": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 8,
+        "required": [
+          "state",
+          "head_number",
+          "head_id",
+          "head_timestamp",
+          "irreversible_number",
+          "irreversible_id",
+          "irreversible_timestamp",
+          "last_tracked_block_id"
+        ],
+        "properties": {
+          "state": {
+            "description": "The state of the transaction. Possible values: LOCALLY_APPLIED, FORKED_OUT, IN_BLOCK, IRREVERSIBLE, FAILED, UNKNOWN.",
+            "type": "string"
+          },
+          "block_number": {
+            "description": "The transaction block number.",
+            "type": "integer"
+          },
+          "block_id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "block_timestamp": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "expiration": {
+            "$ref": "#/components/schemas/DateTimeSeconds"
+          },
+          "head_number": {
+            "description": "The head block number.",
+            "type": "integer"
+          },
+          "head_id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "head_timestamp": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "irreversible_number": {
+            "description": "The irreversible block number.",
+            "type": "integer"
+          },
+          "irreversible_id": {
+            "$ref": "#/components/schemas/Sha256"
+          },
+          "irreversible_timestamp": {
+            "$ref": "#/components/schemas/DateTime"
+          },
+          "last_tracked_block_id": {
+            "$ref": "#/components/schemas/Sha256"
+          }
+        },
+        "title": "TransactionStatus"
+      }
+    }
+  },
+  "paths": {
+    "/get_account": {
+      "post": {
+        "description": "Returns an object containing various details about a specific account on the blockchain.",
+        "operationId": "get_account",
+        "requestBody": {
+          "description": "JSON Object with single member \"account_name\"",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account_name"
+                ],
+                "properties": {
+                  "account_name": {
+                    "$ref": "#/components/schemas/Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Account"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_block": {
+      "post": {
+        "description": "Returns an object containing various details about a specific block on the blockchain.",
+        "operationId": "get_block",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "block_num_or_id"
+                ],
+                "properties": {
+                  "block_num_or_id": {
+                    "type": "string",
+                    "description": "Provide a `block number` or a `block id`"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Block"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_block_info": {
+      "post": {
+        "description": "Similar to `get_block` but returns a fixed-size smaller subset of the block data.",
+        "operationId": "get_block_info",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "block_num"
+                ],
+                "properties": {
+                  "block_num": {
+                    "type": "integer",
+                    "description": "Provide a `block number`"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_info": {
+      "post": {
+        "description": "Returns an object containing various details about the blockchain.",
+        "operationId": "get_info",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Info"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/push_transaction": {
+      "post": {
+        "description": "This method expects a transaction in JSON format and will attempt to apply it to the blockchain.",
+        "operationId": "push_transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "signatures": {
+                    "type": "array",
+                    "description": "array of signatures required to authorize transaction",
+                    "items": {
+                      "$ref": "#/components/schemas/Signature"
+                    }
+                  },
+                  "compression": {
+                    "type": "boolean",
+                    "description": "Compression used, usually false"
+                  },
+                  "packed_context_free_data": {
+                    "type": "string",
+                    "description": "JSON to hex"
+                  },
+                  "packed_trx": {
+                    "type": "string",
+                    "description": "Transaction object JSON to hex"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/send_transaction": {
+      "post": {
+        "description": "This method expects a transaction in JSON format and will attempt to apply it to the blockchain.",
+        "operationId": "send_transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "signatures": {
+                    "type": "array",
+                    "description": "array of signatures required to authorize transaction",
+                    "items": {
+                      "$ref": "#/components/schemas/Signature"
+                    }
+                  },
+                  "compression": {
+                    "type": "boolean",
+                    "description": "Compression used, usually false"
+                  },
+                  "packed_context_free_data": {
+                    "type": "string",
+                    "description": "JSON to hex"
+                  },
+                  "packed_trx": {
+                    "type": "string",
+                    "description": "Transaction object JSON to hex"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/push_transactions": {
+      "post": {
+        "description": "This method expects a transaction in JSON format and will attempt to apply it to the blockchain.",
+        "operationId": "push_transactions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Transaction"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_block_header_state": {
+      "post": {
+        "description": "Retrieves the glock header state",
+        "operationId": "get_block_header_state",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "block_num_or_id"
+                ],
+                "properties": {
+                  "block_num_or_id": {
+                    "type": "string",
+                    "description": "Provide a block_number or a block_id"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BlockHeaderState"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_abi": {
+      "post": {
+        "description": "Retrieves the ABI for a contract based on its account name",
+        "operationId": "get_abi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account_name"
+                ],
+                "properties": {
+                  "account_name": {
+                    "$ref": "#/components/schemas/Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Abi"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_currency_balance": {
+      "post": {
+        "description": "Retrieves the current balance",
+        "operationId": "get_currency_balance",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "code",
+                  "account",
+                  "symbol"
+                ],
+                "properties": {
+                  "code": {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  "account": {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  "symbol": {
+                    "$ref": "#/components/schemas/Symbol"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Symbol"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_currency_stats": {
+      "post": {
+        "description": "Retrieves currency stats",
+        "operationId": "get_currency_stats",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  "symbol": {
+                    "$ref": "#/components/schemas/Symbol"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns an object with one member labeled as the symbol you requested, the object has three members: supply (Symbol), max_supply (Symbol) and issuer (Name)"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_required_keys": {
+      "post": {
+        "description": "Returns the required keys needed to sign a transaction.",
+        "operationId": "get_required_keys",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "transaction",
+                  "available_keys"
+                ],
+                "properties": {
+                  "transaction": {
+                    "$ref": "#/components/schemas/Transaction"
+                  },
+                  "available_keys": {
+                    "type": "array",
+                    "description": "Provide the available keys",
+                    "items": {
+                      "$ref": "#/components/schemas/PublicKey"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_producers": {
+      "post": {
+        "description": "Retrieves producers list",
+        "operationId": "get_producers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "GetProducersRequest",
+                "type": "object",
+                "required": [
+                  "limit",
+                  "lower_bound"
+                ],
+                "properties": {
+                  "limit": {
+                    "type": "string",
+                    "description": "total number of producers to retrieve"
+                  },
+                  "lower_bound": {
+                    "type": "string",
+                    "description": "In conjunction with limit can be used to paginate through the results. For example, limit=10 and lower_bound=10 would be page 2"
+                  },
+                  "json": {
+                    "type": "boolean",
+                    "description": "return result in JSON format"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "GetProducersResponse",
+                  "type": "object",
+                  "properties": {
+                    "rows": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/schemas/Producer"
+                      }
+                    },
+                    "total_producer_vote_weight": {
+                      "type": "string",
+                      "description": "The sum of all producer votes."
+                    },
+                    "more": {
+                      "type": "string",
+                      "description": "If not all producers were returned with the first request, more contains the lower bound to use for the next request."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_raw_code_and_abi": {
+      "post": {
+        "description": "Retrieves raw code and ABI for a contract based on account name",
+        "operationId": "get_raw_code_and_abi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account_name"
+                ],
+                "properties": {
+                  "account_name": {
+                    "$ref": "#/components/schemas/Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account_name": {
+                      "$ref": "#/components/schemas/Name"
+                    },
+                    "wasm": {
+                      "type": "string",
+                      "description": "base64 encoded wasm"
+                    },
+                    "abi": {
+                      "type": "string",
+                      "description": "base64 encoded ABI"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_scheduled_transactions": {
+      "post": {
+        "description": "Retrieves scheduled transactions",
+        "operationId": "get_scheduled_transactions",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "lower_bound": {
+                    "$ref": "#/components/schemas/DateTimeSeconds"
+                  },
+                  "limit": {
+                    "description": "The maximum number of transactions to return",
+                    "type": "integer"
+                  },
+                  "json": {
+                    "description": "true/false whether the packed transaction is converted to json",
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "transactions": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Transaction"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_table_by_scope": {
+      "post": {
+        "description": "Retrieves table scope",
+        "operationId": "get_table_by_scope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "code"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "`name` of the contract to return table data for"
+                  },
+                  "table": {
+                    "type": "string",
+                    "description": "Filter results by table"
+                  },
+                  "lower_bound": {
+                    "type": "string",
+                    "description": "Filters results to return the first element that is not less than provided value in set"
+                  },
+                  "upper_bound": {
+                    "type": "string",
+                    "description": "Filters results to return the first element that is greater than provided value in set"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "Limit number of results returned.",
+                    "format": "int32",
+                    "default": 10
+                  },
+                  "reverse": {
+                    "type": "boolean",
+                    "description": "Reverse the order of returned results",
+                    "default": false
+                  },
+                  "show_payer": {
+                    "type": "boolean",
+                    "description": "Show RAM payer",
+                    "default": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "rows": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/TableScope"
+                      }
+                    },
+                    "more": {
+                      "$ref": "#/components/schemas/Name"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_table_rows": {
+      "post": {
+        "description": "Returns an object containing rows from the specified table.",
+        "operationId": "get_table_rows",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "code",
+                  "table",
+                  "scope"
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "The name of the smart contract that controls the provided table"
+                  },
+                  "table": {
+                    "type": "string",
+                    "description": "The name of the table to query"
+                  },
+                  "scope": {
+                    "type": "string",
+                    "description": "The account to which this data belongs"
+                  },
+                  "index_position": {
+                    "type": "string",
+                    "description": "Position of the index used, accepted parameters `primary`, `secondary`, `tertiary`, `fourth`, `fifth`, `sixth`, `seventh`, `eighth`, `ninth` , `tenth`"
+                  },
+                  "key_type": {
+                    "type": "string",
+                    "description": "Type of key specified by index_position (for example - `uint64_t` or `name`)"
+                  },
+                  "encode_type": {
+                    "type": "string"
+                  },
+                  "lower_bound": {
+                    "type": "string",
+                    "description": "Filters results to return the first element that is not less than provided value in set"
+                  },
+                  "upper_bound": {
+                    "type": "string",
+                    "description": "Filters results to return the first element that is greater than provided value in set"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "Limit number of results returned.",
+                    "format": "int32",
+                    "default": 10
+                  },
+                  "reverse": {
+                    "type": "boolean",
+                    "description": "Reverse the order of returned results",
+                    "default": false
+                  },
+                  "show_payer": {
+                    "type": "boolean",
+                    "description": "Show RAM payer",
+                    "default": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "rows": {
+                      "type": "array",
+                      "items": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_code": {
+      "post": {
+        "description": "Returns an object containing the smart contract WASM code.",
+        "operationId": "get_code",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account_name",
+                  "code_as_wasm"
+                ],
+                "properties": {
+                  "account_name": {
+                    "$ref": "#/components/schemas/Name"
+                  },
+                  "code_as_wasm": {
+                    "type": "integer",
+                    "default": 1,
+                    "description": "This must be 1 (true)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "GetCodeResponse",
+                  "properties": {
+                    "name": {
+                      "$ref": "#/components/schemas/Name"
+                    },
+                    "code_hash": {
+                      "$ref": "#/components/schemas/Sha256"
+                    },
+                    "wast": {
+                      "type": "string"
+                    },
+                    "wasm": {
+                      "type": "string"
+                    },
+                    "abi": {
+                      "$ref": "#/components/schemas/Abi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_raw_abi": {
+      "post": {
+        "description": "Returns an object containing the smart contract abi.",
+        "operationId": "get_raw_abi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "account_name"
+                ],
+                "properties": {
+                  "account_name": {
+                    "$ref": "#/components/schemas/Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account_name": {
+                      "$ref": "#/components/schemas/Name"
+                    },
+                    "code_hash": {
+                      "$ref": "#/components/schemas/Sha256"
+                    },
+                    "abi_hash": {
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/Sha256"
+                        }
+                      ]
+                    },
+                    "abi": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_activated_protocol_features": {
+      "post": {
+        "description": "Retreives the activated protocol features for producer node",
+        "operationId": "get_activated_protocol_features",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "lower_bound": {
+                    "type": "integer",
+                    "description": "Lower bound"
+                  },
+                  "upper_bound": {
+                    "type": "integer",
+                    "description": "Upper bound"
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "description": "The limit, default is 10"
+                  },
+                  "search_by_block_num": {
+                    "type": "boolean",
+                    "description": "Flag to indicate it is has to search by block number"
+                  },
+                  "reverse": {
+                    "type": "boolean",
+                    "description": "Flag to indicate it has to search in reverse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Returns activated protocol features",
+                  "required": [
+                    "activated_protocol_features"
+                  ],
+                  "properties": {
+                    "activated_protocol_features": {
+                      "type": "array",
+                      "description": "Variant type, an array of strings with the activated protocol features",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "more": {
+                      "type": "integer",
+                      "description": "In case there's more activated protocol features than the input parameter `limit` requested, returns the ordinal of the next activated protocol feature which was not returned, otherwise zero."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_accounts_by_authorizers": {
+      "post": {
+        "description": "Given a set of account names and public keys, find all account permission authorities that are, in part or whole, satisfiable",
+        "operationId": "get_accounts_by_authorizers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "accounts": {
+                    "type": "array",
+                    "description": "List of authorizing accounts and/or actor/permissions",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/Name"
+                        },
+                        {
+                          "$ref": "#/components/schemas/Authority"
+                        }
+                      ]
+                    }
+                  },
+                  "keys": {
+                    "type": "array",
+                    "description": "List of authorizing keys",
+                    "items": {
+                      "$ref": "#/components/schemas/PublicKey"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Result containing a list of accounts which are authorized, in whole or part, by the provided accounts and keys",
+                  "required": [
+                    "accounts"
+                  ],
+                  "properties": {
+                    "accounts": {
+                      "type": "array",
+                      "description": "An array of each account,permission,authorizing-data triplet in the response",
+                      "items": {
+                        "type": "object",
+                        "description": "the information for a single account,permission,authorizing-data triplet",
+                        "required": [
+                          "account_name",
+                          "permission_name",
+                          "authorizer",
+                          "weight",
+                          "threshold"
+                        ],
+                        "properties": {
+                          "account_name": {
+                            "$ref": "#/components/schemas/Name"
+                          },
+                          "permission_name": {
+                            "$ref": "#/components/schemas/Name"
+                          },
+                          "authorizer": {
+                            "oneOf": [
+                              {
+                                "$ref": "#/components/schemas/PublicKey"
+                              },
+                              {
+                                "$ref": "#/components/schemas/Authority"
+                              }
+                            ]
+                          },
+                          "weight": {
+                            "type": "integer",
+                            "description": "the weight that this authorizer adds to satisfy the permission"
+                          },
+                          "threshold": {
+                            "type": "integer",
+                            "description": "the sum of weights that must be met or exceeded to satisfy the permission"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_transaction_status": {
+      "post": {
+        "description": "Attempts to get current blockchain state and, if available, transaction information given the transaction id. For query to work, the transaction finality status feature must be enabled by configuring the chain plugin with the config option '--transaction-finality-status-max-storage-size-gb' in nodeos.",
+        "operationId": "get_transaction_status",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "The transaction ID of the transaction to retrieve the status for."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/send_transaction2": {
+      "post": {
+        "description": "Attempts to apply a transaction to the blockchain specified in JSON format. It supports returning the full trace of a failed transaction and automatic nodeos-mediated retry if it is enabled on the node. When transaction retry is enabled on an API node, it will monitor incoming API transactions and ensure they are resubmitted additional times into the P2P network until they expire or are included in a block. Warning, full failure traces are now returned by default instead of exceptions. Be careful to not confuse a returned trace as an indication of speculative execution success. Verify 'receipt' and 'except' fields of the returned trace.",
+        "operationId": "send_transaction2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "return_failure_trace": {
+                    "type": "boolean",
+                    "description": "If true, then embed transaction exceptions into the returned transaction trace."
+                  },
+                  "retry_trx": {
+                    "type": "boolean",
+                    "description": "If true, requests to retry transaction until gets in a block of given height, see retry_trx_num_blocks as well, or it is irreversible or expires."
+                  },
+                  "retry_trx_num_blocks": {
+                    "type": "integer",
+                    "description": "If retry_trx is true, requests to retry transaction until in a block of given height, or lib if not specified."
+                  },
+                  "transaction": {
+                    "type": "object",
+                    "properties": {
+                      "signatures": {
+                        "type": "array",
+                        "description": "array of signatures required to authorize transaction.",
+                        "items": {
+                          "$ref": "#/components/schemas/Signature"
+                        }
+                      },
+                      "compression": {
+                        "type": "boolean",
+                        "description": "Compression used, usually false"
+                      },
+                      "packed_context_free_data": {
+                        "type": "string",
+                        "description": "JSON to hex"
+                      },
+                      "packed_trx": {
+                        "type": "string",
+                        "description": "Transaction object JSON to hex"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/compute_transaction": {
+      "post": {
+        "description": "Executes specified transaction and creates a transaction trace, including resource usage, and then reverts all state changes but not contribute to the subjective billing for the account. If the transaction has signatures, they are processed, but any failures are ignored. Transactions which fail always include the transaction failure trace. Warning, users with exposed nodes who have enabled the compute_transaction endpoint should implement some throttling to protect from Denial of Service attacks.",
+        "operationId": "compute_transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "signatures": {
+                    "type": "array",
+                    "description": "array of signatures required to authorize transaction",
+                    "items": {
+                      "$ref": "#/components/schemas/Signature"
+                    }
+                  },
+                  "compression": {
+                    "type": "boolean",
+                    "description": "Compression used, usually false"
+                  },
+                  "packed_context_free_data": {
+                    "type": "string",
+                    "description": "JSON to hex"
+                  },
+                  "packed_trx": {
+                    "type": "string",
+                    "description": "Transaction object, JSON to hex"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_code_hash": {
+      "post": {
+        "description": "Retrieves the code hash for a smart contract deployed on the blockchain. Once you have the code hash of a contract, you can compare it with a known or expected value to ensure that the contract code has not been modified or tampered with.",
+        "operationId": "get_code_hash",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account_name": {
+                    "description": "The name of the account for which you want to retrieve the code hash. It represents the account that owns the smart contract code.",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account_name": {
+                      "description": "The name of the account where the smart contract was deployed.",
+                      "type": "string"
+                    },
+                    "code_hash": {
+                      "type": "string",
+                      "description": "A string that represents the hash value of the specified account's smart contract code."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_transaction_id": {
+      "post": {
+        "description": "Retrieves the transaction ID (also known as the transaction hash) of a specified transaction on the blockchain.",
+        "operationId": "get_transaction_id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transaction"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "description": "The transaction ID."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get_producer_schedule": {
+      "post": {
+        "description": "Retrieves the current producer schedule from the blockchain, which includes the list of active producers and their respective rotation schedule.",
+        "operationId": "get_producer_schedule",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "active": {
+                      "$ref": "#/components/schemas/ProducerSchedule"
+                    },
+                    "pending": {
+                      "$ref": "#/components/schemas/ProducerSchedule"
+                    },
+                    "proposed": {
+                      "$ref": "#/components/schemas/ProducerSchedule"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/send_read_only_transaction": {
+      "post": {
+        "description": "Sends a read-only transaction in JSON format to the blockchain. This transaction is not intended for inclusion in the blockchain. When a user sends a transaction, which modifies the blockchain state, the connected node will fail the transaction.",
+        "operationId": "send_read_only_transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transaction": {
+                    "type": "object",
+                    "properties": {
+                      "compression": {
+                        "type": "boolean",
+                        "description": "Compression used, usually false"
+                      },
+                      "packed_context_free_data": {
+                        "type": "string",
+                        "description": "JSON to hex"
+                      },
+                      "packed_trx": {
+                        "type": "string",
+                        "description": "Transaction object JSON to hex"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/push_block": {
+      "post": {
+        "description": "Sends a block to the blockchain.",
+        "operationId": "push_block",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Block"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Returns Nothing"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
