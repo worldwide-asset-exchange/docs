@@ -14,11 +14,13 @@ export default defineConfig({
     'en/:rest*': ':rest*'
   },
 
+  ignoreDeadLinks: true,
+
   cleanUrls: true,
   lastUpdated: true,
 
   sitemap: {
-    hostname: 'https://developer.wax.io'
+    hostname: 'https://docs.wax.io'
   },
 
   themeConfig: {
@@ -28,7 +30,7 @@ export default defineConfig({
       dark: '/assets/images/logo.svg',
     },
     
-    siteTitle: 'Developer',
+    siteTitle: 'WAX Docs',
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/worldwide-asset-exchange/docs' },

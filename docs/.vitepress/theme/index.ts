@@ -7,15 +7,10 @@ import { theme, useOpenapi } from 'vitepress-openapi/client'
 import 'vitepress-openapi/dist/style.css'
 import spec from '../../openapi/chain-openapi.json' with { type: 'json' }
 
-// get servers from https://validate.eosnation.io/wax/reports/endpoints.json and save to a variable
-const servers = await fetch('https://validate.eosnation.io/wax/reports/endpoints.json')
-  .then(res => res.json())
-  .then(data => {
-    return data.report.api_https2.map(item => item[1])
-  })
-  .catch(err => {
-    console.error(err)
-  })
+// Default servers fallback
+const defaultServers = [
+  'https://wax.greymass.com'
+]
 
 /** @type {import('vitepress').Theme} */
 export default {
@@ -25,11 +20,21 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp({ app, router, siteData }) {
+  async enhanceApp({ app, router, siteData }) {
+    // Fetch dynamic servers
+    let dynamicServers = defaultServers
+    try {
+      const response = await fetch('https://validate.eosnation.io/wax/reports/endpoints.json')
+      const data = await response.json()
+      dynamicServers = data.report.api_https2.map(item => item[1])
+    } catch (err) {
+      console.error('Failed to fetch dynamic servers, using defaults:', err)
+    }
+
     useOpenapi({
       spec: {
         ...spec,
-        servers: servers.map(item => ({
+        servers: dynamicServers.map(item => ({
           url: `${item}/v1/chain`,
         })).sort((a, b) => {
           // if url contains greymass, it should be the first server
