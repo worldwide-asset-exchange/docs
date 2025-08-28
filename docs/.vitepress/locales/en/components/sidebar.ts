@@ -290,6 +290,7 @@ export default [
                 collapsed: true,
                 items: [
                     {text: 'Chain API', link: '/build/api-reference/rpc_api'},
+                    {text: 'AtomicAssets API', link: '/build/api-reference/atomic_api'},
                     {text: 'CDT', link: '/build/api-reference/cdt_api'},
                 ],
             },

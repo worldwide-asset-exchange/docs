@@ -1,5 +1,5 @@
 ---
-title: WAX Chain API Reference
+title: WAX AtomicAssets API Reference
 aside: false
 outline: false
 ---
@@ -8,11 +8,11 @@ outline: false
 import { ref, onMounted, nextTick } from 'vue'
 import { useTheme } from 'vitepress-openapi/client'
 import { fetchWaxEndpoints } from '../../../.vitepress/theme/index.ts'
-import spec from '../../../openapi/chain-openapi.json' with { type: 'json' }
+import spec from '../../../openapi/atomic-openapi.json' with { type: 'json' }
 
 // Default servers fallback
 const defaultServers = [
-  'https://wax.greymass.com'
+  'https://atomic.3dkrender.com'
 ]
 
 const dynamicSpec = ref(spec)
@@ -30,17 +30,12 @@ const updateSpecWithServers = async (endpoints) => {
     return
   }
   
-  const dynamicServers = endpoints.api_https2.map(item => item[1])
+  const dynamicServers = endpoints.atomic_https.map(item => item[1])
   const newSpec = {
     ...spec,
     servers: dynamicServers.map(item => ({
-      url: `${item}/v1/chain`,
-    })).sort((a, b) => {
-      // if url contains greymass, it should be the first server
-      if (a.url.includes('greymass')) return -1
-      if (b.url.includes('greymass')) return 1
-      return 0
-    }),
+      url: item,
+    })),
   }
   
   dynamicSpec.value = newSpec
@@ -53,7 +48,7 @@ onMounted(async () => {
 
 useTheme({
   operation: {
-    defaultBaseUrl: `${defaultServers[0]}/v1/chain`,
+    defaultBaseUrl: defaultServers[0],
   },
 })
 </script>
