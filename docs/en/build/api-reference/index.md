@@ -10,4 +10,3 @@ Here you'll find detailed documentation, usage guides, and examples to help you 
 
 - [Chain RPC](/build/api-reference/rpc_api)
 - [CDT](/build/api-reference/cdt_api)
-- [dFuse](/build/api-reference/dfuse)

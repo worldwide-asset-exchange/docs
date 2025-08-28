@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wax-office-of-inspector-general/wax-developer.git"
+    "url": "git+https://github.com/worldwide-asset-exchange/docs.git"
   },
   "author": "many",
   "license": "UNLICENSED",
@@ -26,9 +26,9 @@
     "node": ">=20.10.0"
   },
   "bugs": {
-    "url": "https://github.com/wax-office-of-inspector-general/wax-developer/issues"
+    "url": "https://github.com/worldwide-asset-exchange/docs/issues"
   },
-  "homepage": "https://github.com/wax-office-of-inspector-general/wax-developer#readme",
+  "homepage": "https://github.com/worldwide-asset-exchange/docs#readme",
   "devDependencies": {
     "sass": "^1.91.0",
     "vitepress": "^1.6.4",

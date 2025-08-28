@@ -5,8 +5,8 @@ import footer from './components/footer'
 export default {
   label: 'English',
   lang: 'en-EN',
-  title: 'WAX Developer Portal',
-  description: "WAX Blockchain Documentation - Resources for developers building on WAX",
+  title: 'WAX Blockchain Documentation',
+  description: "WAX Blockchain Documentation – Your resource hub for developers, creators, and project to build, launch, and learn everything about WAX, NFTs, and the ecosystem.",
   themeConfig: {
     nav,
     sidebar,

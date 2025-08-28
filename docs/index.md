@@ -1,13 +1,13 @@
 ---
 layout: home
-title: Home
+title: WAX Blockchain Documentation
 permalink: /
 hero:
-  name: "WAX Developer Portal"
-  tagline: "The Gateway for Building on the WAX Blockchain"
+  name: WAX Blockchain Documentation
+  tagline: The Gateway for Building on the WAX Blockchain
   image: {
   src: /assets/images/front-cube.png,
-  alt: WAX Developer Portal
+  alt: WAX Blockchain Documentation
   }
   actions:
   - theme: alt
