@@ -291,14 +291,6 @@ export default [
                 items: [
                     {text: 'Chain API', link: '/build/api-reference/rpc_api'},
                     {text: 'CDT', link: '/build/api-reference/cdt_api'},
-                    {
-                        text: 'dFuse',
-                        link: '/build/api-reference/dfuse',
-                        collapsed: true,
-                        items: [
-                            '/build/api-reference/dfuse/dfuse_example',
-                        ],
-                    }
                 ],
             },
         ],

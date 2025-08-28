@@ -59,5 +59,3 @@ Puedes usar cualquier editor o IDE de C++ de terceros para escribir tus contrato
 [EOS Studio](https://www.eosstudio.io/) es un IDE gráfico construido para el desarrollo de dApp de EOSIO, disponible en Linux, Mac OS y Windows. Esta herramienta cuenta con un editor de código, inspector de contratos y un gestor de redes. Para integrar WAX con EOS Studio, consulta [Cómo usar EOS Studio con WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/eos-studio). Nuestro script proporciona una integración mínima, desarrollada y probada con Ubuntu 18.04.
 
 [eosjs](https://github.com/EOSIO/eosjs) es un SDK de API javascript que puedes usar para comunicarte fácilmente con la API de la Blockchain de WAX. Consulta [API RPC de WAX](/es/build/api-reference/rpc_api) para más información.
-
-[dfuse](https://www.dfuse.io) es un poderoso conjunto de APIs que te permiten consultar la Blockchain de WAX y transmitir datos en tiempo real. Consulta [dfuse para dApps de WAX](/es/build/api-reference/dfuse/) para más información.

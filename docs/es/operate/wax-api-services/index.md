@@ -18,7 +18,6 @@ Los proveedores de servicio pagados ofrecen mucha más fiabilidad, flexibilidad 
 | WAX Galaxy    | [https://waxgalaxy.io/tools/api-services](https://waxgalaxy.io/tools/api-services) | FAH, PAH, SH, AA           | Servidores Dedicados, Suscripciones a API por Medición | contact@waxgalaxy.io, ID de Telegram: @sukeshtedla                      |
 | binfra.one    | [https://binfra.one/](https://binfra.one/)                     | FAH, AA, SH, LA            | Servidores Dedicados y Compartidos                 | https://t.me/cc32d9                                                  |
 | EOS USA       | [https://www.eosusa.io/hosting/](https://www.eosusa.io/hosting/)         | FAH, SH, AA                | Servidores Dedicados                            | https://www.eosusa.io/hosting/, ID de Telegram: @EOSUSA_Michael         |
-| EOS Nation    | [https://dfuse.eosnation.io/pricing](https://dfuse.eosnation.io/pricing)      | FAH                        | Suscripciones a API por Medición                    | [info@eosnation.io](mailto:info@eosnation.io), ID de Telegram: @mdarwin |
 | WAX Sweden    | [https://waxsweden.org/commercial-api/](https://waxsweden.org/commercial-api/)   | SH, Notificaciones de Contrato | Servidores Dedicados                            | https://t.me/eossweden                                               |
 
 - FAH: Historia de Archivo Completo

@@ -8,7 +8,7 @@ Parte de la utilidad de una blockchain de alto rendimiento es la capacidad de co
 
 El software de WAX no es diferente en este aspecto y originalmente tenía una provisión para un historial consultable llamado history_plugin o Historia V1. El plugin de historia fue de hecho desaprobado en 2018, lo que impulsó a la comunidad a construir alternativas.
 
-Las alternativas de Historia Completa más populares siendo Dfuse de EOS Canada, ahora llamado [Streaming Fast](https://www.streamingfast.io/), y [Hyperion](https://github.com/eosrio/hyperion-history-api) de [EOS RIO](https://eosrio.io/). Una nueva opción para una solución de Historia Ligera también ha sido lanzada recientemente por cc32d9 llamada [Memento](https://github.com/cc32d9/eosio_memento) que ciertamente parece interesante.
+Las alternativas de Historia Completa más populares siendo [Streaming Fast](https://www.streamingfast.io/) de EOS Canada, y [Hyperion](https://github.com/eosrio/hyperion-history-api) de [EOS RIO](https://eosrio.io/). Una nueva opción para una solución de Historia Ligera también ha sido lanzada recientemente por cc32d9 llamada [Memento](https://github.com/cc32d9/eosio_memento) que ciertamente parece interesante.
 
 EOSphere tiene una extensa experiencia en producción con la provisión de servicios de Historia Completa usando Hyperion en WAX Mainnet y Testnet así como en otras redes. Esta guía compartirá esta experiencia contigo, dividida en una serie que comienza con una introducción a los componentes de software y los requisitos de hardware de una solución de WAX Hyperion Full History lista para producción.
 

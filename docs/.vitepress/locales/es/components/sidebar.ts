@@ -274,14 +274,6 @@ export default [
         items: [
           { text: 'API WAX-RPC', link: '/es/build/api-reference/rpc_api' },
           { text: 'API WAX-CDT', link: '/es/build/api-reference/cdt_api' },
-          {
-            text: 'dFuse',
-            link: '/es/build/api-reference/dfuse/index',
-            collapsed: true,
-            items: [
-              { text: 'Ejemplo dFuse', link: '/es/build/api-reference/dfuse/dfuse_example' }
-            ],
-          },
         ],
       },
     ],
