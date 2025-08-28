@@ -5,7 +5,7 @@ import footer from './components/footer'
 export default {
   label: 'Spanish',
   lang: 'es-ES',
-  title: 'WAX Docs',
+  title: 'WAX Blockchain Documentation',
   description: 'Portal para desarrolladores en WAX Blockchain',
   themeConfig: {
     nav,

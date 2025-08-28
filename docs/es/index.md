@@ -1,13 +1,13 @@
 ---
 layout: home
-title: Portal de Desarrolladores de WAX
+title: Documentación de la cadena de bloques WAX
 permalink: /es/
 hero:
-  name: "WAX Developer" 
-  tagline: Portal para Desarrolladores en WAX Blockchain
+  name: Documentación de la cadena de bloques WAX
+  tagline: La puerta de entrada para construir en la cadena de bloques WAX
   image: {
     src: /assets/images/front-cube.png,
-    alt: WAX Developer Portal
+    alt: Documentación de la cadena de bloques WAX
   }
   actions:
     - theme: brand

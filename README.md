@@ -1,10 +1,10 @@
-<h1 align="center">WAX Developer Portal</h1>
+<h1 align="center">WAX Blockchain Documentation</h1>
 <p>
   <img src="https://img.shields.io/badge/node-%3E%3D20.0.0-blue.svg" />
-  <a href="https://github.com/wax-office-of-inspector-general/wax-developer/wiki" target="_blank">
+  <a href="https://github.com/worldwide-asset-exchange/docs/wiki" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/wax-office-of-inspector-general/wax-developer/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/worldwide-asset-exchange/docs/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://twitter.com/WAXOIG" target="_blank">
@@ -12,9 +12,9 @@
   </a>
 </p>
 
-> WAX Blockchain Documentation - Resources for developers building on WAX
+> WAX Blockchain Documentation – Your resource hub for developers, creators, and project to build, launch, and learn everything about WAX, NFTs, and the ecosystem.
 
-### [Visit Documentation](https://developer.wax.io/)
+### [Visit Documentation](https://docs.wax.io/)
 
 ## Installation
 
@@ -56,7 +56,7 @@ Read the [vitepress docs](https://vitepress.dev/guide/getting-started#what-s-nex
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/wax-office-of-inspector-general/wax-developer/issues). You can also take a look at the [contributing guide](https://github.com/wax-office-of-inspector-general/wax-developer/wiki/2-Contribution-Guides).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/worldwide-asset-exchange/docs/issues). You can also take a look at the [contributing guide](https://github.com/worldwide-asset-exchange/docs/wiki/2-Contribution-Guides).
 
 ## Show your support
 

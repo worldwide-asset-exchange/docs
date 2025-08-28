@@ -5,7 +5,7 @@ import footer from './components/footer'
 export default {
   label: 'Chinese',
   lang: 'cn-CN',
-  title: 'WAX Docs',
+  title: 'WAX Blockchain Documentation',
   description: '开发者门户在WAX区块链',
   editLink: {
     pattern: 'https://github.com/worldwide-asset-exchange/docs/edit/main/docs/:path',

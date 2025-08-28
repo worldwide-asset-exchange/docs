@@ -1,13 +1,13 @@
 ---
 layout: home
-title: 欢迎来到WAX开发者门户
+title: WAX区块链文档
 permalink: /cn
 hero:
-  name: "欢迎来到WAX开发者门户"
-  tagline: "The Gateway for Building on the WAX Blockchain"
+  name: WAX区块链文档
+  tagline: WAX区块链开发门户
   image: {
   src: /assets/images/front-cube.png,
-  alt: WAX Developer Portal
+  alt: WAX区块链文档
   }
   actions:
   - theme: brand
