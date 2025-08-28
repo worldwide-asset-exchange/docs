@@ -8,5 +8,6 @@ Here you'll find detailed documentation, usage guides, and examples to help you 
 
 ## APIs
 
-- [Chain RPC](/build/api-reference/rpc_api)
+- [Chain API](/build/api-reference/rpc_api)
+- [AtomiAssets API](/build/api-reference/atomic_api)
 - [CDT](/build/api-reference/cdt_api)
