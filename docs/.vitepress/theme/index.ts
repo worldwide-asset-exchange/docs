@@ -5,12 +5,45 @@ import type { Theme } from 'vitepress'
 import './style.css'
 import { theme, useOpenapi } from 'vitepress-openapi/client'
 import 'vitepress-openapi/dist/style.css'
-import spec from '../../openapi/chain-openapi.json' with { type: 'json' }
 
-// Default servers fallback
-const defaultServers = [
-  'https://wax.greymass.com'
-]
+// Global server fetching utility
+export const fetchWaxEndpoints = async () => {
+  // Check cache first
+  const cacheKey = 'wax-endpoints-cache'
+  const cacheExpiry = 1000 * 60 * 60 * 24 // 24 hours in milliseconds
+  
+  try {
+    const cached = localStorage.getItem(cacheKey)
+    if (cached) {
+      const { endpoints: cachedEndpoints, timestamp } = JSON.parse(cached)
+      const now = Date.now()
+      
+      // Use cached endpoints if they're still valid
+      if (now - timestamp < cacheExpiry) {
+        console.log('Using cached endpoint list')
+        return cachedEndpoints
+      }
+    }
+    
+    // Fetch fresh data if cache is expired or doesn't exist
+    console.log('Fetching fresh endpoint list')
+    const response = await fetch('https://validate.eosnation.io/wax/reports/endpoints.json')
+    const data = await response.json()
+    const endpoints = data.report
+    
+    // Cache the new data
+    const cacheData = {
+      endpoints,
+      timestamp: Date.now()
+    }
+    localStorage.setItem(cacheKey, JSON.stringify(cacheData))
+    
+    return endpoints
+  } catch (err) {
+    console.error('Failed to fetch endpoints, using defaults:', err)
+    return null
+  }
+}
 
 /** @type {import('vitepress').Theme} */
 export default {
@@ -21,32 +54,8 @@ export default {
     })
   },
   async enhanceApp({ app, router, siteData }) {
-    // Fetch dynamic servers
-    let dynamicServers = defaultServers
-    try {
-      const response = await fetch('https://validate.eosnation.io/wax/reports/endpoints.json')
-      const data = await response.json()
-      dynamicServers = data.report.api_https2.map(item => item[1])
-    } catch (err) {
-      console.error('Failed to fetch dynamic servers, using defaults:', err)
-    }
-
     useOpenapi({
-      spec: {
-        ...spec,
-        servers: dynamicServers.map(item => ({
-          url: `${item}/v1/chain`,
-        })).sort((a, b) => {
-          // if url contains greymass, it should be the first server
-          if (a.url.includes('greymass')) return -1
-          if (b.url.includes('greymass')) return 1
-          return 0
-        })
-      },
       config: {
-        operation: {
-          defaultBaseUrl: 'https://wax.greymass.com/v1/chain',
-        },
         spec: {
           groupByTags: false,
         },
