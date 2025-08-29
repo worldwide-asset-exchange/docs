@@ -1,11 +1,11 @@
 ---
-title: Cloud Wallet Quickstart
+title: WaxJS Quickstart
 order: 3
 ---
 
-# Cloud Wallet  Quickstart
+# WaxJS Quickstart
 
-When users sign up or sign in to Cloud Wallet , a WAX Blockchain Account is automatically created. Users can easily manage their resources, blockchain transactions, NFTs, and whitelisted dApps from the Cloud Wallet  dashboard. 
+When users sign up or sign in to Cloud Wallet , a WAX Blockchain Account is automatically created. Users can easily manage their resources, blockchain transactions, NFTs, and whitelisted dApps from the My Cloud Wallet dashboard. 
 
 In this guide, you'll learn how to use **WaxJS** to connect to the Cloud Wallet , allowing you to:
 
@@ -19,7 +19,7 @@ In the next few sections, we'll go over how everything works. If you'd like to j
 
 ## Before You Begin
 
-* Create a [Cloud Wallet  Account](http://all-access.wax.io). 
+* Create a [My Cloud Wallet Account](http://all-access.wax.io). 
 * Be familiar with the [ESIO/eosjs](https://github.com/EOSIO/eosjs) Javascript API. Refer to the [eosjs](https://eosio.github.io/eosjs/latest) docs for more information.
 * For tips on building and deploying smart contracts on the WAX Blockchain, refer to our [dApp Development](/build/dapp-development/) section. 
 

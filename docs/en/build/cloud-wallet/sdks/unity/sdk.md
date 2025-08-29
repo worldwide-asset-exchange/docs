@@ -1,7 +1,7 @@
-# Cloud Wallet Unity SDK
+# My Cloud Wallet Unity SDK
 
 ## Introduction
-The **CloudWallet** plugin for Unity enables dApp developers to seamlessly establish the connection between the dapp with the Cloud Wallet. This plugin provides essential features such as wallet activation, wallet deactivation, and transaction signing.
+The **My Cloud Wallet** plugin for Unity enables dApp developers to seamlessly establish the connection between the dapp with the Cloud Wallet. This plugin provides essential features such as wallet activation, wallet deactivation, and transaction signing.
 
 This repository has the Unity Plugin and a Demo that shows how to implement it.
 
@@ -35,7 +35,7 @@ The internal dependencies required for the Cloud Wallet plugin to function prope
 
 ## User Information Security
 
-The CloudWallet plugin is designed with a strong focus on security to protect the user's sensitive information.
+The My Cloud Wallet plugin is designed with a strong focus on security to protect the user's sensitive information.
 
 All sensitive user data, such as tokens and keys, are encapsulated within the plugin class. This ensures that these details are not directly accessible from outside the plugin, reducing the risk of exposure.
 
@@ -104,11 +104,11 @@ Please check the [IOSPostProcessBuild class](https://github.com/worldwide-asset-
 
 Initialize the plugin with your dApp information before using any functionality.
 
-To set up the CloudWallet plugin, you need to initialize it with your dApp information. This initialization process must be done before using any functionality of the plugin.
+To set up the My Cloud Wallet plugin, you need to initialize it with your dApp information. This initialization process must be done before using any functionality of the plugin.
 
 ## Initialization
 
-Below is an example of how to initialize the CloudWallet plugin in a Unity script:
+Below is an example of how to initialize the My Cloud Wallet plugin in a Unity script:
 
 ```csharp
 public sealed class DemoScript : MonoBehaviour

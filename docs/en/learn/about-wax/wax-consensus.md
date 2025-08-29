@@ -1,9 +1,10 @@
 ---
-title: WAX Consensus
-order: 3
+title: How Does the WAX Blockchain Work?
 ---
 
-# How Does the WAX Blockchain Work?
+# {{ $frontmatter.title }}
+
+## Consensus
 
 At the heart of the WAX Blockchain lies a **Delegated Proof-of-Stake (DPoS)** consensus mechanism, ensuring fast, secure, and energy-efficient transactions. This innovative model blends scalability, security, and sustainability, making WAX an industry leader. 
 

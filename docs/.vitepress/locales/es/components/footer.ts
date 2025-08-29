@@ -40,7 +40,7 @@ export default [
         href: 'https://www.waxdefi.io/'
       },
       {
-        text: 'Cloud Wallet',
+        text: 'My Cloud Wallet',
         href: 'https://www.mycloudwallet.com/'
       },
     ]

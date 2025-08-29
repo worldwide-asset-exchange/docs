@@ -1,15 +1,14 @@
 ---
 title: Why WAX?
-order: 2
 ---
 
-# Why WAX?
+# {{ $frontmatter.title }}
 
 WAX is **The Everything Chain**, empowering creators, collectors, and businesses to thrive in the digital asset space. With its scalable, user-friendly blockchain and a vibrant community, WAX delivers everything you need to build, trade, and innovate in web3.
 
 ## Seamless for Everyone
 
-WAX eliminates the technical headaches of blockchain with tools like the **[WAX Cloud Wallet](https://www.mycloudwallet.com)**, making it easy for anyone to create, trade, and own digital assets. Whether you’re an NFT creator, a web3 developer, or a first-time collector, WAX keeps things simple.
+WAX eliminates the technical headaches of blockchain with tools like the **[My Cloud Wallet](https://www.mycloudwallet.com)**, making it easy for anyone to create, trade, and own digital assets. Whether you’re an NFT creator, a web3 developer, or a first-time collector, WAX keeps things simple.
 
 ## Fast, Scalable, and No Fees
 
@@ -17,7 +16,7 @@ Built to handle high demand, WAX processes **up to 10,000 transactions per secon
 
 ## A Thriving Community
 
-WAX isn’t just a blockchain; it’s a movement powered by an active community of developers, artists, and entrepreneurs. From hosting Twitter Spaces to featuring projects on the **WAX Cloud Wallet**, the WAX team works hand-in-hand with its community to amplify their success. Platforms like **[bountyblok](https://bountyblok.io)**, **[NFTHive](https://nfthive.io)**, and **[AtomicHub](https://wax.atomichub.io)** are just a few examples of how the community enriches the ecosystem.
+WAX isn’t just a blockchain; it’s a movement powered by an active community of developers, artists, and entrepreneurs. From hosting Twitter Spaces to featuring projects on the **My Cloud Wallet**, the WAX team works hand-in-hand with its community to amplify their success. Platforms like **[bountyblok](https://bountyblok.io)**, **[NFTHive](https://nfthive.io)**, and **[AtomicHub](https://wax.atomichub.io)** are just a few examples of how the community enriches the ecosystem.
 
 ## Real Use Cases, Real Impact
 

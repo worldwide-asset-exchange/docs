@@ -9,7 +9,7 @@ WAX es **La Cadena para Todo**, empoderando a creadores, coleccionistas y empres
 
 ## Sencillo para Todos
 
-WAX elimina las complicaciones técnicas de la blockchain con herramientas como **[WAX Cloud Wallet](https://www.mycloudwallet.com)**, permitiendo que cualquiera pueda crear, intercambiar y poseer activos digitales con facilidad. Ya seas un creador de NFT, un desarrollador web3 o un coleccionista principiante, WAX hace que todo sea simple.  
+WAX elimina las complicaciones técnicas de la blockchain con herramientas como **[My Cloud Wallet](https://www.mycloudwallet.com)**, permitiendo que cualquiera pueda crear, intercambiar y poseer activos digitales con facilidad. Ya seas un creador de NFT, un desarrollador web3 o un coleccionista principiante, WAX hace que todo sea simple.  
 
 ## Rápido, Escalable y Sin Tarifas
 
@@ -17,7 +17,7 @@ Diseñado para manejar alta demanda, WAX procesa **hasta 10,000 transacciones po
 
 ## Una Comunidad en Pleno Crecimiento
 
-WAX no es solo una blockchain; es un movimiento impulsado por una comunidad activa de desarrolladores, artistas y emprendedores. Desde la organización de Twitter Spaces hasta la promoción de proyectos en el **WAX Cloud Wallet**, el equipo de WAX trabaja codo a codo con su comunidad para amplificar su éxito. Plataformas como **[bountyblok](https://bountyblok.io)**, **[NFTHive](https://nfthive.io)** y **[AtomicHub](https://wax.atomichub.io)** son solo algunos ejemplos de cómo la comunidad enriquece el ecosistema.  
+WAX no es solo una blockchain; es un movimiento impulsado por una comunidad activa de desarrolladores, artistas y emprendedores. Desde la organización de Twitter Spaces hasta la promoción de proyectos en el **My Cloud Wallet**, el equipo de WAX trabaja codo a codo con su comunidad para amplificar su éxito. Plataformas como **[bountyblok](https://bountyblok.io)**, **[NFTHive](https://nfthive.io)** y **[AtomicHub](https://wax.atomichub.io)** son solo algunos ejemplos de cómo la comunidad enriquece el ecosistema.  
 
 ## Casos de Uso Reales, Impacto Real
 

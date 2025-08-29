@@ -116,7 +116,7 @@ export default [
                         link: '/build/cloud-wallet/waxjs/',
                         collapsed: true,
                         items: [
-                            {text: 'Cloud Wallet Quickstart', link: '/build/cloud-wallet/waxjs/waxjs_qstart'},
+                            {text: 'WaxJS Quickstart', link: '/build/cloud-wallet/waxjs/waxjs_qstart'},
                             {text: 'Install WaxJS', link: '/build/cloud-wallet/waxjs/waxjs_install'},
                             {text: 'Use WaxJS', link: '/build/cloud-wallet/waxjs/waxjs_use'},
                             {text: 'WaxJS Demo', link: '/build/cloud-wallet/waxjs/waxjs_demo'},
@@ -365,7 +365,7 @@ export default [
             },
             {
                 text: 'WAX API Services',
-                link: '/operate/wax-api-services/',
+                link: '/operate/wax-api-services',
                 collapsed: true,
             },
         ],
@@ -373,16 +373,29 @@ export default [
     {
         text: 'Create',
         items: [
-          {
-            text: 'Awesome WAX',
-            link: '/create/awesome-wax/',
-            collapsed: true,
-          },
-          {
-            text: 'Documentation',
-            link: '/create/docs/',
-            collapsed: true,
-          },
+            {
+              text: 'WAX Labs',
+              link: '/create/wax-labs',
+              collapsed: true,
+              items: [
+                  {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
+              ],
+            },
+            {
+              text: 'Community',
+              link: '/create/community',
+              collapsed: true,
+            },
+            {
+              text: 'Awesome WAX',
+              link: '/create/awesome-wax',
+              collapsed: true,
+            },
+            {
+              text: 'Documentation',
+              link: '/create/docs',
+              collapsed: true,
+            },
         ],
     },
 ];

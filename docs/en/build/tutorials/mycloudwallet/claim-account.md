@@ -1,5 +1,5 @@
 ---
-title: Claim CloudWallet Account
+title: Claim My Cloud Wallet Account
 order: 100
 ---
 
@@ -38,7 +38,7 @@ MyCloudWallet is a custodial wallet, that is, the custody of the private keys is
 
 For most users the use of MyCloudWallet as a custodial wallet is sufficient, but if the user requires a higher level of usability, which implies the use of the private keys of the account, he can request the transfer of custody partially or completely.
 
-# Claim your WAX Cloud Wallet account
+# Claim your My Cloud Wallet account
 
 The first thing we’re going to do before claiming a MyCloudWallet account is to generate two key pairs for the Owner and Active permissions. For this we can use the official WAX Blockchain Explorer ([The Official WAX Blockchain Explorer](https://waxblock.io/))
 
@@ -62,13 +62,13 @@ The WAX explorer uses a modern key system, but MyCloudWallet still uses the old 
 
 (No need to do this for private keys, but keep in mind for potential future wallet imports.)
 
-## Claim your account from WAX Cloud Wallet
+## Claim your account from My Cloud Wallet
 
 Prepared with the necessary keys, proceed to claim your account.
 
-![WAX Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_lunes-2-de-octubre-de-2023_16h55m06s_003_-1024x725.png)
+![My Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_lunes-2-de-octubre-de-2023_16h55m06s_003_-1024x725.png)
 
-1. Visit [WAX Cloud Wallet website](https://www.mycloudwallet.com) and log in.
+1. Visit [My Cloud Wallet website](https://www.mycloudwallet.com) and log in.
 2. Once inside the MyCloudWallet management panel, navigate to **Settings** (1), then **Account Claiming** (2).
 3. Two account claim options are presented.
    - **Soft Claim** (3): Retains control and custody of the keys while keeping the account linked to MyCloudWallet for continued tool access. Touted as “The best of both worlds”.
@@ -80,7 +80,7 @@ Prepared with the necessary keys, proceed to claim your account.
 2. Carefully read the displayed information, ensuring correct keys are used to avoid account access loss.
 3. Select the compliance box (3) and sign the transaction to initiate the account claim request.
 
-![WAX Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_12h48m57s_001_.png)
+![My Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_12h48m57s_001_.png)
 
 In the next step, a security code is emailed for additional verification.
 

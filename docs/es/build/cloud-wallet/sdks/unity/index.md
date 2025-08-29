@@ -5,9 +5,9 @@ description: SDK de Unity
 ---
 
 # SDK de Unity
-## Descripción general del SDK de WAX Cloud Wallet
+## Descripción general del SDK de My Cloud Wallet
 
-El SDK de Unity para WAX Cloud Wallet permite una integración fluida entre aplicaciones Unity y la aplicación móvil de WAX Cloud Wallet. Este SDK proporciona a los desarrolladores una solución robusta para implementar transacciones blockchain en sus aplicaciones Unity, ofreciendo soporte multiplataforma y capacidades seguras de firma de transacciones.
+El SDK de Unity para My Cloud Wallet permite una integración fluida entre aplicaciones Unity y la aplicación móvil de My Cloud Wallet. Este SDK proporciona a los desarrolladores una solución robusta para implementar transacciones blockchain en sus aplicaciones Unity, ofreciendo soporte multiplataforma y capacidades seguras de firma de transacciones.
 
 El SDK abstrae la complejidad de las interacciones con la blockchain, permitiendo a los desarrolladores centrarse en crear excelentes experiencias de usuario mientras garantiza la firma segura de transacciones y la autenticación de usuarios.
 

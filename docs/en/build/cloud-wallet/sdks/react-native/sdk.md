@@ -8,7 +8,7 @@ description: Installation and Usage
 
 ## Prerequisites
 - Required development environment
-- WAX Cloud Wallet App installed
+- My Cloud Wallet App installed
   - iOS: https://apps.apple.com/us/app/my-cloud-wallet/id6473984457
   - Android: https://play.google.com/store/apps/details?id=com.waxcloudwalletmobile
 - Backend requirements (for WebSocket mode)
