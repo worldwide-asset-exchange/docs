@@ -1,10 +1,10 @@
 ---
-title: Cloud Wallet 
+title: My Cloud Wallet
 ---
 
-# Cloud Wallet 
+# My Cloud Wallet
 
-With just a few lines of code, Cloud Wallet  makes it as simple for customers to use your dApp as any mainstream app.
+With just a few lines of code, My Cloud Wallet makes it as simple for customers to use your dApp as any mainstream app.
 
 1. Free SSO in 48 languages, using our free single sign on software.
 2. Zero investment in account security & management means you stay focused on driving business.
@@ -13,7 +13,7 @@ With just a few lines of code, Cloud Wallet  makes it as simple for customers to
 The simplest way to onboard & manage accounts.
 Designed for use by anyone - gamers, developers, even crypto fanatics
 
-## What makes Cloud Wallet  different?
+## What makes My Cloud Wallet different?
 It's simple for mainstream gamers and app customers to use your dApp (not just the crypto community).
 
 * No complicated onboarding process - just a 2 step login
@@ -24,7 +24,7 @@ It's simple for mainstream gamers and app customers to use your dApp (not just t
 
 Tap into the global community of gamers, item traders, and collectors in just minutes - for free (seriously)
 
-* The [WCW Quickstart Guide](/build/cloud-wallet/waxjs/waxjs_qstart) features tutorials, installation instructions, code samples, and a live demo
+* The [WaxJS Quickstart Guide](/build/cloud-wallet/waxjs/waxjs_qstart) features tutorials, installation instructions, code samples, and a live demo
 * Users can whitelist your dApp and auto-sign transactions, so <b>you can execute blockchain transactions on their behalf</b>
 * Zero investment in account security & management means you stay focused on driving business
 
@@ -37,7 +37,7 @@ WCW is the uncomplicated crypto wallet
 * Works on <b>mobile</b> just as easily as it does on a desktop
 * Customers can automatically log into your dApp any time they access it using the [WaxJS feature](/build/cloud-wallet/waxjs/)
 
-## Join dApps already using Cloud Wallet 
+## Join dApps already using My Cloud Wallet
 
 Convert more customers. Completely free.
 

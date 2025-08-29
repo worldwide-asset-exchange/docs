@@ -3,7 +3,7 @@ title: How to Submit a WAX Labs Proposal
 description: Learn how to submit a WAX Labs proposal
 ---
 
-# How to Submit a WAX Labs Proposal
+# {{ $frontmatter.title }}
 
 ## 1. Ensure the Project Qualifies to Receive Funding
 
@@ -24,7 +24,7 @@ If unsure whether the project qualifies, reach out to the WAX team or the WAX Of
 
 ## 2. Create a WAX Account & Complete WAX Labs Profile
 
-Ensure that the proposer has a WAX account. If one is needed, the proposer can create an account using the WAX Cloud Wallet or various other wallet providers.
+Ensure that the proposer has a WAX account. If one is needed, the proposer can create an account using My Cloud Wallet or various other wallet providers.
 
 Log in to WAX Labs and complete the profile by clicking on the WAX account name in the top right. Make sure that the profile is memorable and detailed to increase the chances of a successful proposal.
 

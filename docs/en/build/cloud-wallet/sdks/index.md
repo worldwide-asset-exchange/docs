@@ -1,19 +1,19 @@
 ---
 layout: doc
 title: SDKs
-description: Available SDKs for WAX Cloud Wallet
+description: Available SDKs for My Cloud Wallet
 ---
 
 # Available SDKs
 
-WAX Cloud Wallet provides SDKs for various platforms to help developers integrate blockchain functionality into their applications. Below is a list of available SDKs:
+My Cloud Wallet provides SDKs for various platforms to help developers integrate blockchain functionality into their applications. Below is a list of available SDKs:
 
 ## Mobile SDKs
 
 | SDK | Description | Documentation |
 |-----|-------------|---------------|
-| [React Native SDK](/build/cloud-wallet/sdks/react-native/) | Enables seamless integration between React Native applications and the WAX Cloud Wallet mobile app. Provides WebSocket and Direct connection modes. | [View Documentation](/build/cloud-wallet/sdks/react-native/) |
-| [Unity SDK](/build/cloud-wallet/sdks/unity/) | Enables Unity applications to interact with the WAX Cloud Wallet for authentication, transaction signing, and wallet management. Supports Android, iOS, and desktop platforms. | [View Documentation](/build/cloud-wallet/sdks/unity/) |
+| [React Native SDK](/build/cloud-wallet/sdks/react-native/) | Enables seamless integration between React Native applications and My Cloud Wallet mobile app. Provides WebSocket and Direct connection modes. | [View Documentation](/build/cloud-wallet/sdks/react-native/) |
+| [Unity SDK](/build/cloud-wallet/sdks/unity/) | Enables Unity applications to interact with My Cloud Wallet for authentication, transaction signing, and wallet management. Supports Android, iOS, and desktop platforms. | [View Documentation](/build/cloud-wallet/sdks/unity/) |
 
 ## Features Comparison
 

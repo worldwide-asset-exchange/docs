@@ -2,7 +2,7 @@
 
 ## Introducción
 
-El plugin **CloudWallet** para Unity permite a los desarrolladores de dApps establecer de manera fluida la conexión entre la dapp y Cloud Wallet. Este plugin proporciona características esenciales como la activación del wallet, desactivación del wallet y firma de transacciones.
+El plugin **My Cloud Wallet** para Unity permite a los desarrolladores de dApps establecer de manera fluida la conexión entre la dapp y Cloud Wallet. Este plugin proporciona características esenciales como la activación del wallet, desactivación del wallet y firma de transacciones.
 
 Este repositorio contiene el Plugin de Unity y una Demo que muestra cómo implementarlo.
 
@@ -37,7 +37,7 @@ Las dependencias internas requeridas para que el plugin de Cloud Wallet funcione
 
 ## Seguridad de la Información del Usuario
 
-El plugin CloudWallet está diseñado con un fuerte enfoque en la seguridad para proteger la información sensible del usuario.
+El plugin My Cloud Wallet está diseñado con un fuerte enfoque en la seguridad para proteger la información sensible del usuario.
 
 Todos los datos sensibles del usuario, como tokens y claves, están encapsulados dentro de la clase del plugin. Esto asegura que estos detalles no sean directamente accesibles desde fuera del plugin, reduciendo el riesgo de exposición.
 
@@ -106,11 +106,11 @@ Por favor, consulta la [clase IOSPostProcessBuild](https://github.com/worldwide-
 
 Inicializa el plugin con la información de tu dApp antes de usar cualquier funcionalidad.
 
-Para configurar el plugin CloudWallet, necesitas inicializarlo con la información de tu dApp. Este proceso de inicialización debe realizarse antes de usar cualquier funcionalidad del plugin.
+Para configurar el plugin My Cloud Wallet, necesitas inicializarlo con la información de tu dApp. Este proceso de inicialización debe realizarse antes de usar cualquier funcionalidad del plugin.
 
 ## Inicialización
 
-A continuación se muestra un ejemplo de cómo inicializar el plugin CloudWallet en un script de Unity:
+A continuación se muestra un ejemplo de cómo inicializar el plugin My Cloud Wallet en un script de Unity:
 
 ```csharp
 public sealed class DemoScript : MonoBehaviour

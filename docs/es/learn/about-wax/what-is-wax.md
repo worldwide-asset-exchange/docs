@@ -9,7 +9,7 @@ WAX es **La Cadena para Todo**, una destacada blockchain de capa 1 que está red
 
 Fundada en 2017 por **William E. Quigley** y **Jonathan Yantis**, WAX ha impulsado **cientos de millones de transacciones** mientras colabora con marcas icónicas como **NASCAR**, **AMC**, **Mattel** y **Hasbro**. También pionera en la creación de **vIRLs®**, NFTs que conectan activos digitales a productos físicos, WAX ha abierto nuevas oportunidades para creadores y empresas.
 
-El **Puente de WAX** proporciona una conectividad multicadena sin fisuras, permitiendo que los NFTs y tokens fluyan entre cadenas blockchain. Con **WAX Cloud Wallet**, el monedero web3 más fácil de usar, WAX asegura un registro de usuario suave.
+El **Puente de WAX** proporciona una conectividad multicadena sin fisuras, permitiendo que los NFTs y tokens fluyan entre cadenas blockchain. Con **My Cloud Wallet**, el monedero web3 más fácil de usar, WAX asegura un registro de usuario suave.
 
 Más allá del juego y las colecciones, WAX es hogar de un **ecosistema floreciente de monedas meme**, donde los tokens fomentan comunidades comprometidas y creativas. Ya sea construyendo una economía de juegos o lanzando la próxima tendencia viral, WAX proporciona las herramientas e infraestructura necesarias para el éxito.
 

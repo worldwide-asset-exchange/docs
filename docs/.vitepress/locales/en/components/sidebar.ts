@@ -116,7 +116,7 @@ export default [
                         link: '/build/cloud-wallet/waxjs/',
                         collapsed: true,
                         items: [
-                            {text: 'Cloud Wallet Quickstart', link: '/build/cloud-wallet/waxjs/waxjs_qstart'},
+                            {text: 'WaxJS Quickstart', link: '/build/cloud-wallet/waxjs/waxjs_qstart'},
                             {text: 'Install WaxJS', link: '/build/cloud-wallet/waxjs/waxjs_install'},
                             {text: 'Use WaxJS', link: '/build/cloud-wallet/waxjs/waxjs_use'},
                             {text: 'WaxJS Demo', link: '/build/cloud-wallet/waxjs/waxjs_demo'},
@@ -380,6 +380,11 @@ export default [
               items: [
                   {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
               ],
+            },
+            {
+              text: 'Community',
+              link: '/create/community',
+              collapsed: true,
             },
             {
               text: 'Awesome WAX',

@@ -1,9 +1,8 @@
 ---
 title: What is the WAXP token?
-order: 4
 ---
 
-# What is the WAXP Token?
+# {{ $frontmatter.title }}
 
 WAXP is the native token of the WAX blockchain, powering everything from NFT trades to staking rewards. Whether you're swapping collectibles, earning through staking, or having a say in governance, WAXP is the key to unlocking WAX's web3 ecosystem.
 

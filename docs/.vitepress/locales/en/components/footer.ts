@@ -36,7 +36,7 @@ export default [
         href: 'https://waxblock.io'
       },
       {
-        text: 'Cloud Wallet',
+        text: 'My Cloud Wallet',
         href: 'https://www.mycloudwallet.com'
       },
       {
