@@ -1,13 +1,19 @@
 ---
 title: WAX API Reference
+description: API documentation for WAX Blockchain
 ---
 
-# WAX API Reference
+# {{ $frontmatter.title }}
 
-Here you'll find detailed documentation, usage guides, and examples to help you understand and integrate WAX APIs into your applications efficiently.
+Here you'll find comprehensive documentation for WAX Blockchain APIs
 
 ## APIs
 
-- [Chain API](/build/api-reference/rpc_api)
-- [AtomiAssets API](/build/api-reference/atomic_api)
-- [CDT](/build/api-reference/cdt_api)
+**[Chain API](/apis/chain-api)**  
+The Chain API offers blockchain data access including account information, transaction details, and blockchain state.
+
+**[Atomic Assets API](/apis/atomic-api)**  
+The Atomic Assets API provides endpoints for managing and querying NFT assets on the WAX blockchain.
+
+**[CDT](/build/api-reference/cdt_api)**  
+Contract Development Toolkit for smart contract development.
