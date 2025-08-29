@@ -1,6 +1,6 @@
 ---
-title: WAX RPC API
-description: Redirecting to Chain API
+title: WAX Chain API
+description: WAX Blockchain Chain API Documentation
 ---
 
 <meta http-equiv="refresh" content="0; url=/apis/chain-api.htm">

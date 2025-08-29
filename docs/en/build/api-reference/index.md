@@ -9,10 +9,10 @@ Here you'll find comprehensive documentation for WAX Blockchain APIs
 
 ## APIs
 
-**[Chain API](/apis/chain-api.html)**  
+**[Chain API](/apis/chain-api.htm)**  
 The Chain API offers blockchain data access including account information, transaction details, and blockchain state.
 
-**[AtomicAssets API](/apis/atomic-api.html)**  
+**[AtomicAssets API](/apis/atomic-api.htm)**  
 The AtomicAssets API provides endpoints for managing and querying NFT assets on the WAX blockchain.
 
 **[CDT](/build/api-reference/cdt_api)**  

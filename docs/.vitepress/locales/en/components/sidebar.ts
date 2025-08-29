@@ -289,8 +289,8 @@ export default [
                 link: '/build/api-reference/',
                 collapsed: true,
                 items: [
-                    {text: 'Chain API', link: '/apis/chain-api.html'},
-                    {text: 'AtomicAssets API', link: '/apis/atomic-api.html'},
+                    {text: 'Chain API', link: '/apis/chain-api.htm'},
+                    {text: 'AtomicAssets API', link: '/apis/atomic-api.htm'},
                     {text: 'CDT', link: '/build/api-reference/cdt_api'},
                 ],
             },
