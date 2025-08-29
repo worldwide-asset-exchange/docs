@@ -134,6 +134,7 @@ export default defineConfig({
     ],
     resolve: {
       alias: []
-    }
+    },
+    publicDir: 'public'
   }
 })

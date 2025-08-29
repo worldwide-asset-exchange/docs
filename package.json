@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/worldwide-asset-exchange/docs#readme",
   "devDependencies": {
-    "@types/node": "^22.13.10",
+    "@types/node": "^24.3.0",
     "sass": "^1.91.0",
     "vitepress": "^1.6.4",
     "vitepress-plugin-theme-override": "^0.1.0",
@@ -38,8 +38,5 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
-  },
-  "dependencies": {
-    "vitepress-openapi": "^0.1.8"
   }
 }
