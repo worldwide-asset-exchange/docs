@@ -1,17 +1,10 @@
 ---
-title: WAX Atomic Assets API
-description: WAX Blockchain Atomic Assets API Documentation
+title: WAX AtomicAssets API
+description: WAX Blockchain AtomicAssets API Documentation
 ---
 
-<script setup>
-import { onMounted } from 'vue'
+<meta http-equiv="refresh" content="0; url=/apis/atomic-api.html">
 
-onMounted(() => {
-  // Redirect to the static HTML file
-  window.location.href = '/apis/atomic-api'
-})
-</script>
+# Redirecting to AtomicAssets API...
 
-# Redirecting to Atomic Assets API...
-
-If you're not redirected automatically, [click here](/apis/atomic-api) to view the WAX Atomic Assets API documentation.
+If you're not redirected automatically, [click here](/apis/atomic-api.html) to view the WAX AtomicAssets API documentation.

@@ -3,15 +3,8 @@ title: WAX Chain API
 description: WAX Blockchain Chain API Documentation
 ---
 
-<script setup>
-import { onMounted } from 'vue'
-
-onMounted(() => {
-  // Redirect to the static HTML file
-  window.location.href = '/apis/chain-api'
-})
-</script>
+<meta http-equiv="refresh" content="0; url=/apis/chain-api.html">
 
 # Redirecting to Chain API...
 
-If you're not redirected automatically, [click here](/apis/chain-api) to view the WAX Chain API documentation.
+If you're not redirected automatically, [click here](/apis/chain-api.html) to view the WAX Chain API documentation.
