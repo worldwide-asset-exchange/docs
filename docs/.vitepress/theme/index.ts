@@ -5,6 +5,7 @@ import type { Theme } from 'vitepress'
 import './style.css'
 import { theme, useOpenapi } from 'vitepress-openapi/client'
 import 'vitepress-openapi/dist/style.css'
+import ActionHighlight from './components/ActionHighlight.vue'
 
 // Global server fetching utility
 export const fetchWaxEndpoints = async () => {
@@ -54,6 +55,7 @@ export default {
     })
   },
   async enhanceApp({ app, router, siteData }) {
+    app.component('ActionHighlight', ActionHighlight),
     useOpenapi({
       config: {
         spec: {

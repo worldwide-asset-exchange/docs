@@ -7,8 +7,8 @@
   <a href="https://github.com/worldwide-asset-exchange/docs/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://twitter.com/WAXOIG" target="_blank">
-    <img alt="Twitter: WAXOIG" src="https://img.shields.io/twitter/follow/WAXOIG.svg?style=social" />
+  <a href="https://twitter.com/wax_io" target="_blank">
+    <img alt="Twitter: wax_io" src="https://img.shields.io/twitter/follow/wax_io.svg?style=social" />
   </a>
 </p>
 
