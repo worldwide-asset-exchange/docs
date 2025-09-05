@@ -1,13 +1,12 @@
 ---
-title: Relink Claimed Accounts
-order: 110
+title: Relink a claimed account to My Cloud Wallet
 ---
 
 # Relink a claimed account to My Cloud Wallet
 
 When we log in to the My Cloud Wallet site using the login method we had assigned (Gmail account, for example), we will see that our WAX account no longer appears but, instead, we have a link that says "Link Blockchain Account" that will allow us to associate a WAX account with My Cloud Wallet.
 
-![My Cloud Wallet Link Blockchain Account](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_16h14m18s_003_-1.png)
+![My Cloud Wallet Link Blockchain Account](/assets/images/relink-account-1.png)
 
 As we see, the system remembers our old account and tells us that you can only recover that account, that is; We will not be able to link a different account than the one we had.
 
@@ -19,7 +18,7 @@ We are going to perform an authorization at the account ownership level to allow
 
 When you ask us to sign the transaction we will see the Anchor signature window similar to this:
 
-![Anchor Signature](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_16h32m37s_006_-1-1024x706.png)
+![Anchor Signature](/assets/images/relink-account-2.png)
 
 The first thing that catches our attention is the warning in red (1) that indicates the seriousness of this operation, since it involves giving permissions to a third party on our account thanks to the action "updateauth" (3). It is convenient to look at what is signed and make sure that we are sharing the "Active" signing permission with the "managed.wax" account, owned by My Cloud Wallet.
 
@@ -27,6 +26,6 @@ We make sure that we are going to sign the transaction with the Owned permission
 
 We accept by clicking on the button (4) and we will see the following message:
 
-![My Cloud Wallet Link Blockchain Account](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_16h35m21s_007_-1.png)
+![My Cloud Wallet Success Message](/assets/images/relink-account-3.png)
 
 Our account has been linked again to My Cloud Wallet as if we were in the case of **Soft Claim**

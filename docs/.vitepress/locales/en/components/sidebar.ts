@@ -35,6 +35,16 @@ export default [
                 collapsed: true,
                 items: [
                     {text: 'Wallets', link: '/learn/getting-started/wallets'},
+                    {
+                        text: 'My Cloud Wallet',
+                        link: '/learn/getting-started/mycloudwallet',
+                        collapsed: true,
+                        items: [
+                            {text: 'Claim Account', link: '/learn/getting-started/mycloudwallet/claim-account'},
+                            {text: 'Relink Account', link: '/learn/getting-started/mycloudwallet/relink-account'},
+                        ],
+
+                    },
                 ],
             },
         ],

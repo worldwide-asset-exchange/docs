@@ -1,30 +1,10 @@
 ---
 title: Claim My Cloud Wallet Account
-order: 100
 ---
 
-# User accounts, passwords and Wallets guarded
+# Claim My Cloud Wallet Account
 
-An account allows you to identify a user or entity, such as a smart contract. Accounts have permissions that authorize them, or not, to use actions from other smart contracts. Beads can be between 1 and 12 characters long and can only include the lowercase letters a-z, numbers 1-5, and the period.
-
-If, for example, a smart contract allows an action to mint an NFT and a user wants to mint that NFT, the user must have the appropriate permission associated with it and must also be able to demonstrate it.
-
-## Proving Possession
-
-To prove the possession of the accounts and the rights to use the associated permissions are the account keys. The keys are managed in pairs having for each type of associated permission a public key and a private key.
-
-## Basic Permissions
-
-The basic permissions for an account are “Owner” and “Active”
-
-- **Owner**: Authorizes account ownership operations, such as changing keys for any other permissions, creating permissions, etc. The keys associated with this permission should never be used in third-party applications to identify themselves or perform generic tasks.
-- **Active**: Generic permission for the usual operations in the blockchain.
-
-In addition to these permissions, it is possible to create more permissions associated with the account, with their own key pairs, to limit them to the use of specific actions against specific smart contracts.
-
-## My Cloud Wallet is a Custodial Wallet
-
-My Cloud Wallet is a custodial wallet, that is, the custody of the private keys is done by the wallet and the user has no control over them. This practice has its advantages and disadvantages:
+The private keyts of a My Cloud Wallet account are by default managed by the wallet and the user has no control over them. This practice has its advantages and disadvantages:
 
 ### Advantages
 
@@ -38,11 +18,22 @@ My Cloud Wallet is a custodial wallet, that is, the custody of the private keys 
 
 For most users the use of My Cloud Wallet as a custodial wallet is sufficient, but if the user requires a higher level of usability, which implies the use of the private keys of the account, he can request the transfer of custody partially or completely.
 
+## Basic Permissions
+
+The basic permissions for an account are “Owner” and “Active”
+
+- **Owner**: Authorizes account ownership operations, such as changing keys for any other permissions, creating permissions, etc. The keys associated with this permission should never be used in third-party applications to identify themselves or perform generic tasks.
+- **Active**: Generic permission for the usual operations in the blockchain.
+
+In addition to these permissions, it is possible to create more permissions associated with the account, with their own key pairs, to limit them to the use of specific actions against specific smart contracts.
+
+---
+
 # Claim your My Cloud Wallet account
 
 The first thing we’re going to do before claiming a My Cloud Wallet account is to generate two key pairs for the Owner and Active permissions. For this we can use the official WAX Blockchain Explorer ([The Official WAX Blockchain Explorer](https://waxblock.io/))
 
-![WAX Blockchain Explorer](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_11h05m31s_001_-768x376.png)
+![WAX Blockchain Explorer](/assets/images/claim-account-1.png)
 
 1. Navigate to the menu: **Wallet** (1), **Utilities** (2).
 2. Click on the “Generate new keys” button (3). (Feel free to click several times to generate different keys, ensuring more randomness.)
@@ -53,7 +44,7 @@ The first thing we’re going to do before claiming a My Cloud Wallet account is
 
 The WAX explorer uses a modern key system, but My Cloud Wallet still uses the old system, necessitating a format change.
 
-![WAX Blockchain Explorer](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_11h43m51s_003_-1024x414.png)
+![WAX Blockchain Explorer Key Format](/assets/images/claim-account-2.png)
 
 1. In the same **Wallet**, **Utilities** section, navigate to **Format Keys**.
 2. This tool allows for a format change from modern to old (retaining the same key value).
@@ -66,7 +57,7 @@ The WAX explorer uses a modern key system, but My Cloud Wallet still uses the ol
 
 Prepared with the necessary keys, proceed to claim your account.
 
-![My Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_lunes-2-de-octubre-de-2023_16h55m06s_003_-1024x725.png)
+![My Cloud Wallet Account Claiming](/assets/images/claim-account-3.png)
 
 1. Visit [My Cloud Wallet website](https://www.mycloudwallet.com) and log in.
 2. Once inside the My Cloud Wallet management panel, navigate to **Settings** (1), then **Account Claiming** (2).
@@ -80,7 +71,7 @@ Prepared with the necessary keys, proceed to claim your account.
 2. Carefully read the displayed information, ensuring correct keys are used to avoid account access loss.
 3. Select the compliance box (3) and sign the transaction to initiate the account claim request.
 
-![My Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_12h48m57s_001_.png)
+![My Cloud Wallet Soft Claim Process](/assets/images/claim-account-4.png)
 
 In the next step, a security code is emailed for additional verification.
 

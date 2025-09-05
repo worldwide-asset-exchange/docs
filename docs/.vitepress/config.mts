@@ -107,8 +107,11 @@ export default defineConfig({
         type: 'image/x-icon',
       },
     ],
+    
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     ['meta', { property: 'og:site', content: 'website' }],
+    ['meta', { property: 'og:image', content: '/assets/images/social.jpg' }],
+    ['meta', { name: 'twitter:image', content: '/assets/images/social.jpg' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@wax_io' }],
     ['meta', { name: 'twitter:widgets:csp', content: 'on' }],
