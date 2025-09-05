@@ -120,7 +120,7 @@ export default [
                 ],
             },
             {
-                text: 'MyCloudWallet',
+                text: 'My Cloud Wallet',
                 link: '/build/cloud-wallet/',
                 collapsed: true,
                 items: [

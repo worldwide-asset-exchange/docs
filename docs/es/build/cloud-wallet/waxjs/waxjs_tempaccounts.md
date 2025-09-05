@@ -5,15 +5,15 @@ order: 5
 
 # Cuentas temporales con WaxJS
 
-**MyCloudWallet** permite la creación de cuentas temporales que no requieren el pago de la comisión de creación de cuenta. Sin embargo, estas cuentas no existen en la blockchain hasta que se realiza dicho pago. Este sistema es muy útil para que las aplicaciones puedan crear cuentas de usuario sin que los usuarios tengan que pagar la comisión de creación de cuenta directamente o tener conocimientos previos sobre la compra de criptomonedas, transacciones, etc.
+**My Cloud Wallet** permite la creación de cuentas temporales que no requieren el pago de la comisión de creación de cuenta. Sin embargo, estas cuentas no existen en la blockchain hasta que se realiza dicho pago. Este sistema es muy útil para que las aplicaciones puedan crear cuentas de usuario sin que los usuarios tengan que pagar la comisión de creación de cuenta directamente o tener conocimientos previos sobre la compra de criptomonedas, transacciones, etc.
 
-Los usuarios pueden seguir el proceso normal de creación de cuenta, pero al llegar al paso de pagar la cuota de creación, pueden cancelar y cerrar el popup. A partir de ese momento, la cuenta existirá en el contexto de **MyCloudWallet**, pero no en la blockchain. Esta cuenta temporal podrá utilizarse para iniciar sesión en aplicaciones que tengan integrado **MyCloudWallet** y que permitan el uso de cuentas temporales.
+Los usuarios pueden seguir el proceso normal de creación de cuenta, pero al llegar al paso de pagar la cuota de creación, pueden cancelar y cerrar el popup. A partir de ese momento, la cuenta existirá en el contexto de **My Cloud Wallet**, pero no en la blockchain. Esta cuenta temporal podrá utilizarse para iniciar sesión en aplicaciones que tengan integrado **My Cloud Wallet** y que permitan el uso de cuentas temporales.
 
-Se recomienda leer los tutoriales anteriores para comprender el funcionamiento de la librería `waxjs.js` y cómo integrar **MyCloudWallet** en una aplicación.
+Se recomienda leer los tutoriales anteriores para comprender el funcionamiento de la librería `waxjs.js` y cómo integrar **My Cloud Wallet** en una aplicación.
 
 ## Configuración de la App para Permitir Cuentas Temporales
 
-Para permitir cuentas temporales en una aplicación, el desarrollador debe configurar el método de inicio de sesión de **MyCloudWallet** para permitir dichas cuentas. Esto se hace añadiendo el parámetro `returnTempAccounts` con el valor `true` en la configuración del método de inicio de sesión usando la librería `waxjs.js`.
+Para permitir cuentas temporales en una aplicación, el desarrollador debe configurar el método de inicio de sesión de **My Cloud Wallet** para permitir dichas cuentas. Esto se hace añadiendo el parámetro `returnTempAccounts` con el valor `true` en la configuración del método de inicio de sesión usando la librería `waxjs.js`.
 
 ```javascript
   const wax = new waxjs.WaxJS({
@@ -44,10 +44,10 @@ A continuación, se muestra un ejemplo sencillo que ilustra el proceso de inicio
 El método `login()` de la librería `waxjs.js` devuelve un objeto con la información de la cuenta del usuario y un booleano `isTemp` que indica si la cuenta es temporal o no, además de otros datos, como se ha explicado en tutoriales anteriores.
 :::
 
-En nuestro ejemplo, hay un botón de "login" que, al hacer clic, ejecuta el código anterior. Si no hay datos en caché de una cuenta previamente creada o no se ha creado ninguna cuenta, se abrirá el popup de **MyCloudWallet** para que el usuario pueda iniciar sesión. Si el usuario cancela el pago de la comisión de creación de cuenta, la cuenta será temporal.
+En nuestro ejemplo, hay un botón de "login" que, al hacer clic, ejecuta el código anterior. Si no hay datos en caché de una cuenta previamente creada o no se ha creado ninguna cuenta, se abrirá el popup de **My Cloud Wallet** para que el usuario pueda iniciar sesión. Si el usuario cancela el pago de la comisión de creación de cuenta, la cuenta será temporal.
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/login_01.png)
-(Figura 1: Popup de MyCloudWallet para iniciar sesión o crear cuenta)
+(Figura 1: Popup de My Cloud Wallet para iniciar sesión o crear cuenta)
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/create_01.png)
 (Figura 2: Aceptar los términos y condiciones)
@@ -55,10 +55,10 @@ En nuestro ejemplo, hay un botón de "login" que, al hacer clic, ejecuta el cód
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/create_02.png)
 (Figura 3: Paso previo al pago de la comisión de creación de cuenta. En este punto, el usuario puede cancelar el proceso)
 
-Si la cuenta ya existe, la llamada a **MyCloudWallet** mostrará un popup solicitando al usuario que inicie sesión, siempre que no esté activado el auto-login.
+Si la cuenta ya existe, la llamada a **My Cloud Wallet** mostrará un popup solicitando al usuario que inicie sesión, siempre que no esté activado el auto-login.
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/login_03.png)
-(Figura 4: Popup de MyCloudWallet para iniciar sesión)
+(Figura 4: Popup de My Cloud Wallet para iniciar sesión)
 
 ::: warning Importante
 Esto solo es posible si al crear el objeto `wax` se ha configurado el parámetro `returnTempAccounts` con el valor `true`. De lo contrario, el modal siempre mostrará la pantalla de pago de la comisión de creación de cuenta (si es una cuenta temporal).
@@ -215,4 +215,4 @@ La transacción debe hacerse a la cuenta `newuser.wax`, con el nombre de la cuen
 
 ## Conclusión
 
-**MyCloudWallet** permite la creación de cuentas temporales que no requieren el pago de la comisión de creación de cuenta. Este sistema es muy útil para que las aplicaciones puedan crear cuentas de usuario sin que estos tengan que pagar la comisión de creación de cuenta directamente o tener conocimientos previos sobre la compra de criptomonedas, transacciones, etc. Sin embargo, es importante recordar que la cuenta temporal no existe en la blockchain hasta que se realice el pago de la comisión. Por lo tanto, es responsabilidad de la aplicación realizar dicho pago en nombre del usuario.
+**My Cloud Wallet** permite la creación de cuentas temporales que no requieren el pago de la comisión de creación de cuenta. Este sistema es muy útil para que las aplicaciones puedan crear cuentas de usuario sin que estos tengan que pagar la comisión de creación de cuenta directamente o tener conocimientos previos sobre la compra de criptomonedas, transacciones, etc. Sin embargo, es importante recordar que la cuenta temporal no existe en la blockchain hasta que se realice el pago de la comisión. Por lo tanto, es responsabilidad de la aplicación realizar dicho pago en nombre del usuario.

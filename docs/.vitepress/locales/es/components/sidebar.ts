@@ -111,7 +111,7 @@ export default [
         ],
       },
       {
-        text: 'MyCloudWallet',
+        text: 'My Cloud Wallet',
         link: '/es/build/cloud-wallet/',
         collapsed: true,
         sidebarDepth: 1,

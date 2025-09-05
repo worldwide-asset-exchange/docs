@@ -22,9 +22,9 @@ The basic permissions for an account are “Owner” and “Active”
 
 In addition to these permissions, it is possible to create more permissions associated with the account, with their own key pairs, to limit them to the use of specific actions against specific smart contracts.
 
-## MyCloudWallet is a Custodial Wallet
+## My Cloud Wallet is a Custodial Wallet
 
-MyCloudWallet is a custodial wallet, that is, the custody of the private keys is done by the wallet and the user has no control over them. This practice has its advantages and disadvantages:
+My Cloud Wallet is a custodial wallet, that is, the custody of the private keys is done by the wallet and the user has no control over them. This practice has its advantages and disadvantages:
 
 ### Advantages
 
@@ -33,14 +33,14 @@ MyCloudWallet is a custodial wallet, that is, the custody of the private keys is
 
 ### Inconvenience
 
-- Use of the account is limited to MyCloudWallet’s own options and features.
-- If the MyCloudWallet service were hacked all the guarded keys could be exposed.
+- Use of the account is limited to My Cloud Wallet’s own options and features.
+- If the My Cloud Wallet service were hacked all the guarded keys could be exposed.
 
-For most users the use of MyCloudWallet as a custodial wallet is sufficient, but if the user requires a higher level of usability, which implies the use of the private keys of the account, he can request the transfer of custody partially or completely.
+For most users the use of My Cloud Wallet as a custodial wallet is sufficient, but if the user requires a higher level of usability, which implies the use of the private keys of the account, he can request the transfer of custody partially or completely.
 
 # Claim your My Cloud Wallet account
 
-The first thing we’re going to do before claiming a MyCloudWallet account is to generate two key pairs for the Owner and Active permissions. For this we can use the official WAX Blockchain Explorer ([The Official WAX Blockchain Explorer](https://waxblock.io/))
+The first thing we’re going to do before claiming a My Cloud Wallet account is to generate two key pairs for the Owner and Active permissions. For this we can use the official WAX Blockchain Explorer ([The Official WAX Blockchain Explorer](https://waxblock.io/))
 
 ![WAX Blockchain Explorer](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_11h05m31s_001_-768x376.png)
 
@@ -51,7 +51,7 @@ The first thing we’re going to do before claiming a MyCloudWallet account is t
 
 ## Changing the key format
 
-The WAX explorer uses a modern key system, but MyCloudWallet still uses the old system, necessitating a format change.
+The WAX explorer uses a modern key system, but My Cloud Wallet still uses the old system, necessitating a format change.
 
 ![WAX Blockchain Explorer](https://3dkrender.com/wp-content/uploads/2023/10/capture_martes-3-de-octubre-de-2023_11h43m51s_003_-1024x414.png)
 
@@ -69,10 +69,10 @@ Prepared with the necessary keys, proceed to claim your account.
 ![My Cloud Wallet](https://3dkrender.com/wp-content/uploads/2023/10/capture_lunes-2-de-octubre-de-2023_16h55m06s_003_-1024x725.png)
 
 1. Visit [My Cloud Wallet website](https://www.mycloudwallet.com) and log in.
-2. Once inside the MyCloudWallet management panel, navigate to **Settings** (1), then **Account Claiming** (2).
+2. Once inside the My Cloud Wallet management panel, navigate to **Settings** (1), then **Account Claiming** (2).
 3. Two account claim options are presented.
-   - **Soft Claim** (3): Retains control and custody of the keys while keeping the account linked to MyCloudWallet for continued tool access. Touted as “The best of both worlds”.
-   - **Hard Claim** (4): Similar key management as Soft Claim, but fully unlinks the MyCloudWallet account, necessitating third-party wallets like Anchor or Wombat for access. Re-association with MyCloudWallet is possible in future.
+   - **Soft Claim** (3): Retains control and custody of the keys while keeping the account linked to My Cloud Wallet for continued tool access. Touted as “The best of both worlds”.
+   - **Hard Claim** (4): Similar key management as Soft Claim, but fully unlinks the My Cloud Wallet account, necessitating third-party wallets like Anchor or Wombat for access. Re-association with My Cloud Wallet is possible in future.
 
 ### Soft Claim
 
@@ -85,14 +85,14 @@ Prepared with the necessary keys, proceed to claim your account.
 In the next step, a security code is emailed for additional verification.
 
 1. Enter the emailed numerical key (1) and click **Next** (2).
-2. Wait for the claim process to complete, after which you can link the MyCloudWallet account to a third-party wallet such as Anchor or Wombat.
+2. Wait for the claim process to complete, after which you can link the My Cloud Wallet account to a third-party wallet such as Anchor or Wombat.
 
 ### Hard Claim
 
-Accounts claimed through Soft Claim maintain the multisig system with MyCloudWallet so that the user can continue to use MyCloudWallet to log in and to access the interface tools of their website. The user will be able to log in to other applications using other wallets such as Anchor or Wombat, but will not be able to sign transactions due to the multisignature system.
+Accounts claimed through Soft Claim maintain the multisig system with My Cloud Wallet so that the user can continue to use My Cloud Wallet to log in and to access the interface tools of their website. The user will be able to log in to other applications using other wallets such as Anchor or Wombat, but will not be able to sign transactions due to the multisignature system.
 
-With the Hard claim, the multisig is eliminated, so the account is completely disconnected from the MyCloudWallet service and controlled 100% by the user. You will no longer be able to log in through MyCloudWallet anywhere but you can link the account to a wallet such as Anchor or Wombat to do so and continue using your account as normal as do those users who have their own accounts.
+With the Hard claim, the multisig is eliminated, so the account is completely disconnected from the My Cloud Wallet service and controlled 100% by the user. You will no longer be able to log in through My Cloud Wallet anywhere but you can link the account to a wallet such as Anchor or Wombat to do so and continue using your account as normal as do those users who have their own accounts.
 
 The process to make Hard Claim is identical to the process for Soft Claim and can be done from the first moment or after having made Soft Claim.
 
-If we regret having made Hard Claim (or need to link our account with MyCloudWallet again) we can relink the account by following the steps below in the next section.
+If we regret having made Hard Claim (or need to link our account with My Cloud Wallet again) we can relink the account by following the steps below in the next section.

@@ -228,8 +228,3 @@ export const InitTransaction = async (dataTrx: IBaseTransaction ) => {
 :::tip 📝 Note
 The displayed code is for educational purposes and aims to be as simple and explanatory as possible. Each user should adapt it to their needs and optimize it according to their preferences.
 :::
-
-# Conclusion
-
-Although WharfKit is in its early stages of development, it has great potential. I recommend following the [project on Github](https://github.com/wharfkit) and the [official documentation](https://wharfkit.com/docs).
-

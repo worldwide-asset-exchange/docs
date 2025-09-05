@@ -650,5 +650,3 @@ fi
 By following this guide, you have created a WAX Price Oracle service using either a Bash or Python script. The service fetches cryptocurrency prices, securely handles wallet passwords, pushes transactions to the WAX blockchain, and sets up alerts for any failures. Scheduling these scripts using cron jobs ensures your service runs smoothly and reliably.
 
 Additionally, to further ensure the integrity of your oracle and verify that the `write` actions are being published correctly on the WAX Mainnet, you can use the provided script that queries the blockchain directly. This approach helps confirm that the oracle is functioning as expected and hasn't hung by checking for recent transactions directly on-chain. This script uses the WAX history API to fetch and verify actions for the `delphioracle` smart contract, specifically targeting the `write` actions by the `bountyblokbp` actor within the last 30 minutes. This method adds an additional layer of integrity to your oracle setup by providing real-time verification directly from the blockchain.
-
- 

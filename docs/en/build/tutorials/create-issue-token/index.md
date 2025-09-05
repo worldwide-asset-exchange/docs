@@ -140,6 +140,3 @@ $ cleos get table tokenexample EXP stat
   "next_key": ""
 }
 ```
-
-## Conclusion
-Deploying and managing a fungible token on the WAX blockchain involves several detailed steps from setting up the development environment to managing the lifecycle of the token. By following this guide, developers can effectively deploy and manage their own digital assets on the WAX blockchain, leveraging the robust features and secure infrastructure it offers.

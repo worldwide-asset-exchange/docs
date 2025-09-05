@@ -1,15 +1,15 @@
 ---
-title: ServerSide Verification
+title: Server Side Verification
 order: 100
 ---
 
 # Using NKCSS.Antelope.Verify to validate clientside logins on the backend
 
-Both [MyCloudWallet](https://mycloudwallet.com) and [Anchor](https://github.com/greymass/anchor) offer an option to, as part of the standard identity proof request, also sign a proof that you can individually validate on the backend. These proofs can be validated using ECDSA and are ideal for Unity/.NET backend applications and are invisible to the user, not requiring any additional actions compared to the normal client-side-only workflow.
+Both [My Cloud Wallet](https://mycloudwallet.com) and [Anchor](https://github.com/greymass/anchor) offer an option to, as part of the standard identity proof request, also sign a proof that you can individually validate on the backend. These proofs can be validated using ECDSA and are ideal for Unity/.NET backend applications and are invisible to the user, not requiring any additional actions compared to the normal client-side-only workflow.
 
-## How to enable this for MyCloudWallet
+## How to enable this for My Cloud Wallet
 
-You can look [here](https://github.com/worldwide-asset-exchange/waxjs#21-login-combining-proof-system) to see how you can make MyCloudWallet provide the additional proof, or check the [NKCSS.Antelope.Verify](https://github.com/NKCSS/NKCSS.Antelope.Verify/) for an example implementation.
+You can look [here](https://github.com/worldwide-asset-exchange/waxjs#21-login-combining-proof-system) to see how you can make My Cloud Wallet provide the additional proof, or check the [NKCSS.Antelope.Verify](https://github.com/NKCSS/NKCSS.Antelope.Verify/) for an example implementation.
 
 ## How to enable this for Anchor
 

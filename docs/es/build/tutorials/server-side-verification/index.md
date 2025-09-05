@@ -5,11 +5,11 @@ order: 100
 
 # Usar NKCSS.Antelope.Verify para validar inicios de sesión del lado del cliente en el backend
 
-Tanto [MyCloudWallet](https://mycloudwallet.com) como [Anchor](https://github.com/greymass/anchor) ofrecen una opción para, como parte de la solicitud estándar de prueba de identidad, firmar también una prueba que puedes validar individualmente en el backend. Estas pruebas pueden ser validadas utilizando ECDSA y son ideales para aplicaciones backend de Unity/.NET. Son invisibles para el usuario, no requiriendo ninguna acción adicional en comparación con el flujo de trabajo normal solo del lado del cliente.
+Tanto [My Cloud Wallet](https://mycloudwallet.com) como [Anchor](https://github.com/greymass/anchor) ofrecen una opción para, como parte de la solicitud estándar de prueba de identidad, firmar también una prueba que puedes validar individualmente en el backend. Estas pruebas pueden ser validadas utilizando ECDSA y son ideales para aplicaciones backend de Unity/.NET. Son invisibles para el usuario, no requiriendo ninguna acción adicional en comparación con el flujo de trabajo normal solo del lado del cliente.
 
-## Cómo habilitar la verificación para MyCloudWallet
+## Cómo habilitar la verificación para My Cloud Wallet
 
-Puedes consultar [aquí](https://github.com/worldwide-asset-exchange/waxjs#21-login-combining-proof-system) para ver cómo hacer que MyCloudWallet proporcione la prueba adicional, o consultar [NKCSS.Antelope.Verify](https://github.com/NKCSS/NKCSS.Antelope.Verify/) para ver un ejemplo de implementación.
+Puedes consultar [aquí](https://github.com/worldwide-asset-exchange/waxjs#21-login-combining-proof-system) para ver cómo hacer que My Cloud Wallet proporcione la prueba adicional, o consultar [NKCSS.Antelope.Verify](https://github.com/NKCSS/NKCSS.Antelope.Verify/) para ver un ejemplo de implementación.
 
 ## Cómo habilitar la verificación para Anchor
 
