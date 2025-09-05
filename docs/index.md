@@ -15,7 +15,7 @@ hero:
     link: /learn/about-wax/
   - theme: brand
     text: Build →
-    link: /build/getting-started/
+    link: /build/core-concepts/
   - theme: alt
     text: Create
     link: /create/awesome-wax/
