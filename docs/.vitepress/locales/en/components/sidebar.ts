@@ -37,7 +37,7 @@ export default [
                     {text: 'Wallets', link: '/learn/getting-started/wallets'},
                     {
                         text: 'My Cloud Wallet',
-                        link: '/learn/getting-started/mycloudwallet',
+                        link: '/learn/getting-started/mycloudwallet/',
                         collapsed: true,
                         items: [
                             {text: 'Claim Account', link: '/learn/getting-started/mycloudwallet/claim-account'},
@@ -324,7 +324,7 @@ export default [
         items: [
             {
               text: 'WAX Labs',
-              link: '/create/wax-labs',
+              link: '/create/wax-labs/',
               collapsed: true,
               items: [
                   {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
