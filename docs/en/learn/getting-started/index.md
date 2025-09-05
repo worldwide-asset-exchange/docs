@@ -8,12 +8,6 @@ Welcome to WAX, the Worldwide Asset eXchange™ - a purpose-built blockchain des
 
 This Getting Started Guide covers everything you need to know to begin using and developing on the WAX blockchain.
 
-## Quick Start
-
-New to WAX? Get up and running in minutes:
-
-- [WAX Wallets](/learn/getting-started/wallets/) - Choose the right wallet for your needs
-
 ## For Users
 
 ### Account and Wallet Setup
