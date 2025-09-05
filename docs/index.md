@@ -4,7 +4,7 @@ title: WAX Blockchain Documentation
 permalink: /
 hero:
   name: WAX Blockchain Documentation
-  tagline: The Gateway for Building on the WAX Blockchain
+  tagline: The hub for developers and creators to build, launch, and learn everything about WAX, NFTs, and the ecosystem.
   image: {
   src: /assets/images/front-cube.png,
   alt: WAX Blockchain Documentation

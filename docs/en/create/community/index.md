@@ -4,7 +4,7 @@ description: Ways to promote your project with the WAX community
 aside: false
 ---
 
-# {{ $frontmatter.title }}
+# WAX Community Resources
 
 Discover resources to promote your project, build community, and access ecosystem tools that help you succeed on WAX. From marketing opportunities to community management tools.
 

@@ -29,21 +29,24 @@ export default [
                     },
                 ],
             },
+            {
+                text: 'Getting Started',
+                link: '/learn/getting-started/',
+                collapsed: true,
+                items: [
+                    {text: 'Wallets', link: '/learn/getting-started/wallets'},
+                ],
+            },
         ],
     },
     {
         text: 'Build',
         items: [
-            // {
-            //     text: 'Getting Started',
-            //     link: '/build/getting-started/',
-            //     collapsed: true,
-            //     items: [
-            //         {text: 'Quick Start', link: '/build/getting-started/quick-start'},
-            //         {text: 'Installation', link: '/build/getting-started/installation'},
-            //         {text: 'Wallets', link: '/build/getting-started/wallets'},
-            //     ],
-            // },
+            {
+                text: 'Core Concepts',
+                link: '/build/core-concepts/',
+                collapsed: true,
+            },
             {
                 text: 'dApp Development',
                 link: '/build/dapp-development/',

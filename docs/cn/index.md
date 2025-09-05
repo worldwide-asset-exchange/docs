@@ -4,7 +4,7 @@ title: WAX区块链文档
 permalink: /cn
 hero:
   name: WAX区块链文档
-  tagline: WAX区块链开发门户
+  tagline: 开发者与创作者的枢纽，助力构建、发布并全面掌握WAX、NFT及生态系统的核心知识。
   image: {
   src: /assets/images/front-cube.png,
   alt: WAX区块链文档

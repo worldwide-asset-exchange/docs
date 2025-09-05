@@ -2,7 +2,7 @@
 title: About WAX
 ---
 
-# {{ $frontmatter.title }}
+# About WAX
 
 The Worldwide Asset eXchange™ (WAX) is "The Everything Chain" — a purpose-built blockchain designed to power Web3 at scale. From thousands of games and tokens to digital collectibles from major global brands, WAX provides the tools and infrastructure to make it all seamless, accessible, and efficient.
 

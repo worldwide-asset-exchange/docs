@@ -3,7 +3,7 @@ title: Awesome WAX
 description: A curated Lists of awesome projects built on WAX
 ---
 
-# {{ $frontmatter.title }}
+# Awesome WAX
 
 ## A curated Lists of awesome projects built on WAX
 

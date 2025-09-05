@@ -4,7 +4,7 @@ title: Documentación de la cadena de bloques WAX
 permalink: /es/
 hero:
   name: Documentación de la cadena de bloques WAX
-  tagline: La puerta de entrada para construir en la cadena de bloques WAX
+  tagline: El centro para desarrolladores y creadores donde pueden crear, lanzar y aprender todo sobre WAX, NFT y el ecosistema.
   image: {
     src: /assets/images/front-cube.png,
     alt: Documentación de la cadena de bloques WAX

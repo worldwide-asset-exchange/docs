@@ -3,7 +3,7 @@ title: WAX API Reference
 description: API documentation for WAX Blockchain
 ---
 
-# {{ $frontmatter.title }}
+# WAX API Reference
 
 Here you'll find comprehensive documentation for WAX Blockchain APIs
 

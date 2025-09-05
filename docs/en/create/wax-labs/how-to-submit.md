@@ -3,7 +3,7 @@ title: How to Submit a WAX Labs Proposal
 description: Learn how to submit a WAX Labs proposal
 ---
 
-# {{ $frontmatter.title }}
+# How to Submit a WAX Labs Proposal
 
 ## 1. Ensure the Project Qualifies to Receive Funding
 

@@ -8,7 +8,7 @@ import VitepressThemeOverride from 'vitepress-plugin-theme-override';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "WAX Blockchain Documentation",
-  description: "Comprehensive toolkit for developers and creators building dApps, NFTs, and Web3 experiences on the WAX Blockchain",
+  description: "WAX Blockchain Documentation – Your resource hub for developers, creators, and project to build, launch, and learn everything about WAX, NFTs, and the ecosystem.",
 
   rewrites: {
     'en/:rest*': ':rest*'

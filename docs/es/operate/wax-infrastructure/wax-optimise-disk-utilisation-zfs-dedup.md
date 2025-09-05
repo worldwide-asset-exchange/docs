@@ -30,7 +30,7 @@ En nuestro caso de uso, el consumo de espacio en disco de las carpetas de bloque
 
 ## Configuración
 
-Este ejemplo cubrirá dos instancias de nodos WAX en un solo servidor baremetal y, de manera similar a la [Guía de Configuración de un Nodo Sólido WAX Mainnet](https://developer.wax.io/es/operate/wax-infrastructure/wax-mainnet-node.html), utiliza **2 Sistemas de Discos Discretos** en este servidor para equilibrar la E/S del disco.
+Este ejemplo cubrirá dos instancias de nodos WAX en un solo servidor baremetal y, de manera similar a la [Guía de Configuración de un Nodo Sólido WAX Mainnet](/es/operate/wax-infrastructure/wax-mainnet-node.html), utiliza **2 Sistemas de Discos Discretos** en este servidor para equilibrar la E/S del disco.
 
 **Disco 1** es el SSD o NVMe de grado empresarial de alta velocidad y será el disco del SO utilizado para el software WAX, toda la configuración y los archivos de estado. Se requiere que cada instancia de nodo tenga sus propios archivos de estado, normalmente es más fácil colocar todos los archivos para cada instancia de nodo en un directorio separado y ejecutarlos con diferentes puertos TCP de servicio.
 

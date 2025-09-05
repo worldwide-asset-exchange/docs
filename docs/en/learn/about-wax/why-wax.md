@@ -2,7 +2,7 @@
 title: Why WAX?
 ---
 
-# {{ $frontmatter.title }}
+# Why WAX?
 
 WAX is **The Everything Chain**, empowering creators, collectors, and businesses to thrive in the digital asset space. With its scalable, user-friendly blockchain and a vibrant community, WAX delivers everything you need to build, trade, and innovate in web3.
 

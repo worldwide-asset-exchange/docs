@@ -149,8 +149,6 @@ This endpoint must follow the following guidelines:
 - The endpoint must be a POST request.
 - The endpoint must return a string with the single-use token.
 
-For more information about the SUT endpoint, please check the [Single-Use Token Generation](https://developer.wax.io/) documentation.
-
 > ⚠️ **Important**: If your endpoint is not following the guidelines, the plugin will not work correctly.
 
 ### Singleton Pattern

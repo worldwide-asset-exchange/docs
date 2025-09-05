@@ -2,7 +2,7 @@
 title: Automatizar Snapshots de WAX
 ---
 
-Ya sea reiniciando un nodo que se apagó incorrectamente, iniciando un nodo ligero o utilizando la [estrategia de memoria tmpfs](https://developer.wax.io/es/operate/wax-infrastructure/wax-ram-disk-utilisation) para un mejor rendimiento, se necesitan **snapshots de nodeos** para devolver la base de datos de estado de la cadena a un punto válido en el tiempo para que el nodo pueda volver a unirse y sincronizarse con la red.
+Ya sea reiniciando un nodo que se apagó incorrectamente, iniciando un nodo ligero o utilizando la [estrategia de memoria tmpfs](/es/operate/wax-infrastructure/wax-ram-disk-utilisation) para un mejor rendimiento, se necesitan **snapshots de nodeos** para devolver la base de datos de estado de la cadena a un punto válido en el tiempo para que el nodo pueda volver a unirse y sincronizarse con la red.
 
 _La base de datos de estado de la cadena_ `shared_memory.bin` _es necesaria para que `nodeos` funcione; es un archivo mapeado en memoria que contiene el estado asociado con cada bloque, incluidos los datos de contratos inteligentes, detalles de cuentas y transacciones diferidas._
 
@@ -37,7 +37,7 @@ plugin = eosio::producer_api_plugin
 
 Los snapshots se guardarán en la carpeta `/snapshots`. Asegúrate de que haya suficiente espacio en disco disponible.
 
-Consulta [Cómo Configurar un Nodo Sólido WAX Mainnet](https://developer.wax.io/es/operate/wax-infrastructure/wax-mainnet-node) para obtener una guía sobre la construcción, configuración y operación de nodos WAX.
+Consulta [Cómo Configurar un Nodo Sólido WAX Mainnet](/es/operate/wax-infrastructure/wax-mainnet-node) para obtener una guía sobre la construcción, configuración y operación de nodos WAX.
 
 ## **Configurar script de snapshot**
 

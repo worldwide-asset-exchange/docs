@@ -1,14 +1,11 @@
 ---
 title: Help imprvoe these docs
-order: 1
-index: false
-author: false
 ---
 
 TL;DR 
 [How to contribute](https://github.com/worldwide-asset-exchange/docs/wiki)
 
-# {{ $frontmatter.title }}
+# Help imprvoe these docs
 
 Creating a seamless and delightful experience for developers is crucial to the success of our project. As part of our commitment to continuously improve, we invite you to contribute your skills and insights to enhance the developer documentation (DX) and make it even better.
 
