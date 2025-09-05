@@ -2,7 +2,7 @@
 title: How Does the WAX Blockchain Work?
 ---
 
-# {{ $frontmatter.title }}
+# How Does the WAX Blockchain Work?
 
 ## Consensus
 

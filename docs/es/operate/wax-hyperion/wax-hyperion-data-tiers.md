@@ -28,7 +28,7 @@ Esta guía detallará la configuración de las capas de datos al agregar un nuev
 
 Este nuevo nodo se configurará para unirse a una capa de datos "warm". Este nodo utilizará SSDs de consumo más baratos ya que no habrá muchas escrituras afectando la durabilidad, una CPU antigua más lenta ya que no habrá tantas consultas y menos RAM ya que no se utilizará tanta caché.
 
-Por favor, consulta nuestra guía previa [Clustering Elasticsearch para WAX Hyperion Full History](https://developer.wax.io/operate/wax-hyperion/wax-clustering-elasticsearch-for-hyperion.html) para obtener detalles sobre el clustering de Elasticsearch.
+Por favor, consulta nuestra guía previa [Clustering Elasticsearch para WAX Hyperion Full History](https://docs.wax.io/operate/wax-hyperion/wax-clustering-elasticsearch-for-hyperion.html) para obtener detalles sobre el clustering de Elasticsearch.
 
 # Configuración del Nodo de Capa de Datos de Elasticsearch
 

@@ -18,7 +18,7 @@ This guide will go over the basics to get up and running using the Filebeat HAPr
 
 You can read more about  [Filebeat in the Elasticsearch Documentation](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-overview.html).
 
-It is assumed that you are already using HAProxy in your environment, you can read more about how to deploy HAProxy in our  [Set Up a Reliable WAX Load Balancer Guide](https://developer.wax.io/operate/wax-infrastructure/wax-mainnet-node-load-balancer.html)
+It is assumed that you are already using HAProxy in your environment, you can read more about how to deploy HAProxy in our  [Set Up a Reliable WAX Load Balancer Guide](https://docs.wax.io/operate/wax-infrastructure/wax-mainnet-node-load-balancer.html)
 
 # Installation, Configuration and Running
 

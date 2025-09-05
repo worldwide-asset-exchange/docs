@@ -24,7 +24,7 @@ This guide will go through the Data Tiering configuration when adding a new node
 
 This new node will be configured to join a Warm Data tier. This node will utilise cheaper consumer based SSD’s as there won’t be many writes effecting endurance, slower older gen CPU as there won’t be as many queries and less RAM as not as much cache will be used.
 
-Please see our previous guide  [Clustering Elasticsearch for WAX Hyperion Full History](https://developer.wax.io/operate/wax-hyperion/wax-clustering-elasticsearch-for-hyperion.html)  for details on Elasticsearch clustering.
+Please see our previous guide  [Clustering Elasticsearch for WAX Hyperion Full History](https://docs.wax.io/operate/wax-hyperion/wax-clustering-elasticsearch-for-hyperion.html)  for details on Elasticsearch clustering.
 
 # Elasticsearch Data Tier Node Configuration
 

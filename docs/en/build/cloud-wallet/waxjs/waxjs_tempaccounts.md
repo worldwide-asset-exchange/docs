@@ -5,15 +5,15 @@ order: 5
 
 # WaxJS Temporary Accounts
 
-**MyCloudWallet** allows the creation of temporary accounts that do not require the payment of the account creation fee. However, these accounts do not exist on the blockchain until this payment is made. This system is very useful for applications to create user accounts without the users having to pay the account creation fee directly or have prior knowledge of cryptocurrency purchases, transactions, etc.
+**My Cloud Wallet** allows the creation of temporary accounts that do not require the payment of the account creation fee. However, these accounts do not exist on the blockchain until this payment is made. This system is very useful for applications to create user accounts without the users having to pay the account creation fee directly or have prior knowledge of cryptocurrency purchases, transactions, etc.
 
-Users can follow the normal account creation process, but when they reach the step of paying the creation fee, they can cancel and close the popup. From that moment on, the account will exist within the **MyCloudWallet** context, but not on the blockchain. This temporary account can be used to log in to applications that have **MyCloudWallet** integrated and allow the use of temporary accounts.
+Users can follow the normal account creation process, but when they reach the step of paying the creation fee, they can cancel and close the popup. From that moment on, the account will exist within the **My Cloud Wallet** context, but not on the blockchain. This temporary account can be used to log in to applications that have **My Cloud Wallet** integrated and allow the use of temporary accounts.
 
-It is recommended to read the previous tutorials to understand how the `waxjs.js` library works and how to integrate **MyCloudWallet** into an application.
+It is recommended to read the previous tutorials to understand how the `waxjs.js` library works and how to integrate **My Cloud Wallet** into an application.
 
 ## Configuring the App to Allow Temporary Accounts
 
-To allow temporary accounts in an application, the developer must configure **MyCloudWallet**'s login method to permit these accounts. This is done by adding the `returnTempAccounts` parameter with the value `true` in the login method configuration using the `waxjs.js` library.
+To allow temporary accounts in an application, the developer must configure **My Cloud Wallet**'s login method to permit these accounts. This is done by adding the `returnTempAccounts` parameter with the value `true` in the login method configuration using the `waxjs.js` library.
 
 ```javascript
   const wax = new waxjs.WaxJS({
@@ -44,10 +44,10 @@ Below is a simple example that illustrates the login process and verifies whethe
 The `login()` method of the `waxjs.js` library returns an object with the user's account information and a boolean `isTemp` that indicates whether the account is temporary or not, in addition to other data, as explained in previous tutorials.
 :::
 
-In our example, there is a "login" button that, when clicked, executes the code above. If there is no cached data of a previously created account or if no account has been created, the **MyCloudWallet** popup will open for the user to log in. If the user cancels the account creation fee payment, the account will be temporary.
+In our example, there is a "login" button that, when clicked, executes the code above. If there is no cached data of a previously created account or if no account has been created, the **My Cloud Wallet** popup will open for the user to log in. If the user cancels the account creation fee payment, the account will be temporary.
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/login_01.png)
-(Figure 1: MyCloudWallet popup to log in or create an account)
+(Figure 1: My Cloud Wallet popup to log in or create an account)
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/create_01.png)
 (Figure 2: Accept the terms and conditions)
@@ -55,10 +55,10 @@ In our example, there is a "login" button that, when clicked, executes the code 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/create_02.png)
 (Figure 3: Step before paying the account creation fee. At this point, the user can cancel the process)
 
-If the account already exists, the **MyCloudWallet** call will display a popup asking the user to log in, provided auto-login is not enabled.
+If the account already exists, the **My Cloud Wallet** call will display a popup asking the user to log in, provided auto-login is not enabled.
 
 ![Login](https://3dkrender.com/wp-content/uploads/2024/08/login_03.png)
-(Figure 4: MyCloudWallet popup to log in)
+(Figure 4: My Cloud Wallet popup to log in)
 
 ::: warning Warning
 This is only possible if the `returnTempAccounts` parameter was set to `true` when creating the `wax` object. Otherwise, the modal will always show the payment screen for the account creation fee (if it is a temporary account).
@@ -209,10 +209,4 @@ The transaction should be made to the `newuser.wax` account, with the temporary 
 ```
 
 - **appAccount**: Application account making the transaction.
-- **tempUserAccountName**: Name of the temporary account to be converted into
-
- a permanent account.
-
-## Conclusion
-
-**MyCloudWallet** allows the creation of temporary accounts that do not require the payment of the account creation fee. This system is very useful for applications to create user accounts without requiring the users to pay the account creation fee directly or have prior knowledge of cryptocurrency purchases, transactions, etc. However, it is important to remember that the temporary account does not exist on the blockchain until the fee is paid. Therefore, it is the application’s responsibility to pay the account creation fee on behalf of the user.
+- **tempUserAccountName**: Name of the temporary account to be converted into a permanent account.

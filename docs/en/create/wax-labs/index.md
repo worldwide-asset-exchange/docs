@@ -3,7 +3,7 @@ title: WAX Labs
 description: Learn about WAX Labs
 ---
 
-# {{ $frontmatter.title }}
+# WAX Labs
 
 WAX Labs exists to fund and support projects that drive the WAX ecosystem forward. From trailblazing platforms like Uncut and AtomicHub to innovative tools from new builders, WAX Labs provides the resources to move from vision to launch.
 

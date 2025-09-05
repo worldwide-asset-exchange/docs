@@ -2,7 +2,7 @@
 title: "WAX: Building Bridges, Breaking Barriers"
 ---
 
-# {{ $frontmatter.title }}
+# WAX: Building Bridges, Breaking Barriers
 
 WAX is redefining interoperability in blockchain, connecting chains and ecosystems to unlock seamless experiences for users. By enabling fluid transactions and cross-chain functionality, WAX empowers collectors, gamers, and creators to explore a diverse world of crypto and NFT assets.
 

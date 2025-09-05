@@ -111,13 +111,13 @@ export default [
         ],
       },
       {
-        text: 'MyCloudWallet',
+        text: 'My Cloud Wallet',
         link: '/es/build/cloud-wallet/',
         collapsed: true,
         sidebarDepth: 1,
         items: [
           {
-            text: 'wax.js',
+            text: 'waxjs',
             link: '/es/build/cloud-wallet/waxjs/',
             collapsed: true,
             sidebarDepth: 1,
@@ -279,6 +279,22 @@ export default [
     ],
   },
   {
+    text: 'Crear',
+    link: '/es/create/',
+    collapsed: false,
+    sidebarDepth: 1,
+    items: [
+      {
+        text: 'Awesome WAX',
+        link: '/es/create/awesome-wax/',
+      },
+      {
+        text: 'Ayúdanos a mejorar la documentación',
+        link: '/es/create/docs/',
+      },
+    ],
+  },
+  {
     text: 'Operar',
     collapsed: false,
     sidebarDepth: 2,
@@ -348,22 +364,6 @@ export default [
       {
         text: 'Servicios de API de WAX',
         link: '/es/operate/wax-api-services/',
-      },
-    ],
-  },
-  {
-    text: 'Crear',
-    link: '/es/create/',
-    collapsed: false,
-    sidebarDepth: 1,
-    items: [
-      {
-        text: 'Awesome WAX',
-        link: '/es/create/awesome-wax/',
-      },
-      {
-        text: 'Ayúdanos a mejorar la documentación',
-        link: '/es/create/docs/',
       },
     ],
   },

@@ -5,17 +5,13 @@ import footer from './components/footer'
 export default {
   label: 'Chinese',
   lang: 'cn-CN',
-  title: 'WAX Blockchain Documentation',
-  description: '开发者门户在WAX区块链',
-  editLink: {
-    pattern: 'https://github.com/worldwide-asset-exchange/docs/edit/main/docs/:path',
-    text: 'Improve this page on GitHub'
-  },
+  title: 'WAX 区块链文档',
+  description: 'WAX区块链文档中心——专为开发者、创作者及项目团队打造的资源枢纽，助您构建、启动并全面掌握WAX、NFT及生态系统的核心知识。',
   themeConfig: {
     nav,
     sidebar,
     footer: {
       navigation: footer
-    }  
+    }
   }
 }

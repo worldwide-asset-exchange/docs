@@ -2,7 +2,7 @@
 title: WaxJS Overview
 ---
 
-# wax.js
+# WaxJS
 
 **WaxJS** is a Javascript library that connects to My Cloud Wallet to sign in users and execute smart contract transactions, without requiring an external wallet (e.g., Scatter). Similar to the standard OAuth 2.0 flow, users simply allow your dApp to access their WAX Blockchain Account name. Once your dApp's been authorized, users can approve your smart contract transactions from their My Cloud Wallet Account.
 

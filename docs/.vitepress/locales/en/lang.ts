@@ -12,6 +12,6 @@ export default {
     sidebar,
     footer: {
       navigation: footer
-    }  
+    }
   }
 }

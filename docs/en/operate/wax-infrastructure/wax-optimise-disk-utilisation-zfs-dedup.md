@@ -30,7 +30,7 @@ In our use case the disk space consumption of the blocks and state-history folde
 
 ## Configuration
 
-This example will cover two WAX node instances on single baremetal server and similar to the  [Set Up a Solid WAX Mainnet Node Guide](https://developer.wax.io/operate/wax-infrastructure/wax-mainnet-node.html)  uses  **2 Discrete Disk Systems** on this server  in order to balance disk IO.
+This example will cover two WAX node instances on single baremetal server and similar to the  [Set Up a Solid WAX Mainnet Node Guide](https://docs.wax.io/operate/wax-infrastructure/wax-mainnet-node.html)  uses  **2 Discrete Disk Systems** on this server  in order to balance disk IO.
 
 **Disk 1** is the high speed enterprise grade SSD or NVMe and will be the OS disk used for the WAX software, all config and the state files. Each node instance is required to have it’s own state files, typically it’s easier to place all files for each node instance in a separate directory and run with different service TCP ports.
 

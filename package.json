@@ -1,7 +1,7 @@
 {
-  "name": "wax-developer",
-  "description": "WAX Blockchain Documentation - Resources for developers building on WAX",
-  "version": "0.3.0",
+  "name": "wax-docs",
+  "description": "WAX Blockchain Documentation - Your toolkit for Web3 development & NFT creation on the WAX Blockchain",
+  "version": "3.0.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"

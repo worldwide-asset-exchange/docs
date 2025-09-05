@@ -29,11 +29,34 @@ export default [
                     },
                 ],
             },
+            {
+                text: 'Getting Started',
+                link: '/learn/getting-started/',
+                collapsed: true,
+                items: [
+                    {text: 'Wallets', link: '/learn/getting-started/wallets'},
+                    {
+                        text: 'My Cloud Wallet',
+                        link: '/learn/getting-started/mycloudwallet/',
+                        collapsed: true,
+                        items: [
+                            {text: 'Claim Account', link: '/learn/getting-started/mycloudwallet/claim-account'},
+                            {text: 'Relink Account', link: '/learn/getting-started/mycloudwallet/relink-account'},
+                        ],
+
+                    },
+                ],
+            },
         ],
     },
     {
         text: 'Build',
         items: [
+            {
+                text: 'Core Concepts',
+                link: '/build/core-concepts/',
+                collapsed: true,
+            },
             {
                 text: 'dApp Development',
                 link: '/build/dapp-development/',
@@ -107,12 +130,12 @@ export default [
                 ],
             },
             {
-                text: 'MyCloudWallet',
+                text: 'My Cloud Wallet',
                 link: '/build/cloud-wallet/',
                 collapsed: true,
                 items: [
                     {
-                        text: 'wax.js',
+                        text: 'waxjs',
                         link: '/build/cloud-wallet/waxjs/',
                         collapsed: true,
                         items: [
@@ -297,6 +320,34 @@ export default [
         ],
     },
     {
+        text: 'Create',
+        items: [
+            {
+              text: 'WAX Labs',
+              link: '/create/wax-labs/',
+              collapsed: true,
+              items: [
+                  {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
+              ],
+            },
+            {
+              text: 'Community',
+              link: '/create/community',
+              collapsed: true,
+            },
+            {
+              text: 'Awesome WAX',
+              link: '/create/awesome-wax',
+              collapsed: true,
+            },
+            {
+              text: 'Documentation',
+              link: '/create/docs',
+              collapsed: true,
+            },
+        ],
+    },
+    {
         text: 'Operate',
         items: [
             {
@@ -367,34 +418,6 @@ export default [
                 text: 'WAX API Services',
                 link: '/operate/wax-api-services',
                 collapsed: true,
-            },
-        ],
-    },
-    {
-        text: 'Create',
-        items: [
-            {
-              text: 'WAX Labs',
-              link: '/create/wax-labs',
-              collapsed: true,
-              items: [
-                  {text: 'How to Submit a Proposal', link: '/create/wax-labs/how-to-submit'},
-              ],
-            },
-            {
-              text: 'Community',
-              link: '/create/community',
-              collapsed: true,
-            },
-            {
-              text: 'Awesome WAX',
-              link: '/create/awesome-wax',
-              collapsed: true,
-            },
-            {
-              text: 'Documentation',
-              link: '/create/docs',
-              collapsed: true,
             },
         ],
     },

@@ -1,4 +1,4 @@
-Whether it’s restarting an ungracefully shutdown node, spinning up a lite node or using the  [tmpfs memory strategy](https://developer.wax.io/operate/wax-infrastructure/wax-ram-disk-utilisation)  for better performance,  **nodeos snapshots**  are needed to return the chain state database to a valid point in time so the node may rejoin and sync with the network.
+Whether it’s restarting an ungracefully shutdown node, spinning up a lite node or using the  [tmpfs memory strategy](https://docs.wax.io/operate/wax-infrastructure/wax-ram-disk-utilisation)  for better performance,  **nodeos snapshots**  are needed to return the chain state database to a valid point in time so the node may rejoin and sync with the network.
 
 _The chain state database_ `shared_memory.bin` _is needed by_ `nodeos` _to run, it is a memory mapped file that contains the state associated with each block, including smart contract data, account details and deferred transactions._
 
@@ -33,7 +33,7 @@ plugin = eosio::producer_api_plugin
 
 Snapshots will be saved to the  `/snapshots`  folder - ensure there is sufficient disk space available.
 
-Please see  [How to Setup a Solid WAX Mainnet Node](https://developer.wax.io/operate/wax-infrastructure/wax-mainnet-node)  for a guide on WAX node build, config and operation.
+Please see  [How to Setup a Solid WAX Mainnet Node](https://docs.wax.io/operate/wax-infrastructure/wax-mainnet-node)  for a guide on WAX node build, config and operation.
 
 ## **Configure snapshot script**
 

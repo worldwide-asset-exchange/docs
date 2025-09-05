@@ -2,7 +2,7 @@
 title: What is the WAX blockchain?
 ---
 
-# {{ $frontmatter.title }}
+# What is the WAX blockchain?
 
 WAX is **The Everything Chain**, a leading layer-1 blockchain redefining digital commerce across games, collectibles, tokens, meme coins, and more. With eco-friendly technology, feeless transactions, and massive scalability, WAX is the ultimate hub for web3 innovation.
 

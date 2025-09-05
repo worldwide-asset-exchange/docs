@@ -2,7 +2,7 @@
 título: Resumen de WaxJS
 ---
 
-# wax.js
+# WaxJS
 
 **WaxJS** es una biblioteca de Javascript que se conecta a Cloud Wallet para iniciar sesión en usuarios y ejecutar transacciones de contratos inteligentes, sin necesidad de una billetera externa (por ejemplo, Scatter). De manera similar al flujo estándar OAuth 2.0, los usuarios simplemente permiten que tu dApp acceda a su nombre de Cuenta de Blockchain de WAX. Una vez que tu dApp ha sido autorizada, los usuarios pueden aprobar las transacciones de tu contrato inteligente desde su Cuenta de Cloud Wallet.
 

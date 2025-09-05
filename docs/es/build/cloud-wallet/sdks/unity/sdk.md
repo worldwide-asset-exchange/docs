@@ -152,8 +152,6 @@ Este endpoint debe seguir las siguientes pautas:
 -   El endpoint debe ser una solicitud POST.
 -   El endpoint debe devolver una cadena con el token de un solo uso.
 
-Para más información sobre el endpoint SUT, por favor consulta la documentación de [Generación de Token de Un Solo Uso](https://developer.wax.io/).
-
 > ⚠️ **Importante**: Si tu endpoint no sigue las pautas, el plugin no funcionará correctamente.
 
 ### Patrón Singleton

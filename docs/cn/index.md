@@ -4,7 +4,7 @@ title: WAX区块链文档
 permalink: /cn
 hero:
   name: WAX区块链文档
-  tagline: WAX区块链开发门户
+  tagline: 开发者与创作者的枢纽，助力构建、发布并全面掌握WAX、NFT及生态系统的核心知识。
   image: {
   src: /assets/images/front-cube.png,
   alt: WAX区块链文档
@@ -25,9 +25,9 @@ hero:
 
 features:
 - title: Our Mission
-  details: Empowering developers like you to build innovative applications, NFT marketplaces, decentralized finance (DeFi) tools, and community-driven experiences on the WAX blockchain.
+  details: Guiding developers and creators to build innovative dApps, NFT collections, GameFi projects, and DeFi solutions on the carbon-neutral WAX Blockchain.
 - title: Resources
-  details: From detailed documentation and tutorials to practical examples and best practices, we've got you covered.
+  details: Comprehensive guides, code examples, and best practices tailored for both technical developers and creative professionals entering the WAX ecosystem.
 - title: Explore
-  details: Explore the fundamental concepts of the WAX blockchain, learn about its consensus mechanism, understand the role of the WAXP token, and discover how to leverage WAX's governance and interoperability features.
+  details: Navigate WAX's powerful infrastructure, learn its unique consensus model, tokenomics, and creator-friendly tools designed to bring your Web3 vision to life.
 ---

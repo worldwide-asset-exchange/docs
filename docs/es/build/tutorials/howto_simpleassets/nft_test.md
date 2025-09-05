@@ -44,7 +44,7 @@ La consola imprime tus NFTs, incluyendo el **id** único del activo:
       "author": "waxnftowner1",
       "category": "sticker",
       "idata": "{\"name\": \"Colmena de Desarrolladores de WAX\", \"desc\": \"Pegatina de la Colmena de Desarrolladores de WAX\" }",
-      "mdata": "{\"color\": \"negro\", \"img\": \"https://developer.wax.io/images/wax_sticker.png\" }",
+      "mdata": "{\"color\": \"negro\", \"img\": \"https://docs.wax.io/images/wax_sticker.png\" }",
       "container": [],
       "containerf": []
     }
