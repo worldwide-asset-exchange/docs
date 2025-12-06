@@ -18,7 +18,7 @@ hero:
     link: /build/core-concepts/
   - theme: alt
     text: Create
-    link: /create/awesome-wax/
+    link: /create/community/
   - theme: alt
     text: Operate
     link: /operate/wax-infrastructure/

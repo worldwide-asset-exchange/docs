@@ -21,7 +21,7 @@ hero:
   #  link: /operate/wax-infrastructure/
   #- theme: alt
   #  text: 创建
-  #  link: /create/awesome-wax/
+  #  link: /create/community/
 
 features:
 - title: Our Mission
