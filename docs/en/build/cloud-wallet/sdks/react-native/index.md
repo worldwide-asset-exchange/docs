@@ -4,42 +4,12 @@ title: React Native SDK
 description: React Native SDK
 ---
 
-# React Native SDK
-## Overview of My Cloud Wallet SDK
+::: danger IMPORTANT
+**My Cloud Wallet** React Native and Unity SDKs are no longer supported.
+:::
 
-The My Cloud Wallet React Native SDK enables seamless integration between decentralized applications (dApps) and the My Cloud Wallet mobile app. This SDK provides developers with a robust solution for implementing blockchain transactions in their React Native applications, offering two flexible connection modes:
-   1. **WebSocket Mode**: Enables cross-device communication between your dApp and the My Cloud Wallet app. This mode is perfect for scenarios where users want to sign transactions using their My Cloud Wallet app on a different device than the one running the dApp.
-   2. **Direct Mode**: Provides direct integration when both the dApp and My Cloud Wallet app are installed on the same device, offering a smooth, native-like experience through deep linking.
+We hope to bring back these SDKs in the future. If you are interested in helping us bring them back, please reach out to us on Discord or Telegram.
 
-The SDK abstracts the complexity of blockchain interactions, allowing developers to focus on building great user experiences while ensuring secure transaction signing and user authentication.
+---
 
-## Key Features
-
-### Connection Flexibility
-
-Multiple Connection Modes
-
-- WebSocket-based cross-device communication
-- Direct Direct integration for same-device scenarios
-
-### Transaction Management
-**1. Secure Transaction Signing**
-  - End-to-end encrypted communication
-  - Transaction Status Tracking
-
-**2. Authentication & Security**
-  - Secure User Authentication
-  - Encrypted Data Transfer
-
-**3. Developer Experience**
-  - Simple Integration
-    - Minimal configuration required
-    - Comprehensive TypeScript support
-  - Event System
-    - Real-time connection status updates
-    - Transaction event notifications
-
-**4. Cross-Platform Support**
-   - iOS and Android Compatibility
-   - Consistent API Across Platforms
-   - Native Performance
+Please check out the [WharfKit SDK](/build/developing-apps/sdks/wharfkit/) to see if it can help you with your project.

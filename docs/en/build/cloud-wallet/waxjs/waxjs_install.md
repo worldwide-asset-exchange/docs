@@ -1,7 +1,10 @@
 ---
 title: Install WaxJS
-order: 1
 ---
+
+::: warning
+WaxJS is no longer supported. Please use [WharfKit](/build/developing-apps/sdks/wharfkit/) instead.
+:::
 
 # Install WaxJS
 
@@ -21,7 +24,7 @@ yarn add @waxio/waxjs
 
 ## Download Code and Sample Project
 
-The <a href="https://github.com/worldwide-asset-exchange/waxjs" target="_blank">WaxJS Source Code Repository</a> includes the <span class="codeSample">waxjs.js</span> minified bundle along with a sample project. 
+The <a href="https://github.com/worldwide-asset-exchange/waxjs" target="_blank">WaxJS Source Code Repository</a> includes the <span class="codeSample">waxjs.js</span> minified bundle along with a sample project.
 
 To download the **WaxJS** repository, paste the following into the command line:
 
@@ -35,29 +38,24 @@ If you'd like to build the entire project:
 
 ### Generate docs
 
-``` 
+```
 npm run docs
 ```
 
 ### Run tests
 
-``` 
-npm run test 
+```
+npm run test
 ```
 
 ### Build lib
 
-``` 
+```
 npm run build
 ```
 
-### Build for web 
+### Build for web
 
-``` 
+```
 npm run build-web
 ```
-
-
-
-
-

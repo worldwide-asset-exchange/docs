@@ -44,10 +44,6 @@ export default [
                                 text: 'Claim Account',
                                 link: '/learn/getting-started/mycloudwallet/claim-account',
                             },
-                            {
-                                text: 'Relink Account',
-                                link: '/learn/getting-started/mycloudwallet/relink-account',
-                            },
                         ],
                     },
                 ],
@@ -209,113 +205,80 @@ export default [
                 ],
             },
             {
-                text: 'My Cloud Wallet',
-                link: '/build/cloud-wallet/',
+                text: 'Developing Apps',
                 collapsed: true,
                 items: [
                     {
-                        text: 'waxjs',
-                        link: '/build/cloud-wallet/waxjs/',
+                        text: 'SDKs',
+                        link: '/build/developing-apps/sdks/',
                         collapsed: true,
                         items: [
                             {
-                                text: 'WaxJS Quickstart',
-                                link: '/build/cloud-wallet/waxjs/waxjs_qstart',
+                                text: 'WharfKit',
+                                link: '/build/developing-apps/sdks/wharfkit/',
                             },
                             {
-                                text: 'Install WaxJS',
-                                link: '/build/cloud-wallet/waxjs/waxjs_install',
-                            },
-                            {
-                                text: 'Use WaxJS',
-                                link: '/build/cloud-wallet/waxjs/waxjs_use',
-                            },
-                            {
-                                text: 'WaxJS Demo',
-                                link: '/build/cloud-wallet/waxjs/waxjs_demo',
-                            },
-                            {
-                                text: 'Temp Accounts',
-                                link: '/build/cloud-wallet/waxjs/waxjs_tempaccounts',
+                                text: 'Unity',
+                                link: '/build/developing-apps/sdks/unity/',
                             },
                         ],
                     },
-                    {
-                        text: 'boost.wax',
-                        link: '/build/cloud-wallet/boost-wax',
-                        collapsed: true,
-                    },
-                    {
-                        text: 'WalletConnect',
-                        link: '/build/cloud-wallet/wallet-connect/',
-                        collapsed: true,
-                        items: [
-                            {
-                                text: 'Setting Up WalletConnect',
-                                link: '/build/cloud-wallet/wallet-connect/setting-up-walletconnect',
-                            },
-                            {
-                                text: 'Developer Guide',
-                                link: '/build/cloud-wallet/wallet-connect/walletconnect-developer-guide',
-                            },
-                            {
-                                text: 'Integration Guide',
-                                link: '/build/cloud-wallet/wallet-connect/walletconnect-integration-guide',
-                            },
-                        ],
-                    },
+                ],
+            },
+            {
+                text: 'My Cloud Wallet',
+                collapsed: true,
+                items: [
                     {
                         text: 'SDKs',
                         link: '/build/cloud-wallet/sdks/',
                         collapsed: true,
                         items: [
                             {
-                                text: 'React Native',
-                                link: '/build/cloud-wallet/sdks/react-native/',
+                                text: 'WharfKit',
+                                link: '/build/developing-apps/sdks/wharfkit/',
+                            },
+                            {
+                                text: 'Unity',
+                                link: '/build/developing-apps/sdks/unity/',
+                            },
+                            {
+                                text: 'WaxJS (Deprecated)',
+                                link: '/build/cloud-wallet/waxjs/',
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Repository',
-                                        link: '/build/cloud-wallet/sdks/react-native/repository',
+                                        text: 'WaxJS Quickstart',
+                                        link: '/build/cloud-wallet/waxjs/waxjs_qstart',
                                     },
                                     {
-                                        text: 'dApp Backend Requirements',
-                                        link: '/build/cloud-wallet/sdks/react-native/dapp-backend',
+                                        text: 'Install WaxJS',
+                                        link: '/build/cloud-wallet/waxjs/waxjs_install',
                                     },
                                     {
-                                        text: 'Installation & Usage',
-                                        link: '/build/cloud-wallet/sdks/react-native/sdk',
+                                        text: 'Use WaxJS',
+                                        link: '/build/cloud-wallet/waxjs/waxjs_use',
                                     },
                                     {
-                                        text: 'Sample Mobile App',
-                                        link: '/build/cloud-wallet/sdks/react-native/sample-dapp',
+                                        text: 'WaxJS Demo',
+                                        link: '/build/cloud-wallet/waxjs/waxjs_demo',
+                                    },
+                                    {
+                                        text: 'Temp Accounts (Retired)',
+                                        link: '/build/cloud-wallet/waxjs/waxjs_tempaccounts',
                                     },
                                 ],
                             },
                             {
-                                text: 'Unity',
-                                link: '/build/cloud-wallet/sdks/unity/',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Repository',
-                                        link: '/build/cloud-wallet/sdks/unity/repository',
-                                    },
-                                    {
-                                        text: 'dApp Backend Requirements',
-                                        link: '/build/cloud-wallet/sdks/unity/dapp-backend',
-                                    },
-                                    {
-                                        text: 'Installation & Usage',
-                                        link: '/build/cloud-wallet/sdks/unity/sdk',
-                                    },
-                                    {
-                                        text: 'Sample Unity App',
-                                        link: '/build/cloud-wallet/sdks/unity/sample-dapp',
-                                    },
-                                ],
+                                text: 'React Native (Retired)',
+                                link: '/build/cloud-wallet/sdks/react-native/',
                             },
                         ],
+                    },
+                    {
+                        text: 'boost.wax (Retired)',
+                        link: '/build/cloud-wallet/boost-wax',
+                        collapsed: true,
                     },
                 ],
             },

@@ -2,14 +2,19 @@
 title: WaxJS Overview
 ---
 
+::: warning
+WaxJS is no longer supported. Please use [WharfKit](/build/developing-apps/sdks/wharfkit/) instead.
+:::
+
 # WaxJS
 
 **WaxJS** is a Javascript library that connects to My Cloud Wallet to sign in users and execute smart contract transactions, without requiring an external wallet (e.g., Scatter). Similar to the standard OAuth 2.0 flow, users simply allow your dApp to access their WAX Blockchain Account name. Once your dApp's been authorized, users can approve your smart contract transactions from their My Cloud Wallet Account.
 
 To get started, you simply need to include our [WaxJS](https://github.com/worldwide-asset-exchange/waxjs) library and make a few simple calls from your client. If you'd like to jump right to the code and run our live WaxJS example, refer to [WaxJS Demo](waxjs_demo.md).
+
 ## How it Works
 
-**WaxJS** uses My Cloud Wallet and the [EOSIO/eosjs](https://github.com/EOSIO/eosjs)  Javascript API to provide an easy-to-use interface between your users and the WAX Blockchain.
+**WaxJS** uses My Cloud Wallet and the eosjs Javascript API to provide an easy-to-use interface between your users and the WAX Blockchain.
 
 To use **WaxJS**, you simply need to:
 
