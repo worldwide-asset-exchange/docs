@@ -1,40 +1,26 @@
 ---
-layout: doc
-title: SDKs
+title: My Cloud Wallet SDKs
 description: Available SDKs for My Cloud Wallet
 ---
 
-# Available SDKs
+# My Cloud Wallet SDKs
 
-My Cloud Wallet provides SDKs for various platforms to help developers integrate blockchain functionality into their applications. Below is a list of available SDKs:
+## WharfKit
 
-## Mobile SDKs
+Wharf is a JavaScript SDK Suite that provides a fast and flexible way to build web3 projects on WAX. It supports My Cloud Wallet along with other wallets.
 
-| SDK | Description | Documentation |
-|-----|-------------|---------------|
-| [React Native SDK](/build/cloud-wallet/sdks/react-native/) | Enables seamless integration between React Native applications and My Cloud Wallet mobile app. Provides WebSocket and Direct connection modes. | [View Documentation](/build/cloud-wallet/sdks/react-native/) |
-| [Unity SDK](/build/cloud-wallet/sdks/unity/) | Enables Unity applications to interact with My Cloud Wallet for authentication, transaction signing, and wallet management. Supports Android, iOS, and desktop platforms. | [View Documentation](/build/cloud-wallet/sdks/unity/) |
+You can find the full documentation for WharfKit on the dedicated [WharfKit documentation](https://wharfkit.com/guides/session-kit/getting-started-web-app) site.
 
-## Features Comparison
+## Unity
 
-| Feature | React Native SDK | Unity SDK |
-|---------|-----------------|-----------|
-| Cross-Platform Support | ✅ iOS, Android | ✅ iOS, Android, Desktop |
-| WebSocket Mode | ✅ | ✅ |
-| Direct Mode | ✅ | ✅ (*) |
-| QR Code Support | ✅ | ✅ |
-| Transaction Signing | ✅ | ✅ |
-| User Authentication | ✅ | ✅ |
-| Secure Communication | ✅ | ✅ |
-| Automatic Platform Configuration | ✅ | ✅ |
+The WAX Unity SDK allows you to integrate blockchain functionality into your Unity applications.
 
-> (*) ⚠️ Note: WebGL is now supported but only for remote signing.
+You can find the full documentation for the WAX Unity SDK on the dedicated [WAX Unity Web3 Suite](https://liquiidio.gitbook.io/unity-plugin-suite/sources/wax_cloud_wallet) site.
 
-## Getting Started
+## React Native
 
-Choose the SDK that best fits your development needs:
+::: danger IMPORTANT
+**My Cloud Wallet** React Native and Unity Mobile SDKs are no longer supported.
+:::
 
-- For React Native applications, use the [React Native SDK](/build/cloud-wallet/sdks/react-native/)
-- For Unity applications, use the [Unity SDK](/build/cloud-wallet/sdks/unity/)
-
-Each SDK comes with comprehensive documentation, example implementations, and support resources to help you get started quickly.
+We hope to bring back these SDKs in the future. If you are interested in helping us bring them back, please reach out to us on Discord or Telegram.

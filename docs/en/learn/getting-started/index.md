@@ -84,8 +84,6 @@ Create decentralized applications on WAX:
 
 Integrate My Cloud Wallet, Anchor and other wallets into your applications:
 
--   [My Cloud Wallet SDKs](/build/cloud-wallet/sdks/) - React Native and Unity SDKs for My Cloud Wallet Mobile
--   [Wallet Connect](/build/cloud-wallet/wallet-connect/) - Connect wallets to your dApp
 -   [WharfKit](/build/tutorials/wharfkit/) - The New Blockchain Accessibility Standard
 
 ## Learning Resources

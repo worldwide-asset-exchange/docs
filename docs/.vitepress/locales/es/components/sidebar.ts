@@ -180,7 +180,6 @@ export default [
             },
             {
                 text: 'My Cloud Wallet',
-                link: '/es/build/cloud-wallet/',
                 collapsed: true,
                 items: [
                     {
@@ -207,41 +206,6 @@ export default [
                             {
                                 text: 'Cuentas Temporales',
                                 link: '/es/build/cloud-wallet/waxjs/waxjs_tempaccounts',
-                            },
-                        ],
-                    },
-                    {
-                        text: 'boost.wax',
-                        link: '/es/build/cloud-wallet/boost-wax',
-                        collapsed: true,
-                    },
-                    {
-                        text: 'SDKs',
-                        link: '/es/build/cloud-wallet/sdks/react-native',
-                        collapsed: true,
-                        items: [
-                            {
-                                text: 'React Native',
-                                link: '/es/build/cloud-wallet/sdks/react-native/',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'Repositorio',
-                                        link: '/es/build/cloud-wallet/sdks/react-native/repository',
-                                    },
-                                    {
-                                        text: 'Requisitos del Backend de la dApp',
-                                        link: '/es/build/cloud-wallet/sdks/react-native/dapp-backend',
-                                    },
-                                    {
-                                        text: 'Instalación y Uso',
-                                        link: '/es/build/cloud-wallet/sdks/react-native/sdk',
-                                    },
-                                    {
-                                        text: 'dApp de ejemplo',
-                                        link: '/es/build/cloud-wallet/sdks/react-native/sample-dapp',
-                                    },
-                                ],
                             },
                         ],
                     },
