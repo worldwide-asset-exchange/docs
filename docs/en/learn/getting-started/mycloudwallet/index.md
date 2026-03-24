@@ -8,7 +8,7 @@ description: Learn about My Cloud Wallet, including passkeys, wallet migration, 
 My Cloud Wallet is WAX's user-friendly wallet for signing in, managing digital assets, and using WAX-based apps. The latest version uses passkeys for sign-in and supports recovery with a 12-word mnemonic phrase.
 
 ::: info NOTE
-Cloud Wallet Mobile is currently no longer available.
+Cloud Wallet Mobile is no longer available.
 :::
 
 ## What is My Cloud Wallet?
@@ -43,10 +43,10 @@ If you used the legacy wallet, move to the new passkey-based wallet with the mig
 
 ### Account Management
 
-My Cloud Wallet lets you take full control, claiming your account with your own keys:
+Legacy account-claiming options are also available for users who want direct control of older accounts:
 
-- **[Soft Claim](/learn/getting-started/mycloudwallet/claim-account#soft-claim)**: Retain some control while keeping My Cloud Wallet integration
-- **[Hard Claim](/learn/getting-started/mycloudwallet/claim-account#hard-claim)**: Take full control of your account keys
+- **[Soft Claim](/learn/getting-started/mycloudwallet/claim-account#soft-claim)**: Keep My Cloud Wallet compatibility while moving an older account toward direct key control
+- **[Hard Claim](/learn/getting-started/mycloudwallet/claim-account#hard-claim)**: Fully take over an older account outside My Cloud Wallet custody
 
 ## Why Choose My Cloud Wallet?
 

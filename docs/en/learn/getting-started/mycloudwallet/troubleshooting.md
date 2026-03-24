@@ -24,11 +24,9 @@ Try this:
 If the process did not finish:
 
 1. Sign back in to the legacy wallet at [legacy.mycloudwallet.com](https://legacy.mycloudwallet.com)
-2. Open the migration banner again
-3. Resume the migration flow
-4. Re-approve any login or transaction prompts that appear
-
-Your passkey and public key should update automatically when you restart the process.
+2. Open the **Use the New Cloud Wallet** migration flow again
+3. Resume the migration steps
+4. Re-approve any legacy-wallet prompts that appear
 
 ### I do not know whether my account already migrated
 
@@ -58,9 +56,9 @@ If another password manager appears first, disable it temporarily and retry.
 
 ### I lost access to the device that holds my passkey
 
-Use your 12-word mnemonic phrase to recover access and create a new passkey on another device.
+If you still have access on another trusted device, use **Settings > Devices > Add Device**.
 
-This same recovery flow can also be used to add a second device before you lose access to the first one.
+If you no longer have access to any existing passkey device, use your 12-word mnemonic phrase to add a new passkey with the recovery-credentials flow.
 
 ## Recovery Issues
 
@@ -68,7 +66,7 @@ This same recovery flow can also be used to add a second device before you lose 
 
 The mnemonic phrase is the wallet's main recovery method. Without it, device recovery may not be possible.
 
-If you still have access to the wallet on an existing device, sign in there and review your recovery options before changing devices.
+If you still have access to the wallet on an existing device, sign in there and export the mnemonic from **Settings > Account Security > Export Mnemonic** before changing devices.
 
 ### I entered the mnemonic words and recovery is not working
 
@@ -126,12 +124,12 @@ The Vault only stays active while its session remains open and unlocked. If the 
 
 ### I do not want to use the Vault
 
-You can disable the Vault in wallet settings and return to confirming each transaction individually.
+You cannot disable Vault-based signing as it is required for operation of the wallet.
 
 ## Security Reminders
 
 - Store your mnemonic phrase offline
-- Back up any generated Owner and Active keys if you are shown them during migration
+- Treat the mnemonic phrase as your main recovery secret
 - Do not share your passkey, mnemonic phrase, or private keys
 - Add a second recovery-ready device if you want stronger account resilience
 
