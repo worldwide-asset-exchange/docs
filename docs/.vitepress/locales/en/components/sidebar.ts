@@ -41,6 +41,14 @@ export default [
                         collapsed: true,
                         items: [
                             {
+                                text: 'Migration Guide',
+                                link: '/learn/getting-started/mycloudwallet/migration',
+                            },
+                            {
+                                text: 'Troubleshooting',
+                                link: '/learn/getting-started/mycloudwallet/troubleshooting',
+                            },
+                            {
                                 text: 'Claim Account',
                                 link: '/learn/getting-started/mycloudwallet/claim-account',
                             },
