@@ -7,6 +7,83 @@ description: Troubleshooting for My Cloud Wallet migration, passkeys, recovery, 
 
 This guide covers common issues with migration, passkeys, account recovery, and the Vault in My Cloud Wallet.
 
+[[toc]]
+
+## My Cloud Wallet Requirements
+
+To complete the migration to the new passkey-based My Cloud Wallet we officially support the following:
+
+<table>
+  <thead>
+    <tr>
+      <th style="white-space: nowrap;">Device</th>
+      <th>Browser</th>
+      <th>Passkey store or manager</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="white-space: nowrap;">Windows 10+</td>
+      <td>Chrome</td>
+      <td>Google Password Manager</td>
+    </tr>
+    <tr>
+      <td>Chrome, Brave, Edge, Firefox</td>
+      <td>1Password</td>
+    </tr>
+    <tr>
+      <td rowspan="3" style="white-space: nowrap;">macOS 15+</td>
+      <td>Chrome</td>
+      <td>Google Password Manager</td>
+    </tr>
+    <tr>
+      <td>Chrome, Brave, Safari</td>
+      <td>1Password</td>
+    </tr>
+    <tr>
+      <td>Chrome, Edge, Safari</td>
+      <td>iCloud Keychain</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="white-space: nowrap;">Linux</td>
+      <td>Chrome or another compatible desktop browser</td>
+      <td>Google Password Manager or iCloud Keychain on mobile via QR setup</td>
+    </tr>
+    <tr>
+      <td rowspan="1" style="white-space: nowrap;">Android 15+</td>
+      <td>Chrome, Brave</td>
+      <td>Google Password Manager</td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="white-space: nowrap;">iOS 18+</td>
+      <td>Chrome</td>
+      <td>Google Password Manager</td>
+    </tr>
+    <tr>
+      <td>Safari</td>
+      <td>iCloud Keychain</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+- Windows Hello does not currently support PRF passkeys, though your browser or device may still invoke it during setup.
+- Hardware keys such as YubiKey are not supported but are planned for future releases.
+- Bitwarden is not currently supported.
+- 1Password is supported on desktop but does not seem to work on mobile.
+- Other password managers such as Dashlane, Proton Pass, NordPass, and LastPass are untested.
+
+---
+
+<div style="font-size: 0.65rem; line-height: 1.3;">
+  <div>- <em>Chrome / Edge desktop version 128+</em></div>
+  <div>- <em>Chrome Android version 130+</em></div>
+  <div>- <em>Safari version 16+</em></div>
+  <div>- <em>Firefox version 128+</em></div>
+  <div>- <em>Brave version 1.69+</em></div>
+</div>
+
 ## Migration Problems
 
 ### I see an error when I start migration
@@ -24,7 +101,7 @@ Try this:
 If the process did not finish:
 
 1. Sign back in to the legacy wallet at [legacy.mycloudwallet.com](https://legacy.mycloudwallet.com)
-2. Open the **Use the New Cloud Wallet** migration flow again
+2. Open the **Use the New My Cloud Wallet** migration flow again
 3. Resume the migration steps
 4. Re-approve any legacy-wallet prompts that appear
 
@@ -40,10 +117,16 @@ This is often caused by device, browser, or password manager conflicts.
 
 Try this:
 
-- Use a current version of Chrome, Edge, Safari, or another passkey-compatible browser
+- Use a current version of Chrome, Safari, or another compatible browser for your operating system (see above for supported browsers)
 - Disable competing password managers temporarily
 - Retry passkey setup on the current device
 - If needed, use the QR code option and create the passkey on your phone
+
+If you are using **Chrome + Google Password Manager**, also check the following:
+
+- You are signed in to your Chrome browser profile
+- Password sync is enabled for that profile in `chrome://settings/syncSetup`
+- **Offer to save passwords and passkeys** is enabled in `chrome://password-manager/settings`
 
 ### The wrong password manager appears
 
@@ -58,7 +141,7 @@ If another password manager appears first, disable it temporarily and retry.
 
 If you still have access on another trusted device, use **Settings > Devices > Add Device**.
 
-If you no longer have access to any existing passkey device, use your 12-word mnemonic phrase to add a new passkey with the recovery-credentials flow.
+If you no longer have access to any existing passkey device, use your 12-word mnemonic phrase to add a new passkey, use **Settings > Devices > Add device using mnemonic**.
 
 ## Recovery Issues
 
@@ -88,8 +171,8 @@ Check that:
 - You copied the complete private key
 - There are no leading or trailing spaces
 - You are using the exported key from the legacy wallet
-
-If the key still fails, return to the legacy wallet and verify the exported key before retrying the import.
+- You are trying to import a public key, not a private key.
+  Private keys start with `5` or `PVT_`, public keys start with `EOS` or `PUB_`.
 
 ### I imported a private key and saw multiple accounts
 
@@ -124,11 +207,12 @@ The Vault only stays active while its session remains open and unlocked. If the 
 
 ### I do not want to use the Vault
 
-You cannot disable Vault-based signing as it is required for operation of the wallet.
+You can disable the Vault in **Settings > Account Security**. Doing so will require you to confirm your passkeys for each transaction.
 
 ## Security Reminders
 
 - Store your mnemonic phrase offline
+- Two copies stored in different locations is never a bad idea
 - Treat the mnemonic phrase as your main recovery secret
 - Do not share your passkey, mnemonic phrase, or private keys
 - Add a second recovery-ready device if you want stronger account resilience

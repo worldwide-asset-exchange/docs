@@ -1,11 +1,19 @@
 ---
 title: Migrate to the New My Cloud Wallet
-description: Step-by-step guide for migrating from the legacy WAX Cloud Wallet to the new passkey-based My Cloud Wallet.
+description: Step-by-step guide for migrating from the legacy My Cloud Wallet to the new passkey-based My Cloud Wallet.
 ---
 
 # Migrate to the New My Cloud Wallet
 
-This guide covers how to move from the legacy WAX Cloud Wallet to the new My Cloud Wallet experience that uses passkeys for sign-in and a 12-word mnemonic phrase for recovery.
+This guide covers how to move from the legacy My Cloud Wallet to the new My Cloud Wallet experience that uses passkeys for sign-in and a 12-word mnemonic phrase for recovery.
+
+[[toc]]
+
+## My Cloud Wallet Requirements
+
+To complete the migration to the new passkey-based My Cloud Wallet you must use a browser and device that are capable of storing WebAuthn PRF passkeys.
+
+For a list of supported devices, browsers, and password managers, see [My Cloud Wallet Requirements](/learn/getting-started/mycloudwallet/troubleshooting#my-cloud-wallet-requirements).
 
 ## Before You Start
 
@@ -23,12 +31,12 @@ Go to [mycloudwallet.com](https://www.mycloudwallet.com) and select **Migrate yo
 
 After signing in to the legacy wallet, you will see two main options:
 
-- **Use the New Cloud Wallet**: The standard migration path and the recommended choice for most users
+- **Use the New My Cloud Wallet**: The standard migration path and the recommended choice for most users
 - **Take full control of your account**: Advanced claiming options for users who want direct key control in the legacy system
 
-For most users, choose **Use the New Cloud Wallet**.
+For most users, choose **Use the New My Cloud Wallet**.
 
-![Legacy wallet screen showing the recommended Use the New Cloud Wallet option](/assets/images/wax-cloud-wallet/mycloudwallet/migration/legacy-continue-options.png)
+![Legacy wallet screen showing the recommended Use the New My Cloud Wallet option](/assets/images/wax-cloud-wallet/mycloudwallet/migration/legacy-continue-options.png)
 
 ## Step 1: Create Your Passkey
 
