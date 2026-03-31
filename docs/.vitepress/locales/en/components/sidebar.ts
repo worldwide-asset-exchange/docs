@@ -54,6 +54,17 @@ export default [
                             },
                         ],
                     },
+                    {
+                        text: 'Anchor',
+                        link: '/learn/getting-started/anchor/',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: 'Importing Accounts',
+                                link: '/learn/getting-started/anchor/importing-accounts',
+                            },
+                        ],
+                    },
                 ],
             },
             {
