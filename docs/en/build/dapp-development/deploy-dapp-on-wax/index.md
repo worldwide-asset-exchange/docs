@@ -62,4 +62,8 @@ No matter which deployment option you choose, you'll need to:
 - Create a self-managed WAX Blockchain Account.
 - Make sure you have enough WAX staked in your account to allocate resources.
 
-<ChildTableOfContents :max="2" title="More inside this section" />
+## Deployment Paths
+
+- [WAX-CDT Deploy](/build/dapp-development/deploy-dapp-on-wax/deploy_source)
+- [Docker Deploy](/build/dapp-development/deploy-dapp-on-wax/deploy_docker)
+- [Deploy an EOS dApp on WAX](/build/dapp-development/deploy-dapp-on-wax/convert_eos)

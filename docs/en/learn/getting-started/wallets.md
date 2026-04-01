@@ -2,57 +2,52 @@
 title: Wallets
 ---
 
-# WAX Blockchain Wallets
+# WAX Wallets
 
-This guide provides a brief overview of the wallet options available for interacting with the WAX Blockchain.
+WAX accounts are controlled through wallets. The right wallet depends on how you plan to use the chain.
 
-## My Cloud Wallet
+## Main Wallet Types
 
-My Cloud Wallet is a user-friendly web-based wallet that allows users to:
+### My Cloud Wallet
 
-- Create a WAX account using social logins (Google, Apple)
-- Store and manage WAX tokens and NFTs
-- Interact with WAX-based dApps
-- Trade on WAX NFT marketplaces
+My Cloud Wallet is the easiest place to start if you want a guided, consumer-friendly experience for signing in, managing assets, and using WAX apps in a browser.
 
-My Cloud Wallet is perfect for newcomers to blockchain as it abstracts away the complexity of key management.
+- Best for: new users, collectors, and players
+- Strengths: simple onboarding, passkey-based access, native WAX experience
+- Read more: [My Cloud Wallet](/learn/getting-started/mycloudwallet/)
 
-<ActionHighlight label="Create your Cloud Wallet account" href="https://www.mycloudwallet.com/register" />
+### Anchor
 
-## Anchor
+Anchor is a stronger fit for users who want direct control, desktop tooling, and power-user wallet features.
 
-Anchor is a desktop wallet application that supports multiple blockchains, including WAX. Key features include:
+- Best for: advanced users, creators, and developers
+- Strengths: account management, desktop controls, hardware-wallet support
+- Read more: [Anchor](/learn/getting-started/anchor/)
 
-- Secure key management
-- Support for multiple WAX accounts
-- Hardware wallet support (Ledger)
+### Wombat
 
-Anchor provides a balance between security and usability, making it suitable for both regular users and developers.
+Wombat is a multi-chain wallet commonly used with WAX games and NFT apps.
 
-<ActionHighlight label="Get Anchor for Desktop or Mobile" href="https://www.greymass.com/anchor" />
+- Best for: users who want a mobile- and extension-friendly experience
+- Strengths: approachable UX, app-friendly flow, NFT support
 
-## Wombat
+### cleos
 
-Wombat is a multi-chain wallet available as a browser extension and mobile app that supports WAX. It offers:
+`cleos` is the command-line client used for development, automation, and node operations.
 
-- Simple account creation
-- User-friendly interface
-- dApp browser
-- NFT management
-- Cross-chain functionality
+- Best for: developers and operators
+- Strengths: scripting, contract deployment, account and permission management
+- Read more: [cleos](/operate/leap/cleos)
 
-Wombat is designed for ease of use while maintaining security, making it a good option for daily blockchain interactions.
+## Before You Choose
 
-<ActionHighlight label="Get Wombat for Desktop, Mobile, or Browser" href="https://www.wombat.app/the-app" />
+Consider these questions first:
 
-## Cleos
+- Do you want the simplest path or the most control?
+- Are you using WAX mostly in a browser, on mobile, or from a desktop workstation?
+- Do you need developer and signing tools, or just day-to-day account access?
+- Do you need recovery options that fit your own security practices?
 
-Cleos is a command-line tool that interfaces with the WAX Blockchain. It's part of the Antelope software suite and is primarily used by developers for:
+Next step:
 
-- Creating and managing accounts
-- Deploying and interacting with smart contracts
-- Managing keys and permissions
-
-Cleos is ideal for developers who prefer working in terminal environments or need to automate blockchain interactions.
-
-<ActionHighlight label="Learn more about cleos" href="/build/tools/blockchain_tools#cleos" />
+- [Choosing a Wallet](/learn/getting-started/choosing-a-wallet)

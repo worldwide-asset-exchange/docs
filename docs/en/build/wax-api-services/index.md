@@ -3,31 +3,60 @@ title: WAX API Services
 order: 4
 ---
 
-## Free API Service Providers
+# WAX API Services
 
-There are public APIs provided by different validator teams but often times they are heavily rate-limited etc. You can find the list of public APIs here:
+This section is for service discovery. If you need architecture guidance, start with [Endpoints](/build/endpoints/).
 
-[EOSNATION API List](https://validate.eosnation.io/wax/reports/endpoints.html)
+## Free / Public API Discovery
 
-## Paid API Service Providers
+Public API availability changes over time. For current endpoint discovery, use:
 
-Paid service providers offer much more reliability, flexibility and better rate-limits with SLAs for your dapps and removes the hassle to setup & maintain the infrastructure, you can find different service providers and their offerings below:
+- [EOS Nation endpoint reports](https://validate.eosnation.io/wax/reports/endpoints.html)
+- [Validationcore endpoint reports](https://wax.validationcore.io/reports/nodes/api)
 
-| Provider Name | Website                                 | Offerings                  | Offerings Type                               | Contact Information                                                  |
-| ------------- | --------------------------------------- | -------------------------- | -------------------------------------------- | -------------------------------------------------------------------- |
-| WAX Galaxy    | [https://waxgalaxy.io/tools/api-services](https://waxgalaxy.io/tools/api-services) | FAH, PAH, SH, AA           | Dedicated Servers, API Metered Subscriptions | contact@waxgalaxy.io, Telegram ID: @sukeshtedla                      |
-| binfra.one    | [https://binfra.one/](https://binfra.one/)                     | FAH, AA, SH, LA            | Dedicated and Shared Servers                 | https://t.me/cc32d9                                                  |
-| EOS USA       | [https://www.eosusa.io/hosting/](https://www.eosusa.io/hosting/ )         | FAH, SH, AA                | Dedicated Servers                            | https://www.eosusa.io/hosting/, Telegram ID: @EOSUSA_Michael         |
-| EOS Nation    | [https://wax.api.pinax.network/#/](https://wax.api.pinax.network/#/)      | FAH                        | Metered API                    | [info@pinax.network](mailto:info@pinax.network), Telegram ID: @ursapolaris |
-| WAX Sweden    | [https://waxsweden.org/commercial-api/](https://waxsweden.org/commercial-api/)   | SH, Contract Notifications | Dedicated Servers                            | https://t.me/eossweden                                               |
-| EOSphere      | [https://eosphere.io/services/](https://eosphere.io/services/)  | FAH, SH, AA    | Dedicated Servers, API Metered Subscriptions                       | info@eosphere.io, Telegram ID: @rossco99                                          |
+## Managed and Commercial Services
 
-- FAH: Full Archive History
-- PAH: Partial Archive History
-- SH: State History nodes
-- AA: AtomicAssets/Market API nodes
-- LA: Light API nodes
+Commercial providers can make sense when you need:
 
-If you want to communicate with infra service providers, visit this telegram channel:
+- predictable uptime
+- stronger rate-limit guarantees
+- support for history or asset APIs
+- lower operational overhead than self-hosting
+
+Below is the current list preserved from the earlier WAX docs:
+
+| Provider Name | Website | Offerings | Offerings Type | Contact Information |
+| ------------- | ------- | --------- | -------------- | ------------------- |
+| WAX Galaxy | [https://waxgalaxy.io/tools/api-services](https://waxgalaxy.io/tools/api-services) | FAH, PAH, SH, AA | Dedicated Servers, API Metered Subscriptions | contact@waxgalaxy.io, Telegram ID: @sukeshtedla |
+| binfra.one | [https://binfra.one/](https://binfra.one/) | FAH, AA, SH, LA | Dedicated and Shared Servers | https://t.me/cc32d9 |
+| EOS USA | [https://www.eosusa.io/hosting/](https://www.eosusa.io/hosting/) | FAH, SH, AA | Dedicated Servers | https://www.eosusa.io/hosting/, Telegram ID: @EOSUSA_Michael |
+| EOS Nation | [https://wax.api.pinax.network/#/](https://wax.api.pinax.network/#/) | FAH | Metered API | [info@pinax.network](mailto:info@pinax.network), Telegram ID: @ursapolaris |
+| WAX Sweden | [https://waxsweden.org/commercial-api/](https://waxsweden.org/commercial-api/) | SH, Contract Notifications | Dedicated Servers | https://t.me/eossweden |
+| EOSphere | [https://eosphere.io/services/](https://eosphere.io/services/) | FAH, SH, AA | Dedicated Servers, API Metered Subscriptions | info@eosphere.io, Telegram ID: @rossco99 |
+
+## Common Service Categories
+
+- chain RPC
+- Hyperion / history APIs
+- state-history services
+- AtomicAssets or market APIs
+- lighter managed read endpoints
+
+### Service Type Abbreviations
+
+- `FAH`: Full Archive History
+- `PAH`: Partial Archive History
+- `SH`: State History nodes
+- `AA`: AtomicAssets / market API nodes
+- `LA`: Light API nodes
+
+## Use This Section Together With
+
+- [Choosing an Endpoint](/build/endpoints/choosing-an-endpoint)
+- [Rate Limits and Failover](/build/endpoints/rate-limits-and-failover)
+
+## Infra Community Link
+
+If you want to communicate with infrastructure service providers, use:
 
 - [https://t.me/waxapi](https://t.me/waxapi)

@@ -1,26 +1,15 @@
 ---
 title: My Cloud Wallet SDKs
-description: Available SDKs for My Cloud Wallet
+description: Redirecting to supported SDK documentation
 ---
 
-# My Cloud Wallet SDKs
+<meta http-equiv="refresh" content="0; url=/build/developing-apps/sdks/">
 
-## WharfKit
+# Redirecting to SDKs...
 
-Wharf is a JavaScript SDK Suite that provides a fast and flexible way to build web3 projects on WAX. It supports My Cloud Wallet along with other wallets.
+If you are not redirected automatically, [click here](/build/developing-apps/sdks/).
 
-You can find the full documentation for WharfKit on the dedicated [WharfKit documentation](https://wharfkit.com/guides/session-kit/getting-started-web-app) site.
+## Archived SDK Routes
 
-## Unity
-
-The WAX Unity SDK allows you to integrate blockchain functionality into your Unity applications.
-
-You can find the full documentation for the WAX Unity SDK on the dedicated [WAX Unity Web3 Suite](https://liquiidio.gitbook.io/unity-plugin-suite/sources/wax_cloud_wallet) site.
-
-## React Native
-
-::: danger IMPORTANT
-**My Cloud Wallet** React Native and Unity Mobile SDKs are no longer supported.
-:::
-
-We hope to bring back these SDKs in the future. If you are interested in helping us bring them back, please reach out to us on Discord or Telegram.
+- [Legacy Unity SDK route](/build/cloud-wallet/sdks/unity/)
+- [Legacy React Native SDK route](/build/cloud-wallet/sdks/react-native/)

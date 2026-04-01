@@ -36,4 +36,9 @@ Before you set up your local development environment:
 - You'll need to complete our [Docker Quickstart](/build/dapp-development/docker-setup/) (recommended) or use the [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) to build from source.
 - Have a text document or note program ready. You'll need to use a wallet password and a public key to create accounts. 
 
-<ChildTableOfContents :max="2" title="More inside this section" />
+## Steps
+
+- [Start a Local Node](/build/dapp-development/setup-local-dapp-environment/dapp_local)
+- [Blockchain Environments](/build/dapp-development/setup-local-dapp-environment/dapp_environments)
+- [Create a Wallet](/build/dapp-development/setup-local-dapp-environment/dapp_wallet)
+- [Access Your Local API](/build/dapp-development/setup-local-dapp-environment/dapp_api)

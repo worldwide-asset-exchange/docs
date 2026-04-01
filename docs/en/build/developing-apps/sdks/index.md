@@ -1,26 +1,26 @@
 ---
 title: SDKs
-description: Available SDKs for WAX
+description: Supported SDK paths for WAX app development
 ---
 
 # SDKs
 
-## WharfKit
+WAX app development should be centered on actively supported integration paths.
 
-Wharf is a JavaScript SDK Suite that provides a fast and flexible way to build web3 projects on WAX.
+## Primary SDK Paths
 
-You can find the full documentation for WharfKit on the dedicated [WharfKit documentation](https://wharfkit.com/guides/session-kit/getting-started-web-app) site.
+### WharfKit
 
-## Unity SDK
+WharfKit is the main WAX-native path for browser-based wallet integration, session management, and transaction signing across supported wallets.
 
-The WAX Unity SDK allows you to integrate blockchain functionality into your Unity applications.
+- [WharfKit overview](/build/developing-apps/sdks/wharfkit/)
 
-You can find the full documentation for the WAX Unity SDK on the dedicated [WAX Unity Web3 Suite](https://liquiidio.gitbook.io/unity-plugin-suite/) site.
+### Unity
 
-## React Native
+Unity support is available for projects that need WAX integration from game clients, but support expectations and wallet compatibility should be reviewed early.
 
-::: danger IMPORTANT
-**My Cloud Wallet** React Native and Unity Mobile SDKs are no longer supported.
-:::
+- [Unity SDK](/build/developing-apps/sdks/unity/)
 
-We hope to bring back these SDKs in the future. If you are interested in helping us bring them back, please reach out to us on Discord or Telegram.
+## Archived / Deprecated Paths
+
+Older My Cloud Wallet SDK content remains available as archive material where it is still useful for migration, but it is no longer the recommended starting point for new app builds.

@@ -40,5 +40,3 @@ WCW es la billetera cripto sin complicaciones
 ## Únete a las dApps que ya están usando Cloud Wallet
 
 Convierte más clientes. Completamente gratis.
-
-<ChildTableOfContents :max="2" title="Más dentro de esta sección" />

@@ -14,5 +14,3 @@ En este tutorial, aprenderás cómo crear, compilar e implementar un contrato in
 - Necesitarás completar nuestro [Inicio Rápido de Docker](/es/build/dapp-development/docker-setup/) (recomendado) o usar la [Configuración de la Blockchain de WAX](/es/build/dapp-development/wax-blockchain-setup/) para construir desde el código fuente.
 - Ten tu entorno de desarrollo local listo. Consulta [Configurar un Entorno Local de dApp](/es/build/dapp-development/) para más información.
 - Para compilar e implementar tu contrato inteligente localmente, necesitarás usar el [Kit de Herramientas de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/) y estar familiarizado con conceptos básicos como la generación de archivos WASM y ABI.
-
-<ChildTableOfContents :max="2" title="Más contenidos de esta sección" />

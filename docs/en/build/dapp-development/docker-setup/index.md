@@ -29,4 +29,8 @@ Below is a list of our core Docker images. For a complete list, refer to [waxtea
 |[waxteam/waxdev](https://hub.docker.com/r/waxteam/waxdev)|This Docker image includes complied code of the WAX blockchain tools as well as the Smart Contract Development Toolkit.|
 | [waxteam/waxnode](https://hub.docker.com/r/waxteam/waxnode) | It's recommended that you use our [production docker images](https://hub.docker.com/r/waxteam/waxnode) to run a production node. Refer to [Running a WAX node](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/main/samples/mainnet) for more information. |
 
-<ChildTableOfContents :max="2" title="More inside this section" />
+## Guides
+
+- [Run a WAX Container](/build/dapp-development/docker-setup/docker_qstart_getstarted)
+- [Run Commands](/build/dapp-development/docker-setup/docker_qstart_use)
+- [Manage Container](/build/dapp-development/docker-setup/docker_qstart_manage)

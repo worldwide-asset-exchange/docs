@@ -35,5 +35,3 @@ Antes de configurar tu entorno de desarrollo local:
 
 - Deberás completar nuestro [Docker Quickstart](/es/build/dapp-development/docker-setup/) (recomendado) o usar la [Configuración de Blockchain de WAX](/es/build/dapp-development/wax-blockchain-setup/) para construir desde el código fuente.
 - Ten a mano un documento de texto o un programa de notas. Necesitarás usar una contraseña de cartera y una clave pública para crear cuentas.
-
-<ChildTableOfContents :max="2" title="Más contenidos en esta sección" />

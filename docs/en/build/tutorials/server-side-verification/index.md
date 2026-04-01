@@ -1,16 +1,23 @@
 ---
-title: Server Side Verification
+title: Server Side Auth
 order: 100
 ---
 
-# Using NKCSS.Antelope.Verify to validate clientside logins on the backend
+# Server Side Auth
 
-Both [My Cloud Wallet](https://mycloudwallet.com) and [Anchor](https://github.com/greymass/anchor) offer an option to, as part of the standard identity proof request, also sign a proof that you can individually validate on the backend. These proofs can be validated using ECDSA and are ideal for Unity/.NET backend applications and are invisible to the user, not requiring any additional actions compared to the normal client-side-only workflow.
+Server-side auth on WAX is about validating wallet-driven identity and signature flows on the backend without weakening the client signing model.
 
-## How to enable this for My Cloud Wallet
+## When You Need It
 
-You can look [here](https://github.com/worldwide-asset-exchange/waxjs#21-login-combining-proof-system) to see how you can make My Cloud Wallet provide the additional proof, or check the [NKCSS.Antelope.Verify](https://github.com/NKCSS/NKCSS.Antelope.Verify/) for an example implementation.
+- account-linked backend sessions
+- protected APIs
+- game backends and inventory services
+- identity proof flows that must survive beyond a single browser action
 
-## How to enable this for Anchor
+## Important Design Rule
 
-There isn't any documentation available that I could find, but it boils down to a `proof` property being available in the login response, which can be used to validte on the backend. It's signed with a 60-second expiration to prevent replay attacks. You can see [an implementation example in the NKCSS.Antelope.Verify repository](https://github.com/NKCSS/NKCSS.Antelope.Verify/blob/97eac764b52bb185ab4a762ebe00afc1fb4c146b/VerificationExample/wwwroot/js/site.js#L99).
+Backend verification should complement wallet signing, not replace it.
+
+## Existing Pattern
+
+The current tutorial focuses on proof-based verification for backend validation and is most useful when you need an example of how wallet-issued proof data can be checked server-side.

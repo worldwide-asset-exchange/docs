@@ -28,5 +28,3 @@ El siguiente video de Simple Assets demuestra la funcionalidad principal del con
 * Necesitarás completar nuestro [Inicio Rápido con Docker](/build/dapp-development/docker-setup/) (recomendado).
 * Para compilar tu contrato inteligente, necesitarás usar [WAX-CDT](/build/dapp-development/wax-cdt/cdt_use).
 * Para desplegar tu contrato inteligente en la red principal de WAX, necesitarás crear una Cuenta de Blockchain de WAX autogestionada.
-
-<ChildTableOfContents :max="2" title="Más dentro de esta sección" />

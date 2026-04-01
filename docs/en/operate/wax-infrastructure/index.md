@@ -3,23 +3,40 @@ title: WAX Infrastructure Guides
 order: 3
 ---
 
-# Guides for Node and API operators
+# Guides for Node and API Operators
 
-Infrastructure is the backbone of any application and the same goes with WAX Blockchain and the Web3, DeFi, NFT applications built on top of it.
+WAX infrastructure can be split into a few broad service types:
 
-Compared to other blockchains like Ethereum & Bitcoin, running WAX nodes is quite different and needs a good understanding of the underlying Antelope blockchain software operations.
+- chain nodes for peer and API workloads
+- state-history nodes for downstream consumers
+- indexed history stacks such as Hyperion
+- asset-oriented APIs for NFT and marketplace workloads
+- supporting services such as load balancers, routing, storage, and monitoring
 
-There are different types of nodes in WAX Blockchain ecosystem that can used for different purposes. These nodes include:
+## Start With
 
-- Peer nodes
-- API query nodes
-- Validator/Block Producer nodes
-- [Ship nodes (a.k.a Archive nodes)](/operate/wax-infrastructure/wax-mainnet-node)
-- [Full/Partial History nodes (Deserialized & Consumable data archive nodes)](/operate/wax-infrastructure/hyperion-guide)
-- NFT standards and Marketplace specific nodes ([AtomicAssets, AtomicMarket](/operate/wax-infrastructure/atomic-api-guide) & Simpleassets)
+- [Set Up a Mainnet Node](/operate/wax-infrastructure/wax-mainnet-node)
+- [Set Up a Testnet Node](/operate/wax-infrastructure/wax-testnet-node)
+- [Set Up a Testnet Producer Node](/operate/wax-infrastructure/wax-testnet-block-producer)
+- [Set Up a State History Node](/operate/wax-infrastructure/wax-mainnet-ship-node)
+- [Set Up Full or Partial History with Hyperion](/operate/wax-infrastructure/hyperion-guide)
+- [Set Up an Atomic API Node](/operate/wax-infrastructure/atomic-api-guide)
 
-For more detailed explaination on the different types of nodes and their use-cases, please refer to [https://docs.eosnetwork.com/leap/latest/nodeos/usage/node-setups/](https://docs.eosnetwork.com/docs/latest/node-operation/getting-started/)
+## Operational Focus Areas
 
-The guides presented here will share some best practices, help you get a deeper understanding on how you can setup and maintain the WAX blockchain infrastructure in a scalable & resilient way.
+- performance and storage planning
+- query routing and load balancing
+- snapshot management and recovery
+- endpoint abuse mitigation
+- service-specific scaling
 
-If you don't want to setup and manage your infrastructure, there are a couple of service providers you can choose from: [WAX API Services](/operate/wax-api-services/)
+## More Guides
+
+- [Optimise Disk Utilisation with ZFS Deduplication](/operate/wax-infrastructure/wax-optimise-disk-utilisation-zfs-dedup)
+- [Securely Peer with WireGuard](/operate/wax-infrastructure/wax-securely-peer-with-wireguard)
+- [Route API Queries](/operate/wax-infrastructure/wax-route-specific-api-queries)
+- [Websocket Support on a Load Balancer](/operate/wax-infrastructure/wax-websocket-load-balancer)
+- [API Full or Partial Archive Nodes](/operate/wax-infrastructure/api-archive-guide)
+- [Creating a WAX Price Oracle Service](/operate/wax-infrastructure/creating-a-wax-price-oracle-service-bash-python)
+
+If you prefer managed infrastructure instead of self-hosting, see [WAX API Services](/build/wax-api-services).

@@ -61,5 +61,3 @@ Independientemente de la opción de despliegue que elijas, necesitarás:
 
 - Crear una Cuenta de Blockchain de WAX autogestionada.
 - Asegurarte de tener suficiente WAX apostado en tu cuenta para asignar recursos.
-
-<ChildTableOfContents :max="2" title="Más contenidos de esta sección" />

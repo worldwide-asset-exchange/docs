@@ -1,15 +1,10 @@
 ---
-layout: doc
 title: Unity SDK
-description: Unity SDK
+description: Redirecting to the supported Unity SDK path
 ---
 
-::: danger IMPORTANT
-**My Cloud Wallet** React Native and Unity Mobile SDKs are no longer supported.
-:::
+<meta http-equiv="refresh" content="0; url=/build/developing-apps/sdks/unity/">
 
-We hope to bring back these SDKs in the future. If you are interested in helping us bring them back, please reach out to us on Discord or Telegram.
+# Redirecting to Unity SDK...
 
----
-
-Our general WAX Unity SDK is still available and you can find it in our [Unity SDK documentation](/build/developing-apps/sdks/unity/).
+If you are not redirected automatically, [click here](/build/developing-apps/sdks/unity/).

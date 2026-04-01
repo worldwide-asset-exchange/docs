@@ -7,34 +7,34 @@ order: 20
 
 Below you'll find WAX versions, URLs, and development environment information.
 
-| Service | Description |
-|---------|-------------|
-| [Docker Images](https://hub.docker.com/u/waxteam) | Use WAX Docker images to run a local node, use blockchain tools, and compile your smart contracts. Refer to [Docker Quickstart](/build/dapp-development/docker-setup/) for more information. |
-| [waxjs](https://github.com/worldwide-asset-exchange/waxjs) | WaxJS Javascript API for integration with the Cloud Wallet . Use this to easily sign in users and send transactions to the WAX Blockchain from your dApp. Refer to [WaxJS Quickstart](/build/cloud-wallet/waxjs/waxjs_qstart) for more information. |
-| [wax-blockchain](https://github.com/worldwide-asset-exchange/wax-blockchain) | WAX Blockchain source files. Refer to [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) to get started. |
-| [wax-cdt](https://github.com/worldwide-asset-exchange/cdt) | WAX Contract Development Toolkit. Refer to [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/) to get started. |
+| Service                                                                      | Description                                                                                                                                                                                                                                         |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Docker Images](https://hub.docker.com/u/waxteam)                            | Use WAX Docker images to run a local node, use blockchain tools, and compile your smart contracts. Refer to [Docker Quickstart](/build/dapp-development/docker-setup/) for more information.                                                        |
+| [waxjs](https://github.com/worldwide-asset-exchange/waxjs)                   | WaxJS Javascript API for integration with the Cloud Wallet . Use this to easily sign in users and send transactions to the WAX Blockchain from your dApp. Refer to [WaxJS Quickstart](/build/cloud-wallet/waxjs/waxjs_qstart) for more information. |
+| [wax-blockchain](https://github.com/worldwide-asset-exchange/wax-blockchain) | WAX Blockchain source files. Refer to [WAX Blockchain Setup](/build/dapp-development/wax-blockchain-setup/) to get started.                                                                                                                         |
+| [wax-cdt](https://github.com/worldwide-asset-exchange/wax-cdt)               | WAX Contract Development Toolkit. Refer to [WAX Contract Development Toolkit (WAX-CDT)](/build/dapp-development/wax-cdt/) to get started.                                                                                                           |
 
 ## WAX Mainnet
 
-| Service | URL | Description |
-|---------|-----|-------------|
-| Blockchain URL | [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers) | Used to make API calls and deploy your smart contracts to the WAX mainnet. |
-| Blockchain P2P | peers.wax.io:9876 | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
-| Blockchain Explorer | [https://waxblock.io](https://waxblock.io/) | waxblock.io block explorer. |
-| WAX Account | (e.g., Scatter) | Create a WAX Blockchain Account. |
+| Service             | URL                                                                                 | Description                                                                                   |
+| ------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Blockchain URL      | [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers) | Used to make API calls and deploy your smart contracts to the WAX mainnet.                    |
+| Blockchain P2P      | peers.wax.io:9876                                                                   | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
+| Blockchain Explorer | [https://waxblock.io](https://waxblock.io/)                                         | waxblock.io block explorer.                                                                   |
+| WAX Account         | (e.g., Scatter)                                                                     | Create a WAX Blockchain Account.                                                              |
 
 ## WAX Public Testnet
 
 [WAX sw/eden](https://waxsweden.org/) provides a WAX Testnet allowing you to create test accounts, test smart contracts, use API endpoints, and more.
 
-| Service | URL | Description |
-|---------|-----|-------------|
-| Testnet Site | [WAX Testnet](https://waxsweden.org/testnet/) | Use WAX sw/eden's site to create test accounts, find sample scripts, and more. |
-| Blockchain URL | [https://testnet.waxsweden.org](https://testnet.waxsweden.org) | Used to make API calls and deploy your smart contracts to the WAX Testnet. |
-| Public Endpoints | [endpoints.json](https://github.com/eosswedenorg/waxtestnet/tree/master/endpoints) | Additional P2P and API endpoint URLs. |
-| Blockchain P2P | testnet.waxsweden.org:59876 | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
-| Blockchain Explorer | [Bloks.io Testnet](https://local.bloks.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Testnet block explorer. |
-| Test Account | [https://waxsweden.org/create-testnet-account/](https://waxsweden.org/create-testnet-account/) | Use the "Create testnet account" tool on the [Testnet](https://waxsw
+| Service             | URL                                                                                                                                                                         | Description                                                                                   |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Testnet Site        | [WAX Testnet](https://waxsweden.org/testnet/)                                                                                                                               | Use WAX sw/eden's site to create test accounts, find sample scripts, and more.                |
+| Blockchain URL      | [https://testnet.waxsweden.org](https://testnet.waxsweden.org)                                                                                                              | Used to make API calls and deploy your smart contracts to the WAX Testnet.                    |
+| Public Endpoints    | [endpoints.json](https://github.com/eosswedenorg/waxtestnet/tree/master/endpoints)                                                                                          | Additional P2P and API endpoint URLs.                                                         |
+| Blockchain P2P      | testnet.waxsweden.org:59876                                                                                                                                                 | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
+| Blockchain Explorer | [Bloks.io Testnet](https://local.bloks.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Testnet block explorer.                                                                       |
+| Test Account        | [https://waxsweden.org/create-testnet-account/](https://waxsweden.org/create-testnet-account/)                                                                              | Use the "Create testnet account" tool on the [Testnet](https://waxsw                          |
 
 eden.org/testnet/) homepage or visit the direct link. |
 
@@ -42,8 +42,8 @@ eden.org/testnet/) homepage or visit the direct link. |
 
 When you [Set Up a Local dApp Environment](/build/dapp-development/), you can make calls to your local API using the following URL.
 
-| Service | URL | Description |
-|---------|-----|-------------|
+| Service        | URL                                            | Description                                                   |
+| -------------- | ---------------------------------------------- | ------------------------------------------------------------- |
 | Blockchain URL | [http://127.0.0.1:8888](http://127.0.0.1:8888) | Used to make API calls in your local development environment. |
 
 ## C++ Environment

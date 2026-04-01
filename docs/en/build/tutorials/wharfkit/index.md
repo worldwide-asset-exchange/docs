@@ -45,4 +45,7 @@ Additionally, it provides interfaces and plugins, such as:
 
 It's essential to mention **SessionStorage**, which preserves session instances between page loads.
 
-<ChildTableOfContents :max="2" title="More inside this section" />
+## Tutorial Pages
+
+- [WharfKit in React](/build/tutorials/wharfkit/howto_react)
+- [WharfKit Multi-Session](/build/tutorials/wharfkit/multisession)

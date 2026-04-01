@@ -44,5 +44,3 @@ Además, proporciona interfaces y plugins, como:
 - **Plugin de Transacción**: Estructura lógica para agregar código personalizado.
 
 Es esencial mencionar **Almacenamiento de Sesión**, que conserva las instancias de sesión entre cargas de página.
-
-<ChildTableOfContents :max="2" title="Más contenidos en esta sección" />

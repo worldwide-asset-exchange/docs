@@ -28,3 +28,11 @@ To use **WaxJS**, you simply need to:
 ![WaxJS Sign](/assets/images/wax-cloud-wallet/waxjs/waxjs_sign.png)
 
 In the next sections, you'll learn how to install and use **WaxJS**.
+
+## Archived Pages
+
+- [WaxJS Quickstart](/build/cloud-wallet/waxjs/waxjs_qstart)
+- [Install WaxJS](/build/cloud-wallet/waxjs/waxjs_install)
+- [Use WaxJS](/build/cloud-wallet/waxjs/waxjs_use)
+- [WaxJS Demo](/build/cloud-wallet/waxjs/waxjs_demo)
+- [Temporary Accounts](/build/cloud-wallet/waxjs/waxjs_tempaccounts)

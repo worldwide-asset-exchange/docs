@@ -13,8 +13,8 @@ Deploying a fungible token on the WAX blockchain can be an exciting project for 
 
 Before beginning, ensure you have the following tools installed:
 
-- [cdt](https://github.com/AntelopeIO/cdt): Contract development toolkit for developing the contract
-- [leap](https://github.com/AntelopeIO/leap): Include the cleos command line tool to interact with the blockchain.
+- [cdt](https://github.com/worldwide-asset-exchange/wax-cdt): Contract development toolkit for developing the contract
+- [leap](https://github.com/worldwide-asset-exchange/wax-blockchain): Include the cleos command line tool to interact with the blockchain.
 
 ## Build token contract
 
@@ -60,10 +60,11 @@ code hash: 64ac1483b2ff62a4d36173882dca2a278c50e11136b70370123da6775e63659b
 ### 1. Create new token
 
 Call action `create` of token contract:
+
 - require contract permission
 - parameters:
-  - issuer: issuer account, account has permission to issue and retire token
-  - maximum_supply: maximum supply of token, make sure that you have correct number since it can not be changed
+    - issuer: issuer account, account has permission to issue and retire token
+    - maximum_supply: maximum supply of token, make sure that you have correct number since it can not be changed
 
 ```bash
 $ cleos push action tokenexample create '["tokenissuer", "1000000000.0000 EXP"]' -p tokenexample
@@ -72,11 +73,12 @@ $ cleos push action tokenexample create '["tokenissuer", "1000000000.0000 EXP"]'
 ### 2. Issue token
 
 Issue the token by calling the issue `action`, which also requires issuer permission:
+
 - require issuer permission
 - parameters:
-  - to: token receiver
-  - quantity: quantity to issue
-  - memo
+    - to: token receiver
+    - quantity: quantity to issue
+    - memo
 
 ```bash
 $ cleos push action tokenexample issue '["tokenissuer", "1000000.0000 EXP", "first issue"]' -p tokenissuer
@@ -115,11 +117,12 @@ $ cleos get table tokenexample tokenissuer accounts
 ### 3. Burn token
 
 Call `retire` action of token contract:
+
 - require issuer permission
 - issuer balance must greater than burn amount
 - parameters:
-  - quantity: burning quantity
-  - memo
+    - quantity: burning quantity
+    - memo
 
 ```bash
 $ cleos push action tokenexample retire '["1.0000 EXP", "first burn"]' -p tokenissuer

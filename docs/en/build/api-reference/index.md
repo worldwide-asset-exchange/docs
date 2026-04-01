@@ -1,19 +1,34 @@
 ---
 title: WAX API Reference
-description: API documentation for WAX Blockchain
+description: Entry points to WAX API documentation
 ---
 
 # WAX API Reference
 
-Here you'll find comprehensive documentation for WAX Blockchain APIs
+Use this section to choose the right API surface for your application.
 
 ## APIs
 
-**[Chain API](/apis/chain-api.htm)**  
-The Chain API offers blockchain data access including account information, transaction details, and blockchain state.
+### Chain API
 
-**[AtomicAssets API](/apis/atomic-api.htm)**  
-The AtomicAssets API provides endpoints for managing and querying NFT assets on the WAX blockchain.
+For core chain state, account data, and transaction-facing RPC methods.
 
-**[CDT](/build/api-reference/cdt_api)**  
-Contract Development Toolkit for smart contract development.
+- [Chain API](/apis/chain-api.htm)
+
+### AtomicAssets API
+
+For NFT and asset-oriented queries that sit above raw chain tables.
+
+- [AtomicAssets API](/apis/atomic-api.htm)
+
+### Hyperion History API
+
+For historical indexing and richer history-style query workloads.
+
+- [Hyperion History API](/build/api-reference/hyperion-history-api)
+
+### Light API
+
+For lightweight provider-specific read patterns where full history infrastructure is unnecessary.
+
+- [Light API](/build/api-reference/light-api)

@@ -12,30 +12,34 @@ Esta guía te mostrará cómo crear el contrato del juego de Tictactoe que se ej
 [Tutorial de Contrato Inteligente en github.com](https://github.com/worldwide-asset-exchange/tic-tac-toe)
 
 ### Lo que aprenderás
+
 - [Cómo Funciona el Juego](/es/build/tutorials/tic-tac-toe-game/client.html#how-to-play)
 - [Flujo de Desarrollo](#flujo-de-desarrollo)
-  - [Prerrequisitos](#prerrequisitos)
-  - [Construir y Probar](#construir-y-probar)
-  - [Despliegue](#despliegue)
+    - [Prerrequisitos](#prerrequisitos)
+    - [Construir y Probar](#construir-y-probar)
+    - [Despliegue](#despliegue)
 - [Implementación del Contrato del Juego](#implementación-del-contrato-del-juego)
-  - [Lógica del Juego](#lógica-del-juego)
-  - [Entendiendo el Juego](#entendiendo-el-juego)
-  - [Contrato Inteligente Tres en Raya](#contrato-inteligente-tres-en-raya)
-  - [Acciones del Contrato](#acciones-del-contrato)
-    - [Solicitud de Valores Aleatorios](#solicitando-valores-aleatorios)
-    - [Acción de Movimiento](#acción-de-movimiento)
+    - [Lógica del Juego](#lógica-del-juego)
+    - [Entendiendo el Juego](#entendiendo-el-juego)
+    - [Contrato Inteligente Tres en Raya](#contrato-inteligente-tres-en-raya)
+    - [Acciones del Contrato](#acciones-del-contrato)
+        - [Solicitud de Valores Aleatorios](#solicitando-valores-aleatorios)
+        - [Acción de Movimiento](#acción-de-movimiento)
 - [Uso del Contrato de Token](#uso-del-contrato-de-token)
 - [Emisión de Recompensas de Tokens](#emisiones-de-recompensas-de-tokens)
 
 ## Flujo de Desarrollo
+
 &nbsp;
 
 ### 1. Prerrequisitos
-  - https://github.com/AntelopeIO/cdt: Kit de herramientas de desarrollo de contratos para desarrollar el contrato.
-  - https://github.com/AntelopeIO/leap: Incluye la herramienta de línea de comandos **cleos** para interactuar con la blockchain.
-  - Node.js (Versión: 16.16.0) o Yarn (Versión: 1.22.17) y npm (Versión: 9.6.7) instalados en tu máquina.
+
+- [cdt](https://github.com/worldwide-asset-exchange/wax-cdt): Kit de herramientas de desarrollo de contratos para desarrollar el contrato.
+- [leap](https://github.com/worldwide-asset-exchange/wax-blockchain): Incluye la herramienta de línea de comandos **cleos** para interactuar con la blockchain.
+- Node.js (Versión: 16.16.0) o Yarn (Versión: 1.22.17) y npm (Versión: 9.6.7) instalados en tu máquina.
 
 ### 2. Construir y Probar
+
 ```sh
     make build
     npm run test
@@ -73,18 +77,22 @@ cleos push action tic.token issue '["tictactoe","1000000.0000 TIC","issue token"
 ```
 
 ## Implementación del Contrato del Juego
+
 &nbsp;
 
 ### 1. Lógica del Juego
-  - El jugador puede crear el juego en uno de dos modos: jugador contra jugador o jugador contra bot
-  - El tablero del juego es un rectángulo de 3x3
-  - El primer movimiento será aleatorio por contrato
-  - El primer jugador en completar una fila o diagonal de X's o O's gana el juego.
-  - Al jugar con un bot, el contrato llamará al contrato orgn.wax para obtener un número aleatorio
-  - El ganador del juego recibirá una recompensa de 10 tokens TIC (el token emitido por el juego)
+
+- El jugador puede crear el juego en uno de dos modos: jugador contra jugador o jugador contra bot
+- El tablero del juego es un rectángulo de 3x3
+- El primer movimiento será aleatorio por contrato
+- El primer jugador en completar una fila o diagonal de X's o O's gana el juego.
+- Al jugar con un bot, el contrato llamará al contrato orgn.wax para obtener un número aleatorio
+- El ganador del juego recibirá una recompensa de 10 tokens TIC (el token emitido por el juego)
 
 ### 2. Entendiendo el Juego
+
 Para un juego básico como tictactoe, podemos visualizar que el juego tendría estas acciones:
+
 - create: crear un nuevo juego
 - move: movimiento por un usuario si es su turno
 - close: limpiar el juego por el anfitrión
@@ -93,20 +101,19 @@ Para un juego básico como tictactoe, podemos visualizar que el juego tendría e
 La lógica del juego seguirá los siguientes diagramas:
 
 - Creando un nuevo juego:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-new.png"/>
 
+      <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-new.png"/>
 
 - Modo Jugador contra Jugador:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-pvp.png"/>
+
+      <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-pvp.png"/>
 
 - Jugador contra Bot:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-bot.png"/>
 
+      <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-bot.png"/>
 
 ### 3. Contrato Inteligente Tres en Raya
+
 Sumerjámonos en cómo podemos implementar estas acciones en el contrato inteligente de tres en raya.
 
 El contrato inteligente tendrá el [archivo de encabezado tictactoe.hpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.hpp) y el [archivo de implementación tictactoe.cpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.cpp).
@@ -122,6 +129,7 @@ Coloquemos estas declaraciones en el archivo de encabezado, estas son las accion
 ```
 
 y la tabla de juego para almacenar los datos del juego:
+
 ```cpp
  TABLE game
   {
@@ -153,11 +161,11 @@ Aquí podemos ver la estructura de datos para almacenar el juego. Cada juego ten
 
 El tablero de juego es un arreglo bidimensional, pero en la tabla del juego usaremos una dimensión para representar el tablero. Por ejemplo, este tablero:
 
-| Fila  | 0 | 1 | 2 |
-|------|---|---|---|
-|   0  | 1 | 2 | 1 |
-|   1  | 1 | 2 | 2 |
-|   2  | 2 | 1 | 1 |
+| Fila | 0   | 1   | 2   |
+| ---- | --- | --- | --- |
+| 0    | 1   | 2   | 1   |
+| 1    | 1   | 2   | 2   |
+| 2    | 2   | 1   | 1   |
 
 Será representado como `[1, 2, 1, 1, 2, 2, 2, 1, 1]`.
 
@@ -178,7 +186,7 @@ Hablamos sobre usar números aleatorios del contrato orng.wax para aleatorizar q
         {get_self(), "active"_n},
         "orng.wax"_n, "requestrand"_n,
         std::tuple(game_id, turn_count, get_self()))
-        .send();        
+        .send();
 ```
 
 Esta acción envía un comando **requestrand** al contrato orng.wax, luego esperaremos la devolución de llamada para obtener nuestro número aleatorio.
@@ -255,7 +263,6 @@ Una lógica importante aquí es verificar el ganador:
 
 Puedes ver que solicitamos el siguiente número aleatorio y procesamos el resultado en la acción **receiverand**. Con un número aleatorio que recibimos, calculamos un próximo movimiento válido y continuamos llamando a mover en nombre del bot (que es el propio contrato del juego).
 
-
 ## Uso del Contrato de Token
 
 El juego cubre una lógica cuando encontramos al ganador, lo recompensaremos con una cantidad de tokens TIC. Puedes usar esta lógica para emitir tokens del juego, permitir que los jugadores comercien y compren artículos dentro del juego,...
@@ -286,4 +293,5 @@ Como parte de la lógica de la acción `move`, cuando encontramos que alguien ha
                 .send();
     }
 ```
+
 Si el host o el desafiante ganan, llamamos al método eosio.token#transfer que tiene una firma de función de `(const name& from, const name& to, const asset& quantity, const string& memo)`. Nótese que los 4 decimales del token TIC se implican en la representación entera, así que 100000 en la línea de definición de `payout` en realidad representa 10.0000 tokens TIC.

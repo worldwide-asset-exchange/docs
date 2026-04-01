@@ -1,54 +1,44 @@
 ---
 title: WAX Ecosystem
-description: Discover the WAX ecosystem and the best entry points to get started
+description: Discover the main entry points into the WAX ecosystem.
 ---
 
 # WAX Ecosystem
 
-You’re new to the WAX blockchain and looking to get started? Whether you want to trade NFTs or build the next standout dApp, this curated list will help you hit the ground running and discover the best entry points into the WAX ecosystem!
+This page is for discovery. If you are looking for setup steps, funding, wallet safety, or resource guidance, go back to [Getting Started](/learn/getting-started/).
 
-### Create a WAX account / Wallets
+## Wallets
 
--   [My Cloud Wallet](https://www.mycloudwallet.com/)
--   [Anchor](https://greymass.com/en/anchor/)
--   [Wombat](https://www.wombat.app/)
--   [Ledger](https://www.ledger.com/eos-wallet/)
--   [Foundry](https://foundry.qaraqol.com/)
+- [My Cloud Wallet](https://www.mycloudwallet.com/)
+- [Anchor](https://greymass.com/en/anchor/)
+- [Wombat](https://www.wombat.app/)
 
-&nbsp;
+## Explorers
 
-### Block Explorer
+- [WAXBlock](https://waxblock.io/)
+- [WAX Items](https://waxitems.com/)
+- [EOS Authority](https://eosauthority.com/?network=wax)
+- [Eoseyes](https://wax.eoseyes.com/)
 
--   [WAXBlock](https://waxblock.io/): The Official WAX Blockchain Explorer
--   [EOSAuthority](https://eosauthority.com/?network=wax)
--   [Eoseye](https://wax.eoseyes.com/)
+## Marketplaces
 
-&nbsp;
+- [AtomicHub](https://wax.atomichub.io/)
+- [NeftyBlocks](https://neftyblocks.com/)
+- [NFTHive](https://nfthive.io/)
+- [vIRL](https://virl.com/)
 
-### NFT Marketplaces
+## Exchange and Trading Tools
 
--   [AtomicHub](https://wax.atomichub.io/)
--   [NeftyBlocks](https://neftyblocks.com/)
--   [NFTHive](https://nfthive.io/)
--   [vIRL](https://virl.com/)
+- [Alcor Exchange](https://alcor.exchange/)
+- [Taco Swap](https://swap.tacocrypto.io/)
+- [Defibox](https://wax.defibox.io/)
 
-&nbsp;
+## Public Endpoint Discovery
 
-### DEX
+- [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
+- [EOS Nation Endpoint Reports](https://validate.eosnation.io/wax/reports/endpoints.html)
 
--   [Alcor Exchange](https://alcor.exchange/)
+## More Projects
 
-&nbsp;
-
-### Free / Public API Endpoints (Chain, History and NFT)
-
--   [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
--   [EOS Nation Validator](https://validate.eosnation.io/wax/reports/endpoints.html)
-
-&nbsp;
-
-### More Projects
-
--   [WAXMarketCap](https://waxmarketcap.com/)
--   [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)
--   [WAXDetective](https://waxdetective.io/network)
+- [WAXMarketCap](https://waxmarketcap.com/)
+- [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)

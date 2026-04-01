@@ -9,46 +9,45 @@ description: Descubre el ecosistema WAX y los mejores puntos de entrada para emp
 
 ### Crear una cuenta WAX / Carteras
 
--   [My Cloud Wallet](https://www.mycloudwallet.com/)
--   [Anchor](https://greymass.com/en/anchor/)
--   [Wombat](https://www.wombat.app/)
--   [Ledger](https://www.ledger.com/eos-wallet/)
--   [Foundry](https://foundry.qaraqol.com/)
+- [My Cloud Wallet](https://www.mycloudwallet.com/)
+- [Anchor](https://greymass.com/en/anchor/)
+- [Wombat](https://www.wombat.app/)
+- [Ledger](https://www.ledger.com/eos-wallet/)
 
 &nbsp;
 
 ### Explorador de bloques
 
--   [WAXBlock](https://waxblock.io/): El explorador oficial de la cadena de bloques WAX
--   [EOSAuthority](https://eosauthority.com/?network=wax)
--   [Eoseye](https://wax.eoseyes.com/)
+- [WAXBlock](https://waxblock.io/): El explorador oficial de la cadena de bloques WAX
+- [EOSAuthority](https://eosauthority.com/?network=wax)
+- [Eoseye](https://wax.eoseyes.com/)
 
 &nbsp;
 
 ### Mercados de NFT
 
--   [AtomicHub](https://wax.atomichub.io/)
--   [NeftyBlocks](https://neftyblocks.com/)
--   [NFTHive](https://nfthive.io/)
--   [vIRL](https://virl.com/)
+- [AtomicHub](https://wax.atomichub.io/)
+- [NeftyBlocks](https://neftyblocks.com/)
+- [NFTHive](https://nfthive.io/)
+- [vIRL](https://virl.com/)
 
 &nbsp;
 
 ### DEX
 
--   [Alcor Exchange](https://alcor.exchange/)
+- [Alcor Exchange](https://alcor.exchange/)
 
 &nbsp;
 
 ### Puntos finales de API gratuitos/públicos (cadena, historial y NFT)
 
--   [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
--   [EOS Nation Validator](https://validate.eosnation.io/wax/reports/endpoints.html)
+- [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
+- [EOS Nation Validator](https://validate.eosnation.io/wax/reports/endpoints.html)
 
 &nbsp;
 
 ### Más proyectos
 
--   [WAXMarketCap](https://waxmarketcap.com/)
--   [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)
--   [WAXDetective](https://waxdetective.io/network)
+- [WAXMarketCap](https://waxmarketcap.com/)
+- [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)
+- [WAXDetective](https://waxdetective.io/network)

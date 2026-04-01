@@ -2,12 +2,11 @@
 title: boost.wax
 ---
 
-::: danger IMPORTANT
-**My Cloud Wallet** boost.wax is no longer supported.
-:::
-
 # boost.wax
 
-boost.wax was a system that allowed dApps to cover the cost of CPU and NET resources for their users via My Cloud Wallet.
+`boost.wax` is retired and should not be used as the starting point for new integrations.
 
-You can achieve the same functionality by using WharfKit with the [transact-plugin-resource-provider](https://wharfkit.com/plugins/transact-plugin-resource-provider) plugin which should be compatible with all wallets. However this does invole building your own API to provide the resources to the users.
+For new work, use the supported app-integration path in:
+
+- [Developing Apps](/build/developing-apps/)
+- [WharfKit](/build/developing-apps/sdks/wharfkit/)

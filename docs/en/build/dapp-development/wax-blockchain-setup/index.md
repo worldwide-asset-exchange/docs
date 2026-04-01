@@ -51,3 +51,9 @@ If you're not using our Docker images, you'll need to:
 - Have at least 7 GB of free RAM.
 
 - Have at least 20 GB of free hard drive space.
+
+## Guides
+
+- [Install the WAX Blockchain](/build/dapp-development/wax-blockchain-setup/blockchain_install)
+- [Uninstall WAX](/build/dapp-development/wax-blockchain-setup/blockchain_uninstall)
+- [Verify Your Installation](/build/dapp-development/wax-blockchain-setup/blockchain_verify)

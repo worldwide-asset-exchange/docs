@@ -7,36 +7,37 @@ order: 3
 
 This tic-tac-toe contract provides an example of building a game on WAX, complete with secure use of random values to determine game outcomes.
 
-This will guide you how to make the Tictactoe game contract which run on Wax blockchain. Logic of the tictactoe game follow the eosio sample at [Tic-tac-toe Game EOS tutorial](https://developers.eos.io/welcome/v2.1/tutorials/tic-tac-toe-game-smart-contract-single-node), but we'll add more logic that support randomize the first turner and random game move if playing with bot. 
-
+This will guide you how to make the Tictactoe game contract which run on Wax blockchain. Logic of the tictactoe game follow the eosio sample at [Tic-tac-toe Game EOS tutorial](https://developers.eos.io/welcome/v2.1/tutorials/tic-tac-toe-game-smart-contract-single-node), but we'll add more logic that support randomize the first turner and random game move if playing with bot.
 
 [Smart Contract Tutorial on github.com](https://github.com/worldwide-asset-exchange/tic-tac-toe)
 
 ### What you will learn
+
 - [How the Game Works](/build/tutorials/tic-tac-toe-game/client.html#how-to-play)
 - [Development Workflow](#development-workflow)
 - [Game Contract Implementation](#game-contract-implementation)
-  - [Requesting Random Values](#requesting-random-values)
+    - [Requesting Random Values](#requesting-random-values)
 - [Token Contract Usage](#token-contract-usage)
 - [Token Rewards Emissions](#token-rewards-emissions)
 
-
 ## Development Workflow
-&nbsp; 
- 
+
+&nbsp;
+
 ### 1. Prerequisites
-  - https://github.com/AntelopeIO/cdt: Contract development toolkit for developing the contract
-  - https://github.com/AntelopeIO/leap: Include the **cleos** command line tool to interact with the blockchain.
-  - Node.js (Version: 16.16.0) or Yarn (Version: 1.22.17) & npm (Version: 9.6.7) installed on your machine.
+
+- [cdt](https://github.com/worldwide-asset-exchange/wax-cdt): Contract development toolkit for developing the contract
+- [leap](https://github.com/worldwide-asset-exchange/wax-blockchain): Include the **cleos** command line tool to interact with the blockchain.
+- Node.js (Version: 16.16.0) or Yarn (Version: 1.22.17) & npm (Version: 9.6.7) installed on your machine.
 
 ### 2. Build and Test
+
 ```sh
     make build
     npm run test
 ```
 
 ### 3. Deployment
-
 
 1. Create new account for contract tictactoe and tic.token
 
@@ -67,45 +68,47 @@ cleos push action tic.token create '["tictactoe","1000000.0000 TIC"]' -p tic.tok
 cleos push action tic.token issue '["tictactoe","1000000.0000 TIC","issue token"]' -p tictactoe@active
 ```
 
-
 ## Game Contract Implementation
+
 &nbsp;
 
 ### 1. Game Logic
-  - Player can create the game in one of two modes: player vs player or player vs bot
-  - Game board is 3x3 rectangle
-  - First mover will be random by contract
-  - First player to complete a row or diagonal of either X's or O's wins the game.
-  - When playing with bot, the contract will call the orgn.wax contract to get random number
-  - The winner of the game will get a reward of 10 TIC token (the token issued by the game)
+
+- Player can create the game in one of two modes: player vs player or player vs bot
+- Game board is 3x3 rectangle
+- First mover will be random by contract
+- First player to complete a row or diagonal of either X's or O's wins the game.
+- When playing with bot, the contract will call the orgn.wax contract to get random number
+- The winner of the game will get a reward of 10 TIC token (the token issued by the game)
 
 ### 2. Understanding the Game
- For a basic game like tictactoe, we can visualize the game would have these actions:
- - create: create a new game
- - move: move by an user if it's his turn
- - close: clear the game by the host
- - restart: restart the game
+
+For a basic game like tictactoe, we can visualize the game would have these actions:
+
+- create: create a new game
+- move: move by an user if it's his turn
+- close: clear the game by the host
+- restart: restart the game
 
 Game logic will follow below diagrams:
 
 - Creating new game:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-new.png"/>
 
+        <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-new.png"/>
 
 - Player vs Player mode:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-pvp.png"/>
+
+        <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-pvp.png"/>
 
 - Player vs Bot:
-  
-  <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-bot.png"/>
- 
+
+        <img src="/assets/images/tutorials/tic-tac-toe/tictactoe-bot.png"/>
 
 ### 3. Tic-tac-toe Smart Contract
+
 Let dive into how can we implement these actions on tictactoe smartcontract.
 
-The smartcontract will have the [tictactoe.hpp header file](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.hpp) and the [tictactoe.cpp implementation file]https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.cpp). 
+The smartcontract will have the [tictactoe.hpp header file](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.hpp) and the [tictactoe.cpp implementation file](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.cpp).
 
 Let's put these declarations in header file, this is the main action of our smartcontract:
 
@@ -118,6 +121,7 @@ Let's put these declarations in header file, this is the main action of our smar
 ```
 
 and the game table to store the game data:
+
 ```cpp
  TABLE game
   {
@@ -149,22 +153,21 @@ Look at here we can see the data structure to store the game. Each game will hav
 
 The game board is two dimensionals array, but on the game table we'll use one dimension to represent the board. For example this board:
 
-| Row  | 0 | 1 | 2 |
-|------|---|---|---|
-|   0  | 1 | 2 | 1 |
-|   1  | 1 | 2 | 2 |
-|   2  | 2 | 1 | 1 |
+| Row | 0   | 1   | 2   |
+| --- | --- | --- | --- |
+| 0   | 1   | 2   | 1   |
+| 1   | 1   | 2   | 2   |
+| 2   | 2   | 1   | 1   |
 
-Will be represented as  `[1, 2, 1, 1, 2, 2, 2, 1, 1]`.
+Will be represented as `[1, 2, 1, 1, 2, 2, 2, 1, 1]`.
 
 ### Contract actions:
 
 - init(): This action is used to init table and singleton in the smartcontract. We need to call this action right after deployment for the contract to have initial data we want.
 - create(): This action launches a new game and creates a new game board array. Create action will have params that allow the host to choose the challenger. We define that when the challenger is tiactactoe name( the contract name itself) then the host want to play with bot.
 - restart(): This action clears data from an existing game board array.
-- close(): This action deletes and removes existing game data and frees up any storage the game uses. 
+- close(): This action deletes and removes existing game data and frees up any storage the game uses.
 - move(): This action sets a marker on the gameboard and updates the game board array.
-
 
 #### Requesting Random Values
 
@@ -175,7 +178,7 @@ We talked about using random number from orgn.wax contract to randomize who taki
         {get_self(), "active"_n},
         "orng.wax"_n, "requestrand"_n,
         std::tuple(game_id, turn_count, get_self()))
-        .send();        
+        .send();
 ```
 
 This action send a **requestrand** command to the orng.wax contract then we'll wait for the callback to get our random number.
@@ -252,7 +255,6 @@ One important logic here is checking for the winner:
 
 You can see we request the next random number and process the result in **receiverand** action. With a random number we received, we calculate a valid next move and continue to call move on be half of the bot (which is the game contract itself).
 
-
 ## Token Contract Usage
 
 The game cover a logic when we found the winner, we'll reward him with an amount of TIC token. You can use this logic to issue game's token, let player trade and buy in-game item,...
@@ -283,4 +285,5 @@ As part of the `move` action logic, when we find that someone has won the game, 
                 .send();
     }
 ```
+
 If the host or challenger wins, we call the eosio.token#transfer method which has a function signature of `( const name& from, const name& to, const asset& quantity, const string& memo)`. Notice that the 4 decimals of the TIC token are implied in the integer representation, so 100000 in the `payout` definition line actually represents 10.0000 TIC tokens.
