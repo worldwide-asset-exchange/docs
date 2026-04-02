@@ -7,8 +7,6 @@ description: Step-by-step guide for migrating from the legacy My Cloud Wallet to
 
 This guide covers how to move from the legacy My Cloud Wallet to the new My Cloud Wallet experience that uses passkeys for sign-in and a 12-word mnemonic phrase for recovery.
 
-[[toc]]
-
 ## My Cloud Wallet Requirements
 
 To complete the migration to the new passkey-based My Cloud Wallet you must use a browser and device that are capable of storing WebAuthn PRF passkeys.
