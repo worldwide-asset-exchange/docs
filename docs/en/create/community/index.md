@@ -100,14 +100,6 @@ Discover resources to promote your project, build community, and access ecosyste
 
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title">WAX Hub</h3>
-      <p class="card-desc">Become a WAX Ambassador & enter the WAX Hub to get early access to content, opt-in to campaigns and help us grow the WAX NFT ecosystem together.</p>
-      <ActionHighlight label="Sign Up" href="https://ambassador.wax.io" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
       <h3 class="card-title">Taco Tools</h3>
       <p class="card-desc">Swap at the lowest market fees with Taco Swap, and sign transactions everywhere with the Taco Utility App. It's like having WAX in your pocket!</p>
       <ActionHighlight label="Learn More" href="https://tacocrypto.io" />

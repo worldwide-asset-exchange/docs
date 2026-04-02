@@ -4,16 +4,32 @@ title: NFTs
 
 # NFTs
 
-Use this section as the creator-facing entry point for NFT work on WAX.
+WAX is widely used for collectibles, game assets, membership items, and other NFT-based experiences. This section is for creators planning an NFT project on WAX, from collection design through launch readiness.
 
-## What Belongs Here
+## What Creators Should Decide First
 
-- collection planning
-- metadata design
-- creator workflows
-- marketplace readiness
+- what the collection is for
+- who the audience is
+- how supply and rarity will work
+- what metadata your assets need
+- who controls minting, updates, and collection settings
 
-## Current Starting Points
+## Launch Checklist
+
+A typical NFT launch on WAX includes:
+
+- planning the collection structure
+- defining schemas and templates
+- testing metadata and media
+- minting test assets
+- checking marketplace visibility and presentation
+- confirming wallet and account requirements for your users
+
+## Start Here
 
 - [AtomicAssets Guide](/build/tutorials/howto_atomicassets/)
 - [Marketplaces](/learn/getting-started/marketplaces)
+
+## Note
+
+Use the AtomicAssets guide above for the current technical workflow. A more detailed creator-oriented guide can be added later.
