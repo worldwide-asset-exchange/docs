@@ -31,9 +31,9 @@ The <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target=
 
 - Docker must be installed and configured to run without sudo. Linux users, refer to <a href="https://docs.docker.com/install/linux/linux-postinstall/" target="_blank">Post-installation steps for Linux</a> for more information.
 
-  :::tip
-  <strong>Windows Subsystem for Linux Users:</strong> Docker configuration and installation requirements will vary depending on your WSL version. Recommended only for advanced Docker/Windows users. If you're running WSL 2, refer to <a href="https://docs.docker.com/docker-for-windows/wsl-tech-preview/" target="_blank">Docker Desktop WSL 2 Tech Preview</a> for more information.
-  :::
+    :::tip
+    <strong>Windows Subsystem for Linux Users:</strong> Docker configuration and installation requirements will vary depending on your WSL version. Recommended only for advanced Docker/Windows users. If you're running WSL 2, refer to <a href="https://docs.docker.com/docker-for-windows/wsl-tech-preview/" target="_blank">Docker Desktop WSL 2 Tech Preview</a> for more information.
+    :::
 
 - make (VERSION 3.9 +)
 - A self-managed WAX Blockchain Account and its private key (to deploy the contract).
@@ -66,4 +66,3 @@ No matter which deployment option you choose, you'll need to:
 
 - [WAX-CDT Deploy](/build/dapp-development/deploy-dapp-on-wax/deploy_source)
 - [Docker Deploy](/build/dapp-development/deploy-dapp-on-wax/deploy_docker)
-- [Deploy an EOS dApp on WAX](/build/dapp-development/deploy-dapp-on-wax/convert_eos)
