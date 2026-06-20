@@ -17,3 +17,9 @@ This section groups the contract-authoring topics that were previously scattered
 
 - [Smart Contract Quickstart](/build/dapp-development/smart-contract-quickstart/)
 - [Deploy Your dApp on WAX](/build/dapp-development/deploy-dapp-on-wax/)
+
+## External Reference
+
+For Antelope-level design guidance, security patterns, and architectural context that applies to WAX smart contracts:
+
+- [Antelope Smart Contract Developer's Handbook](https://cc32d9.gitbook.io/antelope-smart-contract-developers-handbook)
