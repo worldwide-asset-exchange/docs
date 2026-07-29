@@ -24,13 +24,6 @@ Anchor is a stronger fit for users who want direct control, desktop tooling, and
 - Strengths: account management, desktop controls, hardware-wallet support
 - Read more: [Anchor](/learn/getting-started/anchor/)
 
-### Wombat
-
-Wombat is a multi-chain wallet commonly used with WAX games and NFT apps.
-
-- Best for: users who want a mobile- and extension-friendly experience
-- Strengths: approachable UX, app-friendly flow, NFT support
-
 ### cleos
 
 `cleos` is the command-line client used for development, automation, and node operations.
@@ -38,6 +31,10 @@ Wombat is a multi-chain wallet commonly used with WAX games and NFT apps.
 - Best for: developers and operators
 - Strengths: scripting, contract deployment, account and permission management
 - Read more: [cleos](/operate/leap/cleos)
+
+### Wombat
+
+Wombat was a multi-chain wallet commonly used with WAX games and NFT apps. It is no longer available.
 
 ## Before You Choose
 

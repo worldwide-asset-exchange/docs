@@ -22,9 +22,9 @@ Anchor is better when you want local wallet management, deeper account controls,
 
 ### Mostly Using Games and Apps
 
-Consider My Cloud Wallet or Wombat first.
+Consider My Cloud Wallet first.
 
-Both are designed around regular app interaction. The better choice depends on your preferred device, sign-in flow, and the apps you use most often.
+My Cloud Wallet is designed around regular app interaction. The better choice depends on your preferred device, sign-in flow, and the apps you use most often.
 
 ### Building or Operating on WAX
 
@@ -38,7 +38,6 @@ Pick the wallet that best matches the statements below:
 
 - I want the fastest consumer onboarding: My Cloud Wallet
 - I want stronger desktop control and advanced account features: Anchor
-- I want a game-friendly multi-chain wallet: Wombat
 - I want command-line control and scripting: cleos
 
 ## After You Choose

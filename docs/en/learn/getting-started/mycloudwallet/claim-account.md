@@ -5,19 +5,7 @@ description: Learn the difference between soft claim and hard claim, generate ke
 
 # Claim My Cloud Wallet Account
 
-By default, My Cloud Wallet manages the keys for your account. That custodial setup makes onboarding easier, but it also means you do not directly control the account keys unless you claim them.
-
-## Advantages
-
-- My Cloud Wallet removes the need for new users to store and manage private keys themselves.
-- It makes sign-in easier because access is tied to the login method used to create the wallet.
-
-## Inconveniences
-
-- Account access is limited to My Cloud Wallet's own tools and flows.
-- If the custodial service were ever compromised, managed keys could be exposed.
-
-For many users, My Cloud Wallet is enough on its own. If you want direct control of the account keys, you can claim the account partially or fully.
+This guide covers how to move from the legacy My Cloud Wallet to another wallet such as Anchor. This is not migration to the new My Cloud Wallet.
 
 ## Basic Permissions
 
@@ -78,19 +66,6 @@ If you do not want to generate the keys inside Anchor, you can use the official 
 4. Repeat the process to create another key pair for **Active**.
 5. Store all four keys safely and clearly label which pair belongs to **Owner** and which belongs to **Active**.
 
-## Change the Public Key Format
-
-The WAX explorer uses the modern public key format, but My Cloud Wallet's claim form expects the older public key format beginning with `EOS...`.
-
-![WAX Blockchain Explorer Key Format](/assets/images/claim-account-2.png)
-
-1. In the same **Wallet > Utilities** area, open **Format Keys**.
-2. Paste each generated public key into the formatter.
-3. Convert the public key to the legacy format.
-4. Copy the output key that begins with `EOS...`
-
-You do not need to convert the private keys.
-
 ## Claim Your Account from My Cloud Wallet
 
 Once your keys are ready, proceed with the claim flow in My Cloud Wallet.
@@ -102,7 +77,7 @@ Once your keys are ready, proceed with the claim flow in My Cloud Wallet.
 3. Choose one of the two account claim options.
 
 - **Soft Claim** (3): Keeps the account linked to My Cloud Wallet while adding your own keys.
-- **Hard Claim** (4): Fully disconnects the account from My Cloud Wallet custody and moves control to your own keys. After this, you will need another wallet such as Anchor or Wombat to use the account.
+- **Hard Claim** (4): Fully disconnects the account from My Cloud Wallet custody and moves control to your own keys. After this, you will need another wallet such as Anchor to use the account.
 
 ### Soft Claim
 
@@ -122,7 +97,7 @@ My Cloud Wallet then sends a security code by email.
 
 Soft Claim keeps the My Cloud Wallet multisig model in place. That means you may still be able to log in with My Cloud Wallet, but external wallets will not have full standalone signing control.
 
-Hard Claim removes the multisig setup and fully transfers control of the account to your own keys. After a Hard Claim, you will no longer use My Cloud Wallet as the controlling wallet for that account. You will need a third-party wallet such as Anchor or Wombat.
+Hard Claim removes the multisig setup and fully transfers control of the account to your own keys. After a Hard Claim, you will no longer use My Cloud Wallet as the controlling wallet for that account. You will need a third-party wallet such as Anchor.
 
 The claim form itself is the same as Soft Claim. The difference is the option you choose and the final custody result.
 

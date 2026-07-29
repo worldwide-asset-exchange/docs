@@ -11,7 +11,6 @@ This page is for discovery. If you are looking for setup steps, funding, wallet 
 
 - [My Cloud Wallet](https://www.mycloudwallet.com/)
 - [Anchor](https://greymass.com/en/anchor/)
-- [Wombat](https://www.wombat.app/)
 
 ## Explorers
 

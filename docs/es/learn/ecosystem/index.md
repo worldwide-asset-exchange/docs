@@ -11,7 +11,6 @@ description: Descubre el ecosistema WAX y los mejores puntos de entrada para emp
 
 - [My Cloud Wallet](https://www.mycloudwallet.com/)
 - [Anchor](https://greymass.com/en/anchor/)
-- [Wombat](https://www.wombat.app/)
 - [Ledger](https://www.ledger.com/eos-wallet/)
 
 &nbsp;
