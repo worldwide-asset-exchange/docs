@@ -33,6 +33,9 @@ My Cloud Wallet is designed to make blockchain interactions simpler for everyday
 4. Verify the requested recovery words
 5. Choose your 12-character WAX account name
 6. Create a passkey on your device or by using your phone
+7. Pay the **5 WAX** account creation fee when prompted
+
+For other ways to create an account, including Anchor and a WAX transfer, see [Create an Account](/learn/getting-started/create-an-account).
 
 ## Migration and Recovery
 

@@ -6,6 +6,8 @@ title: Get WAXP and Fund an Account
 
 WAXP is the native token used across the WAX ecosystem. You need it to fund accounts, acquire resources, trade assets, and participate in network activity.
 
+If you do not have a WAX account yet, create one first: [Create an Account](/learn/getting-started/create-an-account).
+
 ## Common Ways to Get WAXP
 
 Users typically obtain WAXP through:

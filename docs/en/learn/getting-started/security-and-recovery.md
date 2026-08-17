@@ -37,6 +37,10 @@ Plan for these cases in advance:
 
 If you use My Cloud Wallet, make sure you understand the difference between device-based access and phrase-based recovery. If you use Anchor, make sure your keys and any wallet backups are stored securely offline.
 
+::: danger Download Anchor only from official sources
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+:::
+
 ## Signing Safety
 
 Before approving a transaction:

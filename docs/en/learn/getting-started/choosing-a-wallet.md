@@ -4,7 +4,7 @@ title: Choosing a Wallet
 
 # Choosing a Wallet
 
-No single wallet is best for every WAX user. Choose based on the kind of access, control, and recovery model you need.
+No single wallet is best for every WAX user. Choose based on the kind of access, control, and recovery model you need. After you pick a wallet, [create an account](/learn/getting-started/create-an-account).
 
 ## Recommended by Use Case
 
@@ -19,6 +19,10 @@ It offers the easiest onboarding path and is the simplest way to start using gam
 Use [Anchor](/learn/getting-started/anchor/).
 
 Anchor is better when you want local wallet management, deeper account controls, and a workflow that fits power users or developers.
+
+::: danger Download Anchor only from official sources
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+:::
 
 ### Mostly Using Games and Apps
 
@@ -42,6 +46,7 @@ Pick the wallet that best matches the statements below:
 
 ## After You Choose
 
+- [Create an Account](/learn/getting-started/create-an-account)
 - Review [Security and Recovery](/learn/getting-started/security-and-recovery)
 - If you chose My Cloud Wallet, continue to [My Cloud Wallet](/learn/getting-started/mycloudwallet/)
 - If you chose Anchor, continue to [Anchor](/learn/getting-started/anchor/)

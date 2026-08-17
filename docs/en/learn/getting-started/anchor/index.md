@@ -7,6 +7,10 @@ description: Learn about Anchor Wallet, a desktop and mobile wallet application 
 
 Anchor Wallet is Greymass's open-source wallet for Antelope-based networks, including WAX. It is designed to help you securely sign transactions, connect to dApps, manage accounts, and work across multiple supported chains from one wallet.
 
+::: danger Download Anchor only from official sources
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+:::
+
 Greymass describes Anchor as security and privacy focused. On desktop, Anchor supports strong local encryption, Ledger integration, account management tools, and a richer set of wallet controls for power users. Anchor also supports sign-in flows for Antelope-based applications and can provide a limited number of free transactions on supported networks through Greymass Fuel.
 
 ## Why Use Anchor?
@@ -18,7 +22,10 @@ Greymass describes Anchor as security and privacy focused. On desktop, Anchor su
 
 ## Get Started
 
+- [Download Anchor from anchorwallet.io](https://anchorwallet.io)
 - [Download Anchor from Greymass](https://greymass.com/anchor)
+- [Anchor source on GitHub](https://github.com/greymass/anchor)
+- [Create a WAX Account](/learn/getting-started/create-an-account)
 - [Import Accounts into Anchor Wallet](/learn/getting-started/anchor/importing-accounts)
 - [Get Help from the Greymass Support Portal](https://support.greymass.com/support/home)
 

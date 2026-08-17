@@ -24,6 +24,10 @@ Anchor is a stronger fit for users who want direct control, desktop tooling, and
 - Strengths: account management, desktop controls, hardware-wallet support
 - Read more: [Anchor](/learn/getting-started/anchor/)
 
+::: danger Download Anchor only from official sources
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+:::
+
 ### cleos
 
 `cleos` is the command-line client used for development, automation, and node operations.
@@ -45,6 +49,7 @@ Consider these questions first:
 - Do you need developer and signing tools, or just day-to-day account access?
 - Do you need recovery options that fit your own security practices?
 
-Next step:
+Next steps:
 
 - [Choosing a Wallet](/learn/getting-started/choosing-a-wallet)
+- [Create an Account](/learn/getting-started/create-an-account)

@@ -44,6 +44,10 @@ export default [
                         link: '/learn/getting-started/choosing-a-wallet',
                     },
                     {
+                        text: 'Create an Account',
+                        link: '/learn/getting-started/create-an-account',
+                    },
+                    {
                         text: 'My Cloud Wallet',
                         link: '/learn/getting-started/mycloudwallet/',
                         collapsed: true,

@@ -10,8 +10,12 @@ description: Descubre el ecosistema WAX y los mejores puntos de entrada para emp
 ### Crear una cuenta WAX / Carteras
 
 - [My Cloud Wallet](https://www.mycloudwallet.com/)
-- [Anchor](https://greymass.com/en/anchor/)
+- [Anchor](https://anchorwallet.io)
 - [Ledger](https://www.ledger.com/eos-wallet/)
+
+::: danger Descarga Anchor solo desde fuentes oficiales
+Las únicas descargas oficiales de Anchor son [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor) y el [repositorio de GitHub de Greymass](https://github.com/greymass/anchor). **anchorwallet.org es falso.** No descargues Anchor desde ese sitio ni desde cualquier otra página, anuncio o resultado de búsqueda no oficial.
+:::
 
 &nbsp;
 

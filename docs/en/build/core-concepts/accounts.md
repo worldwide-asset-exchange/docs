@@ -38,5 +38,6 @@ A WAX account can control:
 
 Read next:
 
+- [Create an Account](/learn/getting-started/create-an-account)
 - [Permissions](/build/core-concepts/permissions)
 - [Resources](/build/core-concepts/resources)
