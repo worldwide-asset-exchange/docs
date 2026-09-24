@@ -51,7 +51,7 @@ Greymass provides a paid account creator at [create.anchor.link](https://create.
 **Fee:** $0.99 USD.
 
 ::: danger Download Anchor only from official sources
-The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io) and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
 :::
 
 1. Download and install Anchor from one of the official links above

@@ -8,7 +8,7 @@ description: Learn the difference between soft claim and hard claim, generate ke
 This guide covers how to move from the legacy My Cloud Wallet to another wallet such as Anchor. This is not migration to the new My Cloud Wallet.
 
 ::: danger Download Anchor only from official sources
-The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io) and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
 :::
 
 ## Basic Permissions

@@ -9,12 +9,12 @@ This guide shows how to import an existing WAX account into Anchor Wallet Deskto
 
 ## Before You Start
 
-- Download and install Anchor only from [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), or the [official GitHub repository](https://github.com/greymass/anchor)
+- Download and install Anchor only from [anchorwallet.io](https://anchorwallet.io) or the [official GitHub repository](https://github.com/greymass/anchor)
 - Have your WAX private key ready if you plan to use the direct import flow
 - Keep your Anchor password stored safely offline, because Anchor cannot recover it for you
 
 ::: danger Download Anchor only from official sources
-The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io) and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
 :::
 
 :::tip
