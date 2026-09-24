@@ -21,7 +21,7 @@ Use [Anchor](/learn/getting-started/anchor/).
 Anchor is better when you want local wallet management, deeper account controls, and a workflow that fits power users or developers.
 
 ::: danger Download Anchor only from official sources
-The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
+The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io) and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
 :::
 
 ### Mostly Using Games and Apps
