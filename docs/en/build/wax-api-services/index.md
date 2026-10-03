@@ -30,6 +30,7 @@ Below is the current list preserved from the earlier WAX docs:
 | EOS USA       | [https://www.eosusa.io/hosting/](https://www.eosusa.io/hosting/)               | FAH, SH, AA                | Dedicated Servers                            | https://www.eosusa.io/hosting/, Telegram ID: @EOSUSA_Michael |
 | WAX Sweden    | [https://waxsweden.org/commercial-api/](https://waxsweden.org/commercial-api/) | SH, Contract Notifications | Dedicated Servers                            | https://t.me/eossweden                                       |
 | EOSphere      | [https://eosphere.io/services/](https://eosphere.io/services/)                 | FAH, SH, AA                | Dedicated Servers, API Metered Subscriptions | info@eosphere.io, Telegram ID: @rossco99                     |
+| Pinax         | [https://pinax.network/](https://pinax.network/)                               | Firehose, Substreams       | Managed streaming endpoints                  | support@pinax.network, https://app.pinax.network/docs        |
 
 ## Common Service Categories
 
@@ -38,6 +39,7 @@ Below is the current list preserved from the earlier WAX docs:
 - state-history services
 - AtomicAssets or market APIs
 - lighter managed read endpoints
+- block streaming and parallel indexing (Firehose, Substreams)
 
 ### Service Type Abbreviations
 
