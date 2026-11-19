@@ -8,7 +8,7 @@ Afortunadamente, existen soluciones poderosas y gratuitas que pueden implementar
 
 Esta guía te mostrará cómo utilizar una implementación existente de HAProxy para exportar métricas usando Filebeat a un clúster de Elasticsearch, donde los datos pueden visualizarse. Creando paneles asombrosos y útiles como nuestro panel de HAProxy WAX de EOSphere a continuación:
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/90e76d13-a955-422d-9012-db973e967984)
+![Panel HAProxy de WAX de EOSphere](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/haproxy-dashboard.png)
 
 # Cómo visualizar métricas desde un balanceador de carga WAX
 
@@ -95,7 +95,7 @@ Conéctate a la interfaz de usuario web de Kibana usando un navegador y pega el 
 ```
 http://<DIRECCIÓN IP DEL SERVIDOR>:5601/
 ```
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/2fc7bf50-3aa8-42b4-8fbd-adfecb824935)
+![Pantalla para introducir el token de inscripción de Kibana](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/kibana-enrollment.png)
 
 Introduce el token de inscripción de Kibana.
 
@@ -198,13 +198,13 @@ Ahora que Filebeat está en funcionamiento, se puede verificar Kibana para asegu
 
 Inicia sesión en Kibana y haz clic en las [Tres barras horizontales] en la parte superior izquierda -> [Analytics] -> [Discover]
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/cee33d07-4d72-4853-b57f-18f1b1adcdc9)
+![Opción Discover en el menú de Kibana](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/kibana-discover-menu.png)
 
 La herramienta Discover de Kibana te dará una vista de todos los campos que se han indexado, estos campos pueden luego usarse para crear tus propias visualizaciones personalizadas que luego pueden añadirse a un panel.
 
 Al hacer clic en un documento y expandirlo, tendrás una idea de lo que está disponible.
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/a0696e32-443b-4b4e-bd76-61172882267b)
+![Campos de Filebeat indexados en Kibana Discover](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/filebeat-indexed-fields.png)
 
 Los campos poblados significan que el exportador Filebeat está funcionando como se espera.
 
@@ -214,11 +214,11 @@ La herramienta Visualize de Kibana toma los datos de métricas y los muestra en 
 
 La herramienta Visualize de Kibana puede accederse directamente haciendo clic en un campo en la herramienta Discover,
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/1e7225b8-83bc-451f-848f-bbbef882ccfe)
+![Opción para visualizar un campo en Kibana Discover](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/visualize-field-from-discover.png)
 
 o desde [Analytics] -> [Visualize Library]
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/37f51abb-131b-4148-b13c-1948a939f135)
+![Opción Visualize Library en el menú de Kibana](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/kibana-visualize-library-menu.png)
 
 El módulo HAProxy de Filebeat habría proporcionado algunas visualizaciones predeterminadas para ayudarte a comenzar. Solo busca "filebeat haproxy".
 
@@ -226,13 +226,13 @@ Lo mejor es hacer clic y jugar con los diversos tipos de visualización (Barra /
 
 A continuación, se muestra un ejemplo de presentación de los códigos de respuesta http del frontend de HAProxy en un gráfico de líneas durante los últimos 15 minutos. Se utilizó el campo `http.response.status_code`.
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/6c6613ef-ed8a-4f97-bdfd-afb30bec684c)
+![Creación de un gráfico de códigos de respuesta HTTP de HAProxy en Kibana](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/haproxy-response-code-visualization.png)
 
 Estas visualizaciones luego pueden guardarse e importarse a un panel para una vista clara y sencilla de todas las visualizaciones.
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/3fc0799b-112b-4614-9a6c-89b70d1e6ba2)
+![Cuadro de diálogo para guardar una visualización de Kibana en un panel](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/save-kibana-visualization.png)
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/1f72a310-6b6b-4e19-8820-c306303a7cb7)
+![Panel de Kibana con el gráfico de códigos de respuesta HTTP guardado](/assets/images/wax-infrastructure/visualise-load-balancer-metrics/dashboard-with-saved-visualization.png)
 
 Kibana y Elasticsearch realmente son un sandbox para todas tus necesidades de visualización. Comenzar con una idea clara de los datos que te gustaría ver te ayudará mucho mientras te familiarizas con Kibana.
 
@@ -240,6 +240,6 @@ Kibana y Elasticsearch realmente son un sandbox para todas tus necesidades de vi
 
 ---
 
-Estas **Guías técnicas para desarrolladores de WAX** se crean utilizando material de origen de la [Serie técnica de cómo hacerlo de EOSphere WAX](https://medium.com/eosphere/wax-technical-how-to/home).
+Estas **Guías técnicas para desarrolladores de WAX** se crean utilizando material de origen de la [WAX Technical How To #16](https://medium.com/eosphere/wax-technical-how-to-16-a64d5a53d770), de Ross Dold (EOSphere)..
 
 Asegúrate de hacer cualquier pregunta en el [Telegram de EOSphere](https://t.me/eosphere_io).

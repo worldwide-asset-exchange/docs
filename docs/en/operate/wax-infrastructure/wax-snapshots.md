@@ -42,7 +42,9 @@ First of all you need to obtain a valid snapshot file from a trusted source. The
 Choose a file compatible with your `nodeos` version from the [EOSphere WAX Mainnet snapshot directory](https://store3.eosphere.io/wax/snapshots/).
 :::
 
-![snapshotservice_v2](https://github.com/Rossco99/wax-developer/assets/12730423/60f41ad4-f85c-483d-8ed6-bc913c943369)
+![WAX snapshot providers and download links](/assets/images/wax-infrastructure/snapshots/wax-snapshot-services.jpg)
+
+_Historical screenshot from [WAX Technical How To #2](https://medium.com/eosphere/wax-technical-how-to-2-db45a339e735) by Ross Dold, EOSphere._
 
 ### Usage
 

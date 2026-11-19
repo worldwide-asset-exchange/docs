@@ -88,7 +88,7 @@ There are few ways to run the scan as below:
 >./hyp-repair scan wax -o ./xyz
 ```
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/e2f88c2f-352f-4397-a3df-5e3c43f76a96)
+![Terminal output from a Hyperion scan of all blocks](/assets/images/wax-hyperion/hyperion-repair-indexed-data/hyperion-all-blocks-scan.png)
 
 If a range isn’t specified the scan will start in reverse, from the last indexed block to the first indexed block in Elasticsearch.
 
@@ -103,7 +103,7 @@ If missing or forked blocks are found a file will be created listing the discrep
 > ./hyp-repair view .repair/wax-4-250000861-missing-blocks.json
 ```
 
-![image](https://github.com/Rossco99/wax-developer/assets/12730423/9259c6fe-9c45-47bf-82b0-c96d38907bf0)
+![Terminal output listing forked blocks found by Hyperion](/assets/images/wax-hyperion/hyperion-repair-indexed-data/hyperion-forked-blocks-output.png)
 
 Of course you may have no issues and in that case no file will be created.
 
@@ -134,6 +134,6 @@ It’s a good idea to then re-run the scan to ensure you have successfully fixed
 
   ---
 
-These **WAX Developer Technical Guides** are created using source material from the [EOSphere WAX Technical How To Series](https://medium.com/eosphere/wax-technical-how-to/home)
+These **WAX Developer Technical Guides** are created using source material from the [WAX Technical How To #15.9](https://medium.com/eosphere/wax-technical-how-to-15-9-648857d7b535) by Ross Dold (EOSphere).
 
 Be sure to ask any questions in the  [EOSphere Telegram](https://t.me/eosphere_io)
