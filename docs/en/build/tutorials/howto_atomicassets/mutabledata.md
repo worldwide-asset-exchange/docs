@@ -30,19 +30,24 @@ Let us see how to modify them, now.
 Before getting into modifying a mutable field In JavaScript it is important to know the ATTRIBUTE_MAP object. One of the advantages of the AtomicAssets standard is the use of serialization in order to save RAM in the tables which store NFTs' data. For this we use a data map that pairs the type of data with its content, therefore allowing it to be serialized.
 
 This map's format is built following this pattern:
+
 ```json
 [{"key": MYKEY, value: MYVALUE}, ...]
 ```
+
 In an NFT's template it is defined which is mutable data and which is immutable data, and it specifies the name of the field and the type of data it will contain. Therefore, we can have the string type field "name", or the int(16bits) type field "speed".
 
 So if we wished to create a data map to specify this information:
+
 ```json
-{ 
-    name: “Delorean”, 
-    speed: 300 
+{
+    name: “Delorean”,
+    speed: 300
 }
 ```
+
 We should create an array of objects while keeping its specifications from the template:
+
 ```json
 [{
 	“key”: “name”,
@@ -52,6 +57,7 @@ We should create an array of objects while keeping its specifications from the t
 	“value”: [“uint16”, 300]
 }]
 ```
+
 Let us see how to do this in JavaScript now.
 
 ## Writing mutable data in an NFT in JavaScript <a name="p3"></a>
@@ -66,6 +72,7 @@ For this example we need to call the "setassetdata" action from the AtomicAssets
 - **new_mutable_data**: a structure similar to the ATTRIBUTE_MAP which contains the data we want to modify, as we saw before.
 
 By following the previous example we could define a function which receives the needed information as parameters and which calls the smart contract from "atomicassets":
+
 ```js
 Const updateNft = (authorized, owner, asset_id, name, speed) => {
     apiRpc.transact({
@@ -100,6 +107,7 @@ Const updateNft = (authorized, owner, asset_id, name, speed) => {
     });
 }
 ```
+
 ## Modifying mutable data in JavaScript <a name="p4"></a>
 
 We have seen how to introduce mutable data in an NFT, but sometimes we will need to update its content, such as, for instance, to add a number of points to its actual score.
@@ -114,47 +122,55 @@ As the eosjs library requires to be connected to a Full Story API from the WAX B
 :::
 
 In this example we see how to connect to an Atomic API in order to read an NFT, based on its ID, and how to obtain one of its data's contents.
+
 ```js
-const { ExplorerApi } = require("atomicassets");
-const api = new ExplorerApi(
-    ATOMIC_API, 
-    "atomicassets", 
-    { fetch });
+const { ExplorerApi } = require('atomicassets');
+const api = new ExplorerApi(ATOMIC_API, 'atomicassets', { fetch });
 
 const asset = await api.getAsset(asset_id);
 let player_points = asset.mutable_data.player_points;
 player_points += 100;
 ```
-You must change **ATOMIC_API** for a valid Atomic API URL. You can get a list of them in https://tools.ledgerwise.io
+
+Set **ATOMIC_API** to a valid URL from the AtomicAssets API list on [HerdCheck](https://herdcheck.blocdraig.com/wax/lists).
 
 Once we have read it, all there is left to do is to update the information with the desired values and save it in the NFT, as we saw in the previous step.
 
 ## Writing the mutable data of an NFT from AtomicAssets in a smart contract <a name="p5"></a>
 
 Operating with AtomicAssets' NFTs from our smart contract requires us to include some items from the smart contract "atomicassets" in our code, for us to be able to reuse certain definitions and declarations of functions and data . Specifically we will need these files:
+
 ```
 atomicassets.hpp
 atomicdata.hpp
 base58.hpp
 ```
+
 Which we can obtain from Pink Network's GitHub:
-(https://github.com/pinknetworkx/atomicassets-contract/tree/master/include)
+(https://github.com/atomicassets/atomicassets-contract/tree/master/include)
 
 Our first step is to declare an item of the ATTRIBUTE_MAP type:
+
 ```c
 atomicassets::ATTRIBUTE_MAP mdata = {};
 ```
+
 Now we can start adding data:
+
 ```c
 mdata[“name”] = string(“Delorean”);
 mdata[“speed”] = uint16_t(300);
 ```
+
 Or, if we receive the data as parameters in a function -see the JavaScript example:
+
 ```c
 mdata[“name”] = name;
 mdata[“speed”] = speed;
 ```
+
 And all that is left to do is to call the "atomicassets" smart contract's action to carry out the operation:
+
 ```c
 action(
     permission_level{name(“authorized”), name("active")},
@@ -163,6 +179,7 @@ action(
     make_tuple(name(“authorized”), name(“owner”), asset_id, mdata))
     .send();
 ```
+
 ## Modifying mutable data from the smart contract <a name="p6"></a>
 
 While similar to the JavaScript example of mutable data modification, in this case we will need to deserialize the data. We are fortunate that Pink Network will facilitate our job again -this is the reason why we imported the "atomicdata" and "base58" files during the previous step.
@@ -170,6 +187,7 @@ While similar to the JavaScript example of mutable data modification, in this ca
 First of all we need to locate the NFT by accessing the assets table owned by the current owner. This is why it is important to know who has the NFT in their wallet, since it will be the scope of the data table of the assets from AtomicAssets.
 
 The information we need to serialize and deserialize the data -item names and data types- is stored in the collection's schema, so we need to access the information of the schema the NFT belongs to as well.
+
 ```c
 // Read owner’s assets
 atomicassets::assets_t listAssets = atomicassets::get_assets(owner);
@@ -194,6 +212,5 @@ uint32_t mdata_player_points = get<uint32_t>(mdata["player_points"]);
 // Update
 mdata_player_points += player_points;
 ```
+
 Once the data has been taken we can modify and store it as we saw in the previous example. We just need to keep in mind that the function "deserialize" will give us an item of the type ATTRIBUTE_MAP, which allows us to use it directly in the writing operation.
-
-

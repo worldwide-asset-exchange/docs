@@ -15,7 +15,7 @@ Cada contrato inteligente requiere una cuenta en la blockchain. Se recomienda qu
 
 2. Desde la página principal de Testnet, obtén Tokens WAX gratis para financiar tu nueva cuenta.
 
-3. Para desplegar tus contratos inteligentes, necesitarás crear una billetera utilizando tus claves públicas y privadas. Puedes usar las características de billetera en <a href="https://local.bloks.io/wallet/transfer?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org" target="_blank">Bloks.io</a>, o usar nuestras [imágenes de Docker](/build/dapp-development/docker-setup/) para gestionar tu billetera.
+3. Para desplegar tus contratos inteligentes, necesitarás crear una billetera utilizando tus claves públicas y privadas. Puedes usar las características de billetera en <a href="https://local.waxblock.io/wallet/transfer?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org" target="_blank">WAXBlock</a>, o usar nuestras [imágenes de Docker](/build/dapp-development/docker-setup/) para gestionar tu billetera.
 
     Para crear una billetera desde un contenedor Docker, usa el comando `cleos wallet`:
 
@@ -28,7 +28,7 @@ Cada contrato inteligente requiere una cuenta en la blockchain. Se recomienda qu
 
     Guarda la contraseña de tu billetera en un lugar seguro - la necesitarás para ejecutar comandos en la blockchain.
 
-4. Una vez que tengas una billetera configurada con tu cuenta Testnet, puedes apostar NET, CPU y RAM desde Bloks.io o tu contenedor Docker.
+4. Una vez que tengas una billetera configurada con tu cuenta Testnet, puedes apostar NET, CPU y RAM desde WAXBlock o tu contenedor Docker.
 
     Comprar RAM:
 

@@ -3,11 +3,11 @@ title: Cómo configurar un nodo de API atómica de WAX
 order: 4
 ---
 
-El estándar de NFT AtomicAssets desarrollado por [Pink.gg](https://pink.gg/) se ha vuelto sinónimo de la Red del Protocolo WAX y del ampliamente utilizado [WAX Atomic Hub](https://wax.atomichub.io/).
+El estándar de NFT AtomicAssets desarrollado por Pink.gg se ha vuelto sinónimo de la Red del Protocolo WAX y del ampliamente utilizado [WAX Atomic Hub](https://wax.atomichub.io/).
 
-El estándar de NFT AtomicAssets se distingue de sus alternativas por no requerir RAM de los usuarios y ofrecer ofertas de intercambio bidireccionales nativas, así como respaldar NFTs con tokens. Puedes leer más sobre el estándar en [https://atomicassets.io/](https://atomicassets.io/).
+El estándar de NFT AtomicAssets se distingue de sus alternativas por no requerir RAM de los usuarios y ofrecer ofertas de intercambio bidireccionales nativas, así como respaldar NFTs con tokens. Puedes leer más sobre el estándar en [AtomicAssets en GitHub](https://github.com/atomicassets/).
 
-Por supuesto, ningún marco de NFTs impresionante estaría completo sin la capacidad para que los usuarios y desarrolladores accedan a datos en tiempo real de manera simple y efectiva a través de una API escalable. Aquí es donde [Pink.gg](https://pink.gg/) desarrolló la [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) también conocida como la **API Atómica**.
+Por supuesto, ningún marco de NFTs impresionante estaría completo sin la capacidad para que los usuarios y desarrolladores accedan a datos en tiempo real de manera simple y efectiva a través de una API escalable. Aquí es donde Pink.gg desarrolló la [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) también conocida como la **API Atómica**.
 
 Esta guía te guiará a través del proceso de construir y ejecutar un nodo de API atómica de WAX, lo que te permitirá, como gremio o desarrollador, ofrecer un servicio de API muy útil para el ecosistema... o tal vez solo para ti.
 
@@ -23,7 +23,7 @@ Esta guía pasa por el proceso de construir las dependencias de la aplicación y
 
 **Hardware**
 
-- 8 CPU Core / 5_Ghz+ recomendado_
+- 8 CPU Core / 5*Ghz+ recomendado*
 - 1TB+ Disco / _SSD de grado empresarial o NVMe_
 
 Actualmente (noviembre de 2022) un nodo completo usa aproximadamente **859GB** de espacio en disco con la base de datos postgres actualmente en **849GB**.
@@ -46,7 +46,7 @@ Actualmente (noviembre de 2022) un nodo completo usa aproximadamente **859GB** d
 
 # Construir el Software
 
-En el momento de escribir, la versión actual de la [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) es `v1.3.17`
+En el momento de escribir, la versión actual de la [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) es `v1.3.17`
 
 Dependencias de la Aplicación **_(Algunas de nuestras recomendaciones)_**
 
@@ -63,7 +63,7 @@ Dependencias de la Aplicación **_(Algunas de nuestras recomendaciones)_**
 ```
 > curl -fsSL [https://deb.nodesource.com/setup_16.x](https://deb.nodesource.com/setup_16.x) | sudo -E bash - > sudo apt install -y nodejs
 
-#Verificar Versión#  
+#Verificar Versión#
 > node -v
 ```
 
@@ -72,7 +72,7 @@ Dependencias de la Aplicación **_(Algunas de nuestras recomendaciones)_**
 ```
 > sudo npm install pm2 -g
 
-#Verificar Versión#  
+#Verificar Versión#
 > pm2 -v
 ```
 
@@ -91,7 +91,7 @@ Instala Postgres como se indica a continuación:
 
 > sudo apt install postgresql postgresql-contrib
 
-#Verificar Versión#  
+#Verificar Versión#
 > apt show postgresql
 ```
 
@@ -104,12 +104,12 @@ Después de la instalación, es necesario crear una nueva base de datos y asigna
 
 > psql
 
-#Asignar una contraseña a la cuenta de postgres#  
-postgres=# \password  
-Ingresa nueva contraseña:  
+#Asignar una contraseña a la cuenta de postgres#
+postgres=# \password
+Ingresa nueva contraseña:
 Ingresa nuevamente:
 
-#Crear la base de datos#  
+#Crear la base de datos#
 postgres=# \l (lista las bases de datos)
 postgres=# CREATE DATABASE "api-wax-mainnet-atomic-1";
 postgres=# \l+ (lista las bases de datos - incluyendo tamaño)
@@ -129,10 +129,10 @@ postgres=# \q (salir)
 
 > sudo apt install redis
 
-#Verificar Versión#  
+#Verificar Versión#
 > redis-server --version
 
-#Si hay un error de desenmascarar entonces#  
+#Si hay un error de desenmascarar entonces#
 > sudo systemctl unmask redis-server.service
 ```
 
@@ -141,18 +141,18 @@ postgres=# \q (salir)
 ```
 > sudo npm install --global yarn
 
-#Verificar Versión#  
+#Verificar Versión#
 > yarn --version
 ```
 
 ## API Atómica
 
-Las últimas instrucciones de construcción siempre se pueden encontrar en el [Github de Pink.gg](https://github.com/pinknetworkx/eosio-contract-api)
+Las últimas instrucciones de construcción siempre se pueden encontrar en el [Github de Pink.gg](https://github.com/atomicassets/atomicassets-api)
 
 **Instalación**
 
 ```
-> git clone https://github.com/pinknetworkx/eosio-contract-api.git
+> git clone https://github.com/atomicassets/atomicassets-api.git
 
 > cd eosio-contract-api
 
@@ -164,8 +164,8 @@ Las últimas instrucciones de construcción siempre se pueden encontrar en el [G
 Hay tres archivos de configuración que deben ajustarse para tu implementación específica
 
 ```
-connections.config.json  
-server.config.json  
+connections.config.json
+server.config.json
 readers.config.json
 ```
 
@@ -260,7 +260,7 @@ _server.config.json_
         "connected_reader": "atomic-1"
       }
     }
- 
+
 
  ]
 }
@@ -333,26 +333,26 @@ Esto tomará algún tiempo y es aconsejable asegurarse de que la indexación se 
 ```
 > cd ~/eosio-contract-api
 
-#Iniciar el Filler de Indexación de Postgres#  
+#Iniciar el Filler de Indexación de Postgres#
 > pm2 start ecosystems.config.json --only eosio-contract-api-filler
 
-#Iniciar el Servidor de API#  
+#Iniciar el Servidor de API#
 > pm2 start ecosystems.config.json --only eosio-contract-api-server
 
-#Monitorear el Filler y el Servidor#  
+#Monitorear el Filler y el Servidor#
 > pm2 log
 ```
 
 **_NB:_** _Detener el servicio de filler puede ser problemático ocasionalmente donde reiniciar demasiado pronto puede causar que se ejecuten dos instancias del filler causando una corrupción de la DB. Para evitar esto, asegúrate de que el filler haya dejado de indexar a postgres monitoreando los servicios activos con top o htop antes de reiniciar._
 
 ```
-#Detener el Filler de Indexación de Postgres#  
+#Detener el Filler de Indexación de Postgres#
 > pm2 stop eosio-contract-api-filler
 
-#Detener el Servidor de API#  
+#Detener el Servidor de API#
 > pm2 stop eosio-contract-api-server
 
-#Detener Todo#  
+#Detener Todo#
 > pm2 stop all
 
 #Verificar usando top o htop#

@@ -3,11 +3,11 @@ title: Cómo configurar un nodo de Estado-Historial de WAX
 order: 148
 ---
 
-Existe un tipo de implementación de nodoos que es crucial para el funcionamiento de numerosos servicios principales de WAX, como [Hyperion Full History](https://github.com/eosrio/hyperion-history-api) y la [API de Activos Atómicos](https://github.com/pinknetworkx/eosio-contract-api), y ese es el servicio de Estado-Historial.
+Existe un tipo de implementación de nodoos que es crucial para el funcionamiento de numerosos servicios principales de WAX, como [Hyperion Full History](https://github.com/eosrio/hyperion-history-api) y la [API de Activos Atómicos](https://github.com/atomicassets/atomicassets-api), y ese es el servicio de Estado-Historial.
 
 Esta guía te mostrará cómo construir, configurar y desplegar nodeos para proporcionar funcionalidad de Estado-Historial, también conocida como un nodo de Protocolo de Historial de Estado (SHIP).
 
-> Este artículo ha sido actualizado para incorporar el proceso de construcción de software_ [_Antelope_](https://antelope.io/).
+> Este artículo ha sido actualizado para incorporar el proceso de construcción de software* [\_Antelope*](https://antelope.io/).
 
 # Cómo configurar un nodo de Estado-Historial de WAX
 
@@ -23,29 +23,29 @@ Este artículo guiará a través de un ejemplo que es válido actualmente (septi
 
 **Hardware**
 
--   CPU de 4 núcleos / _4Ghz+_
--   (1) Disco de 256GB+ / _SSD de calidad empresarial o NVMe (_**_Requisito de Alta Resistencia_**_)_
--   (2) Disco de 10TB+ / _SAS o SATA son aceptables, sin embargo, se prefieren SSD o NVMe_
+- CPU de 4 núcleos / _4Ghz+_
+- (1) Disco de 256GB+ / _SSD de calidad empresarial o NVMe (_**_Requisito de Alta Resistencia_**_)_
+- (2) Disco de 10TB+ / _SAS o SATA son aceptables, sin embargo, se prefieren SSD o NVMe_
 
 Actualmente (septiembre de 2022), los directorios `blocks` y `state-history` ocupan poco menos de **8TB** de espacio en disco.
 
 ```
-2.1T    ./blocks  
-5.7T    ./state-history  
+2.1T    ./blocks
+5.7T    ./state-history
 7.8T    .
 ```
 
--   RAM de 128GB+
+- RAM de 128GB+
 
 **Sistema Operativo**
 
--   Ubuntu 18.04
--   Ubuntu 20.04  **_(Recomendado)_**
--   Ubuntu 22.04
+- Ubuntu 18.04
+- Ubuntu 20.04 **_(Recomendado)_**
+- Ubuntu 22.04
 
 **Internet**
 
--   Conexión de banda ancha moderna / Fibra óptica (síncrona de 100Mb/s o superior)
+- Conexión de banda ancha moderna / Fibra óptica (síncrona de 100Mb/s o superior)
 
 # Preparar el Entorno del Sistema Operativo
 
@@ -68,41 +68,41 @@ En este ejemplo, el Disco 2 ejecutará el **Sistema de Archivos ZFS** que nos pr
 Implemente ZFS en el Disco 2 con la siguiente configuración:
 
 ```
-# Instalar ZFS  
+# Instalar ZFS
 > sudo apt-get install zfsutils-linux
 
-# Localizar el nombre del dispositivo del Disco 2  
+# Localizar el nombre del dispositivo del Disco 2
 > lsblk
 
-# Crear un Pool ZFS llamado "datavolume" en el dispositivo "sdb"  
+# Crear un Pool ZFS llamado "datavolume" en el dispositivo "sdb"
 > sudo zpool create datavolume /dev/sdb
 
-# Habilitar la compresión LZ4  
+# Habilitar la compresión LZ4
 > sudo zfs set compression=lz4 datavolume
 
-# Desactivar las actualizaciones de tiempo de acceso de ZFS  
+# Desactivar las actualizaciones de tiempo de acceso de ZFS
 > sudo zfs set atime=off datavolume
 
-# Establecer ARC para cachear solo metadatos  
+# Establecer ARC para cachear solo metadatos
 > sudo zfs set primarycache=all datavolume
 
-# Establecer la ubicación del punto de montaje en su ubicación preferida  
+# Establecer la ubicación del punto de montaje en su ubicación preferida
 > sudo zfs set mountpoint=/home/eosphere/datavolume datavolume
 
-# Crear las carpetas específicas para /blocks y /state-history  
+# Crear las carpetas específicas para /blocks y /state-history
 > mkdir /home/eosphere/datavolume/blocks
 
 > mkdir /home/eosphere/datavolume/state-history
 
-# Establecer un punto de montaje específico para /blocks y /state-history  
+# Establecer un punto de montaje específico para /blocks y /state-history
 > sudo zfs create -o mountpoint=/home/eosphere/datavolume/blocks datavolume/blocks
 
 > sudo zfs create -o mountpoint=/home/eosphere/datavolume/state-history datavolume/state-history
 
-# Desactivar la compresión lz4 en el punto de montaje state-history  
+# Desactivar la compresión lz4 en el punto de montaje state-history
 > sudo zfs set compression=none datavolume/state-history
 
-# Verificar la configuración de ZFS  
+# Verificar la configuración de ZFS
 > zfs get all
 ```
 
@@ -110,31 +110,31 @@ Implemente ZFS en el Disco 2 con la siguiente configuración:
 
 Es crucial para una cadena de bloques globalmente entrelazada tener tiempo sincronizado en todos los nodos.
 
-[Chrony](https://chrony.tuxfamily.org/)  es un excelente cliente NTP y es bastante adecuado para las necesidades de la WAX Mainnet.
+[Chrony](https://chrony.tuxfamily.org/) es un excelente cliente NTP y es bastante adecuado para las necesidades de la WAX Mainnet.
 
 Instale, configure y verifique como se muestra a continuación:
 
 ```
-# Instalar Chrony  
+# Instalar Chrony
 > sudo apt install chrony
 
-# Si es necesario, agregue manualmente pares locales, estos son servidores AU  
-> sudo nano /etc/chrony/chrony.conf  
-  
-server 0.pool.ntp.org  
-server 1.pool.ntp.org  
-server 2.pool.ntp.org  
+# Si es necesario, agregue manualmente pares locales, estos son servidores AU
+> sudo nano /etc/chrony/chrony.conf
+
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
 server 3.pool.ntp.org
 
-# Reiniciar Chrony  
+# Reiniciar Chrony
 > sudo /etc/init.d/chrony restart
 
-# Verificar  
-> chronyc sources -v  
+# Verificar
+> chronyc sources -v
 
 > chronyc tracking
 
-# Establecer su zona horaria local si es necesario  
+# Establecer su zona horaria local si es necesario
 > sudo timedatectl set-timezone Australia/Perth
 ```
 
@@ -147,11 +147,11 @@ Configure y verifique los límites aumentados de la siguiente manera:
 ```
 > sudo nano /etc/systemd/system.conf
 
-# Agregar la siguiente configuración  
-DefaultLimitNOFILE=64000   
+# Agregar la siguiente configuración
+DefaultLimitNOFILE=64000
 DefaultLimitSTACK=65536000
 
-# Reiniciar el servidor y verificar  
+# Reiniciar el servidor y verificar
 > ulimit -a
 ```
 
@@ -161,13 +161,13 @@ El software de WAX se deriva del software Antelope de código abierto, sin embar
 
 Actualmente, la versión y construcción de software de WAX Block Producer aceptada es `v3.
 
-1.0wax01`  creada por  [cc32d9](https://cc32d9.medium.com/), miembro del  [EOS Amsterdam Guild](https://eosamsterdam.net/)
+1.0wax01` creada por [cc32d9](https://cc32d9.medium.com/), miembro del [EOS Amsterdam Guild](https://eosamsterdam.net/)
 
 La última etiqueta de construcción de `wax` está disponible actualmente en [cc32d9 Github](https://github.com/cc32d9/wax-leap/tags)
 
 **Proceso de Construcción**
 
-Este ejemplo utiliza [Ubuntu Linux](https://ubuntu.com/)  para compilar el software de WAX desde el origen siguiendo el proceso a continuación:
+Este ejemplo utiliza [Ubuntu Linux](https://ubuntu.com/) para compilar el software de WAX desde el origen siguiendo el proceso a continuación:
 
 ```
 > cd ~
@@ -198,13 +198,13 @@ Ahora que se ha compilado una versión limpia del software de WAX, procedamos a 
 
 Para configurar y iniciar el nodo se utilizará `nodeos`, que es el daemon del servicio principal que se ejecuta en cada nodo de la Red de Protocolo de WAX.
 
-`nodeos`  puede configurarse para procesar contratos inteligentes, validar transacciones, producir bloques que contienen transacciones válidas y confirmar bloques para registrarlos en la cadena de bloques.
+`nodeos` puede configurarse para procesar contratos inteligentes, validar transacciones, producir bloques que contienen transacciones válidas y confirmar bloques para registrarlos en la cadena de bloques.
 
 Las funciones operativas principales de `nodeos` son; ejecutarlo como Productor de Bloques, Punto Final de API de Red, Nodo Semilla P2P o Nodo de Estado-Historial. Típicamente, en una red concurrida como la WAX Mainnet, separaría estas funciones en servidores físicamente discretos.
 
 En este ejemplo de la WAX Mainnet, hará que su nodo se conecte a otros pares de red y esté disponible para conexiones API y Websocket como un nodo de Estado-Historial (SHIP).
 
-`nodeos`  requiere **dos archivos** para conectarse a pares y ejecutarse en la WAX Mainnet:
+`nodeos` requiere **dos archivos** para conectarse a pares y ejecutarse en la WAX Mainnet:
 
 **config.ini**
 
@@ -227,130 +227,130 @@ Luego podrá editar el `config.ini` recién creado y ver todos los parámetros d
 Ahora edite el `config.ini` y agregue la siguiente configuración:
 
 ```
-# la ubicación del directorio de bloques en el Disco 2  
+# la ubicación del directorio de bloques en el Disco 2
 blocks-dir = /home/eosphere/datavolume/blocks
 
-wasm-runtime = eos-vm-jit  
-chain-state-db-size-mb = 131072  
+wasm-runtime = eos-vm-jit
+chain-state-db-size-mb = 131072
 chain-state-db-guard-size-mb = 1024
 
 read-mode = head
 
-http-server-address = 0.0.0.0:8888  
-access-control-allow-origin = *  
-access-control-allow-headers = Origin, X-Requested-With, Content-Type, Accept  
-http-max-response-time-ms = 100  
-verbose-http-errors = true  
+http-server-address = 0.0.0.0:8888
+access-control-allow-origin = *
+access-control-allow-headers = Origin, X-Requested-With, Content-Type, Accept
+http-max-response-time-ms = 100
+verbose-http-errors = true
 http-validate-host = false
 
 p2p-listen-endpoint = 0.0.0.0:9876
 
-# 3dkrenderwax: FI, wax-peer  
-p2p-peer-address = peer.3dkrender.com:9880  
-  
-# 3dkrenderwax: FI, query  
-p2p-peer-address = query.3dkrender.com:9880  
-  
-# amsterdamwax: NL, Amsterdam  
-p2p-peer-address = wax.eu.eosamsterdam.net:9101  
-  
-# amsterdamwax: US, Washington, D.C.  
-p2p-peer-address = waxp2p.us.eosamsterdam.net:9101  
-  
-# blokcrafters: CA, Montreal, Quebec  
-p2p-peer-address = wax-peer-ca.blokcrafters.io:9876  
-  
-# blokcrafters: FI, Helsinki, Uusimaa  
-p2p-peer-address = wax-peer-eu.blokcrafters.io:9876  
-  
-# bp.box: KY, Cayman Islands  
-p2p-peer-address = wax.defibox.xyz:9966  
-  
-# bp.wecan: GB, London  
-p2p-peer-address = seed2-wax-mainnet.wecan.dev:14998  
-  
-# bp.wecan: US, NewYork  
-p2p-peer-address = seed3-wax-mainnet.wecan.dev:14998  
-  
-# cryptolions1: DE, Germany-Finland  
-p2p-peer-address = wax.cryptolions.io:9876  
-  
-# dapplica: DE, Germany-Finland  
-p2p-peer-address = wax.dapplica.io:9876  
-  
-# eosauthority: DE, Falkenstein  
-p2p-peer-address = node-wax.eosauthority.com:10301  
-  
-# eosauthority: FI, Helsinki  
-p2p-peer-address = node-wax-p2p.eosauthority.com:10301  
-  
-# eosdacserver: GB, United Kingdom  
-p2p-peer-address = wax-p2p.eosdac.io:29876  
-  
-# eosdublinwow: FI, Finland  
-p2p-peer-address = wax.p2p.eosdublin.io:9876  
-  
-# eoseouldotio: JP, Seoul  
-p2p-peer-address = p2p.wax.eoseoul.io:29876  
-  
-# eosphereiobp: CA, Beauharnois  
-p2p-peer-address = peer1-wax.eosphere.io:9876  
-  
-# eosphereiobp: CA, Beauharnois  
-p2p-peer-address = peer2-wax.eosphere.io:9876  
-  
-# greeneosiobp: DE, Germany  
-p2p-peer-address = p2p1.wax.greeneosio.com:9876  
-  
-# guild.nefty: DE, Germany  
-p2p-peer-address = p2p-node1.neftyblocks.com:9876  
-  
-# guild.nefty: FI, Finland  
-p2p-peer-address = p2p-node2.neftyblocks.com:9876  
-  
-# ledgerwiseio: FI, LB  
-p2p-peer-address = waxp2p.ledgerwise.io:21877  
-  
-# nation.wax: CA, Canada  
-p2p-peer-address = wax.seed.eosnation.io:9876  
-  
-# oneinacilian: GB, United Kingdom  
-p2p-peer-address = p2p.oiac.io:9876  
-  
+# 3dkrenderwax: FI, wax-peer
+p2p-peer-address = peer.3dkrender.com:9880
+
+# 3dkrenderwax: FI, query
+p2p-peer-address = query.3dkrender.com:9880
+
+# amsterdamwax: NL, Amsterdam
+p2p-peer-address = wax.eu.eosamsterdam.net:9101
+
+# amsterdamwax: US, Washington, D.C.
+p2p-peer-address = waxp2p.us.eosamsterdam.net:9101
+
+# blokcrafters: CA, Montreal, Quebec
+p2p-peer-address = wax-peer-ca.blokcrafters.io:9876
+
+# blokcrafters: FI, Helsinki, Uusimaa
+p2p-peer-address = wax-peer-eu.blokcrafters.io:9876
+
+# bp.box: KY, Cayman Islands
+p2p-peer-address = wax.defibox.xyz:9966
+
+# bp.wecan: GB, London
+p2p-peer-address = seed2-wax-mainnet.wecan.dev:14998
+
+# bp.wecan: US, NewYork
+p2p-peer-address = seed3-wax-mainnet.wecan.dev:14998
+
+# cryptolions1: DE, Germany-Finland
+p2p-peer-address = wax.cryptolions.io:9876
+
+# dapplica: DE, Germany-Finland
+p2p-peer-address = wax.dapplica.io:9876
+
+# eosauthority: DE, Falkenstein
+p2p-peer-address = node-wax.eosauthority.com:10301
+
+# eosauthority: FI, Helsinki
+p2p-peer-address = node-wax-p2p.eosauthority.com:10301
+
+# eosdacserver: GB, United Kingdom
+p2p-peer-address = wax-p2p.eosdac.io:29876
+
+# eosdublinwow: FI, Finland
+p2p-peer-address = wax.p2p.eosdublin.io:9876
+
+# eoseouldotio: JP, Seoul
+p2p-peer-address = p2p.wax.eoseoul.io:29876
+
+# eosphereiobp: CA, Beauharnois
+p2p-peer-address = peer1-wax.eosphere.io:9876
+
+# eosphereiobp: CA, Beauharnois
+p2p-peer-address = peer2-wax.eosphere.io:9876
+
+# greeneosiobp: DE, Germany
+p2p-peer-address = p2p1.wax.greeneosio.com:9876
+
+# guild.nefty: DE, Germany
+p2p-peer-address = p2p-node1.neftyblocks.com:9876
+
+# guild.nefty: FI, Finland
+p2p-peer-address = p2p-node2.neftyblocks.com:9876
+
+# ledgerwiseio: FI, LB
+p2p-peer-address = waxp2p.ledgerwise.io:21877
+
+# nation.wax: CA, Canada
+p2p-peer-address = wax.seed.eosnation.io:9876
+
+# oneinacilian: GB, United Kingdom
+p2p-peer-address = p2p.oiac.io:9876
+
 # sentnlagents
 
-: GB, United Kingdom  
-p2p-peer-address = waxp2p.sentnl.io:9876  
-  
-# tokengamerio: DE, Germany  
-p2p-peer-address = peer2.wax.tgg.gg:9876  
-  
-# waxhiveguild: FI, Finnland  
-p2p-peer-address = peer1.hivebp.io:9876  
-  
-# waxhiveguild: DE, Germany  
-p2p-peer-address = peer2.hivebp.io:9876  
-  
-# waxmadrid111: DE, SEED  
-p2p-peer-address = wax-seed.eosiomadrid.io:9876  
-  
-# waxswedenorg: SE, Sweden  
+: GB, United Kingdom
+p2p-peer-address = waxp2p.sentnl.io:9876
+
+# tokengamerio: DE, Germany
+p2p-peer-address = peer2.wax.tgg.gg:9876
+
+# waxhiveguild: FI, Finnland
+p2p-peer-address = peer1.hivebp.io:9876
+
+# waxhiveguild: DE, Germany
+p2p-peer-address = peer2.hivebp.io:9876
+
+# waxmadrid111: DE, SEED
+p2p-peer-address = wax-seed.eosiomadrid.io:9876
+
+# waxswedenorg: SE, Sweden
 p2p-peer-address = p2p.waxsweden.org:35777
 
 # Lista de Pares - https://eosphere.io/services/
 
-agent-name = "<su nombre> Nodo de Estado-Historial WAX Mainnet"  
-  
+agent-name = "<su nombre> Nodo de Estado-Historial WAX Mainnet"
+
 sync-fetch-span = 500
 
-state-history-dir = /home/eosphere/datavolume/state-history  
-trace-history = true  
-chain-state-history = true  
+state-history-dir = /home/eosphere/datavolume/state-history
+trace-history = true
+chain-state-history = true
 state-history-endpoint = 0.0.0.0:8080
 
-plugin = eosio::http_plugin  
-plugin = eosio::state_history_plugin  
-plugin = eosio::chain_plugin  
+plugin = eosio::http_plugin
+plugin = eosio::state_history_plugin
+plugin = eosio::chain_plugin
 plugin = eosio::chain_api_plugin
 ```
 
@@ -367,28 +367,28 @@ Estos son los parámetros de estado iniciales requeridos por cada nodo nuevo que
 Agregue los siguientes parámetros al archivo `genesis.json` para la WAX Public Mainnet:
 
 ```
-{  
-  "initial_timestamp": "2019-06-05T12:00:00.000",  
-  "initial_key": "EOS8i2pkwtv2JmdYWNJdcy5BcJ7wCE5q6mpE1hwT25HdgHMzeRday",  
-  "initial_configuration": {  
-    "max_block_net_usage": 1048576,  
-    "target_block_net_usage_pct": 1000,  
-    "max_transaction_net_usage": 524288,  
-    "base_per_transaction_net_usage": 12,  
-    "net_usage_leeway": 500,  
-    "context_free_discount_net_usage_num": 20,  
-    "context_free_discount_net_usage_den": 100,  
-    "max_block_cpu_usage": 500000,  
-    "target_block_cpu_usage_pct": 2000,  
-    "max_transaction_cpu_usage": 150000,  
-    "min_transaction_cpu_usage": 100,  
-    "max_transaction_lifetime": 3600,  
-    "deferred_trx_expiration_window": 600,  
-    "max_transaction_delay": 3888000,  
-    "max_inline_action_size": 4096,  
-    "max_inline_action_depth": 4,  
-    "max_authority_depth": 6  
-  }  
+{
+  "initial_timestamp": "2019-06-05T12:00:00.000",
+  "initial_key": "EOS8i2pkwtv2JmdYWNJdcy5BcJ7wCE5q6mpE1hwT25HdgHMzeRday",
+  "initial_configuration": {
+    "max_block_net_usage": 1048576,
+    "target_block_net_usage_pct": 1000,
+    "max_transaction_net_usage": 524288,
+    "base_per_transaction_net_usage": 12,
+    "net_usage_leeway": 500,
+    "context_free_discount_net_usage_num": 20,
+    "context_free_discount_net_usage_den": 100,
+    "max_block_cpu_usage": 500000,
+    "target_block_cpu_usage_pct": 2000,
+    "max_transaction_cpu_usage": 150000,
+    "min_transaction_cpu_usage": 100,
+    "max_transaction_lifetime": 3600,
+    "deferred_trx_expiration_window": 600,
+    "max_transaction_delay": 3888000,
+    "max_inline_action_size": 4096,
+    "max_inline_action_depth": 4,
+    "max_authority_depth": 6
+  }
 }
 ```
 
@@ -400,10 +400,10 @@ Use screen para mantener viva su sesión incluso cuando se desconecte, el uso es
 
 ```
 # Crear una nueva sesión de screen
-> screen -US wax 
+> screen -US wax
 
 # Desconectar la sesión de screen
-> ctrl-a+d 
+> ctrl-a+d
 
 # Reconectar la sesión de screen
 > screen -r wax

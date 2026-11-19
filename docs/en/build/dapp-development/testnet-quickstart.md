@@ -15,7 +15,7 @@ Every smart contract requires a blockchain account. It's recommended that you na
 
 2. From the Testnet homepage, get free WAX Tokens to fund your new account. 
 
-3. To deploy your smart contracts, you'll need to create a wallet using your public and private keys. You can use the wallet features on <a href="https://local.bloks.io/wallet/transfer?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org" target="_blank">Bloks.io</a>, or use our [Docker images](/build/dapp-development/docker-setup/)to manage your wallet. 
+3. To deploy your smart contracts, you'll need to create a wallet using your public and private keys. You can use the wallet features on <a href="https://local.waxblock.io/wallet/transfer?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org" target="_blank">WAXBlock</a>, or use our [Docker images](/build/dapp-development/docker-setup/) to manage your wallet.
 
     To create a wallet from a Docker container, use the `cleos wallet` command:
 
@@ -28,7 +28,7 @@ Every smart contract requires a blockchain account. It's recommended that you na
 
     Store your wallet password in a safe place - you'll need it to run blockchain commands.
 
-4. Once you have a wallet configured with your Testnet account, you can stake NET, CPU, and RAM from Bloks.io or your Docker container.
+4. Once you have a wallet configured with your Testnet account, you can stake NET, CPU, and RAM from WAXBlock or your Docker container.
 
     Buy RAM:
 

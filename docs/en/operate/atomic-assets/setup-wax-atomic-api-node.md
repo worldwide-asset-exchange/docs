@@ -3,11 +3,11 @@ title: How to Set Up a WAX Atomic API Node
 order: 4
 ---
 
-The AtomicAssets NFT standard orginally developed by Pink.gg has become synonymous with the WAX Protocol Network and the widely utilised  [WAX Atomic Hub](https://wax.atomichub.io/).
+The AtomicAssets NFT standard orginally developed by Pink.gg has become synonymous with the WAX Protocol Network and the widely utilised [WAX Atomic Hub](https://wax.atomichub.io/).
 
 The AtomicAssets NFT standard stands apart from it’s alternatives by not requiring any RAM from users and offering native two sided trade offers as well as backing NFTs with tokens.
 
-Of course no awesome NFT framework would be complete without the ability for users and developers to access real-time data in a simple and effective way through a scalable API. This is where Pink.gg developed the [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) also known as the  **Atomic API**.
+Of course no awesome NFT framework would be complete without the ability for users and developers to access real-time data in a simple and effective way through a scalable API. This is where Pink.gg developed the [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) also known as the **Atomic API**.
 
 This guide will walk through the process of building and running a WAX Atomic API Node enabling a Guild or Developer to offer a very useful API service for the ecosystem… or maybe just for you.
 
@@ -25,38 +25,38 @@ This guide goes through the process of building the application dependencies and
 
 **Hardware**
 
--   8 Core CPU / 5_Ghz+ recommended_
--   2TB+ Disk /  _Enterprise Grade SSD or NVMe_
+- 8 Core CPU / 5*Ghz+ recommended*
+- 2TB+ Disk / _Enterprise Grade SSD or NVMe_
 
 Currently (March 2025) a full Atomic API Node postgres DB is **1.1TB**
 
--   64GB+ RAM
+- 64GB+ RAM
 
 **Operating System**
 
--   Ubuntu 22.04  **_(Recommended)_**
+- Ubuntu 22.04 **_(Recommended)_**
 
 **SHIP Node**
 
--   Access to an up to date v5.0.3wax01 WAX State-History node
--   SHIP node on the same LAN  **_(Highly Recommended)_**
+- Access to an up to date v5.0.3wax01 WAX State-History node
+- SHIP node on the same LAN **_(Highly Recommended)_**
 
 **Network**
 
--   Modern Internet Broadband / Fibre Connection (100Mb/s synchronous and above)
--   1Gb/s+ LAN
+- Modern Internet Broadband / Fibre Connection (100Mb/s synchronous and above)
+- 1Gb/s+ LAN
 
 # Build the Software
 
-At time of writing the current version of the  [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api)  is  `v1.3.24`
+At time of writing the current version of the [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) is `v1.3.24`
 
 Application Dependencies **_(Some our our recommendations)_**
 
--   NodeJS >= 22.14.0
--   PM2 >= 5.4.3
--   PostgreSQL >= 17.0
--   Redis >= 7.4.2
--   Yarn >= 1.22.22
+- NodeJS >= 22.14.0
+- PM2 >= 5.4.3
+- PostgreSQL >= 17.0
+- Redis >= 7.4.2
+- Yarn >= 1.22.22
 
 ## Application Installation and Configuration Process
 
@@ -78,7 +78,7 @@ Application Dependencies **_(Some our our recommendations)_**
 > echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 
 #Install Node.js#
-> sudo apt update 
+> sudo apt update
 
 > sudo apt-get install -y nodejs
 
@@ -113,7 +113,7 @@ Install Postgres as below:
 
 > sudo apt install postgresql postgresql-contrib
 
-#Check Version#  
+#Check Version#
 > apt show postgresql
 ```
 
@@ -124,12 +124,12 @@ After installation a new database needs to be created and permissions assigned i
 
 > psql
 
-#Assign a password to the postgres account#  
-postgres=# \password  
-Enter new password:  
+#Assign a password to the postgres account#
+postgres=# \password
+Enter new password:
 Enter it again:
 
-#Create the database#  
+#Create the database#
 postgres=# \l (lists databases)
 postgres=# CREATE DATABASE "api-wax-mainnet-atomic-1";
 postgres=# \l+ (lists databases - including size)
@@ -151,10 +151,10 @@ postgres=# \q (quit)
 
 > sudo systemctl enable redis-server
 
-#Check Version#  
+#Check Version#
 > redis-server --version
 
-#If there is a unmask error then#  
+#If there is a unmask error then#
 > sudo systemctl unmask redis-server.service
 ```
 
@@ -163,18 +163,18 @@ postgres=# \q (quit)
 ```
 > sudo npm install --global yarn
 
-#Check Version#  
+#Check Version#
 > yarn --version
 ```
 
 ## Atomic API
 
-The latest build can be found on the  [Pink.gg Github](https://github.com/pinknetworkx/eosio-contract-api), ```v1.3.24``` must just be built from the master branch.
+The latest build can be found on the [Pink.gg Github](https://github.com/atomicassets/atomicassets-api), `v1.3.24` must just be built from the master branch.
 
 **Installation**
 
 ```
-> git clone https://github.com/pinknetworkx/eosio-contract-api.git
+> git clone https://github.com/atomicassets/atomicassets-api.git
 
 > cd eosio-contract-api
 
@@ -186,8 +186,8 @@ The latest build can be found on the  [Pink.gg Github](https://github.com/pinkne
 There are three configuration files to be adjusted for your specific deployment
 
 ```
-connections.config.json  
-server.config.json  
+connections.config.json
+server.config.json
 readers.config.json
 ```
 
@@ -357,32 +357,32 @@ This will take sometime and it is advisable to ensure indexing has caught up bef
 ```
 > cd ~/eosio-contract-api
 
-#Start Postgres Indexing Filler#  
+#Start Postgres Indexing Filler#
 > pm2 start ecosystems.config.json --only eosio-contract-api-filler
 
-#Start the API Server#  
+#Start the API Server#
 > pm2 start ecosystems.config.json --only eosio-contract-api-server
 
-#Monitor Filler and Server#  
+#Monitor Filler and Server#
 > pm2 log
 ```
 
 **_NB:_** _Stopping the filler service can occasionally be problematic where restarting too soon can cause two instances of the filler to run causing a DB corruption. To get around this ensure that the filler has in fact stopped indexing to postgres by monitoring the active services with top or htop before you restart._
 
 ```
-#Stop Postgres Indexing Filler#  
+#Stop Postgres Indexing Filler#
 > pm2 stop eosio-contract-api-filler
 
-#Stop the API Server#  
+#Stop the API Server#
 > pm2 stop eosio-contract-api-server
 
-#Stop All#  
+#Stop All#
 > pm2 stop all
 
 #Check using top or htop#
 ```
 
-Your node will be accessible via  **http port 9000**  which when offering the service publicly will be best served from behind a SSL offloading loadbalancer such as HAProxy or nginx.
+Your node will be accessible via **http port 9000** which when offering the service publicly will be best served from behind a SSL offloading loadbalancer such as HAProxy or nginx.
 
 Query your node’s status as below:
 
@@ -397,4 +397,4 @@ Query your node’s status as below:
 
 These **WAX Developer Technical Guides** are created using source material from the [EOSphere WAX Technical How To Series](https://medium.com/eosphere/wax-technical-how-to/home)
 
-Be sure to ask any questions in the  [EOSphere Telegram](https://t.me/eosphere_io)
+Be sure to ask any questions in the [EOSphere Telegram](https://t.me/eosphere_io)

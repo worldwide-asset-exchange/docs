@@ -8,6 +8,7 @@ order: 38
 Si tenemos que acuñar múltiples copias de un mismo asset como, por ejemplo, una espada que se obtiene de recompensa en una misión, nos vendrá bien hacerlo con una plantilla. Gracias a la plantilla estaremos ahorrando memoria RAM, agilizaremos el trabajo y mantendremos una coherencia en la colección completa.
 
 AtomicAssets dispone de dos acciones para gestionar las plantillas:
+
 - createtempl: Crear unaplantilla.
 - locktemplate: Bloquear la plantilla para evitar que se acuñen más copias de las existentes.
 
@@ -25,7 +26,7 @@ Al crear una plantilla haremos uso de los tipos de datos declarados en el esquem
 - max_supply: Número máximo de impresiones permitidas. Si es 0 se supone infinito.
 - immutable_data: Array de información inmutable que se incluirá en todas las copias creadas con esta plantilla.
 
-Los datos inmutables deben definirse en un mapa del tipo [ATTRIBUTE_MAP](https://github.com/pinknetworkx/atomicassets-contract/wiki/Custom-Types#attribute_map) compuesto por pares de claves y valores.
+Los datos inmutables deben definirse en un mapa del tipo [ATTRIBUTE_MAP](https://github.com/atomicassets/atomicassets-contract/wiki/Custom-Types#attribute_map) compuesto por pares de claves y valores.
 
 ::: tip 📝 Nota
 Un NFT AtomicAssets también puede contener datos modificables (mutable data). Esto lo veremos más adelante ya que no se deben especificar durante la creación de la plantilla.
@@ -45,7 +46,7 @@ const schemaName = 'player';
 
 // Burnable and transferable
 const burnable = true,
-      transferable = true;
+    transferable = true;
 
 // Infinite supply
 const maxSuply = 0;
@@ -53,76 +54,88 @@ const maxSuply = 0;
 // Collection description
 const immutableData = [
     {
-        key: "name",
-        value: ["string", "Player A"],
+        key: 'name',
+        value: ['string', 'Player A'],
     },
     {
-        key: "img",
-        value: ["string", "QmaNCMQ3mD1ZxVPhac6vEUY2pidxwMQC2u6sNwuurweeJ5"],
+        key: 'img',
+        value: ['string', 'QmaNCMQ3mD1ZxVPhac6vEUY2pidxwMQC2u6sNwuurweeJ5'],
     },
     {
-        key: "class",
-        value: ["string", "Warrior"],
-    }
+        key: 'class',
+        value: ['string', 'Warrior'],
+    },
 ];
 
 // Create schema
-(async()=> {
-    const result = await createTempl(auth, colName, schemaName, transferable, burnable, maxSuply, immutableData);
+(async () => {
+    const result = await createTempl(
+        auth,
+        colName,
+        schemaName,
+        transferable,
+        burnable,
+        maxSuply,
+        immutableData,
+    );
     console.log(result);
 })();
-``` 
+```
+
 ::: tip 📝 Nota
 los datos tipo "ipfs" e "image" son tratados como "string"
 :::
 
 Y la llamada a la acción
+
 ```js
-/* 
+/*
  * Create a template
-*/
+ */
 const createTempl = async (
-  auth,
-  colName,
-  schemaName,
-  transferable,
-  burnable,
-  maxSupply,
-  immutableData
+    auth,
+    colName,
+    schemaName,
+    transferable,
+    burnable,
+    maxSupply,
+    immutableData,
 ) => {
-  try {
-    const result = await apiRpc.transact(
-      {
-        actions: [
-          {
-            account: "atomicassets",
-            name: "createtempl",
-            authorization: [
-              {
-                actor: auth,
-                permission: "active",
-              },
-            ],
-            data: {
-              authorized_creator: auth,
-              collection_name: colName,
-              schema_name: schemaName,
-              transferable: transferable,
-              burnable: burnable,
-              max_supply: maxSupply,
-              immutable_data: immutableData
+    try {
+        const result = await apiRpc.transact(
+            {
+                actions: [
+                    {
+                        account: 'atomicassets',
+                        name: 'createtempl',
+                        authorization: [
+                            {
+                                actor: auth,
+                                permission: 'active',
+                            },
+                        ],
+                        data: {
+                            authorized_creator: auth,
+                            collection_name: colName,
+                            schema_name: schemaName,
+                            transferable: transferable,
+                            burnable: burnable,
+                            max_supply: maxSupply,
+                            immutable_data: immutableData,
+                        },
+                    },
+                ],
             },
-          },
-        ],
-      }, TAPOS
-    );
-    return result;
-  } catch (error) {
-    console.log(error);
-    return false;
-  }
-}
+            TAPOS,
+        );
+        return result;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
 ```
+
 Una vez ejecutada la acción, y si no hay problemas, obtendremos como retorno la información de la transacción. Podemos recoger la ID de la transacción para analizar la respuesta por parte del smart contract de AtomicAssets
 
 ![AtomicAsssets createschema](/assets/images/tutorials/howto_atomicassets/transaction_id.png)
@@ -143,7 +156,7 @@ Tanto si una plantilla ha sido configurada con un límite de impresiones o hasta
 No es posible bloquear una plantilla si no tiene creado, al menos, 1 NFT.
 :::
 
-Para eso AtomicAssets disponde de la acción "*locktemplate*"
+Para eso AtomicAssets disponde de la acción "_locktemplate_"
 
 ![AtomicAsssets createschema](/assets/images/tutorials/howto_atomicassets/locktemplate_atomicassets.png)
 
@@ -154,42 +167,39 @@ Para eso AtomicAssets disponde de la acción "*locktemplate*"
 Se trata de una llamada a la acción con parámetros sencillos por lo que pasaremos directamente a ver cómo sería esa llamada de ejemplo:
 
 ```js
-/* 
+/*
  * Extend a schema with new data types
  */
-const lockTemplate = async ( 
-  auth,
-  colName,
-  templateID
-) => {
-  try {
-    const result = await apiRpc.transact(
-      {
-        actions: [
-          {
-            account: "atomicassets",
-            name: "locktemplate",
-            authorization: [
-              {
-                actor: auth,
-                permission: "active",
-              },
-            ],
-            data: {
-              authorized_editor: auth,
-              collection_name: colName,
-              template_id: templateID
+const lockTemplate = async (auth, colName, templateID) => {
+    try {
+        const result = await apiRpc.transact(
+            {
+                actions: [
+                    {
+                        account: 'atomicassets',
+                        name: 'locktemplate',
+                        authorization: [
+                            {
+                                actor: auth,
+                                permission: 'active',
+                            },
+                        ],
+                        data: {
+                            authorized_editor: auth,
+                            collection_name: colName,
+                            template_id: templateID,
+                        },
+                    },
+                ],
             },
-          },
-        ],
-      }, TAPOS
-    );
-    return result;
-  } catch (error) {
-    console.log(error);
-    return false;
-  }
-}
+            TAPOS,
+        );
+        return result;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
 ```
 
 ::: tip 📝 Nota

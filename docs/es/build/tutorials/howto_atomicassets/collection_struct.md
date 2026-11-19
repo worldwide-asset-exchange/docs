@@ -20,6 +20,7 @@ Colección -> Esqemas -> Plantillas -> NFTs
 ## Colección
 
 Una colección se define con la siguiente información:
+
 - Nombre de colección.
 - Autor o propietario.
 - Descripción y datos de identificación.
@@ -28,22 +29,24 @@ Una colección se define con la siguiente información:
 - Tasa por regalías por comercio en markets.
 
 La descripción y datos de identificación se introducen según la siguiente estructura:
+
 ```
-[ 
-	{ "name": "name","type": "string" }, 
-	{ "name": "img", "type": "ipfs" }, 
-	{ "name": "description", "type": "string" }, 
-	{ "name": "url", "type": "string" }, 
-	{ "name": "images", "type": "string" }, 
-	{ "name": "socials", "type": "string" }, 
-	{ "name": "creator_info", "type": "string" } 
+[
+	{ "name": "name","type": "string" },
+	{ "name": "img", "type": "ipfs" },
+	{ "name": "description", "type": "string" },
+	{ "name": "url", "type": "string" },
+	{ "name": "images", "type": "string" },
+	{ "name": "socials", "type": "string" },
+	{ "name": "creator_info", "type": "string" }
 ]
 ```
+
 Si creamos la colección desde un interface como [https://waxblock.io](https://waxblock.io/account/atomicassets?loadContract=true&tab=Actions&account=atomicassets&scope=atomicassets&limit=100&action=createcol) tendremos que cumplimentar esta entrada de datos:
 
 ![AtomicAssets - createcol action](/assets/images/tutorials/howto_atomicassets/createcol_atomicassets.png)
 
-A continuación se muestra un ejemplo de la información aceptada en el campo "*data*" 
+A continuación se muestra un ejemplo de la información aceptada en el campo "_data_"
 
 ```
 data:
@@ -73,7 +76,7 @@ data:
 
 El esquema cumple con dos funciones fundamentalmete; agrupar los NFTs de la colección según ciertos atributos comunes y declarar los tipos de datos que podremos utilizar a la hora de crear los NFTs.
 
-A la hora de declarar la estructura de datos utilizaremos vectores de [FORMAT](https://github.com/pinknetworkx/atomicassets-contract/wiki/Custom-Types#format); tuplas formadas por un nombre y un tipo de datos.
+A la hora de declarar la estructura de datos utilizaremos vectores de [FORMAT](https://github.com/atomicassets/atomicassets-contract/wiki/Custom-Types#format); tuplas formadas por un nombre y un tipo de datos.
 
 Una vez creado un esquema de datos es posble añadir más datos al mismo pero ya no pueden borrarse o modificarse los existentes (tampoco es obligatorio emplear en las plantillas todos los datos declarados).
 
@@ -82,5 +85,5 @@ Una vez creado un esquema de datos es posble añadir más datos al mismo pero ya
 La plantilla es el molde con el que acuñaremos todos los assets de un mismo tipo. En la plantilla es donde se declara la información que estará disponible en un NFT como el nombre, la URL de la imágen (preferiblemente IPFS), la descripción, etc. Gracias a esto no es necesario repetir la información una y otra vez en cada NFT acuñado. Para conocer el nombre, la descripción o cualquier otro campo de un NFT solo es necesario acceder al contenido de ese atributo declarado en la plantilla.
 
 ::: tip 📝 Nota
-Los datos inmutables se almacenan en la plantilla pero los datos mutables, propios de cada unidad NFT, se almacenan en el mismo NFT al que pertenecen por lo que, en caso de existir, aumentarán la memoria RAM consumida. 
+Los datos inmutables se almacenan en la plantilla pero los datos mutables, propios de cada unidad NFT, se almacenan en el mismo NFT al que pertenecen por lo que, en caso de existir, aumentarán la memoria RAM consumida.
 :::

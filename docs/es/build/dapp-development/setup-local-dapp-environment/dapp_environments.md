@@ -19,7 +19,7 @@ A continuación, encontrarás las versiones de WAX, URLs e información del ento
 | Servicio | URL | Descripción |
 |---------|-----|-------------|
 | URL de Blockchain | [chain-api-url](/es/operate/wax-infrastructure/#public-and-free-api-service-providers) | Utilizado para realizar llamadas API y desplegar tus contratos inteligentes en la red principal de WAX. |
-| P2P de Blockchain | peers.wax.io:9876 | Punto final de conexión para sincronizar un productor o nodo completo (sin protocolo al frente). |
+| P2P de Blockchain | [Pares de WAX Mainnet (EOSphere)](https://eosphere.io/services/) | Usa una dirección de la columna P2P en formato `host:puerto` para sincronizar un productor o un nodo completo. |
 | Explorador de Blockchain | [https://waxblock.io](https://waxblock.io/) | Explorador de bloques waxblock.io. |
 | Cuenta WAX | (por ejemplo, Scatter) | Crea una cuenta de Blockchain de WAX. |
 
@@ -33,7 +33,7 @@ A continuación, encontrarás las versiones de WAX, URLs e información del ento
 | URL de Blockchain | [https://testnet.waxsweden.org](https://testnet.waxsweden.org) | Utilizado para realizar llamadas API y desplegar tus contratos inteligentes en el Testnet de WAX. |
 | Puntos finales públicos | [endpoints.json](https://github.com/eosswedenorg/waxtestnet/tree/master/endpoints) | URLs adicionales de puntos finales P2P y API. |
 | P2P de Blockchain | testnet.waxsweden.org:59876 | Punto final de conexión para sincronizar un productor o nodo completo (sin protocolo al frente). |
-| Explorador de Blockchain | [Bloks.io Testnet](https://local.bloks.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Explorador de bloques Testnet. |
+| Explorador de Blockchain | [WAXBlock Testnet](https://local.waxblock.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Explorador de bloques Testnet. |
 | Cuenta de Prueba | [https://waxsweden.org/create-testnet-account/](https://waxsweden.org/create-testnet-account/) | Utiliza la herramienta "Crear cuenta testnet" en la página de inicio de [Testnet](https://waxsweden.org/testnet/) o visita el enlace directo. |
 
 ## WAX Local Testnet

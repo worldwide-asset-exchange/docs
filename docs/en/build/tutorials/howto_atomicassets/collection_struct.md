@@ -20,6 +20,7 @@ Collection -> Schemas -> Templates -> NFTs.
 ## Collection
 
 A collection is defined with the following information:
+
 - Collection name.
 - Author or owner.
 - Description and identification data.
@@ -30,14 +31,14 @@ A collection is defined with the following information:
 The description and identification data are entered according to the following structure:
 
 ```
-[ 
-	{ "name": "name","type": "string" }, 
-	{ "name": "img", "type": "ipfs" }, 
-	{ "name": "description", "type": "string" }, 
-	{ "name": "url", "type": "string" }, 
-	{ "name": "images", "type": "string" }, 
-	{ "name": "socials", "type": "string" }, 
-	{ "name": "creator_info", "type": "string" } 
+[
+	{ "name": "name","type": "string" },
+	{ "name": "img", "type": "ipfs" },
+	{ "name": "description", "type": "string" },
+	{ "name": "url", "type": "string" },
+	{ "name": "images", "type": "string" },
+	{ "name": "socials", "type": "string" },
+	{ "name": "creator_info", "type": "string" }
 ]
 ```
 
@@ -45,7 +46,7 @@ If we create the collection from an interface like [https://waxblock.io](https:/
 
 ![AtomicAssets - createcol action](/assets/images/tutorials/howto_atomicassets/createcol_atomicassets.png)
 
-An example of the information accepted in the "*data*" field is shown below. 
+An example of the information accepted in the "_data_" field is shown below.
 
 ```
 data:
@@ -70,11 +71,12 @@ data:
 						"banner_1920x500\":\"QmQtXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\",
 						\"logo_512x512\":\"\"}"]}
 ```
+
 ## Schema
 
 The schema serves two main functions; to group the NFTs in the collection according to certain common attributes and to declare the data types that we can use when creating the NFTs.
 
-When declaring the data structure we will use vectors of [FORMAT](https://github.com/pinknetworkx/atomicassets-contract/wiki/Custom-Types#format); tuples formed by a name and a data type.
+When declaring the data structure we will use vectors of [FORMAT](https://github.com/atomicassets/atomicassets-contract/wiki/Custom-Types#format); tuples formed by a name and a data type.
 
 Once a data schema has been created, it is possible to add more data to it but existing data can no longer be deleted or modified (**Tip:** it is also not mandatory to use all the declared data in the templates).
 
@@ -82,5 +84,5 @@ Once a data schema has been created, it is possible to add more data to it but e
 
 The template is the mould with which all assets of the same type will be minted. The template is where the information that will be available in an NFT such as the name, the image URL (preferably IPFS), the description, etc. is declared. Thanks to this, it is not necessary to repeat the information over and over again in every NFT that is minted. To know the name, description or any other field of an NFT, it is only necessary to access the content of that attribute declared in the template.
 
-Immutable data are stored in the template but mutable data, specific to each NFT unit, are stored in the same NFT to which they belong and, if they exist, they will increase the RAM memory consumed. 
+Immutable data are stored in the template but mutable data, specific to each NFT unit, are stored in the same NFT to which they belong and, if they exist, they will increase the RAM memory consumed.
 :::

@@ -11,10 +11,9 @@ El estándar actual de bp.json está actualizado en el Repositorio de GitHub. Es
 
 ## ¿Qué es un bp.json?
 
-El bp.json contiene las piezas de información más importantes sobre el productor de bloques y sus nodos, como los puntos finales de la API, la ubicación geográfica, los contactos de emergencia y más. La forma estandarizada del bp.json facilita que empresas e individuos usen los nodos e información del productor de bloques. A través de este método, sitios como (bloks.io) pueden, por ejemplo, obtener la foto de perfil de tu gremio. Aquí hay algunos ejemplos de bp.json para la red principal de WAX:
+El bp.json contiene las piezas de información más importantes sobre el productor de bloques y sus nodos, como los puntos finales de la API, la ubicación geográfica, los contactos de emergencia y más. La forma estandarizada del bp.json facilita que empresas e individuos usen los nodos e información del productor de bloques. A través de este método, sitios como waxblock.io pueden, por ejemplo, obtener la foto de perfil de tu gremio. Aquí hay algunos ejemplos de bp.json para la red principal de WAX:
 
 - [https://eosnation.io/wax.json](https://eosnation.io/wax.json)
-- [https://blacklusion.io/wax.json](https://blacklusion.io/wax.json)
 - [https://waxsweden.org/wax.json](https://waxsweden.org/wax.json)
 
 ## Creando el bp.json
@@ -111,9 +110,9 @@ Simplemente sustituye las variables con tus valores.
 cleos -u https://wax.blacklusion.io push action producerjson set '{"owner":"blacklusionx", "json": "'printf %q $(cat wax.json | tr -d "\r")'"}' -p blacklusionx@producerjson
 ```
 
-## 2. Publicando a través de bloks.io
+## 2. Publicando a través de waxblock.io
 
-Especialmente cuando estás comenzando, bloks.io es una gran opción, ya que ofrece una forma más amigable para el usuario que un comando CLI.
+Especialmente cuando estás comenzando, waxblock.io es una gran opción, ya que ofrece una forma más amigable para el usuario que un comando CLI.
 
 ### Ve al contrato de producerjson:
 
@@ -129,7 +128,7 @@ Selecciona “set” y llena tu información. Como nombre de la cuenta, solo usa
 
 ![](/assets/images/wax-bp/bp-json/img02.png)
 
-Si has hecho todo correctamente, bloks.io confirmará tu transacción exitosa. Puedes echar un vistazo a esta transacción de muestra [aquí](https://waxblock.io/transaction/4bfb8f1219abd7f5e231bf54100c35604c0a655d6ff50925a472afdcf6e4bfe9).
+Si has hecho todo correctamente, waxblock.io confirmará tu transacción exitosa. Puedes echar un vistazo a esta transacción de muestra [aquí](https://waxblock.io/transaction/4bfb8f1219abd7f5e231bf54100c35604c0a655d6ff50925a472afdcf6e4bfe9).
 
 ![](/assets/images/wax-bp/bp-json/img03.png)
 

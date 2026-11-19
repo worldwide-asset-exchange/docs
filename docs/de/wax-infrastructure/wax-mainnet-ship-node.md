@@ -7,7 +7,7 @@ lang-ref: How to Set Up a WAX State-History Node
 lang: de
 ---
 
-Es gibt einen Nodeos-Implementierungstyp, der für den Betrieb zahlreicher WAX-Mainnet-Dienste wie [Hyperion Full History] (https://github.com/eosrio/hyperion-history-api) und die [Atomic Assets API] (https://github.com/pinknetworkx/eosio-contract-api) von entscheidender Bedeutung ist, und das ist der State-History-Dienst.
+Es gibt einen Nodeos-Implementierungstyp, der für den Betrieb zahlreicher WAX-Mainnet-Dienste wie [Hyperion Full History] (https://github.com/eosrio/hyperion-history-api) und die [Atomic Assets API] (https://github.com/atomicassets/atomicassets-api) von entscheidender Bedeutung ist, und das ist der State-History-Dienst.
 
 Dieser Leitfaden zeigt Ihnen, wie Sie nodeos erstellen, konfigurieren und einsetzen, um die State-History-Funktionalität, auch bekannt als SHIP-Nodes (State History Protocol), bereitzustellen.
 

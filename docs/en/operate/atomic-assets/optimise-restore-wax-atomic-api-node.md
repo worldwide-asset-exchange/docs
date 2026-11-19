@@ -12,15 +12,15 @@ _This article has been updated to reflect the current Atomic API Node deployment
 
 ## **postgres optimised configuration**
 
-The default  [PostgreSQL](https://www.postgresql.org/)  configuration leaves a lot to be desired in regards to what a WAX Atomic API Node requires to operate effectively on the WAX Mainnet.
+The default [PostgreSQL](https://www.postgresql.org/) configuration leaves a lot to be desired in regards to what a WAX Atomic API Node requires to operate effectively on the WAX Mainnet.
 
-I was actually pointed to an excellent config tuning tool call  [PGTune](https://pgtune.leopard.in.ua/)  which may help come up with some good postgres configuration settings to suit your deployment.
+I was actually pointed to an excellent config tuning tool call [PGTune](https://pgtune.leopard.in.ua/) which may help come up with some good postgres configuration settings to suit your deployment.
 
 In this example we have a node with 64GB RAM and 8 CPU Cores:
 
 ![image](https://github.com/user-attachments/assets/3f5cc062-e60b-4318-8cdd-fea2bedab244)
 
-In the  [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/)  environment we have had success in changing only six of these settings which were derived from guidance from the Pink.gg Team.
+In the [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/) environment we have had success in changing only six of these settings which were derived from guidance from the Pink.gg Team.
 
 **_shared_buffers_**_,_ memory directly allocated the postgres service internal buffer.  
 **_effective_cache_size_**, how much cache memory is available for the database.  
@@ -32,32 +32,33 @@ In the  [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/)  
 Configure PostgreSQL 17 as below:
 
 ```
-***Stop the Atomic API PM2 services***  
+***Stop the Atomic API PM2 services***
 > pm2 stop all
 
 ***64GB RAM Assumed***
 > sudo nano /etc/postgresql/17/main/postgresql.conf
 
-shared_buffers = '32GB';  
-effective_cache_size = '48GB';  
-maintenance_work_mem = '2GB';  
-random_page_cost = 1.1;  
-effective_io_concurrency = 300;  
+shared_buffers = '32GB';
+effective_cache_size = '48GB';
+maintenance_work_mem = '2GB';
+random_page_cost = 1.1;
+effective_io_concurrency = 300;
 work_mem = '16MB';
 
 > sudo service postgresql restart
 ```
+
 ## postgres backup and restoration
 
 Having access to an existing Atomic API posgres backup can be awesome way to get your node up and running as soon as possible.
 
-What can be even  **more awesome**  is if you can provide a backup for others to use as well.
+What can be even **more awesome** is if you can provide a backup for others to use as well.
 
-Two postgres tools are used for this process  `pg_dump`  and  `pg_restore`
+Two postgres tools are used for this process `pg_dump` and `pg_restore`
 
 EOSphere publishes [WAX Mainnet Atomic API backups](https://store3.eosphere.io/wax/atomic/backups/). Check the [EOSphere backup version notes](https://snapshots.eosphere.io/) to choose a dump compatible with your Atomic API and PostgreSQL versions.
 
-In order to  **create**  a compressed backup follow the process below:
+In order to **create** a compressed backup follow the process below:
 
 ```
 > sudo su - postgres
@@ -67,7 +68,7 @@ In order to  **create**  a compressed backup follow the process below:
 ***This may take some time***
 ```
 
-In order to  **restore**  a compressed backup follow the process below:
+In order to **restore** a compressed backup follow the process below:
 
 ```
 ***Delete the existing database if necessary***
@@ -86,15 +87,15 @@ postgres=# \q
 
 ## Atomic API Server optimisations
 
-Ensure these two features on the API Server are configured which enable the service to be more resilient to heavy public use. They are already configured in the latest ```v1.3.24``` build.
+Ensure these two features on the API Server are configured which enable the service to be more resilient to heavy public use. They are already configured in the latest `v1.3.24` build.
 
 I have copied and pasted the origninal community update details on these features below:
 
-**"bill_execution_time”: true**  // This changes rate limiting to a CPU like approach, so expensive queries will use more from the available rate limit. This means people spamming a lot of expensive queries are rate limited faster but this change should not affect anyone that only sends fast and optimized calls
+**"bill_execution_time”: true** // This changes rate limiting to a CPU like approach, so expensive queries will use more from the available rate limit. This means people spamming a lot of expensive queries are rate limited faster but this change should not affect anyone that only sends fast and optimized calls
 
-**“disable_v1_sales”: true**  // This will route /v2/sales to /v1/sales because its much faster. This is a breaking change because /v1/sales wont return cancelled sales anymore but this will reduce load a lot and not many people are interested in cancelled sales. For those who are, there is a new /v0/sales endpoint which still serves the old API
+**“disable_v1_sales”: true** // This will route /v2/sales to /v1/sales because its much faster. This is a breaking change because /v1/sales wont return cancelled sales anymore but this will reduce load a lot and not many people are interested in cancelled sales. For those who are, there is a new /v0/sales endpoint which still serves the old API
 
-I captured these updated features in the  [previous guide](https://docs.wax.io/operate/wax-infrastructure/atomic-api-guide)  , but for completeness the configuration is below:
+I captured these updated features in the [previous guide](https://docs.wax.io/operate/wax-infrastructure/atomic-api-guide) , but for completeness the configuration is below:
 
 ```
 > cd  ~/eosio-contract-api/config
@@ -152,7 +153,7 @@ I captured these updated features in the  [previous guide](https://docs.wax.io/o
 
 ## Load Balancing and Redundancy
 
-Currently there isn’t a [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) available feature that enables multiple filler services to the same db cluster.
+Currently there isn’t a [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) available feature that enables multiple filler services to the same db cluster.
 
 We have had success and suggest that you load balance your public API service to multiple completely synced and self standing Atomic API servers.
 
@@ -160,4 +161,4 @@ We have had success and suggest that you load balance your public API service to
 
 These **WAX Developer Technical Guides** are created using source material from the [EOSphere WAX Technical How To Series](https://medium.com/eosphere/wax-technical-how-to/home)
 
-Be sure to ask any questions in the  [EOSphere Telegram](https://t.me/eosphere_io)
+Be sure to ask any questions in the [EOSphere Telegram](https://t.me/eosphere_io)

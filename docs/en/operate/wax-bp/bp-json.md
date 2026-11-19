@@ -11,10 +11,9 @@ The current bp.json standard is updated in the GitHub Repository. This guide wil
 
 ## What is a bp.json?
 
-The bp.json contains the most important pieces of information about the block producer and their nodes, such as API-Endpoints, geographical location, emergency contacts, and more. The standardized form of the bp.json makes it easy for companies and individuals to use the block producer’s nodes and information. Through this method sites such as (bloks.io) can e.g. get the profile picture for your guild. Here are some examples of bp.json for the WAX Mainnet:
+The bp.json contains the most important pieces of information about the block producer and their nodes, such as API-Endpoints, geographical location, emergency contacts, and more. The standardized form of the bp.json makes it easy for companies and individuals to use the block producer’s nodes and information. Through this method sites such as waxblock.io can e.g. get the profile picture for your guild. Here are some examples of bp.json for the WAX Mainnet:
 
 - [https://eosnation.io/wax.json](https://eosnation.io/wax.json)
-- [https://blacklusion.io/wax.json](https://blacklusion.io/wax.json)
 - [https://waxsweden.org/wax.json](https://waxsweden.org/wax.json)
 
 ## Creating the bp.json
@@ -109,9 +108,9 @@ Just substitute the variables with your values.
 cleos -u https://wax.blacklusion.io push action producerjson set '{"owner":"blacklusionx", "json": "'printf %q $(cat wax.json | tr -d "\r")'"}' -p blacklusionx@producerjson
 ```
 
-## 2. Pushing via bloks.io
+## 2. Pushing via waxblock.io
 
-Especially when you are starting out, bloks.io is a great option, since it offers a more user friendly way than a CLI-Command.
+Especially when you are starting out, waxblock.io is a great option, since it offers a more user friendly way than a CLI-Command.
 
 ### Go to the producerjson contract:
 
@@ -125,7 +124,7 @@ Select “set” and fill in your information. As account name just use the acco
 
 ![](/assets/images/wax-bp/bp-json/img02.png)
 
-If you have done everything correctly bloks.io will confirm your successful transaction. You can have a look at this sample transaction [here](https://waxblock.io/transaction/4bfb8f1219abd7f5e231bf54100c35604c0a655d6ff50925a472afdcf6e4bfe9).
+If you have done everything correctly waxblock.io will confirm your successful transaction. You can have a look at this sample transaction [here](https://waxblock.io/transaction/4bfb8f1219abd7f5e231bf54100c35604c0a655d6ff50925a472afdcf6e4bfe9).
 
 ![](/assets/images/wax-bp/bp-json/img03.png)
 

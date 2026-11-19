@@ -30,21 +30,26 @@ Veamos ahora cómo modificarlos.
 Antes de entrar en la modificación de un campo mutable en JavaScript, es importante conocer el objeto ATTRIBUTE_MAP. Una de las ventajas del estándar AtomicAssets es el uso de serialización para ahorrar RAM en las tablas que almacenan los datos de los NFTs. Para esto usamos un mapa de datos que empareja el tipo de datos con su contenido, permitiendo así que sea serializado.
 
 El formato de este mapa se construye siguiendo este patrón:
+
 ```json
 [{"key": MYKEY, value: MY
 
 VALUE}, ...]
 ```
+
 En la plantilla de un NFT se define cuál es el dato mutable y cuál el dato inmutable, y se especifica el nombre del campo y el tipo de dato que contendrá. Por lo tanto, podemos tener el campo de tipo string "name", o el campo de tipo int(16bits) "speed".
 
 Entonces, si deseáramos crear un mapa de datos para especificar esta información:
+
 ```json
-{ 
-    name: “Delorean”, 
-    speed: 300 
+{
+    name: “Delorean”,
+    speed: 300
 }
 ```
+
 Deberíamos crear un arreglo de objetos manteniendo sus especificaciones de la plantilla:
+
 ```json
 [{
 	“key”: “name”,
@@ -54,6 +59,7 @@ Deberíamos crear un arreglo de objetos manteniendo sus especificaciones de la p
 	“value”: [“uint16”, 300]
 }]
 ```
+
 Veamos ahora cómo hacer esto en JavaScript.
 
 ## Escribir datos mutables en un NFT en JavaScript <a name="p3"></a>
@@ -68,6 +74,7 @@ Para este ejemplo necesitamos llamar a la acción "setassetdata" del contrato in
 - **new_mutable_data**: una estructura similar al ATTRIBUTE_MAP que contiene los datos que queremos modificar, como vimos antes.
 
 Siguiendo el ejemplo anterior podríamos definir una función que reciba la información necesaria como parámetros y que llame al contrato inteligente de "atomicassets":
+
 ```js
 Const updateNft = (authorized, owner, asset_id, name, speed) => {
     apiRpc.transact({
@@ -102,6 +109,7 @@ Const updateNft = (authorized, owner, asset_id, name, speed) => {
     });
 }
 ```
+
 ## Modificar datos mutables en JavaScript <a name="p4"></a>
 
 Hemos visto cómo introducir datos mutables en un NFT, pero a veces necesitaremos actualizar su contenido, como por ejemplo, agregar una cantidad de puntos a su puntuación actual.
@@ -116,49 +124,57 @@ Como la biblioteca eosjs requiere estar conectada a una API de Full Story de la 
 :::
 
 En este ejemplo vemos cómo conectarnos a una API Atómica para leer un NFT, basado en su ID, y cómo obtener el contenido de uno de sus datos.
+
 ```js
-const { ExplorerApi } = require("atomicassets");
-const api = new ExplorerApi(
-    ATOMIC_API, 
-    "atomicassets", 
-    { fetch });
+const { ExplorerApi } = require('atomicassets');
+const api = new ExplorerApi(ATOMIC_API, 'atomicassets', { fetch });
 
 const asset = await api.getAsset(asset_id);
-let player_points = asset.mutable_data.player
+let player_points = asset.mutable_data.player;
 
 _points;
 player_points += 100;
 ```
-Debes cambiar **ATOMIC_API** por una URL válida de API Atómica. Puedes obtener una lista de ellas en https://tools.ledgerwise.io
+
+Configura **ATOMIC_API** con una URL válida de la lista de API de AtomicAssets en [HerdCheck](https://herdcheck.blocdraig.com/wax/lists).
 
 Una vez que hemos leído, solo queda actualizar la información con los valores deseados y guardarla en el NFT, como vimos en el paso anterior.
 
 ## Escribir los datos mutables de un NFT de AtomicAssets en un contrato inteligente <a name="p5"></a>
 
 Operar con NFTs de AtomicAssets desde nuestro contrato inteligente requiere que incluyamos algunos elementos del contrato inteligente "atomicassets" en nuestro código, para que podamos reutilizar ciertas definiciones y declaraciones de funciones y datos. Específicamente necesitaremos estos archivos:
+
 ```
 atomicassets.hpp
 atomicdata.hpp
 base58.hpp
 ```
+
 Que podemos obtener del GitHub de Pink Network:
-(https://github.com/pinknetworkx/atomicassets-contract/tree/master/include)
+(https://github.com/atomicassets/atomicassets-contract/tree/master/include)
 
 Nuestro primer paso es declarar un elemento del tipo ATTRIBUTE_MAP:
+
 ```c
 atomicassets::ATTRIBUTE_MAP mdata = {};
 ```
+
 Ahora podemos comenzar a agregar datos:
+
 ```c
 mdata[“name”] = string(“Delorean”);
 mdata[“speed”] = uint16_t(300);
 ```
+
 O, si recibimos los datos como parámetros en una función -ver el ejemplo de JavaScript:
+
 ```c
 mdata[“name”] = name;
 mdata[“speed”] = speed;
 ```
+
 Y todo lo que queda por hacer es llamar a la acción del contrato inteligente de "atomicassets" para realizar la operación:
+
 ```c
 action(
     permission_level{name(“authorized”), name("active")},
@@ -167,6 +183,7 @@ action(
     make_tuple(name(“authorized”), name(“owner”), asset_id, mdata))
     .send();
 ```
+
 ## Modificar datos mutables desde el contrato inteligente <a name="p6"></a>
 
 Aunque similar al ejemplo de modificación de datos mutables en JavaScript, en este caso necesitaremos deserializar los datos. Afortunadamente, Pink Network facilitará nuestro trabajo nuevamente -esta es la razón por la que importamos los archivos "atomicdata" y "base58" durante el paso anterior.
@@ -174,6 +191,7 @@ Aunque similar al ejemplo de modificación de datos mutables en JavaScript, en e
 Primero que todo necesitamos localizar el NFT accediendo a la tabla de activos propiedad del dueño actual. Por eso es importante saber quién tiene el NFT en su billetera, ya que será el ámbito de la tabla de datos de los activos de AtomicAssets.
 
 La información que necesitamos para serializar y deserializar los datos -nombres de los ítems y tipos de datos- se almacena en el esquema de la colección, por lo que necesitamos acceder también a la información del esquema al que pertenece el NFT.
+
 ```c
 // Leer los activos del propietario
 atomicassets::assets_t listAssets = atomicassets::get_assets(owner);
@@ -198,4 +216,5 @@ uint32_t mdata_player_points = get<uint32_t>(mdata["player_points"]);
 // Actualizar
 mdata_player_points += player_points;
 ```
+
 Una vez que se ha tomado los datos podemos modificar y almacenar como vimos en el ejemplo anterior. Solo necesitamos tener en cuenta que la función "deserialize" nos dará un elemento del tipo ATTRIBUTE_MAP, lo que nos permite usarlo directamente en la operación de escritura.

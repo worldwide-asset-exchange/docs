@@ -3,7 +3,7 @@ title: How to Set Up a WAX State-History Node
 order: 148
 ---
 
-There is a nodeos implementation type that is crucial for the operation of numerous WAX Mainnet Services such as  [Hyperion Full History](https://github.com/eosrio/hyperion-history-api)  and the  [Atomic Assets API](https://github.com/pinknetworkx/eosio-contract-api)  and that is the State-History service.
+There is a nodeos implementation type that is crucial for the operation of numerous WAX Mainnet Services such as [Hyperion Full History](https://github.com/eosrio/hyperion-history-api) and the [Atomic Assets API](https://github.com/atomicassets/atomicassets-api) and that is the State-History service.
 
 This guide will show you how to build, configure and deploy nodeos to provide State-History functionality also known as a State History Protocol (SHIP) node.
 
@@ -23,28 +23,28 @@ This article will walk through an example that is currently valid (March 2024) a
 
 **Hardware**
 
--   4 Core CPU /  _4Ghz+_
--   (1) 384GB+ Disk /  _Enterprise Grade SSD or NVMe (_**_High Endurance Req._**_)_
--   (2) 20TB+ Disk /  _SAS or SATA are OK however SSD or NVMe preferred_
+- 4 Core CPU / _4Ghz+_
+- (1) 384GB+ Disk / _Enterprise Grade SSD or NVMe (_**_High Endurance Req._**_)_
+- (2) 20TB+ Disk / _SAS or SATA are OK however SSD or NVMe preferred_
 
-Currently (March 2024) the  `blocks`and  `state-history`  directories take up **14TB**  of disk space.
+Currently (March 2024) the `blocks`and `state-history` directories take up **14TB** of disk space.
 
 ```
-3.8T    ./blocks  
-9.5T    ./state-history  
+3.8T    ./blocks
+9.5T    ./state-history
 14T    .
 ```
 
--   128GB+ RAM
+- 128GB+ RAM
 
 **Operating System**
 
--   Ubuntu 20.04
--   Ubuntu 22.04 **_(Recommended)_**
+- Ubuntu 20.04
+- Ubuntu 22.04 **_(Recommended)_**
 
 **Internet**
 
--   Modern Broadband / Fibre Connection (100Mb/s synchronous and above)
+- Modern Broadband / Fibre Connection (100Mb/s synchronous and above)
 
 # Prepare the Operating System Environment
 
@@ -52,87 +52,88 @@ Before the WAX software is built and configured, the operating system environmen
 
 # Zettabyte File System (ZFS)
 
-This node build uses  **2 Discrete SAS Disks**  in order to balance disk IO and provide a more affordable storage option for the  `/blocks`  and  `/state-history`  directories which together are currently 14TB and growing.
+This node build uses **2 Discrete SAS Disks** in order to balance disk IO and provide a more affordable storage option for the `/blocks` and `/state-history` directories which together are currently 14TB and growing.
 
 **Disk 1** is the high speed enterprise grade SSD or NVMe will be the OS disk used for the WAX software, all config and the state files. The state files are extremely IO intensive, a consumer based SSD’s life span will be short lived due to the high number of writes hence the need to use a high endurance enterprise SSD or NVMe.
 
-_Note:_  _It needs to be mentioned that there are mechanisms to run these state files in memory if you have enough available, this topic will be covered in a future article._
+_Note:_ _It needs to be mentioned that there are mechanisms to run these state files in memory if you have enough available, this topic will be covered in a future article._
 
-In this example Disk 1 will run the default OS  **Ext4 File System** that will already be implemented during the Ubuntu 22.04 installation.
+In this example Disk 1 will run the default OS **Ext4 File System** that will already be implemented during the Ubuntu 22.04 installation.
 
-**Disk 2**  is the large capacity SATA or SAS disk that will host the  `/blocks`  and  `/state-history`  directories. The IO demands on these directories are far lower than the state files and slower larger capacity spindle based disks are still suitable.
+**Disk 2** is the large capacity SATA or SAS disk that will host the `/blocks` and `/state-history` directories. The IO demands on these directories are far lower than the state files and slower larger capacity spindle based disks are still suitable.
 
-In this example Disk 2 will run the  **ZFS File System** which will give us two main benefits. ZFS will enable us to use  **LZ4 compression**  and it will improve disk IO with  **Adaptive Replacement Cache**  (ARC). Compression will only be used for the /blocks directory (which currently is a gain of 1.3x ) as there on no benefits on the already optimised state-history flat file.
+In this example Disk 2 will run the **ZFS File System** which will give us two main benefits. ZFS will enable us to use **LZ4 compression** and it will improve disk IO with **Adaptive Replacement Cache** (ARC). Compression will only be used for the /blocks directory (which currently is a gain of 1.3x ) as there on no benefits on the already optimised state-history flat file.
 
 Implement ZFS on Disk 2 with the below configuration:
 
 ```
-#Install ZFS  
+#Install ZFS
 > sudo apt-get install zfsutils-linux
 
-#Locate the Disk 2 device name  
+#Locate the Disk 2 device name
 > lsblk
 
-#Create ZFS Pool called "datavolume" on device "sdb"  
+#Create ZFS Pool called "datavolume" on device "sdb"
 > sudo zpool create datavolume /dev/sdb
 
-#Enable LZ4 compression  
+#Enable LZ4 compression
 > sudo zfs set compression=lz4 datavolume
 
-#Disable ZFS access time Updates  
+#Disable ZFS access time Updates
 > sudo zfs set atime=off datavolume
 
-#Set ARC to only cache metadata  
+#Set ARC to only cache metadata
 > sudo zfs set primarycache=all datavolume
 
-#Set the mountpoint location to your preferred location  
+#Set the mountpoint location to your preferred location
 > sudo zfs set mountpoint=/home/eosphere/datavolume datavolume
 
-#Create the specific folders for /blocks and /state-history  
+#Create the specific folders for /blocks and /state-history
 > mkdir /home/eosphere/datavolume/blocks
 
 > mkdir /home/eosphere/datavolume/state-history
 
-#Set specific mountpoint for /blocks and /state-history  
+#Set specific mountpoint for /blocks and /state-history
 > sudo zfs create -o mountpoint=/home/eosphere/datavolume/blocks datavolume/blocks
 
 > sudo zfs create -o mountpoint=/home/eosphere/datavolume/state-history datavolume/state-history
 
-#Turn off lz4 compression on the state-history mountpoint  
+#Turn off lz4 compression on the state-history mountpoint
 > sudo zfs set compression=none datavolume/state-history
 
-#Verify ZFS Settings  
+#Verify ZFS Settings
 > zfs get all
 ```
+
 # Network Time Protocol (NTP)
 
 It is crucial for a globally meshed blockchain to have synchronised time across all nodes.
 
-[Chrony](https://chrony.tuxfamily.org/)  is an excellent NTP client and is quite suitable for the needs of WAX Mainnet.
+[Chrony](https://chrony.tuxfamily.org/) is an excellent NTP client and is quite suitable for the needs of WAX Mainnet.
 
 Install, configure and verify as below:
 
 ```
-#Install Chrony  
+#Install Chrony
 > sudo apt install chrony
 
-#If necessary manually add local peers, these are AU servers  
-> sudo nano /etc/chrony/chrony.conf  
-  
-server 0.pool.ntp.org  
-server 1.pool.ntp.org  
-server 2.pool.ntp.org  
+#If necessary manually add local peers, these are AU servers
+> sudo nano /etc/chrony/chrony.conf
+
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
 server 3.pool.ntp.org
 
-#Restart Chrony  
+#Restart Chrony
 > sudo /etc/init.d/chrony restart
 
-#Verify  
-> chronyc sources -v  
+#Verify
+> chronyc sources -v
 
 > chronyc tracking
 
-#Set your local timezone if necessary  
+#Set your local timezone if necessary
 > sudo timedatectl set-timezone Australia/Perth
 ```
 
@@ -145,11 +146,11 @@ Configure and verify the raised limits as below:
 ```
 > sudo nano /etc/systemd/system.conf
 
-#Append the following configuration  
-DefaultLimitNOFILE=64000   
+#Append the following configuration
+DefaultLimitNOFILE=64000
 DefaultLimitSTACK=65536000
 
-#Restart server and verify  
+#Restart server and verify
 > ulimit -a
 ```
 
@@ -157,13 +158,13 @@ DefaultLimitSTACK=65536000
 
 The WAX software is derived from opensource Antelope software, however it has been modified to suit the needs of the WAX Protocol Network.
 
-Currently the WAX Block Producer accepted software build and version is ```v5.0.1wax01``` (March 2024)
+Currently the WAX Block Producer accepted software build and version is `v5.0.1wax01` (March 2024)
 
-The latest ```wax``` build tag is always available on the [worldwide-asset-exchange Github](https://github.com/worldwide-asset-exchange/wax-blockchain/tags)
+The latest `wax` build tag is always available on the [worldwide-asset-exchange Github](https://github.com/worldwide-asset-exchange/wax-blockchain/tags)
 
 **Building Process**
 
-This example uses  [Ubuntu Linux](https://ubuntu.com/)  to build the WAX software from source following the process below:
+This example uses [Ubuntu Linux](https://ubuntu.com/) to build the WAX software from source following the process below:
 
 ```
 > git submodule update --init --recursive
@@ -198,19 +199,19 @@ This example uses  [Ubuntu Linux](https://ubuntu.com/)  to build the WAX softwar
 
 Now that a clean build of the WAX software has been compiled lets get into configuring state-history for WAX Mainnet operation.
 
-To configure and start the node  `nodeos`  will be used,  `nodeos`is the core service daemon that runs on every WAX Protocol Network node.
+To configure and start the node `nodeos` will be used, `nodeos`is the core service daemon that runs on every WAX Protocol Network node.
 
-`nodeos`  can be configured to process smart contracts, validate transactions, produce blocks containing valid transactions, and confirm blocks to record them on the blockchain.
+`nodeos` can be configured to process smart contracts, validate transactions, produce blocks containing valid transactions, and confirm blocks to record them on the blockchain.
 
-The primary operational functions of  `nodeos`  are; running it as a Block Producer, Network API Endpoint, P2P Seed Node or State-History Node. Typically on a busy network such as the WAX Mainnet you would separate these functions across physically discrete servers.
+The primary operational functions of `nodeos` are; running it as a Block Producer, Network API Endpoint, P2P Seed Node or State-History Node. Typically on a busy network such as the WAX Mainnet you would separate these functions across physically discrete servers.
 
 In this WAX Mainnet example you will make your node connect to other network peers and available for API and Websocket connections as a State-History (SHIP) node.
 
-`nodeos`  requires  **two files**  to connect to peers and run on the WAX Mainnet:
+`nodeos` requires **two files** to connect to peers and run on the WAX Mainnet:
 
 **config.ini**
 
-Create a default  `config.ini`  by running  `nodeos`  without config as per the command below:
+Create a default `config.ini` by running `nodeos` without config as per the command below:
 
 ```
 > mkdir ~/waxdata
@@ -220,29 +221,29 @@ Create a default  `config.ini`  by running  `nodeos`  without config as per the 
 > ./nodeos --data-dir ~/waxdata --config-dir ~/waxdata
 ```
 
-You will then be able to edit the newly created  `config.ini`  and see all the available parameters:
+You will then be able to edit the newly created `config.ini` and see all the available parameters:
 
 ```
 > cd ~/waxdata> nano config.ini
 ```
 
-Now edit the  `config.ini`and add the following configuration settings:
+Now edit the `config.ini`and add the following configuration settings:
 
 ```
-# the location of the blocks directory on Disk 2  
+# the location of the blocks directory on Disk 2
 blocks-dir = /home/eosphere/datavolume/blocks
 
-wasm-runtime = eos-vm-jit  
-chain-state-db-size-mb = 131072  
+wasm-runtime = eos-vm-jit
+chain-state-db-size-mb = 131072
 chain-state-db-guard-size-mb = 1024
 
 read-mode = head
 
-http-server-address = 0.0.0.0:8888  
-access-control-allow-origin = *  
-access-control-allow-headers = Origin, X-Requested-With, Content-Type, Accept  
-http-max-response-time-ms = 100  
-verbose-http-errors = true  
+http-server-address = 0.0.0.0:8888
+access-control-allow-origin = *
+access-control-allow-headers = Origin, X-Requested-With, Content-Type, Accept
+http-max-response-time-ms = 100
+verbose-http-errors = true
 http-validate-host = false
 
 p2p-listen-endpoint = 0.0.0.0:9876
@@ -359,18 +360,18 @@ p2p-peer-address = wax-seed.eosiomadrid.io:9876
 p2p-peer-address = p2p.waxsweden.org:35777
 # PeerList - https://eosphere.io/services/
 
-agent-name = "<yourname> WAX Mainnet State-History"  
-  
+agent-name = "<yourname> WAX Mainnet State-History"
+
 sync-fetch-span = 500
 
-state-history-dir = /home/eosphere/datavolume/state-history  
-trace-history = true  
-chain-state-history = true  
+state-history-dir = /home/eosphere/datavolume/state-history
+trace-history = true
+chain-state-history = true
 state-history-endpoint = 0.0.0.0:8080
 
-plugin = eosio::http_plugin  
-plugin = eosio::state_history_plugin  
-plugin = eosio::chain_plugin  
+plugin = eosio::http_plugin
+plugin = eosio::state_history_plugin
+plugin = eosio::chain_plugin
 plugin = eosio::chain_api_plugin
 ```
 
@@ -384,52 +385,52 @@ These are the initial state parameters required by every new starting node on th
 > nano genesis.json
 ```
 
-Add the following parameters to the  `genesis.json`  file for the WAX Public Mainnet:
+Add the following parameters to the `genesis.json` file for the WAX Public Mainnet:
 
 ```
-{  
-  "initial_timestamp": "2019-06-05T12:00:00.000",  
-  "initial_key": "EOS8i2pkwtv2JmdYWNJdcy5BcJ7wCE5q6mpE1hwT25HdgHMzeRday",  
-  "initial_configuration": {  
-    "max_block_net_usage": 1048576,  
-    "target_block_net_usage_pct": 1000,  
-    "max_transaction_net_usage": 524288,  
-    "base_per_transaction_net_usage": 12,  
-    "net_usage_leeway": 500,  
-    "context_free_discount_net_usage_num": 20,  
-    "context_free_discount_net_usage_den": 100,  
-    "max_block_cpu_usage": 500000,  
-    "target_block_cpu_usage_pct": 2000,  
-    "max_transaction_cpu_usage": 150000,  
-    "min_transaction_cpu_usage": 100,  
-    "max_transaction_lifetime": 3600,  
-    "deferred_trx_expiration_window": 600,  
-    "max_transaction_delay": 3888000,  
-    "max_inline_action_size": 4096,  
-    "max_inline_action_depth": 4,  
-    "max_authority_depth": 6  
-  }  
+{
+  "initial_timestamp": "2019-06-05T12:00:00.000",
+  "initial_key": "EOS8i2pkwtv2JmdYWNJdcy5BcJ7wCE5q6mpE1hwT25HdgHMzeRday",
+  "initial_configuration": {
+    "max_block_net_usage": 1048576,
+    "target_block_net_usage_pct": 1000,
+    "max_transaction_net_usage": 524288,
+    "base_per_transaction_net_usage": 12,
+    "net_usage_leeway": 500,
+    "context_free_discount_net_usage_num": 20,
+    "context_free_discount_net_usage_den": 100,
+    "max_block_cpu_usage": 500000,
+    "target_block_cpu_usage_pct": 2000,
+    "max_transaction_cpu_usage": 150000,
+    "min_transaction_cpu_usage": 100,
+    "max_transaction_lifetime": 3600,
+    "deferred_trx_expiration_window": 600,
+    "max_transaction_delay": 3888000,
+    "max_inline_action_size": 4096,
+    "max_inline_action_depth": 4,
+    "max_authority_depth": 6
+  }
 }
 ```
 
 # Running Nodeos
 
-Now that the  `config.ini`  has been configured and the initial WAX Mainnet chain parameters  `genesis.json`  have been created, you can now join the network and sync up the node.
+Now that the `config.ini` has been configured and the initial WAX Mainnet chain parameters `genesis.json` have been created, you can now join the network and sync up the node.
 
 Use screen to keep your session live even when you disconnect, usage below:
 
 ```
 #Create a new screen session
-> screen -US wax 
+> screen -US wax
 
 #Disconnect screen session
-> ctrl-a+d 
+> ctrl-a+d
 
 #Reconnect screen session
 > screen -r wax
 ```
 
-Run  `nodeos`  with pointers to the config, data directory and genesis file:
+Run `nodeos` with pointers to the config, data directory and genesis file:
 
 ```
 > cd ~/wax-blockchain/build/programs/nodeos
@@ -440,12 +441,12 @@ Your WAX Mainnet node will now start syncing with the configured peers and catch
 
 At time of writing (March 2024) this may take up to 2 months for a complete block sync from genesis. It may also help if you choose a few closely located peers to limit peer overload and ensure low latency.
 
-As your node syncs from the start of the chain it will build the log and index files in the  `/blocks`  and  `/state-history`  directories.
+As your node syncs from the start of the chain it will build the log and index files in the `/blocks` and `/state-history` directories.
 
-Your node will be accessible via **http port 8888**  for queries and  **ws port 8080**  for state-history.
+Your node will be accessible via **http port 8888** for queries and **ws port 8080** for state-history.
 
 ---
 
 These **WAX Developer Technical Guides** are created using source material from the [EOSphere WAX Technical How To Series](https://medium.com/eosphere/wax-technical-how-to/home)
 
-Be sure to ask any questions in the  [EOSphere Telegram](https://t.me/eosphere_io)
+Be sure to ask any questions in the [EOSphere Telegram](https://t.me/eosphere_io)

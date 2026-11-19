@@ -21,7 +21,7 @@ En este ejemplo tenemos un nodo con 64GB de RAM y 8 CPU Cores:
 
 Configuración generada por PGTune
 
-En el entorno de [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/), hemos tenido éxito cambiando solo seis de estas configuraciones que fueron derivadas de la guía del equipo [Pink.gg](https://pink.gg/)
+En el entorno de [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io/docs/), hemos tenido éxito cambiando solo seis de estas configuraciones que fueron derivadas de la guía del equipo Pink.gg
 
 **_shared_buffers_**, memoria directamente asignada al búfer interno del servicio de postgres.  
 **_effective_cache_size_**, cuánta memoria de caché está disponible para la base de datos.  
@@ -33,21 +33,22 @@ En el entorno de [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io
 Configura PostgreSQL 14 como a continuación:
 
 ```
-***Detener los servicios PM2 de Atomic API***  
+***Detener los servicios PM2 de Atomic API***
 > pm2 stop all
 
 ***Se asume 64GB de RAM***
 > sudo nano /etc/postgresql/14/main/postgresql.conf
 
-shared_buffers = '32GB';  
-effective_cache_size = '48GB';  
-maintenance_work_mem = '2GB';  
-random_page_cost = 1.1;  
-effective_io_concurrency = 300;  
+shared_buffers = '32GB';
+effective_cache_size = '48GB';
+maintenance_work_mem = '2GB';
+random_page_cost = 1.1;
+effective_io_concurrency = 300;
 work_mem = '16MB';
 
 > sudo service postgresql restart
 ```
+
 ## copia de seguridad y restauración de postgres
 
 Tener acceso a una copia de seguridad de posgres de Atomic API existente puede ser una forma increíble de poner en marcha tu nodo lo antes posible.
@@ -93,9 +94,9 @@ ente al uso público intensivo.
 
 He copiado y pegado los detalles de la actualización de la comunidad del equipo de Pink sobre estas características a continuación:
 
-**"bill_execution_time”: true**  // Esto cambia la limitación de tasa a un enfoque similar al de la CPU, por lo que las consultas costosas usarán más del límite de tasa disponible. Esto significa que las personas que envían muchas consultas costosas se limitarán más rápido, pero este cambio no debería afectar a quienes solo envían llamadas rápidas y optimizadas.
+**"bill_execution_time”: true** // Esto cambia la limitación de tasa a un enfoque similar al de la CPU, por lo que las consultas costosas usarán más del límite de tasa disponible. Esto significa que las personas que envían muchas consultas costosas se limitarán más rápido, pero este cambio no debería afectar a quienes solo envían llamadas rápidas y optimizadas.
 
-**“disable_v1_sales”: true**  // Esto dirigirá /v2/sales a /v1/sales porque es mucho más rápido. Este es un cambio importante porque /v1/sales no devolverá ventas canceladas, pero esto reducirá mucho la carga y no muchas personas están interesadas en ventas canceladas. Para aquellos que lo estén, hay un nuevo endpoint /v0/sales que aún sirve la API antigua.
+**“disable_v1_sales”: true** // Esto dirigirá /v2/sales a /v1/sales porque es mucho más rápido. Este es un cambio importante porque /v1/sales no devolverá ventas canceladas, pero esto reducirá mucho la carga y no muchas personas están interesadas en ventas canceladas. Para aquellos que lo estén, hay un nuevo endpoint /v0/sales que aún sirve la API antigua.
 
 Capturé estas características actualizadas en la [guía anterior](https://medium.com/eosphere/wax-technical-how-to-9-f7d22bfa4e2b), pero para completitud, la configuración está a continuación:
 
@@ -155,7 +156,7 @@ Capturé estas características actualizadas en la [guía anterior](https://medi
 
 ## Balanceo de carga y redundancia
 
-Actualmente no hay una [eosio-contract-api](https://github.com/pinknetworkx/eosio-contract-api) de [Pink.gg](https://pink.gg/) disponible que permita múltiples servicios de llenado a un mismo clúster de db.
+Actualmente no hay una [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) de Pink.gg disponible que permita múltiples servicios de llenado a un mismo clúster de db.
 
 Como el servidor completo de API atómica sigue siendo de solo alrededor de 1.2TB (27 de diciembre de 2022), hemos tenido éxito y sugerimos que balancees la carga de tu servicio público de API a múltiples servidores de API atómica completamente sincronizados y autónomos.
 

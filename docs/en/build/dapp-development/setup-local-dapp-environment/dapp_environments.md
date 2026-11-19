@@ -19,7 +19,7 @@ Below you'll find WAX versions, URLs, and development environment information.
 | Service             | URL                                                                                 | Description                                                                                   |
 | ------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | Blockchain URL      | [chain-api-url](/operate/wax-infrastructure/#public-and-free-api-service-providers) | Used to make API calls and deploy your smart contracts to the WAX mainnet.                    |
-| Blockchain P2P      | peers.wax.io:9876                                                                   | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
+| Blockchain P2P      | [WAX Mainnet peers (EOSphere)](https://eosphere.io/services/)                         | Use an address from the P2P column in `host:port` format to sync a producer or full node.      |
 | Blockchain Explorer | [https://waxblock.io](https://waxblock.io/)                                         | waxblock.io block explorer.                                                                   |
 | WAX Account         | (e.g., Scatter)                                                                     | Create a WAX Blockchain Account.                                                              |
 
@@ -33,7 +33,7 @@ Below you'll find WAX versions, URLs, and development environment information.
 | Blockchain URL      | [https://testnet.waxsweden.org](https://testnet.waxsweden.org)                                                                                                              | Used to make API calls and deploy your smart contracts to the WAX Testnet.                    |
 | Public Endpoints    | [endpoints.json](https://github.com/eosswedenorg/waxtestnet/tree/master/endpoints)                                                                                          | Additional P2P and API endpoint URLs.                                                         |
 | Blockchain P2P      | testnet.waxsweden.org:59876                                                                                                                                                 | Peering endpoint for synchronizing a producer or full node (with no protocol in front of it). |
-| Blockchain Explorer | [Bloks.io Testnet](https://local.bloks.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Testnet block explorer.                                                                       |
+| Blockchain Explorer | [WAXBlock Testnet](https://local.waxblock.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Testnet block explorer.                                                                       |
 | Test Account        | [https://waxsweden.org/create-testnet-account/](https://waxsweden.org/create-testnet-account/)                                                                              | Use the "Create testnet account" tool on the [Testnet](https://waxsw                          |
 
 eden.org/testnet/) homepage or visit the direct link. |

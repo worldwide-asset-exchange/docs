@@ -42,10 +42,6 @@ export default [
       {
         text: 'vIRL Marketplace',
         href: 'https://virl.com'
-      },
-      {
-        text: 'vIRL Marketplace Widget',
-        href: 'https://widget.virl.com'
       }
     ]
   },
