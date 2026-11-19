@@ -96,7 +96,7 @@ zfs create -o mountpoint=/home zfast/home [-->Creates mountpoint]
 
 Now that we have setup the server and disk storage in a good way, let's go ahead with the next steps to setup the Hyperion related dependencies.
 
-https://hyperion.docs.eosrio.io/manual_installation/
+[Hyperion 3.x manual installation](https://github.com/eosrio/hyperion-docs/blob/fd67fb8842399790c5aab28ad46a6cf869346a90/docs/providers/install/manual_install.md)
 
 ##### 6. Node JS installation:
 ```
@@ -114,7 +114,7 @@ For Postgres replication cluster setup, refer:
 
 **PostgreSQL 14 Installation using Apt package:**
 
-Guide: https://techviewleo.com/how-to-install-postgresql-database-on-ubuntu/
+Guide: https://www.postgresql.org/download/linux/ubuntu/
 
 ```
 sudo apt update && sudo apt -y upgrade

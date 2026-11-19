@@ -18,7 +18,7 @@ Existen varios tipos de cuentas que necesitarás para desplegar tus contratos in
 En esta guía, utilizarás **cleos** para crear una nueva Cuenta Blockchain WAX que puedas usar para desplegar tu contrato inteligente.
 
 :::tip
-<strong>Consejo:</strong> Para una lista completa de subcomandos y opciones de creación de cuentas de cleos, consulta la <a href="https://docs.eosnetwork.com/leap/latest/cleos/command-reference/create/account" target="_blank">Guía de Referencia Cleos: crear cuenta</a>.
+<strong>Consejo:</strong> Para una lista completa de subcomandos y opciones de creación de cuentas de cleos, consulta la <a href="https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/02_cleos/03_command-reference/create/account.md" target="_blank">Guía de Referencia Cleos: crear cuenta</a>.
 :::
 
 ## Antes de Comenzar

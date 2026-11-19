@@ -55,7 +55,7 @@ What can be even  **more awesome**  is if you can provide a backup for others to
 
 Two postgres tools are used for this process  `pg_dump`  and  `pg_restore`
 
-EOSphere currently provide  [WAX Mainnet Atomic API backups](https://store1.eosphere.io/wax/atomic/backups/)  on our snapshot webserver.  [https://snapshots.eosphere.io/](https://snapshots.eosphere.io/)
+EOSphere publishes [WAX Mainnet Atomic API backups](https://store3.eosphere.io/wax/atomic/backups/). Check the [EOSphere backup version notes](https://snapshots.eosphere.io/) to choose a dump compatible with your Atomic API and PostgreSQL versions.
 
 In order to  **create**  a compressed backup follow the process below:
 

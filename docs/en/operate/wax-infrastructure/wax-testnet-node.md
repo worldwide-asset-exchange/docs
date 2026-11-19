@@ -78,7 +78,7 @@ Now that a clean build of the WAX software has been compiled lets get into confi
 
 To configure and start the node `nodeos` will be used, `nodeos`is the core service daemon that runs on every WAX Protocol Network node.
 
-`nodeos` can be configured to process smart contracts, validate transactions, produce blocks containing valid transactions, and confirm blocks to record them on the blockchain. You can read more about it [here](https://developers.eos.io/manuals/eos/latest/nodeos/index).
+`nodeos` can be configured to process smart contracts, validate transactions, produce blocks containing valid transactions, and confirm blocks to record them on the blockchain. You can read more about it [here](https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/01_nodeos/index.md).
 
 The primary operational functions of `nodeos` are; running it as a Block Producer, Network API Endpoint, P2P Seed Node or State-History Node. Typically on a busy network such as the WAX Mainnet you would separate these functions across physically discrete servers.
 
@@ -206,7 +206,7 @@ p2p-peer-address = seed1-wax-testnet.wecan.dev:9876
 # wecan: GB, London
 p2p-peer-address = seed2-wax-testnet.wecan.dev:9876
 
-#EOSNation Provided PeerList - https://validate.eosnation.io/waxtest/reports/config.html#
+# WAX Testnet peers published by EOSphere - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Testnet"
 

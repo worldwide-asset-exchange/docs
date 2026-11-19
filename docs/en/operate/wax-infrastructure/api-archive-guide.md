@@ -215,7 +215,7 @@ plugin = eosio::chain_plugin
 plugin = eosio::chain_api_plugin
 plugin = eosio::http_plugin
 
-#Peers list - Refer this link for mainnet latest peers: https://validate.eosnation.io/wax/reports/config.html
+#Peers list - Refer this link for mainnet latest peers: https://eosphere.io/services/
 
 # alohaeosprod: US, Oregon
 p2p-peer-address = peer.wax.alohaeos.com:9876

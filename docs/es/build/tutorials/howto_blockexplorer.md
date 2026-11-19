@@ -179,6 +179,6 @@ Al inicio de cada ciclo comprobamos si la Cola (Queue) tiene datos para procesar
 
 Un ejemplo completo está disponible en Github:
 
-[https://github.com/3dkrender/WAXCrawler](https://github.com/3dkrender/WAXCrawler)
+[Copia pública del ejemplo WAXCrawler](https://github.com/badgifter/WAXCrawler/tree/06c9ec8babd7a99ff64458ab637e6ee890a69a23)
 
 En este ejemplo rastrearemos la blockchain para localizar aquellas transacciones superiores a 10000 WAX. Usamos una base de datos para almacenar el número del primer bloque desde donde queremos comenzar a rastrear la blockchain y para almacenar las transacciones que cumplen la condición.

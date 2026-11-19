@@ -7,7 +7,7 @@ order: 3
 
 Este contrato de tres en raya proporciona un ejemplo de cómo construir un juego en WAX, incluyendo el uso seguro de valores aleatorios para determinar los resultados del juego.
 
-Esta guía te mostrará cómo crear el contrato del juego de Tictactoe que se ejecuta en la blockchain de Wax. La lógica del juego de tictactoe sigue el ejemplo de eosio en el [tutorial del Juego Tres en Raya de EOS](https://developers.eos.io/welcome/v2.1/tutorials/tic-tac-toe-game-smart-contract-single-node), pero agregaremos más lógica que soporte aleatorizar el primer turno y movimientos aleatorios del juego si se juega contra un bot.
+Esta guía te mostrará cómo crear el contrato del juego de Tictactoe que se ejecuta en la blockchain de Wax. La lógica del juego de tictactoe sigue el ejemplo de eosio en el [tutorial del Juego Tres en Raya de EOS](https://github.com/EOSIO/eos/wiki/Smart-Contract/9d16fb04e7d93b9adf4b6900d73b5c083578bdaf#42-tic-tac-toe), pero agregaremos más lógica que soporte aleatorizar el primer turno y movimientos aleatorios del juego si se juega contra un bot.
 
 [Tutorial de Contrato Inteligente en github.com](https://github.com/worldwide-asset-exchange/tic-tac-toe)
 
@@ -116,7 +116,7 @@ La lógica del juego seguirá los siguientes diagramas:
 
 Sumerjámonos en cómo podemos implementar estas acciones en el contrato inteligente de tres en raya.
 
-El contrato inteligente tendrá el [archivo de encabezado tictactoe.hpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.hpp) y el [archivo de implementación tictactoe.cpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.cpp).
+El contrato inteligente tendrá el [archivo de encabezado tictactoe.hpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/blob/master/include/tictactoe.hpp) y el [archivo de implementación tictactoe.cpp](https://github.com/worldwide-asset-exchange/tic-tac-toe/blob/master/src/tictactoe.cpp).
 
 Coloquemos estas declaraciones en el archivo de encabezado, estas son las acciones principales de nuestro contrato inteligente:
 

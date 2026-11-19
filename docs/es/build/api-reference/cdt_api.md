@@ -21,7 +21,7 @@ Todas estas bibliotecas se encuentran en la carpeta **wax-cdt/libraries/eosiolib
 
 **Código Fuente:** <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/core/eosio/crypto.hpp#L283" target="_blank">Repositorio de GitHub de WAX</a>
 
-**Descripción:** Verifica una firma usando el algoritmo RSA 256. Implementado en código nativo, este método es aproximadamente 15 veces más rápido que la verificación WASM estándar. Consulta el <a href="https://www.emc.com/collateral/white-papers/h11300-pkcs-1v2-2-rsa-cryptography-standard-wp.pdf" target="_blank">Estándar de Criptografía RSA</a> para más información.
+**Descripción:** Verifica una firma usando el algoritmo RSA 256. Implementado en código nativo, este método es aproximadamente 15 veces más rápido que la verificación WASM estándar. Consulta el <a href="https://www.rfc-editor.org/rfc/rfc8017.html" target="_blank">Estándar de Criptografía RSA</a> para más información.
 
 **Parámetros de Entrada:**
 
@@ -79,7 +79,7 @@ Tus contratos inteligentes pueden usar los siguientes tipos de datos:
 * symbol_code
 * asset
 
-Consulta los <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Tipos</a> de EOSIO para más información.
+Consulta la [lista de tipos incorporados en el serializador ABI de WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/blob/main/libraries/chain/abi_serializer.cpp) para más información.
 
 ## Definiciones de Tipos
 

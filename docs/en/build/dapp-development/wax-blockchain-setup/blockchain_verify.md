@@ -13,7 +13,7 @@ From the command line, enter the following:
 ```shell
 cleos -u https://wax-api-url get info
 ```
-*Check https://validate.eosnation.io/wax/reports/endpoints.html to get an updated API endpoint URL*
+*Check the [HerdCheck WAX Mainnet API list](https://herdcheck.blocdraig.com/wax/lists) for an updated endpoint URL.*
 <p>&nbsp;</p>
 
 If the [Blockchain Tools](/build/tools/blockchain_tools) installed successfully, this endpoint will return various details about the WAX Blockchain, including the `chain_id`, block producer, and most recent block height.

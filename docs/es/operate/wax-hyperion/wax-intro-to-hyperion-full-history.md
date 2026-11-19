@@ -12,7 +12,7 @@ Las alternativas de Historia Completa más populares siendo [Streaming Fast](htt
 
 EOSphere tiene una extensa experiencia en producción con la provisión de servicios de Historia Completa usando Hyperion en WAX Mainnet y Testnet así como en otras redes. Esta guía compartirá esta experiencia contigo, dividida en una serie que comienza con una introducción a los componentes de software y los requisitos de hardware de una solución de WAX Hyperion Full History lista para producción.
 
-[Aprende más sobre EOS RIO Hyperion](https://eosrio.io/hyperion/)
+[Aprende más sobre EOS RIO Hyperion](https://hyperion.docs.eosrio.io/)
 
 ![](https://miro.medium.com/v2/resize:fit:598/1*ATnQKunF5rVtPEsL-sP0JA.png)
 

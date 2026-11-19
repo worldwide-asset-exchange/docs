@@ -21,7 +21,7 @@ All of these libraries are located in the **wax-cdt/libraries/eosiolib** folder.
 
 **Source Code:** <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/core/eosio/crypto.hpp#L283" target="_blank">WAX GitHub Repository</a>
 
-**Description:** Verify a signature using the RSA 256 algorithm. Implemented in native code, this method is about 15x's faster than standard WASM verification. Refer to <a href="https://www.emc.com/collateral/white-papers/h11300-pkcs-1v2-2-rsa-cryptography-standard-wp.pdf" target="_blank">RSA Cryptography Standard</a> for more information.
+**Description:** Verify a signature using the RSA 256 algorithm. Implemented in native code, this method is about 15x's faster than standard WASM verification. Refer to <a href="https://www.rfc-editor.org/rfc/rfc8017.html" target="_blank">RSA Cryptography Standard</a> for more information.
 
 **Input Parameters:**
 
@@ -80,7 +80,7 @@ Your smart contracts can use the following data types:
 * symbol_code
 * asset
 
-Refer to EOSIO's <a href="https://eosio.github.io/eosio.cdt/1.6.0/group__types.html" target="_blank">Types</a> for more information.
+See the [WAX ABI serializer](https://github.com/worldwide-asset-exchange/wax-blockchain/blob/main/libraries/chain/abi_serializer.cpp) for the list of built-in types.
 
 ## Type Definitions
 

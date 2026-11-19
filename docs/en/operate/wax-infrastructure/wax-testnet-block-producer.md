@@ -29,7 +29,7 @@ It will need to be Sync’d to the current WAX Testnet Headblock
 This is the Node used to securely sign blocks on the WAX Testnet and the main additional production Node in this example.  
 It will need to be Sync’d to the current WAX Testnet Headblock.  
 
-In addition to configuring the latest available [peer list](https://validate.eosnation.io/waxtest/reports/config.html) of trusted Guilds published by EOSNation, it is a good idea to allow it to peer to your own Public Peer Node or Blocks Only Node.
+Configure trusted testnet peers, such as those in the [EOSphere public endpoints list](https://eosphere.io/services/). You can also connect your producer to your own public peer node or blocks-only node.
 
 **Cleos Interface Node**  
 This Node is completely private and used to interact with the Public Testnet Network via command line. Ubuntu Terminal / MacOS Terminal / Windows Ubuntu Shell are great lightweight OS’s for running this private interface.

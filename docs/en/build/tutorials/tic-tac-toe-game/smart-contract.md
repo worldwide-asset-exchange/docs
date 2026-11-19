@@ -7,7 +7,7 @@ order: 3
 
 This tic-tac-toe contract provides an example of building a game on WAX, complete with secure use of random values to determine game outcomes.
 
-This will guide you how to make the Tictactoe game contract which run on Wax blockchain. Logic of the tictactoe game follow the eosio sample at [Tic-tac-toe Game EOS tutorial](https://developers.eos.io/welcome/v2.1/tutorials/tic-tac-toe-game-smart-contract-single-node), but we'll add more logic that support randomize the first turner and random game move if playing with bot.
+This will guide you how to make the Tictactoe game contract which run on Wax blockchain. Logic of the tictactoe game follow the eosio sample at [Tic-tac-toe Game EOS tutorial](https://github.com/EOSIO/eos/wiki/Smart-Contract/9d16fb04e7d93b9adf4b6900d73b5c083578bdaf#42-tic-tac-toe), but we'll add more logic that support randomize the first turner and random game move if playing with bot.
 
 [Smart Contract Tutorial on github.com](https://github.com/worldwide-asset-exchange/tic-tac-toe)
 
@@ -108,7 +108,7 @@ Game logic will follow below diagrams:
 
 Let dive into how can we implement these actions on tictactoe smartcontract.
 
-The smartcontract will have the [tictactoe.hpp header file](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.hpp) and the [tictactoe.cpp implementation file](https://github.com/worldwide-asset-exchange/tic-tac-toe/tree/master/include/tictactoe.cpp).
+The smartcontract will have the [tictactoe.hpp header file](https://github.com/worldwide-asset-exchange/tic-tac-toe/blob/master/include/tictactoe.hpp) and the [tictactoe.cpp implementation file](https://github.com/worldwide-asset-exchange/tic-tac-toe/blob/master/src/tictactoe.cpp).
 
 Let's put these declarations in header file, this is the main action of our smartcontract:
 

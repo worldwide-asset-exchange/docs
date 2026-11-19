@@ -12,7 +12,7 @@ EOS RIO tiene un excelente [Repositorio de Documentación de Hyperion](https://h
 
 Una vez más, esta serie de Cómo Hacerlo Técnico puede cubrir algunos de los mismos contenidos de EOS RIO y agregará matices operacionales desde un punto de vista práctico y nuestra experiencia.
 
-[Aprende más sobre EOS RIO Hyperion](https://eosrio.io/hyperion/)
+[Aprende más sobre EOS RIO Hyperion](https://hyperion.docs.eosrio.io/)
 
 ![EOS RIO Hyperion](https://miro.medium.com/v2/resize:fit:598/0*SMEjl3XTe2BtL1W3.png)
 

@@ -17,7 +17,7 @@ Important: At this time, pre-compiled packages are not available. Support is <st
 
 ## What's Included
 
-The WAX Blockchain is a fork of <a href="https://docs.eosnetwork.com/" target="_blank">EOS (Antelope)</a>. This <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code Repository</a> includes and installs:
+The WAX Blockchain is a fork of <a href="https://docs.vaulta.com/docs/latest/advanced-topics/upgrading-to-vaulta/" target="_blank">EOS (Antelope)</a>. This <a href="https://github.com/worldwide-asset-exchange/wax-blockchain" target="_blank">WAX Blockchain Source Code Repository</a> includes and installs:
 
 - WAX Blockchain source code
 - Dependencies
@@ -36,7 +36,7 @@ The WAX Source Code Repository includes a Hello World sample to quickly build an
 
 ### Dependencies
 
-<p>For a complete list of dependencies, refer to <a href="https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/scripts" target="_blank">wax-blockchain/scripts</a> and locate the `wax_build_` file for your operating system.</p>
+See the [WAX Spring build prerequisites](https://github.com/worldwide-asset-exchange/wax-blockchain/blob/main/README.md#prerequisites) for the dependencies for your operating system.
 
 ## System Requirements
 

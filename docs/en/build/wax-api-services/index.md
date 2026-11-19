@@ -11,7 +11,7 @@ This section is for service discovery. If you need architecture guidance, start 
 
 Public API availability changes over time. For current endpoint discovery, use:
 
-- [Validationcore endpoint reports](https://wax.validationcore.io/reports/nodes/api)
+- [HerdCheck WAX Mainnet endpoints](https://herdcheck.blocdraig.com/wax/lists)
 
 ## Managed and Commercial Services
 

@@ -12,7 +12,7 @@ Hoy en día, hay múltiples soluciones de historia que ofrecen diferentes caract
 
 - **Hardware de nodo API (especificaciones mínimas):** CPU multi-hilo con al menos 4gHZ de velocidad de CPU o superior, 64GB RAM, 14TB SSD (actualmente el tamaño del disco está aumentando alrededor de 25-30GB/día, así que planifica en consecuencia) - Para ElasticSearch [También se recomienda tener clústeres de ES multinodo para mayor rendimiento]
 - **Hardware de nodo de Historia de Estado Completa (especificaciones recomendadas):** CPU i9, 128GB RAM, 6TB NVME SSD [Para una historia de estado parcial, puedes tener especificaciones más bajas o tenerlo en el mismo servidor que Hyperion. Esto también puede iniciarse desde un snapshot]
-- **Versión de Hyperion:** v3.3.5 o superior
+- **Versión de Hyperion:** v3.3.5 (versión de esta guía)
 - **Dependencias:** Elasticsearch 7.17.X, RabbitMQ, Redis, Node.js v16, PM2
 - **SO:** Ubuntu20.04 (recomendado)
 
@@ -83,7 +83,7 @@ zfs create -o mountpoint=/home zfast/home [-->Crea un punto de montaje]
 
 Ahora que hemos configurado el servidor y el almacenamiento en disco de una buena manera, sigamos con los siguientes pasos para configurar las dependencias relacionadas con Hyperion.
 
-https://hyperion.docs.eosrio.io/manual_installation/
+[Instalación manual de Hyperion 3.x](https://github.com/eosrio/hyperion-docs/blob/fd67fb8842399790c5aab28ad46a6cf869346a90/docs/providers/install/manual_install.md). Para versiones más recientes, consulta la [guía de instalación actual de Hyperion](https://hyperion.docs.eosrio.io/providers/install/manual_install/).
 
 ##### 6. Configuración e Instalación de Elasticsearch v7.17.X:
 
@@ -310,35 +310,35 @@ Ahora tenemos dos opciones:
 1. Instalar y sincronizar todo desde cero
 2. Usar snapshots de ES para sincronizar los datos y luego iniciar la instancia de Hyperion.
 
-Nota: Si estás usando snapshots de ES de un proveedor de servicio de snapshots, ve a Kibana dev mode e ingresa los siguientes comandos:
+Para restaurar un snapshot de Elasticsearch, sigue las instrucciones de acceso de tu proveedor. Si usas [EOSphere](https://snapshots.eosphere.io/), consulta la sección «Hyperion snapshots». En Kibana Dev Tools, sustituye `<snapshot-repository-url>` y `<snapshot-name>` por los valores que te proporcione el proveedor.
 
 ```
 PUT _snapshot/eosphere-repo
 {
    "type": "url",
    "settings": {
-       "url": "https://store1.eosphere.io/wax/hyperion/snapshot/"
+       "url": "<snapshot-repository-url>"
    }
 }
 
 
-POST _snapshot/eosphere-repo/wax_snapshot_2022.02.01/_restore
+POST _snapshot/eosphere-repo/<snapshot-name>/_restore
 {
   "indices": "*,-.*"
 }
 ```
 ###### Configuración:
 
-Clona la base de código más reciente e instala hyperion:
+Clona e instala la versión de Hyperion usada en esta guía:
 
 ```
-git clone https://github.com/eosrio/hyperion-history-api.git
+git clone --branch v3.3.5 https://github.com/eosrio/hyperion-history-api.git
 cd hyperion-history-api
 npm install
 ```
 Ahora que está instalado, tenemos que configurar las conexiones y la configuración de la cadena.
 
-1. Sigue la guía [aquí](https://hyperion.docs.eosrio.io/connections/  "aquí") para configurar el archivo connections.json. o encuentra el ejemplo a continuación:
+1. Consulta la [referencia de conexiones de Hyperion 3.x](https://github.com/eosrio/hyperion-docs/blob/fd67fb8842399790c5aab28ad46a6cf869346a90/docs/providers/setup/connections.md) para configurar `connections.json` o usa el ejemplo de abajo.
 ```
 {
   "amqp": {
@@ -375,7 +375,7 @@ Ahora que está instalado, tenemos que configurar las conexiones y la configurac
   }
 }
 ```
-2. Sigue la guía [aquí]https://hyperion.docs.eosrio.io/chain/  "aquí") para configurar el archivo wax.config.json
+2. Consulta la [referencia de configuración de cadenas de Hyperion 3.x](https://github.com/eosrio/hyperion-docs/blob/fd67fb8842399790c5aab28ad46a6cf869346a90/docs/providers/setup/chain.md) para configurar `wax.config.json`.
 
 ###### Ejecutando Hyperion:
 

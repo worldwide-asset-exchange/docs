@@ -39,7 +39,7 @@ First of all you need to obtain a valid snapshot file from a trusted source. The
 
 
 ::: tip 📝 Note
-The [EOS Nation bp.json Validator](https://validate.eosnation.io/wax/reports/resources.html#chain) has a very handy snapshot service list collated from what the Guilds have advertised.
+Choose a file compatible with your `nodeos` version from the [EOSphere WAX Mainnet snapshot directory](https://store3.eosphere.io/wax/snapshots/).
 :::
 
 ![snapshotservice_v2](https://github.com/Rossco99/wax-developer/assets/12730423/60f41ad4-f85c-483d-8ed6-bc913c943369)

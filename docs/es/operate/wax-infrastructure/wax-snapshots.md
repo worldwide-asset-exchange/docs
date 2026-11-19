@@ -38,7 +38,7 @@ El uso más común para una instantánea es recuperarse de un nodo detenido inco
 En primer lugar, necesitas obtener un archivo de instantánea válido de una fuente confiable. Hay varios servicios de instantáneas de WAX proporcionados por los Gremios de WAX, incluido [EOSphere](https://snapshots.eosphere.io/), sin embargo, no todos proporcionan instantáneas de la red de prueba, así que es posible que necesites buscar un poco.
 
 ::: tip 📝 Nota
-El [Validador bp.json de EOS Nation](https://validate.eosnation.io/wax/reports/resources.html#chain) tiene una lista de servicios de instantáneas muy útil recopilada de lo que los Gremios han anunciado.
+En el [directorio de snapshots de WAX Mainnet de EOSphere](https://store3.eosphere.io/wax/snapshots/), elige un archivo compatible con tu versión de `nodeos`.
 :::
 
 ### Uso

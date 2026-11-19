@@ -11,46 +11,37 @@ description: Descubre el ecosistema WAX y los mejores puntos de entrada para emp
 
 - [My Cloud Wallet](https://www.mycloudwallet.com/)
 - [Anchor](https://anchorwallet.io)
-- [Ledger](https://www.ledger.com/eos-wallet/)
+- [Ledger](https://www.ledger.com/coin/wallet/eos)
 
 ::: danger Descarga Anchor solo desde fuentes oficiales
 Las únicas descargas oficiales de Anchor son [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor) y el [repositorio de GitHub de Greymass](https://github.com/greymass/anchor). **anchorwallet.org es falso.** No descargues Anchor desde ese sitio ni desde cualquier otra página, anuncio o resultado de búsqueda no oficial.
 :::
 
-&nbsp;
-
 ### Explorador de bloques
 
-- [WAXBlock](https://waxblock.io/): El explorador oficial de la cadena de bloques WAX
-- [EOSAuthority](https://eosauthority.com/?network=wax)
-- [Eoseye](https://wax.eoseyes.com/)
-
-&nbsp;
+- [WAXBlock](https://waxblock.io/)
+- [WAX Items](https://waxitems.com/)
+- [Unicove](https://wax.unicove.com/en/wax)
+- [EOS Authority](https://eosauthority.com/?network=wax)
+- [Eoseyes](https://wax.eoseyes.com/)
 
 ### Mercados de NFT
 
 - [AtomicHub](https://wax.atomichub.io/)
-- [NeftyBlocks](https://neftyblocks.com/)
+- [WAX Items](https://waxitems.com/market)
 - [NFTHive](https://nfthive.io/)
 - [vIRL](https://virl.com/)
-
-&nbsp;
 
 ### DEX
 
 - [Alcor Exchange](https://alcor.exchange/)
-
-&nbsp;
+- [Taco Swap](https://swap.tacocrypto.io/)
+- [Defibox](https://wax.defibox.io/)
 
 ### Puntos finales de API gratuitos/públicos (cadena, historial y NFT)
 
-- [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
-- [EOS Nation Validator](https://validate.eosnation.io/wax/reports/endpoints.html)
-
-&nbsp;
+- [HerdCheck](https://herdcheck.blocdraig.com/wax)
 
 ### Más proyectos
 
 - [WAXMarketCap](https://waxmarketcap.com/)
-- [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)
-- [WAXDetective](https://waxdetective.io/network)

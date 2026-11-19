@@ -11,16 +11,17 @@ Since a [bp.json](/operate/wax-bp/bp-json) is needed for every chain (this inclu
 
 ## Creating the chains.json
 
-Just start off by using [this](https://github.com/Blacklusion/chains.json) template. It contains already all chains that you will probably need and more. If you don’t want to use this repo, we can alternatively suggest using the Network Info from the [Validationcore](https://wax.validationcore.io/services/network-info) or [EOS Nation Validator](https://validate.eosnation.io/wax/info/).
+Just start off by using [this](https://github.com/Blacklusion/chains.json) template. It contains already all chains that you will probably need and more. If you don’t want to use this repo, we can alternatively suggest using the Network Info from [HerdCheck](https://herdcheck.blocdraig.com/wax/lists).
 In the next step, delete all chains, that you don’t need from the template. Don’t forget to adjust the names of the chain’s producerjson that you have not deleted. These have to match the according .json and URL for that chain. The names provided in the repo are not binding, however, this is how we (would) name the producerjsons.
 
 Examnple chains.json for WAX Mainnet & Testnet:
+
 ```json
 {
-  "chains": {
-    "1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4": "/wax.json",
-    "f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12": "/wax-testnet.json"
-  }
+    "chains": {
+        "1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4": "/wax.json",
+        "f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12": "/wax-testnet.json"
+    }
 }
 ```
 
@@ -43,6 +44,7 @@ location ~ \.json {
 ```
 
 ## Helpful Links
+
 - Template chains.json with ChainIds: [https://github.com/Blacklusion/chains.json](https://github.com/Blacklusion/chains.json)
-- Tools to validate your chains.json: [Validationcore](https://wax.validationcore.io/validations) [EOS Nation Validator](https://validate.eosnation.io/wax/producers/)
+- Tools to validate your chains.json: [HerdCheck](https://herdcheck.blocdraig.com/wax)
 - [bp.json tutorial](/operate/wax-bp/bp-json)

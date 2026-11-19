@@ -18,7 +18,7 @@ Hay diferentes tipos de nodos en el ecosistema de Blockchain de WAX que pueden u
 - [Nodos de Historia Completa/Parcial (nodos de archivo de datos deserializados y consumibles)](/operate/wax-infrastructure/hyperion-guide)
 - Nodos específicos de estándares NFT y Marketplace ([AtomicAssets, AtomicMarket](/operate/wax-infrastructure/atomic-api-guide) & Simpleassets)
 
-Para una explicación más detallada sobre los diferentes tipos de nodos y sus casos de uso, por favor refiérase a [https://docs.eosnetwork.com/leap/latest/nodeos/usage/node-setups/](https://docs.eosnetwork.com/docs/latest/node-operation/getting-started/)
+Para más detalles sobre los tipos de nodos, consulta la [guía de configuración de nodos de Antelope](https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/01_nodeos/02_usage/02_node-setups/index.md).
 
 Las guías presentadas aquí compartirán algunas mejores prácticas, te ayudarán a obtener una comprensión más profunda de cómo puedes configurar y mantener la infraestructura de blockchain de WAX de manera escalable y resiliente.
 

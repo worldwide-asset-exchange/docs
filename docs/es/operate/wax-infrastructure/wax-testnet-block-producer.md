@@ -25,7 +25,7 @@ Debe sincronizarse con el último bloque principal de la Red de Pruebas de WAX.
 Este es el nodo utilizado para firmar bloques de forma segura en la Red de Pruebas de WAX y es el principal nodo de producción adicional en este ejemplo.  
 Debe sincronizarse con el último bloque principal de la Red de Pruebas de WAX.
 
-Además de configurar la última [lista de pares](https://validate.eosnation.io/waxtest/reports/config.html) confiables publicada por EOSNation, es una buena idea permitir que se conecte a tu propio Nodo de Semilla Pública o solo Bloques.
+Configura pares de confianza para la testnet, como los que aparecen en [los endpoints públicos de EOSphere](https://eosphere.io/services/). También puedes conectar tu nodo productor a tu propio nodo de pares público o nodo de solo bloques.
 
 **Nodo de Interfaz Cleos**  
 Este nodo es completamente privado y se utiliza para interactuar con la Red de Pruebas pública a través de la línea de comandos. Ubuntu Terminal / MacOS Terminal / Windows Ubuntu Shell son excelentes sistemas operativos livianos para ejecutar esta interfaz privada.

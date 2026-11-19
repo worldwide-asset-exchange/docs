@@ -10,7 +10,7 @@ EOS RIO have an excellent  [Hyperion Documentation Repository](https://hyperion.
 
 Once again this Technical How To series will cover some of EOS RIO’s same content and will add operational nuances from a practical stand point and our experience.
 
-[Learn more about EOS RIO Hyperion](https://eosrio.io/hyperion/)
+[Learn more about EOS RIO Hyperion](https://hyperion.docs.eosrio.io/)
 
 ![image](https://github.com/user-attachments/assets/2ce31a7d-8a87-48a4-b85a-b5bb1e0685a8)
 

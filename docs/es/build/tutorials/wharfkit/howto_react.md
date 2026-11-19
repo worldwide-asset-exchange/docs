@@ -11,7 +11,7 @@ Para instalar el kit en una aplicación JavaScript o TypeScript (React):
 yarn add @wharfkit/session @wharfkit/web-renderer @wharfkit/wallet-plugin-anchor
 ```
 
-Para un ejemplo completo en React, revisa [este enlace](https://github.com/3dkrender/WAX_CS_Template).
+Para un ejemplo completo en React, revisa [la copia pública de la plantilla original](https://github.com/NFTPartyQuest/WAX_CS_Template/tree/7b35853b5d7f44482b20a342fc27054989fff93d).
 
 ## Preparando la Sesión
 
@@ -45,22 +45,26 @@ export const sessionKit = new SessionKit({
 :::tip 📝 Nota
 Para el ejemplo, se toman algunos datos de archivos de entorno y sus valores variarán dependiendo de la blockchain. Por ejemplo, para diferenciar entre mainnet y testnet:
 
-VITE_CHAIN=testnet  
-VITE_RPC=http://tapiwax.3dkrender.com  
+```bash
+VITE_CHAIN=testnet
+VITE_RPC=https://wax-testnet.eosphere.io
 VITE_CHAINID=f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12
+```
 
-VITE_CHAIN=mainnet  
-VITE_RPC=http://apiwax.3dkrender.com  
+```bash
+VITE_CHAIN=mainnet
+VITE_RPC=https://wax.eosphere.io
 VITE_CHAINID=1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4
+```
 :::
 
-[Código de Ejemplo](https://github.com/3dkrender/WAX_CS_Template/blob/main/Client/src/App.tsx)
+[Código de Ejemplo](https://github.com/NFTPartyQuest/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/App.tsx)
 
 # Inicio de Sesión
 
 Para crear nuestra instancia de sesión, necesitamos llamar al método de inicio de sesión del kit de sesión. Podemos usar un botón que, al presionarse, active la llamada al componente. En la plantilla mencionada, este componente se llama desde el botón de inicio de sesión ubicado en el menú principal de la aplicación 
 
-[Código de Ejemplo](https://github.com/3dkrender/WAX_CS_Template/blob/main/Client/src/components/Menu/Menu.tsx).
+[Código de Ejemplo](https://github.com/NFTPartyQuest/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/components/Menu/Menu.tsx).
 
 El primer paso será recuperar la instancia del kit de sesión que ya hemos creado:
 
@@ -146,7 +150,7 @@ export const GetUserTokens = () => {
 
 El kit de sesión puede gestionar múltiples sesiones, pero en nuestro ejemplo, solo tendremos una sesión a la vez, por lo que será suficiente recuperar el primer elemento del array de sesiones. El nombre de la cuenta en WAX es un número de 64 bits. Para obtener su equivalente en cadena, necesitamos convertirlo usando String().
 
-[Código de Ejemplo](https://github.com/3dkrender/WAX_CS_Template/blob/main/Client/src/Pages/GetUserTokens/GetUserTokens.tsx)
+[Código de Ejemplo](https://github.com/NFTPartyQuest/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/Pages/GetUserTokens/GetUserTokens.tsx)
 
 # Firmar y Enviar una Transacción
 
@@ -188,7 +192,7 @@ Definición del array de acciones:
       }]
     });
 ```
-[Código de Ejemplo](https://github.com/3dkrender/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/Pages/Transaction/PushTransaction.tsx#L31C10-L31C10)
+[Código de Ejemplo](https://github.com/NFTPartyQuest/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/Pages/Transaction/PushTransaction.tsx#L31)
 
 Creación de la transacción, envío a la billetera y recepción del resultado:
 
@@ -220,7 +224,7 @@ export const InitTransaction = async (dataTrx: IBaseTransaction ) => {
   }
 }
 ```
-[Código de Ejemplo](https://github.com/3dkrender/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/services/InitTransaction.ts#L15)
+[Código de Ejemplo](https://github.com/NFTPartyQuest/WAX_CS_Template/blob/7b35853b5d7f44482b20a342fc27054989fff93d/Client/src/services/InitTransaction.ts#L15)
 
 :::tip 📝 Nota
 El código mostrado tiene carácter educativo y trata de ser lo más sencillo y explicativo posible. Cada usuario debe adaptarlo a sus necesidades y optimizarlo según sus preferencias.

@@ -40,7 +40,7 @@ Der häufigste Anwendungsfall für einen Snapshot ist die Wiederherstellung eine
 Zunächst einmal müssen Sie eine gültige Snapshot-Datei aus einer vertrauenswürdigen Quelle beziehen. Es gibt eine ganze Reihe von WAX-Snapshot-Diensten, die von den WAX-Gilden angeboten werden, darunter auch [EOSphere] (https://snapshots.eosphere.io/), aber nicht alle bieten Testnet-Snapshots an, so dass Sie sich vielleicht ein wenig umsehen müssen.
 
 :::warning
-Der [EOS Nation bp.json Validator](https://validate.eosnation.io/wax/reports/resources.html#chain) hat eine sehr praktische Liste von Snapshot-Diensten zusammengestellt, die von den Gilden beworben werden.
+Wählen Sie im [WAX-Mainnet-Snapshot-Verzeichnis von EOSphere](https://store3.eosphere.io/wax/snapshots/) eine Datei aus, die zu Ihrer `nodeos`-Version passt.
 :::
 
 ![image](https://user-images.githubusercontent.com/12730423/187578145-07ba4f0d-8532-4a46-9e47-83347d5793a9.png)

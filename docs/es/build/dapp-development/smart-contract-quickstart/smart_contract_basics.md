@@ -17,7 +17,7 @@ Los contratos inteligentes típicamente incluyen archivos de cabecera, herencia 
 
 ### Archivos de Cabecera
 
-Los archivos de cabecera de C++ contienen declaraciones globales. Dado que WAX utiliza una bifurcación de EOS (Antelope), todos tus contratos inteligentes de WAX heredarán de los contratos y clases de EOS. El archivo de cabecera <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/eosio.hpp" target="_blank">eosio.hpp</a> debe ser incluido en cada contrato, y cada contrato debe extender la clase <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/contract.hpp" target="_blank">eosio::contract</a>.
+Los archivos de cabecera de C++ contienen declaraciones globales. Dado que WAX utiliza una bifurcación de EOS (Antelope), todos tus contratos inteligentes de WAX heredarán de los contratos y clases de EOS. El archivo de cabecera <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/release/4.1/libraries/eosiolib/contracts/eosio/eosio.hpp" target="_blank">eosio.hpp</a> debe ser incluido en cada contrato, y cada contrato debe extender la clase <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/release/4.1/libraries/eosiolib/contracts/eosio/contract.hpp" target="_blank">eosio::contract</a>.
 
 ```
 #include <eosio/eosio.hpp>
@@ -46,7 +46,7 @@ Las transacciones se comunican utilizando dos modelos: en línea y diferido.
 
 - **En Línea:** Una transacción en línea es un modelo de comunicación tipo síncrono que se ejecuta en el mismo ámbito de la transacción. Estas acciones están garantizadas para ejecutarse en orden y al mismo tiempo que se llama a la acción original. Si la transacción falla, puedes revertir los cambios en las acciones anteriores.
 
-  Para un ejemplo de una transacción en línea, consulta la guía de EOS Network <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Agregar Acciones en Línea</a>.
+  Para un ejemplo de una transacción en línea, consulta la guía de Vaulta <a href="https://docs.vaulta.com/docs/latest/smart-contracts/actions/#inline-actions" target="_blank">Agregar Acciones en Línea</a>.
 
 - **Diferido:** Una acción diferida es una acción que está programada para ejecutarse en el futuro, similar a una llamada asíncrona. Estas transacciones no están garantizadas para ejecutarse (existe la posibilidad de que sean descartadas por el nodo). La acción original (llamante) se aplica a la Blockchain de WAX cuando la acción se ejecuta, y no se puede revertir si la transacción diferida falla.
 
@@ -60,7 +60,7 @@ Un contrato inteligente y una Cuenta Blockchain de WAX se comunican utilizando l
 
 Los permisos también pueden permitir que tus contratos inteligentes manejen notificaciones y realicen llamadas a otros contratos inteligentes (usando el permiso `eosio.code`).
 
-Consulta la guía de EOS Network <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Cuentas y Permisos</a> para más información.
+Consulta la guía de Vaulta <a href="https://docs.vaulta.com/docs/latest/core-concepts/accounts/#permissions-system" target="_blank">Cuentas y Permisos</a> para más información.
 
 ### Persistir Datos
 
@@ -73,7 +73,7 @@ Nota:
 Los datos persistentes se almacenan en la RAM del nodo WAX y afectan la cantidad de WAX que necesitarás apostar para tu contrato inteligente.
 :::
 
-Consulta la guía de EOS Network <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Persistencia de Datos</a> para más información.
+Consulta la guía de Vaulta <a href="https://docs.vaulta.com/docs/latest/smart-contracts/state-data/" target="_blank">Datos de Estado</a> para más información.
 
 ### Despachadores WAX
 

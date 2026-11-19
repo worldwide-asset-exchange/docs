@@ -7,7 +7,7 @@ order: 4
 
 Existen APIs públicas proporcionadas por diferentes equipos de validadores, pero a menudo están muy limitadas por tasa, etc. Puedes encontrar la lista de APIs públicas aquí:
 
-- [Informes de endpoints de Validationcore](https://wax.validationcore.io/reports/nodes/api)
+- [Endpoints de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists)
 
 ## Proveedores de Servicio API Pagados
 

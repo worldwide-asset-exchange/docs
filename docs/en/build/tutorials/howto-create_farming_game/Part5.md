@@ -56,7 +56,7 @@ void receive_asset_transfer
 );
 ```
 
-Regarding `eosio::on_notify`, you can check more about it [here](https://developers.eos.io/welcome/v2.0/smart-contract-guides/payable-actions/#the-on_notify-attribute).
+Regarding `eosio::on_notify`, you can check more about it [here](https://docs.vaulta.com/docs/latest/smart-contracts/events/#event-receiver).
 
 In this function, we configure it to listen to the Atomic Assets contract and its transfer function. Here's a brief rundown:
 

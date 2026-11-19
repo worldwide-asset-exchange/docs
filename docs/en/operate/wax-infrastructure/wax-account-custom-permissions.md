@@ -12,7 +12,7 @@ _This article has been updated to incorporate the_ [_Antelope_](https://antelope
 
 ## WAX Account Custom Permissions
 
-If you are after more detail Antelope accounts and permissions are covered extensively in the legacy but still valid  [EOS Developers Documentation](https://docs.eosnetwork.com/docs/latest/core-concepts/accounts).
+For more details about Antelope accounts and permissions, see the [permissions section of the Vaulta documentation](https://docs.vaulta.com/docs/latest/core-concepts/accounts/#permissions-system).
 
 By default a WAX account has two permissions  **owner**  and  **active**
 

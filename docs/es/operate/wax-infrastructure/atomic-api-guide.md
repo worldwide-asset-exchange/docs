@@ -98,7 +98,7 @@ zfs create -o mountpoint=/home zfast/home [-->Crea punto de montaje]
 
 Ahora que hemos configurado el servidor y el almacenamiento de disco de una buena manera, procedamos con los siguientes pasos para configurar las dependencias relacionadas con Hyperion.
 
-https://hyperion.docs.eosrio.io/manual_installation/
+[Instalación manual de Hyperion 3.x](https://github.com/eosrio/hyperion-docs/blob/fd67fb8842399790c5aab28ad46a6cf869346a90/docs/providers/install/manual_install.md)
 
 
 ##### 6. Instalación de Node JS:
@@ -117,7 +117,7 @@ Para la configuración del clúster de replicación de Postgres, consulta:
 
 **Instalación de PostgreSQL 14 usando el paquete Apt:**
 
-Guía: https://techviewleo.com/how-to-install-postgresql-database-on-ubuntu/
+Guía: https://www.postgresql.org/download/linux/ubuntu/
 
 ```
 sudo apt update && sudo apt -y upgrade

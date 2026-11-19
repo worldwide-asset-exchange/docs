@@ -32,7 +32,7 @@ A lo largo de nuestra sección de Desarrollo de dApps, enumeraremos varios pasos
 ```shell
 cleos -u https://wax-api-url get info
 ```
-*Consulta https://validate.eosnation.io/wax/reports/endpoints.html para obtener una URL de punto final de API actualizada*
+*Consulta la [lista de API de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists) para obtener una URL de endpoint actualizada.*
 
 Cuando inicies una sesión interactiva de bash, la *línea de comandos* es tu indicador de bash del contenedor Docker:
 

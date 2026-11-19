@@ -64,7 +64,7 @@ Without password imported keys will not be retrievable.
 ```
 
 :::tip
-Para obtener una lista completa de subcomandos y parámetros de la cartera cleos, consulta la <a href="https://docs.eosnetwork.com/leap/latest/cleos/command-reference/wallet/" target="_blank">Guía de Referencia de Cleos</a>.
+Para obtener una lista completa de subcomandos y parámetros de la cartera cleos, consulta la <a href="https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/02_cleos/03_command-reference/wallet/index.md" target="_blank">Guía de Referencia de Cleos</a>.
 :::
 
 ## Abrir y Desbloquear Tu Cartera

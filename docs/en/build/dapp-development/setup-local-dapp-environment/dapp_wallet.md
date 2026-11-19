@@ -64,7 +64,7 @@ Without password imported keys will not be retrievable.
 ```
 
 :::tip
-For a complete list of cleos wallet subcommands and parameters, refer to <a href="https://docs.eosnetwork.com/leap/latest/cleos/command-reference/wallet/" target="_blank">Cleos Reference Guide</a>.
+For a complete list of cleos wallet subcommands and parameters, refer to <a href="https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/02_cleos/03_command-reference/wallet/index.md" target="_blank">Cleos Reference Guide</a>.
 :::
 
 ## Open and Unlock Your Wallet

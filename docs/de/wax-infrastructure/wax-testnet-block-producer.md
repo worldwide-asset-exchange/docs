@@ -47,7 +47,7 @@ Dies ist die Node, der zum sicheren Signieren von Blöcken im WAX Testnet verwen
 
 Er muss mit dem aktuellen WAX Testnet Headblock synchronisiert werden.
 
-Zusätzlich zur Konfiguration der neuesten verfügbaren [Peer-Liste] (https://validate.eosnation.io/waxtest/reports/config.html) von vertrauenswürdigen Gilden, die von EOSNation veröffentlicht wurde, ist es eine gute Idee, ihm zu erlauben, sich mit Ihrem eigenen öffentlichen Peer-Node oder Nur-Blöcke-Node zu verbinden.
+Konfigurieren Sie vertrauenswürdige Testnet-Peers, zum Beispiel aus den [öffentlichen Endpoints von EOSphere](https://eosphere.io/services/). Sie können Ihren Producer-Node auch mit einem eigenen öffentlichen Peer-Node oder Nur-Blöcke-Node verbinden.
 
 
 **Cleos-Schnittstellennode**

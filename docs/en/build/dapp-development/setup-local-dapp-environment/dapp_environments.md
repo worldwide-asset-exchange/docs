@@ -58,6 +58,6 @@ You can write WAX smart contracts using the C++ programming language. No custom 
 
 You can use any third party C++ editor or IDE to write your smart contracts, such as Sublime Text, Atom, CLion, Eclipse, or Visual Studio products.
 
-[EOS Studio](https://www.eosstudio.io/) is a graphic IDE built for EOSIO dApp development, available on Linux, Mac OS, and Windows. This tool features a code editor, contract inspector, and a network manager. To integrate WAX with EOS Studio, refer to [How to use EOS Studio with WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/develop/samples/eos-studio). Our script provides a minimal integration, developed and tested with Ubuntu 18.04.
+[EOS Studio](https://github.com/ObsidianLabs/EOS-Studio-Releases/releases) is a graphic IDE built for EOSIO dApp development, available on Linux, Mac OS, and Windows. This tool features a code editor, contract inspector, and a network manager. To integrate WAX with EOS Studio, refer to [How to use EOS Studio with WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/main/samples/eos-studio). Our script provides a minimal integration, developed and tested with Ubuntu 18.04.
 
 [eosjs](https://github.com/EOSIO/eosjs) is a javascript API SDK you can use to easily communicate with the WAX Blockchain API. Refer to [WAX RPC API](/build/api-reference/rpc_api) for more information.

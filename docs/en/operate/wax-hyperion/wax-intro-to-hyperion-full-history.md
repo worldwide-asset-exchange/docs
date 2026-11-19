@@ -10,7 +10,7 @@ The most popular Full History alternatives being EOS Canada’s  [Streaming Fast
 
 EOSphere have extensive production experience with providing Full History services using Hyperion on the WAX Mainnet and Testnet as well as other neworks. This quide will share this experience with you, broken into a series starting with an introduction to the software components and hardware requirements of a production ready WAX Hyperion Full History Solution.
 
-[Learn more about EOS RIO Hyperion](https://eosrio.io/hyperion/)
+[Learn more about EOS RIO Hyperion](https://hyperion.docs.eosrio.io/)
 
 ![](https://miro.medium.com/v2/resize:fit:598/1*ATnQKunF5rVtPEsL-sP0JA.png)
 

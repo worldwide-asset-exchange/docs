@@ -17,7 +17,7 @@ Smart contracts typically include header files, class inheritance, actions, perm
 
 ### Header Files
 
-C++ header files contain global declarations. Because WAX uses a fork of EOS (Antelope), all of your WAX smart contracts will inherit from EOS contracts and classes. The <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/eosio.hpp" target="_blank">eosio.hpp</a> header file must be included in every contract, and every contract must extend the <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/master/libraries/eosiolib/contract.hpp" target="_blank">eosio::contract</a> class.
+C++ header files contain global declarations. Because WAX uses a fork of EOS (Antelope), all of your WAX smart contracts will inherit from EOS contracts and classes. The <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/release/4.1/libraries/eosiolib/contracts/eosio/eosio.hpp" target="_blank">eosio.hpp</a> header file must be included in every contract, and every contract must extend the <a href="https://github.com/worldwide-asset-exchange/wax-cdt/blob/release/4.1/libraries/eosiolib/contracts/eosio/contract.hpp" target="_blank">eosio::contract</a> class.
 
 ```
   #include <eosio/eosio.hpp>
@@ -46,7 +46,7 @@ Transactions communicate using two models: inline and deferred.
 
 - **Inline:** An inline transaction is a synchronous-like communication model that executes in the same transaction scope. These actions are guaranteed to run in-order and at the same time the original action is called. If the transaction fails, you can revert changes in the previous actions.
 
-  For an example of an inline transaction, refer to EOS Network's guide <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Adding Inline Actions</a>.
+  For an example of an inline transaction, refer to Vaulta's guide <a href="https://docs.vaulta.com/docs/latest/smart-contracts/actions/#inline-actions" target="_blank">Adding Inline Actions</a>.
 
 - **Deferred:** A deferred action is an action that's scheduled to run in the future, similar to an asynchronous call. These transactions are not guaranteed to run (there is a potential of it being dropped by the node). The original (calling) action is applied to the WAX Blockchain when the action runs, and can not be reverted if the deferred transaction fails.
 
@@ -60,7 +60,7 @@ A smart contract and a WAX Blockchain Account communicate using the actions defi
 
 Permissions can also enable your smart contracts to handle notifications and make action calls to other smart contracts (using the `eosio.code` permission).
 
-Refer to EOS Network's guide <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Accounts and Permissions</a> for more information.
+Refer to Vaulta's guide <a href="https://docs.vaulta.com/docs/latest/core-concepts/accounts/#permissions-system" target="_blank">Accounts and Permissions</a> for more information.
 
 ### Persist Data
 
@@ -72,7 +72,7 @@ To persist data between the actions of one or more of your smart contracts, you'
 Persistent data is stored on the WAX node's RAM and impacts the amount of WAX that you'll need to stake for your smart contract.
 :::
 
-Refer to EOS Network's guide <a href="https://docs.eosnetwork.com/docs/latest/" target="_blank">Data Persistence</a> for more information.
+Refer to Vaulta's guide <a href="https://docs.vaulta.com/docs/latest/smart-contracts/state-data/" target="_blank">State Data</a> for more information.
 
 ### WAX Dispatchers
 

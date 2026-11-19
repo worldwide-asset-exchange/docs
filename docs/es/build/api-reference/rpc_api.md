@@ -13,7 +13,7 @@ Si estás haciendo solicitudes locales, <strong>nodeos</strong> debe estar ejecu
 
 | Entorno | URL |
 | --- | ----------- |
-| Mainnet de WAX | Verifica la disponibilidad de nodos en [https://validate.eosnation.io/wax/reports/endpoints.html](https://validate.eosnation.io/wax/reports/endpoints.html) |
+| Mainnet de WAX | Verifica la disponibilidad de nodos en [HerdCheck](https://herdcheck.blocdraig.com/wax) |
 | Testnet Local | http://127.0.0.1:8888 |
 
 Puedes hacer solicitudes API directamente a los endpoints de la blockchain:
@@ -32,6 +32,6 @@ cleos -u [url-api] get info
 
 ## Información Adicional y Herramientas de Terceros
 
-Consulta la <a href="https://docs.eosnetwork.com/leap/latest/nodeos/rpc_apis/" target="_blank">documentación de la API RPC</a> para obtener una lista de llamadas a la API.
+Consulta la [referencia de la API de cadena de WAX](/apis/chain-api.htm) para ver las llamadas disponibles.
 
 <a href="https://github.com/eosnetworkfoundation/mandel-eosjs" target="_blank">eosjs</a> es un SDK de API en javascript que se utiliza para comunicarse fácilmente con la API RPC de WAX. Para simplificar el desarrollo, puedes utilizar esta herramienta para acceder a los endpoints de la blockchain.

@@ -312,7 +312,7 @@ p2p-peer-address = p2p.waxsweden.org:35777
 # wizardsguild: US, wax-seed  
 p2p-peer-address = wax-bp.wizardsguild.one:8876
 
-# Always check for the latest PeerList - https://validate.eosnation.io/wax/reports/config.html
+# Always check for the latest PeerList - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Mainnet"  
 max-clients = 100  

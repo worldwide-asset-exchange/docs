@@ -7,7 +7,6 @@
   },
   "servers": [
     {
-      "url": "https://atomic.3dkrender.com",
       "description": "WAX mainnet"
     }
   ],

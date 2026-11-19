@@ -11,13 +11,13 @@ Discover resources to promote your project, build community, and access ecosyste
 ## Get a Kickstart
 
 <div class="cards-grid">
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-body">
       <h3 class="card-title">My Cloud Wallet Banner</h3>
       <p class="card-desc">Submit your banner & get your project prominently featured on the My Cloud Wallet dashboard.</p>
       <ActionHighlight label="Get Started" href="https://atomicads.io" />
     </div>
-  </div>
+  </div> -->
 
   <div class="card">
     <div class="card-body">
@@ -27,13 +27,13 @@ Discover resources to promote your project, build community, and access ecosyste
     </div>
   </div>
 
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-body">
       <h3 class="card-title">Partnerships</h3>
       <p class="card-desc">Reach out to the WAX team to discuss how they can help make your launch a success on WAX.</p>
       <ActionHighlight label="Get Started" href="https://go.wax.io/partnership" />
     </div>
-  </div>
+  </div> -->
 </div>
 
 &nbsp;
@@ -92,14 +92,6 @@ Discover resources to promote your project, build community, and access ecosyste
 
   <div class="card">
     <div class="card-body">
-      <h3 class="card-title">Twitch Drops</h3>
-      <p class="card-desc">Twitch Drops are in-game rewards that viewers earn while watching live streams on Twitch.tv. Drop NFTs to viewers of your game. Powered by NFTHive.</p>
-      <ActionHighlight label="Get in Touch" href="https://discord.gg/g8ZeQqKY4c" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
       <h3 class="card-title">Taco Tools</h3>
       <p class="card-desc">Swap at the lowest market fees with Taco Swap, and sign transactions everywhere with the Taco Utility App. It's like having WAX in your pocket!</p>
       <ActionHighlight label="Learn More" href="https://tacocrypto.io" />
@@ -111,38 +103,6 @@ Discover resources to promote your project, build community, and access ecosyste
       <h3 class="card-title">AtomicAds.io</h3>
       <p class="card-desc">Connect with NFT & Web3 Communities. AtomicAds.io connects advertisers and publishers to NFT & Web3 communities around the world.</p>
       <ActionHighlight label="Learn More" href="https://atomicads.io" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title">Honeycomb</h3>
-      <p class="card-desc">Honeycomb provides community management tools at an affordable price. Basic features such as creating a "Verification Role” for users with a linked wallet are free to use.</p>
-      <ActionHighlight label="Learn More" href="https://honeycomb.sixpm.dev" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title">WaxDAO</h3>
-      <p class="card-desc">The days of asking permission are over. WAXDAO allows you to set up a staking system for your project, without ever needing to contact anyone.</p>
-      <ActionHighlight label="Learn More" href="https://waxdao.io" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title">Maxy Labs</h3>
-      <p class="card-desc">Embark on a web3 community-driven social project that enhances the experience for both users and creators. Connect with The Scientist today!</p>
-      <ActionHighlight label="Learn More" href="https://maxylab.com/discord/" />
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-body">
-      <h3 class="card-title">WAXWORKS</h3>
-      <p class="card-desc">Your WAX Wallet, your way. WAX Works offers an exciting way to showcase your WAX NFT collection, view artists, read comics, share your favorites and more.</p>
-      <ActionHighlight label="Learn More" href="https://waxworks.io" />
     </div>
   </div>
 </div>

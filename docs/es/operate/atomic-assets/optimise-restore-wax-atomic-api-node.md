@@ -56,7 +56,7 @@ Lo que puede ser aún **más increíble** es si puedes proporcionar una copia de
 
 Se utilizan dos herramientas de postgres para este proceso, `pg_dump` y `pg_restore`
 
-EOSphere actualmente proporciona [copias de seguridad de la Mainnet de WAX Atomic API](https://store1.eosphere.io/wax/atomic/backups/) en nuestro servidor web de instantáneas. [https://snapshots.eosphere.io/](https://snapshots.eosphere.io/)
+EOSphere publica [copias de seguridad de WAX Mainnet Atomic API](https://store3.eosphere.io/wax/atomic/backups/). Consulta las [notas de versión de EOSphere](https://snapshots.eosphere.io/) para elegir una copia compatible con tus versiones de Atomic API y PostgreSQL.
 
 Para **crear** una copia de seguridad comprimida sigue el proceso a continuación:
 

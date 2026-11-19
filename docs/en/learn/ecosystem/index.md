@@ -11,6 +11,7 @@ This page is for discovery. If you are looking for setup steps, funding, wallet 
 
 - [My Cloud Wallet](https://www.mycloudwallet.com/)
 - [Anchor](https://anchorwallet.io)
+- [Ledger](https://www.ledger.com/coin/wallet/eos)
 
 ::: danger Download Anchor only from official sources
 The only official Anchor download locations are [anchorwallet.io](https://anchorwallet.io), [greymass.com/anchor](https://greymass.com/anchor), and the [Greymass GitHub repository](https://github.com/greymass/anchor). **anchorwallet.org is fake.** Do not download Anchor from that site or from any other unofficial page, ad, or search result.
@@ -20,13 +21,14 @@ The only official Anchor download locations are [anchorwallet.io](https://anchor
 
 - [WAXBlock](https://waxblock.io/)
 - [WAX Items](https://waxitems.com/)
+- [Unicove](https://wax.unicove.com/en/wax)
 - [EOS Authority](https://eosauthority.com/?network=wax)
 - [Eoseyes](https://wax.eoseyes.com/)
 
 ## Marketplaces
 
 - [AtomicHub](https://wax.atomichub.io/)
-- [NeftyBlocks](https://neftyblocks.com/)
+- [WAX Items](https://waxitems.com/market)
 - [NFTHive](https://nfthive.io/)
 - [vIRL](https://virl.com/)
 
@@ -38,10 +40,8 @@ The only official Anchor download locations are [anchorwallet.io](https://anchor
 
 ## Public Endpoint Discovery
 
-- [Validationcore.io](https://wax.validationcore.io/reports/nodes/api)
-- [EOS Nation Endpoint Reports](https://validate.eosnation.io/wax/reports/endpoints.html)
+- [HerdCheck](https://herdcheck.blocdraig.com/wax)
 
 ## More Projects
 
 - [WAXMarketCap](https://waxmarketcap.com/)
-- [NeftyBlocks Marketplace Embed](https://neftyblocks.me/)

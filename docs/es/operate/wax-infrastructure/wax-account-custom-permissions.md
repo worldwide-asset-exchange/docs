@@ -12,7 +12,7 @@ _Este artículo ha sido actualizado para incorporar el proceso de construcción 
 
 ## Permisos Personalizados de Cuentas WAX
 
-Si buscas más detalles, las cuentas y permisos de Antelope están cubiertos extensamente en la documentación para desarrolladores de EOSIO aún vigente [EOSIO Developers Documentation](https://developers.eos.io/welcome/v2.0/protocol-guides/accounts_and_permissions), así como en el nuevo [Sitio de Documentación de Antelope](https://docs.eosnetwork.com/docs/latest/protocol/accounts_and_permissions).
+Para más detalles sobre las cuentas y los permisos de Antelope, consulta la [sección de permisos de la documentación de Vaulta](https://docs.vaulta.com/docs/latest/core-concepts/accounts/#permissions-system).
 
 Por defecto, una cuenta de WAX tiene dos permisos **owner** y **active**
 

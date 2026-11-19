@@ -357,7 +357,7 @@ p2p-peer-address = wax-seed.eosiomadrid.io:9876
 
 # waxswedenorg: SE, Sweden
 p2p-peer-address = p2p.waxsweden.org:35777
-# PeerList - https://validate.eosnation.io/wax/reports/config.html
+# PeerList - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Mainnet State-History"  
   
