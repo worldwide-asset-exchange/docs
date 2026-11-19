@@ -170,10 +170,6 @@ export default [
                                 text: 'Despliegue con Docker',
                                 link: '/es/build/dapp-development/deploy-dapp-on-wax/deploy_docker',
                             },
-                            {
-                                text: 'Despliegue de una dApp EOS en WAX',
-                                link: '/es/build/dapp-development/deploy-dapp-on-wax/convert_eos',
-                            },
                         ],
                     },
                 ],

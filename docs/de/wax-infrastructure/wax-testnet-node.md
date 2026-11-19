@@ -40,36 +40,16 @@ Das WAX Testnet hat im Vergleich zum Mainnet relativ niedrige Systemanforderunge
 
 Die WAX-Software ist von der Open-Source-Software Antelope abgeleitet, wurde jedoch an die Bedürfnisse des WAX-Protokollnetzes angepasst.
 
-Derzeit ist die vom WAX Block Producer akzeptierte Softwareversion `v3.1.0wax01`, erstellt von [cc32d9](https://cc32d9.medium.com/), der Mitglied der [EOS Amsterdam Guild](https://eosamsterdam.net/) ist.
+Wählen Sie in den [Tags des offiziellen WAX-Repositorys](https://github.com/worldwide-asset-exchange/wax-blockchain/tags) eine Version aus, die zu Ihrem Netzwerk passt. Dieses Beispiel verwendet `v5.0.3wax01`.
 
-Das neueste `wax`-Build-Tag ist derzeit auf dem [cc32d9 Github](https://github.com/cc32d9/wax-leap/tags) verfügbar.
+Folgen Sie der [Build-Anleitung dieser Version](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/v5.0.3wax01#build-and-install-from-source), um die Abhängigkeiten zu installieren und die Software unter Ubuntu zu kompilieren. Laden Sie den Quellcode wie folgt herunter:
 
-**Bauprozess**
-
-In diesem Beispiel wird [Ubuntu Linux](https://ubuntu.com/) verwendet, um die WAX-Software aus dem Quellcode zu erstellen, wobei der folgende Prozess befolgt wird:
+```sh
+git clone --branch v5.0.3wax01 --recurse-submodules https://github.com/worldwide-asset-exchange/wax-blockchain.git ~/wax-blockchain
+cd ~/wax-blockchain
 ```
-> cd ~
 
-> sudo apt install -y file
-
-> git clone [https://github.com/cc32d9/wax-leap.git](https://github.com/cc32d9/wax-leap.git)
-
-> cd wax-leap
-
-> git checkout v3.1.0.wax01
-
-> git submodule update --init --recursive
-
-> sudo bash scripts/install_deps.sh
-
-> mkdir build
-
-# Falls nötig, ergänzen Sie $(nproc) unten mit der Anzahl der Jobs, die Ihr Server aushalten kann, z.B. 4GB RAM pro Job
-
-> nice bash scripts/pinned_build.sh ~/wax-leap/build/leap-deps ~/wax-leap/build $(nproc)
-
-# Binaries are located in ~/wax-leap/build/programs
-```
+Die Binärdateien liegen in `~/wax-blockchain/build/programs`.
 
 ## Konfiguration
 Nachdem nun ein sauberer Build der WAX-Software kompiliert wurde, können wir mit der Konfiguration für den Betrieb beginnen.
@@ -91,7 +71,7 @@ Erstellen Sie eine Standard-"config.ini", indem Sie "nodeos" ohne "config" mit f
 ```
 > mkdir ~/waxdata
 
-> cd ~/wax-leap/build/programs/nodeos
+> cd ~/wax-blockchain/build/programs/nodeos
 
 > ./nodeos --data-dir ~/waxdata --config-dir ~/waxdata
 ```
@@ -211,7 +191,7 @@ Fügen Sie die folgenden Parameter in die Datei `genesis.json` für das WAX Publ
 
 ```
 {  
- "initial_timestamp": "2019–12–06T06:06:06.000",  
+ "initial_timestamp": "2019-12-06T06:06:06.000",
  "initial_key": "EOS7PmWAXLBaqCzSgbq8cyr2HFztQpwBpXk3djBJA8fyoyUnYM37q",  
  "initial_configuration": {  
  "max_block_net_usage": 1048576,  
@@ -257,7 +237,7 @@ screen session wiederherstellen
 Führen Sie `nodeos` mit Zeigern auf die Konfigurations-, Daten- und Genesis-Datei aus:
 
 ```
-> cd ~/wax-leap/build/programs/nodeos
+> cd ~/wax-blockchain/build/programs/nodeos
 
 > ./nodeos --data-dir ~/waxdata --config-dir ~/waxdata --genesis-json ~/waxdata/genesis.json
 ```

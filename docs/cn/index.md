@@ -10,24 +10,24 @@ hero:
   alt: WAX区块链文档
   }
   actions:
-  - theme: brand
-    text: 学习 →
+  - theme: alt
+    text: 学习
     link: /cn/learn/about-wax/
-  #- theme: alt
-  #  text: 建设
-  #  link: /build/dapp-development/
-  #- theme: alt
-  #  text: 操作
-  #  link: /operate/wax-infrastructure/
-  #- theme: alt
-  #  text: 创建
-  #  link: /create/community/
+  - theme: brand
+    text: 开发 →
+    link: /build/core-concepts/
+  - theme: alt
+    text: 创作
+    link: /create/community/
+  - theme: alt
+    text: 运维
+    link: /operate/wax-infrastructure/
 
 features:
-- title: Our Mission
-  details: Guiding developers and creators to build innovative dApps, NFT collections, GameFi projects, and DeFi solutions on the carbon-neutral WAX Blockchain.
-- title: Resources
-  details: Comprehensive guides, code examples, and best practices tailored for both technical developers and creative professionals entering the WAX ecosystem.
-- title: Explore
-  details: Navigate WAX's powerful infrastructure, learn its unique consensus model, tokenomics, and creator-friendly tools designed to bring your Web3 vision to life.
+- title: 我们的使命
+  details: 帮助开发者和创作者在碳中和的 WAX 区块链上构建 dApp、NFT 系列、GameFi 项目和 DeFi 应用。
+- title: 开发资源
+  details: 为 WAX 生态中的开发者和创作者提供操作指南、代码示例和最佳实践。
+- title: 探索 WAX
+  details: 了解 WAX 的基础设施、共识机制、代币经济以及面向创作者的工具。
 ---

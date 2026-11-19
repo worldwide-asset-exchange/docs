@@ -43,11 +43,13 @@ Zun채chst einmal m체ssen Sie eine g체ltige Snapshot-Datei aus einer vertrauensw�
 W채hlen Sie im [WAX-Mainnet-Snapshot-Verzeichnis von EOSphere](https://store3.eosphere.io/wax/snapshots/) eine Datei aus, die zu Ihrer `nodeos`-Version passt.
 :::
 
-![image](https://user-images.githubusercontent.com/12730423/187578145-07ba4f0d-8532-4a46-9e47-83347d5793a9.png)
+![Anbieter und Downloadlinks f체r WAX-Snapshots](/assets/images/wax-infrastructure/snapshots/wax-snapshot-services.jpg)
+
+_Historischer Screenshot aus [WAX Technical How To #2](https://medium.com/eosphere/wax-technical-how-to-2-db45a339e735) von Ross Dold (EOSphere)._
 
 ### Verwendung
 
-Unter Verwendung des Beispiels ```nodeos``` in der [previous](/de/wax-infrastructure/wax-testnet-node) WAX Technical How To, befinden sich alle relevanten Dateien in ```~/waxdata```.
+Unter Verwendung des Beispiels ```nodeos``` in der [vorherigen Anleitung](/de/wax-infrastructure/wax-testnet-node) WAX Technical How To, befinden sich alle relevanten Dateien in ```~/waxdata```.
 
 Laden Sie die gew체nschte Snapshot-Datei herunter und entpacken Sie sie:
 

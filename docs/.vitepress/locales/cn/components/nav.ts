@@ -1,3 +1,3 @@
 export default [
-  { text: 'Home', link: '/cn/' },
+  { text: '首页', link: '/cn/' },
 ]

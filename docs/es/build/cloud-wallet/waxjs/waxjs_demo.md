@@ -3,6 +3,10 @@ title: Demostración de WaxJS
 order: 4
 ---
 
+::: warning
+WaxJS ya no cuenta con soporte. Usa [WharfKit](/build/developing-apps/sdks/wharfkit/) para integrar billeteras en tu aplicación.
+:::
+
 # Demostración de WaxJS
 
 A continuación se muestra un ejemplo básico de la funcionalidad de WaxJS. Para utilizar esta demostración, haz clic en Inicio de Sesión WAX (si no has iniciado sesión automáticamente), luego haz clic en Firmar Transacción.

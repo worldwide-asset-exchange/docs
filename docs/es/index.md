@@ -10,18 +10,18 @@ hero:
     alt: Documentación de la cadena de bloques WAX
   }
   actions:
-    - theme: brand
-      text: Aprender →
+    - theme: alt
+      text: Aprender
       link: /es/learn/about-wax/
-    - theme: alt
-      text: Construir
-      link: /es/build/dapp-development/
-    - theme: alt
-      text: Operar
-      link: /es/operate/
+    - theme: brand
+      text: Construir →
+      link: /es/build/
     - theme: alt
       text: Crear
       link: /es/create/
+    - theme: alt
+      text: Operar
+      link: /es/operate/wax-infrastructure/
 
 features:
   - title: Nuestra misión

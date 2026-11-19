@@ -1,33 +1,132 @@
 ---
-title: Desarrollo de dApp
-order: 10
+title: Kit de desarrollo de contratos de WAX
+order: 50
 ---
 
-# Desarrollo de dApp
+# Kit de desarrollo de contratos de WAX
 
-Worldwide Asset eXchange™ (WAX) es una blockchain diseñada específicamente y un token de protocolo diseñado para hacer las transacciones de comercio electrónico más rápidas, fáciles y seguras para todos. WAX facilita la construcción y despliegue de dApps de alto rendimiento y seguras. Aquí encontrarás Guías Rápidas, código de ejemplo, guías de referencia de API y todas las herramientas de desarrollo que necesitas para configurar un entorno local de WAX y escribir tus contratos inteligentes.
+[WAX-CDT](https://github.com/worldwide-asset-exchange/wax-cdt) incluye una API de C/C++ y herramientas basadas en [Clang](https://clang.llvm.org/) para compilar y desplegar contratos inteligentes.
 
-## Comenzar
+Las herramientas se incluyen en la imagen Docker **waxteam/waxdev**. También puedes iniciar un contenedor interactivo con la imagen independiente **waxteam/cdt**:
 
-Puedes utilizar las siguientes guías para configurar tu entorno de desarrollo de dApp en WAX:
+```sh
+docker run -it --name waxcdt -v /var/share/wax:/wax waxteam/cdt bash
+```
 
-  * Completa nuestra [Guía de Inicio Rápido con Docker](/es/build/dapp-development/docker-setup/)
-  * Descarga el código fuente de la Blockchain de WAX y muestras utilizando la guía de [Configuración de la Blockchain de WAX](/es/build/dapp-development/wax-blockchain-setup/)
-  * Aprende sobre el [Kit de Herramientas de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/)
-  * [Configura un Entorno Local de dApp](/es/build/dapp-development/setup-local-dapp-environment/)
+Consulta el [inicio rápido con Docker](/es/build/dapp-development/docker-setup/) para más detalles.
 
-<span class="anchor" id="buildDapp"></span>
-## Construir una dApp
+Si quieres acceder a los ejemplos desde tu equipo o prescindir de Docker, puedes [descargar y compilar WAX-CDT](/es/build/dapp-development/wax-cdt/cdt_install).
 
-Una vez que hayas configurado tu entorno de desarrollo, estos tutoriales pueden ayudarte a lanzar la próxima gran dApp en WAX:
+::: warning
+La compilación desde el código fuente se realiza sin soporte. Las imágenes Docker incluyen las herramientas ya compiladas.
+:::
 
-  * [Inicio Rápido de Contrato Inteligente](/es/build/dapp-development/smart-contract-quickstart/)
-  * [Despliega Tu dApp en WAX](/es/build/dapp-development/deploy-dapp-on-wax/)
+## Qué incluye
 
-<span class="anchor" id="guides"></span>
-## Guías
+- Una [biblioteca de C/C++](/es/build/api-reference/cdt_api) para interactuar con la blockchain de WAX.
+- Contratos de ejemplo y herramientas para crear tus propias plantillas.
+- Scripts de Make y CMake para generar archivos WASM y ABI.
+- Compatibilidad con contratos y cláusulas ricardianos.
 
-Aprende a realizar solicitudes de API a tu blockchain local, testnet de WAX o mainnet de WAX, y obtén una visión general de la API C++ de WAX-CDT utilizada para construir tus contratos inteligentes.
+Consulta las [opciones de WAX-CDT](/es/build/tools/cdt_options) para ver los comandos y sus parámetros:
 
-  * [API RPC de WAX](/es/build/api-reference/)
-  * [API de WAX-CDT](/es/build/api-reference/cdt_api)
+- `cdt-cpp` compila C++ a WebAssembly.
+- `cdt-ld` enlaza archivos WebAssembly.
+- `cdt-abigen` genera el ABI de un contrato.
+
+## Cómo funciona
+
+- **WASM** es el formato binario que la blockchain usa para ejecutar las acciones de tu contrato.
+- **ABI** es una descripción JSON de las estructuras, tipos, acciones y tablas del contrato. Puede incluir [contratos ricardianos](/es/build/tools/ricardian_contract) y [cláusulas ricardianas](/es/build/tools/ricardian_clause).
+
+### Ejemplo de ABI
+
+Este ejemplo incluye un contrato ricardiano para la acción `hi` y cláusulas que se aplican al contrato.
+
+```json
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Jul 19 13:36:50 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "hi",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "hi",
+            "type": "hi",
+            "ricardian_contract": "### Parameters\nInput parameters:\n\n* `user` (string to include in the output)\n\nImplied parameters: \n\n* `account_name` (name of the party invoking and signing the contract)\n\n### Intent\nINTENT. The intention of the author and the invoker of this contract is to print output. It shall have no other effect.\n\n### Term\nTERM. This Contract expires at the conclusion of code execution."
+        }
+    ],
+    "tables": [],
+    "ricardian_clauses": [
+        {
+            "id": "Warranty",
+            "body": "The invoker of the contract action shall uphold its Obligations under this Contract in a timely and workmanlike manner, using knowledge and recommendations for performing the services which meet generally acceptable standards set forth by EOS.IO Blockchain Block Producers."
+        },
+        {
+            "id": "Default",
+            "body": "The occurrence of any of the following shall constitute a material default under this Contract:"
+        },
+        {
+            "id": "Remedies",
+            "body": "In addition to any and all other rights a party may have available according to law, if a party defaults by failing to substantially perform any provision, term or condition of this Contract, the other party may terminate the Contract by providing written notice to the defaulting party. This notice shall describe with sufficient detail the nature of the default. The party receiving such notice shall promptly be removed from being a Block Producer and this Contract shall be automatically terminated."
+        },
+        {
+            "id": "ForceMajeure",
+            "body": "If performance of this Contract or any obligation under this Contract is prevented, restricted, or interfered with by causes beyond either party's reasonable control (\"Force Majeure\"), and if the party unable to carry out its obligations gives the other party prompt written notice of such event, then the obligations of the party invoking this provision shall be suspended to the extent necessary by such event. The term Force Majeure shall include, without limitation, acts of God, fire, explosion, vandalism, storm or other similar occurrence, orders or acts of military or civil authority, or by national emergencies, insurrections, riots, or wars, or strikes, lock-outs, work stoppages, or supplier failures. The excused party shall use reasonable efforts under the circumstances to avoid or remove such causes of non-performance and shall proceed to perform with reasonable dispatch whenever such causes are removed or ceased. An act or omission shall be deemed within the reasonable control of a party if committed, omitted, or caused by such party, or its employees, officers, agents, or affiliates."
+        },
+        {
+            "id": "DisputeResolution",
+            "body": "Any controversies or disputes arising out of or relating to this Contract will be resolved by binding arbitration under the default rules set forth by the EOS.IO Blockchain. The arbitrator's award will be final, and judgment may be entered upon it by any court having proper jurisdiction."
+        },
+        {
+            "id": "Agreement",
+            "body": "This Contract contains the entire agreement of the parties, and there are no other promises or conditions in any other agreement whether oral or written concerning the subject matter of this Contract. This Contract supersedes any prior written or oral agreements between the parties."
+        },
+        {
+            "id": "Severability",
+            "body": "If any provision of this Contract will be held to be invalid or unenforceable for any reason, the remaining provisions will continue to be valid and enforceable. If a court finds that any provision of this Contract is invalid or unenforceable, but that by limiting such provision it would become valid and enforceable, then such provision will be deemed to be written, construed, and enforced as so limited."
+        },
+        {
+            "id": "Amendment",
+            "body": "This Contract may be modified or amended in writing by mutual agreement between the parties, if the writing is signed by the party obligated under the amendment."
+        },
+        {
+            "id": "GoverningLaw",
+            "body": "This Contract shall be construed in accordance with the Maxims of Equity."
+        },
+        {
+            "id": "Notice",
+            "body": "Any notice or communication required or permitted under this Contract shall be sufficiently given if delivered to a verifiable email address or to such other email address as one party may have publicly furnished in writing, or published on a broadcast contract provided by this blockchain for purposes of providing notices of this type."
+        },
+        {
+            "id": "WaiverOfContractualRight",
+            "body": "The failure of either party to enforce any provision of this Contract shall not be construed as a waiver or limitation of that party's right to subsequently enforce and compel strict compliance with every provision of this Contract."
+        },
+        {
+            "id": "ArbitratorsFeesToPrevailingParty",
+            "body": "In any action arising hereunder or any separate action pertaining to the validity of this Agreement, both sides shall pay half the initial cost of arbitration, and the prevailing party shall be awarded reasonable arbitrator's fees and costs."
+        },
+        {
+            "id": "ConstructionAndInterpretation",
+            "body": "The rule requiring construction or interpretation against the drafter is waived. The document shall be deemed as if it were drafted by both parties in a mutual effort."
+        },
+        {
+            "id": "InWitnessWhereof",
+            "body": "In witness whereof, the parties hereto have caused this Agreement to be executed by themselves or their duly authorized representatives as of the date of execution, and authorized as proven by the cryptographic signature on the transaction that invokes this contract."
+        }
+    ],
+    "variants": [],
+    "abi_extensions": []
+}
+```

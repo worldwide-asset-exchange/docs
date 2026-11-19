@@ -24,19 +24,19 @@ Esta guía pasa por el proceso de construir las dependencias de la aplicación y
 **Hardware**
 
 - 8 CPU Core / 5*Ghz+ recomendado*
-- 1TB+ Disco / _SSD de grado empresarial o NVMe_
+- 2 TB o más de disco / _SSD de grado empresarial o NVMe_
 
-Actualmente (noviembre de 2022) un nodo completo usa aproximadamente **859GB** de espacio en disco con la base de datos postgres actualmente en **849GB**.
+En marzo de 2025, la base de datos PostgreSQL de un nodo completo de Atomic API ocupaba **1,1 TB**.
 
 - 64GB+ RAM
 
 **Sistema Operativo**
 
-- Ubuntu 20.04 **_(Recomendado)_**
+- Ubuntu 22.04 **_(Recomendado)_**
 
 **Nodo SHIP**
 
-- Acceso a un nodo WAX State-History actualizado v2.0.12–13 o v3.1.x
+- Acceso a un nodo WAX State-History actualizado `v5.0.3wax01`
 - Nodo SHIP en la misma LAN **_(Altamente recomendado)_**
 
 **Red**
@@ -46,31 +46,48 @@ Actualmente (noviembre de 2022) un nodo completo usa aproximadamente **859GB** d
 
 # Construir el Software
 
-En el momento de escribir, la versión actual de la [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) es `v1.3.17`
+La versión de la [eosio-contract-api](https://github.com/atomicassets/atomicassets-api) utilizada en este ejemplo de marzo de 2025 es `v1.3.24`.
 
 Dependencias de la Aplicación **_(Algunas de nuestras recomendaciones)_**
 
-- NodeJS >= 16.0
-- PM2
-- PostgreSQL >= 14.0
-- Redis >= 5.0
-- Yarn
+- Node.js >= 22.14.0
+- PM2 >= 5.4.3
+- PostgreSQL >= 17.0
+- Redis >= 7.4.2
+- Yarn >= 1.22.22
 
 ## Proceso de Instalación y Configuración de la Aplicación
 
 **NodeJS**
 
 ```
-> curl -fsSL [https://deb.nodesource.com/setup_16.x](https://deb.nodesource.com/setup_16.x) | sudo -E bash - > sudo apt install -y nodejs
+# Descargar e importar la clave GPG de NodeSource
+> sudo apt update
 
-#Verificar Versión#
+> sudo apt install -y ca-certificates curl gnupg
+
+> sudo mkdir -p /etc/apt/keyrings
+
+> curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+# Configurar el repositorio .deb
+> NODE_MAJOR=22
+
+> echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+# Instalar Node.js
+> sudo apt update
+
+> sudo apt-get install -y nodejs
+
+# Comprobar la versión
 > node -v
 ```
 
 **PM2**
 
 ```
-> sudo npm install pm2 -g
+> sudo npm install pm2@latest -g
 
 #Verificar Versión#
 > pm2 -v
@@ -98,9 +115,7 @@ Instala Postgres como se indica a continuación:
 Después de la instalación, es necesario crear una nueva base de datos y asignar permisos si es necesario, este ejemplo usará el usuario postgres predeterminado.
 
 ```
-> sudo su
-
- - postgres
+> sudo su - postgres
 
 > psql
 
@@ -129,6 +144,8 @@ postgres=# \q (salir)
 
 > sudo apt install redis
 
+> sudo systemctl enable redis-server
+
 #Verificar Versión#
 > redis-server --version
 
@@ -147,12 +164,12 @@ postgres=# \q (salir)
 
 ## API Atómica
 
-Las últimas instrucciones de construcción siempre se pueden encontrar en el [Github de Pink.gg](https://github.com/atomicassets/atomicassets-api)
+Consulta el [repositorio de AtomicAssets API](https://github.com/atomicassets/atomicassets-api) para obtener las instrucciones de compilación.
 
 **Instalación**
 
 ```
-> git clone https://github.com/atomicassets/atomicassets-api.git
+> git clone https://github.com/atomicassets/atomicassets-api.git eosio-contract-api
 
 > cd eosio-contract-api
 

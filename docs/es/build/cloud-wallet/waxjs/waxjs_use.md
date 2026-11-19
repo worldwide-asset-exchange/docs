@@ -3,6 +3,10 @@ title: Uso de WaxJS
 order: 2
 ---
 
+::: warning
+WaxJS ya no cuenta con soporte. Usa [WharfKit](/build/developing-apps/sdks/wharfkit/) para integrar billeteras en tu aplicación.
+:::
+
 # Uso de WaxJS
 
 La biblioteca **WaxJS** expone cuatro componentes principales:

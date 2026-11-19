@@ -3,35 +3,8 @@ title: WAX-RPC API
 order: 20
 ---
 
-# WAX-RPC API
+<meta http-equiv="refresh" content="0; url=/apis/chain-api.htm">
 
-La API RPC de la Blockchain de WAX incluye endpoints públicos utilizados para obtener información de bloques, historial de bloques, información de nodos e información de productores de nodos. Expuesta a través de plugins de **nodeos**, esta API está disponible en la mainnet de WAX y en tu entorno de desarrollo local.
+# Redirigiendo a la API de cadena de WAX
 
-:::tip
-Si estás haciendo solicitudes locales, <strong>nodeos</strong> debe estar ejecutándose.
-:::
-
-| Entorno | URL |
-| --- | ----------- |
-| Mainnet de WAX | Verifica la disponibilidad de nodos en [HerdCheck](https://herdcheck.blocdraig.com/wax) |
-| Testnet Local | http://127.0.0.1:8888 |
-
-Puedes hacer solicitudes API directamente a los endpoints de la blockchain:
-
-```
-curl --request POST \
-  --url http://127.0.0.1:8888/v1/chain/get_info \
-  --header 'content-type: application/x-www-form-urlencoded; charset=UTF-8'
-```
-
-También puedes llamar a estos endpoints usando comandos de **cleos**:
-
-```
-cleos -u [url-api] get info
-```
-
-## Información Adicional y Herramientas de Terceros
-
-Consulta la [referencia de la API de cadena de WAX](/apis/chain-api.htm) para ver las llamadas disponibles.
-
-<a href="https://github.com/eosnetworkfoundation/mandel-eosjs" target="_blank">eosjs</a> es un SDK de API en javascript que se utiliza para comunicarse fácilmente con la API RPC de WAX. Para simplificar el desarrollo, puedes utilizar esta herramienta para acceder a los endpoints de la blockchain.
+Si la redirección no se inicia automáticamente, consulta la [referencia de la API de cadena](/apis/chain-api.htm).

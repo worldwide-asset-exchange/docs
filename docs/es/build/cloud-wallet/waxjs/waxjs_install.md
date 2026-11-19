@@ -3,6 +3,10 @@ title: Instalar WaxJS
 order: 1
 ---
 
+::: warning
+WaxJS ya no cuenta con soporte. Usa [WharfKit](/build/developing-apps/sdks/wharfkit/) para integrar billeteras en tu aplicación.
+:::
+
 # Instalar WaxJS
 
 Hay varias formas de descargar e instalar **WaxJS**:

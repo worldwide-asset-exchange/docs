@@ -30,14 +30,14 @@ En el entorno de [EOSphere Public Atomic API](https://wax-atomic-api.eosphere.io
 **_effective_io_concurrency_**, el número de operaciones de disco I/O concurrentes que PostgreSQL espera que puedan ejecutarse simultáneamente.  
 **_work_mem_**, cuánta memoria está disponible para operaciones de ordenación complejas.
 
-Configura PostgreSQL 14 como a continuación:
+Configura PostgreSQL 17 como se muestra a continuación:
 
 ```
 ***Detener los servicios PM2 de Atomic API***
 > pm2 stop all
 
 ***Se asume 64GB de RAM***
-> sudo nano /etc/postgresql/14/main/postgresql.conf
+> sudo nano /etc/postgresql/17/main/postgresql.conf
 
 shared_buffers = '32GB';
 effective_cache_size = '48GB';
@@ -88,9 +88,7 @@ postgres=# \q
 
 ## Optimizaciones del servidor de API atómica
 
-Recientemente, el equipo de Pink.gg agregó dos excelentes características al servidor de API que permiten que el servicio sea más resist
-
-ente al uso público intensivo.
+La versión `v1.3.24` ya incluye estas dos funciones. Comprueba que estén configuradas para que la API tolere mejor el uso público intensivo.
 
 He copiado y pegado los detalles de la actualización de la comunidad del equipo de Pink sobre estas características a continuación:
 

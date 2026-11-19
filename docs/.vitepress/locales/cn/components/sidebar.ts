@@ -4,7 +4,7 @@ export default [
         collapsed: false,
         items: [
             {
-                textt: '关于WAX',
+                text: '关于 WAX',
                 link: '/cn/learn/about-wax/',
                 collapsed: false,
                 items: [
@@ -28,11 +28,11 @@ export default [
                         text: 'WAX的互操作性',
                         link: '/cn/learn/about-wax/wax-interoperability',
                     },
-                    {
-                        text: 'WAX治理',
-                        link: '/cn/learn/about-wax/wax-governance',
-                    },
                 ],
+            },
+            {
+                text: '质押与治理',
+                link: '/cn/learn/getting-started/staking-and-governance',
             },
         ],
     },

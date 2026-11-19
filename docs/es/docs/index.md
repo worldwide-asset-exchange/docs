@@ -1,4 +1,10 @@
+---
+title: Ayuda a mejorar la documentación
+---
+
 # Ayuda a mejorar la documentación
+
+Consulta [cómo contribuir](https://github.com/worldwide-asset-exchange/docs/wiki) para empezar.
 
 Crear una experiencia fluida y agradable para los desarrolladores es crucial para el éxito de nuestro proyecto. Como parte de nuestro compromiso de mejorar continuamente, te invitamos a contribuir con tus habilidades y conocimientos para mejorar la documentación para desarrolladores (DX) y hacerla aún mejor.
 

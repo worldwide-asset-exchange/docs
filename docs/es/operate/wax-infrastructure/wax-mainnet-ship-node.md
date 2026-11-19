@@ -159,38 +159,16 @@ DefaultLimitSTACK=65536000
 
 El software de WAX se deriva del software Antelope de código abierto, sin embargo, se ha modificado para adaptarse a las necesidades de la Red de Protocolo de WAX.
 
-Actualmente, la versión y construcción de software de WAX Block Producer aceptada es `v3.
+Consulta las [etiquetas del repositorio oficial de WAX](https://github.com/worldwide-asset-exchange/wax-blockchain/tags) para elegir una versión compatible con tu red. Este ejemplo usa `v5.0.3wax01`.
 
-1.0wax01` creada por [cc32d9](https://cc32d9.medium.com/), miembro del [EOS Amsterdam Guild](https://eosamsterdam.net/)
+Sigue las [instrucciones de compilación de esa versión](https://github.com/worldwide-asset-exchange/wax-blockchain/tree/v5.0.3wax01#build-and-install-from-source) para instalar las dependencias y compilar con Ubuntu. Descarga el código fuente con:
 
-La última etiqueta de construcción de `wax` está disponible actualmente en [cc32d9 Github](https://github.com/cc32d9/wax-leap/tags)
-
-**Proceso de Construcción**
-
-Este ejemplo utiliza [Ubuntu Linux](https://ubuntu.com/) para compilar el software de WAX desde el origen siguiendo el proceso a continuación:
-
+```sh
+git clone --branch v5.0.3wax01 --recurse-submodules https://github.com/worldwide-asset-exchange/wax-blockchain.git ~/wax-blockchain
+cd ~/wax-blockchain
 ```
-> cd ~
 
-> sudo apt install -y file
-
-> git clone https://github.com/cc32d9/wax-leap.git
-
-> cd wax-leap
-
-> git checkout v3.1.0.wax01
-
-> git submodule update --init --recursive
-
-> sudo bash scripts/install_deps.sh
-
-> mkdir build
-
-# Si es necesario, suplemente $(nproc) a continuación con el número de trabajos que su servidor puede soportar, sugiero 4GB de RAM requeridos / trabajo
-> nice bash scripts/pinned_build.sh ~/wax-leap/build/leap-deps ~/wax-leap/build $(nproc)
-
-# Los binarios están ubicados en ~/wax-leap/build/programs
-```
+Los binarios se encuentran en `~/wax-blockchain/build/programs`.
 
 # Configuración
 
@@ -213,7 +191,7 @@ Cree un `config.ini` predeterminado ejecutando `nodeos` sin configuración como 
 ```
 > mkdir ~/waxdata
 
-> cd ~/wax-leap/build/programs/nodeos
+> cd ~/wax-blockchain/build/programs/nodeos
 
 > ./nodeos --data-dir ~/waxdata --config-dir ~/waxdata
 ```
@@ -412,7 +390,7 @@ Use screen para mantener viva su sesión incluso cuando se desconecte, el uso es
 Ejecute `nodeos` con punteros al archivo de configuración, directorio de datos y archivo de inicio de genesis:
 
 ```
-> cd ~/wax-leap/build/programs/nodeos
+> cd ~/wax-blockchain/build/programs/nodeos
 > ./nodeos --data-dir ~/waxdata --config-dir ~/waxdata --genesis-json ~/waxdata/genesis.json --disable-replay-opts
 ```
 

@@ -3,6 +3,10 @@ title: Uso de instantáneas de WAX
 order: 143
 ---
 
+![Proveedores y enlaces de descarga de snapshots de WAX](/assets/images/wax-infrastructure/snapshots/wax-snapshot-services.jpg)
+
+_Captura histórica de [WAX Technical How To #2](https://medium.com/eosphere/wax-technical-how-to-2-db45a339e735), de Ross Dold (EOSphere)._
+
 ### Uso de instantáneas (snapshots) de WAX
 
 Probablemente hayas notado que sincronizar con una cadena de bloques que ha estado funcionando durante millones de bloques puede llevar bastante tiempo. Afortunadamente, la sincronización puede acelerarse utilizando una instantánea válida existente de la base de datos del estado de la cadena.
@@ -43,7 +47,7 @@ En el [directorio de snapshots de WAX Mainnet de EOSphere](https://store3.eosphe
 
 ### Uso
 
-Utilizando el ejemplo de construcción de `nodeos` en el [anterior](/operate/wax-infrastructure/wax-testnet-node) WAX Technical How To, todos los archivos relevantes se encuentran en `~/waxdata`.
+Utilizando el ejemplo de construcción de `nodeos` en el [anterior](/es/operate/wax-infrastructure/wax-testnet-node) WAX Technical How To, todos los archivos relevantes se encuentran en `~/waxdata`.
 
 Descarga y descomprime el archivo de instantánea deseado:
 

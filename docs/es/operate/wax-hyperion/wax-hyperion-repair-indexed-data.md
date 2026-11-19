@@ -87,6 +87,8 @@ Existen varias formas de ejecutar el escaneo, como se muestra a continuación:
 > ./hyp-repair scan wax -o ./xyz
 ```
 
+![Resultado de un escaneo de todos los bloques en Hyperion](/assets/images/wax-hyperion/hyperion-repair-indexed-data/hyperion-all-blocks-scan.png)
+
 Si no se especifica un rango, el escaneo comenzará en reversa, desde el último bloque indexado hasta el primer bloque indexado en Elasticsearch.
 
 Si no se especifica una ruta de salida, la salida del escaneo se guarda en la carpeta `~/hyperion-history-api/.repair`.
@@ -96,9 +98,11 @@ Si no se especifica una ruta de salida, la salida del escaneo se guarda en la ca
 Si se encuentran bloques perdidos o bifurcados, se creará un archivo que liste las discrepancias. Revisa lo encontrado según lo siguiente:
 
 ```
-> ./hyp-repair view .repair/wax-4-250012558-bloques-bifurcados.json  
-> ./hyp-repair view .repair/wax-4-250000861-bloques-perdidos.json
+> ./hyp-repair view .repair/wax-4-250012558-forked-blocks.json
+> ./hyp-repair view .repair/wax-4-250000861-missing-blocks.json
 ```
+
+![Resultado de Hyperion con los bloques bifurcados](/assets/images/wax-hyperion/hyperion-repair-indexed-data/hyperion-forked-blocks-output.png)
 
 Por supuesto, es posible que no tengas problemas y en ese caso no se creará ningún archivo.
 
@@ -110,10 +114,10 @@ Si se creó un archivo de bloques bifurcados, ejecuta la herramienta de la sigui
 
 ```
 # Ejecución simulada para probar la reparación propuesta  
-> ./hyp-repair repair wax .repair/wax-4-250012558-bloques-bifurcados.json --dry  
+> ./hyp-repair repair wax .repair/wax-4-250012558-forked-blocks.json --dry
   
 # Reparación real si la simulación parece correcta  
-> ./hyp-repair repair wax .repair/wax-4-250012558-bloques-bifurcados.json
+> ./hyp-repair repair wax .repair/wax-4-250012558-forked-blocks.json
 ```
 
 La reparación de índice eliminará estos bloques bifurcados y solicitará al indizador que complete específicamente estos bloques ahora perdidos nuevamente.
@@ -123,7 +127,7 @@ La reparación de índice eliminará estos bloques bifurcados y solicitará al i
 Si se creó un archivo de bloques perdidos, ejecuta la herramienta de la siguiente manera:
 
 ```
-> ./hyp-repair fill-missing wax .repair/wax-4-250000861-bloques-perdidos.json
+> ./hyp-repair fill-missing wax .repair/wax-4-250000861-missing-blocks.json
 ```
 
 Es una buena idea volver a ejecutar el escaneo para asegurarte de que se han corregido con éxito cualquier condición indeseable de datos perdidos y la herramienta de reparación de índices haya funcionado correctamente.

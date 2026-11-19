@@ -43,4 +43,9 @@ Además, proporciona interfaces y plugins, como:
 - **Plugin de Login**: Modifica el flujo de acciones durante el inicio de sesión.
 - **Plugin de Transacción**: Estructura lógica para agregar código personalizado.
 
-Es esencial mencionar **Almacenamiento de Sesión**, que conserva las instancias de sesión entre cargas de página.
+**SessionStorage** conserva las sesiones entre cargas de página.
+
+## Tutoriales
+
+- [WharfKit en React](/es/build/tutorials/wharfkit/howto_react)
+- [Varias sesiones con WharfKit](/es/build/tutorials/wharfkit/multisession)

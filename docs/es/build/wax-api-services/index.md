@@ -3,15 +3,19 @@ title: Servicios API de WAX
 order: 4
 ---
 
-## Proveedores de Servicio API Gratuitos
+# Servicios de API de WAX
 
-Existen APIs públicas proporcionadas por diferentes equipos de validadores, pero a menudo están muy limitadas por tasa, etc. Puedes encontrar la lista de APIs públicas aquí:
+Usa esta sección para encontrar proveedores. Si necesitas diseñar tu integración, consulta [Endpoints](/build/endpoints/).
+
+## APIs públicas
+
+La disponibilidad de las APIs públicas cambia con el tiempo. Para encontrar endpoints actuales:
 
 - [Endpoints de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists)
 
-## Proveedores de Servicio API Pagados
+## Servicios gestionados y comerciales
 
-Los proveedores de servicio pagados ofrecen mucha más fiabilidad, flexibilidad y mejores límites de tasa con SLAs para tus dapps y eliminan la molestia de configurar y mantener la infraestructura, puedes encontrar diferentes proveedores de servicio y sus ofertas a continuación:
+Considera un proveedor comercial si necesitas disponibilidad predecible, mejores garantías de límites de solicitudes, asistencia con APIs de historial o activos, o reducir el trabajo de mantener tu propia infraestructura.
 
 | Nombre del Proveedor | Sitio Web                                                                      | Ofertas                        | Tipo de Ofertas                                        | Información de Contacto                                         |
 | -------------------- | ------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------ | --------------------------------------------------------------- |
@@ -20,12 +24,29 @@ Los proveedores de servicio pagados ofrecen mucha más fiabilidad, flexibilidad 
 | WAX Sweden           | [https://waxsweden.org/commercial-api/](https://waxsweden.org/commercial-api/) | SH, Notificaciones de Contrato | Servidores Dedicados                                   | https://t.me/eossweden                                          |
 | EOSphere             | [https://eosphere.io/services/](https://eosphere.io/services/)                 | FAH, SH, AA                    | Servidores Dedicados, Suscripciones a API por Medición | info@eosphere.io, Telegram ID: @rossco99                        |
 
-- `FAH`: Historia de Archivo Completo
+## Categorías de servicios
+
+- RPC de cadena.
+- Hyperion y APIs de historial.
+- Servicios de historial de estado.
+- APIs de AtomicAssets o de mercados.
+- Endpoints de lectura ligeros gestionados.
+
+### Abreviaturas
+
+- `FAH`: Historial de archivo completo
 - `PAH`: Historia de Archivo Parcial
 - `SH`: Nodos de Historia de Estado
 - `AA`: Nodos API de AtomicAssets/Market
 - `LA`: Nodos API Ligeros
 
-Si quieres comunicarte con proveedores de servicios de infraestructura, visita este canal de telegram:
+## Guías relacionadas
+
+- [Cómo elegir un endpoint](/build/endpoints/choosing-an-endpoint)
+- [Límites de solicitudes y conmutación por error](/build/endpoints/rate-limits-and-failover)
+
+## Comunidad de infraestructura
+
+Para contactar con proveedores de infraestructura, visita este canal de Telegram:
 
 - [https://t.me/waxapi](https://t.me/waxapi)

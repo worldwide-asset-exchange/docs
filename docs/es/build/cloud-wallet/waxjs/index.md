@@ -1,6 +1,10 @@
 ---
-título: Resumen de WaxJS
+title: Resumen de WaxJS
 ---
+
+::: warning
+WaxJS ya no cuenta con soporte. Usa [WharfKit](/build/developing-apps/sdks/wharfkit/) para integrar billeteras en tu aplicación.
+:::
 
 # WaxJS
 
@@ -9,7 +13,7 @@ título: Resumen de WaxJS
 Para comenzar, simplemente necesitas incluir nuestra biblioteca [WaxJS](https://github.com/worldwide-asset-exchange/waxjs) y hacer unas pocas llamadas simples desde tu cliente. Si te gustaría ir directamente al código y ejecutar nuestro ejemplo en vivo de WaxJS, consulta [Demostración de WaxJS](waxjs_demo.md).
 ## Cómo Funciona
 
-**WaxJS** utiliza Cloud Wallet y la API de Javascript [EOSIO/eosjs](https://github.com/EOSIO/eosjs) para proporcionar una interfaz fácil de usar entre tus usuarios y la Blockchain de WAX.
+**WaxJS** utiliza My Cloud Wallet y la API de JavaScript eosjs para proporcionar una interfaz fácil de usar entre tus usuarios y la Blockchain de WAX.
 
 Para usar **WaxJS**, simplemente necesitas:
 
@@ -22,4 +26,10 @@ Para usar **WaxJS**, simplemente necesitas:
 
 ![Firma de WaxJS](/assets/images/wax-cloud-wallet/waxjs/waxjs_sign.png)
 
-En las siguientes secciones, aprenderás cómo instalar y usar **WaxJS**.
+## Páginas archivadas
+
+- [Guía rápida de WaxJS](/es/build/cloud-wallet/waxjs/waxjs_qstart)
+- [Instalar WaxJS](/es/build/cloud-wallet/waxjs/waxjs_install)
+- [Usar WaxJS](/es/build/cloud-wallet/waxjs/waxjs_use)
+- [Demostración de WaxJS](/es/build/cloud-wallet/waxjs/waxjs_demo)
+- [Cuentas temporales](/es/build/cloud-wallet/waxjs/waxjs_tempaccounts)

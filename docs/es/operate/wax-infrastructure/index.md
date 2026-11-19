@@ -1,25 +1,42 @@
 ---
-título: Guías de Infraestructura de WAX
-orden: 3
+title: Guías de infraestructura de WAX
+order: 3
 ---
 
 # Guías para operadores de nodos y API
 
-La infraestructura es la columna vertebral de cualquier aplicación y lo mismo ocurre con la Blockchain de WAX y las aplicaciones de Web3, DeFi, NFT construidas sobre ella.
+La infraestructura de WAX incluye:
 
-Comparado con otras blockchains como Ethereum y Bitcoin, ejecutar nodos de WAX es bastante diferente y necesita una buena comprensión de las operaciones del software de blockchain Antelope subyacente.
+- Nodos de cadena para conexiones entre pares y consultas de API.
+- Nodos de historial de estado (SHIP) para servicios que consumen datos de la cadena.
+- Sistemas de historial indexado como Hyperion.
+- APIs de activos para aplicaciones y mercados de NFT.
+- Servicios de apoyo como balanceo de carga, enrutamiento, almacenamiento y monitoreo.
 
-Hay diferentes tipos de nodos en el ecosistema de Blockchain de WAX que pueden usarse para diferentes propósitos. Estos nodos incluyen:
+## Por dónde empezar
 
-- Nodos pares
-- Nodos de consulta API
-- Nodos validadores/Productores de bloques
-- [Nodos Ship (también conocidos como nodos de archivo)](/operate/wax-infrastructure/wax-mainnet-node)
-- [Nodos de Historia Completa/Parcial (nodos de archivo de datos deserializados y consumibles)](/operate/wax-infrastructure/hyperion-guide)
-- Nodos específicos de estándares NFT y Marketplace ([AtomicAssets, AtomicMarket](/operate/wax-infrastructure/atomic-api-guide) & Simpleassets)
+- [Configurar un nodo de Mainnet](/es/operate/wax-infrastructure/wax-mainnet-node)
+- [Configurar un nodo de Testnet](/es/operate/wax-infrastructure/wax-testnet-node)
+- [Configurar un nodo productor en Testnet](/es/operate/wax-infrastructure/wax-testnet-block-producer)
+- [Configurar un nodo de historial de estado](/es/operate/wax-infrastructure/wax-mainnet-ship-node)
+- [Configurar historial completo o parcial con Hyperion](/es/operate/wax-infrastructure/hyperion-guide)
+- [Configurar un nodo de API de AtomicAssets](/es/operate/wax-infrastructure/atomic-api-guide)
 
-Para más detalles sobre los tipos de nodos, consulta la [guía de configuración de nodos de Antelope](https://github.com/AntelopeIO/leap/blob/v3.1.2/docs/01_nodeos/02_usage/02_node-setups/index.md).
+## Áreas de operación
 
-Las guías presentadas aquí compartirán algunas mejores prácticas, te ayudarán a obtener una comprensión más profunda de cómo puedes configurar y mantener la infraestructura de blockchain de WAX de manera escalable y resiliente.
+- Planificación de rendimiento y almacenamiento.
+- Enrutamiento de consultas y balanceo de carga.
+- Administración de snapshots y recuperación.
+- Mitigación del abuso de endpoints.
+- Escalado según el servicio.
 
-Si no quieres configurar y gestionar tu infraestructura, hay varios proveedores de servicios entre los que puedes elegir: [Servicios API de WAX](/operate/wax-api-services/)
+## Más guías
+
+- [Optimizar el uso del disco con deduplicación ZFS](/es/operate/wax-infrastructure/wax-optimise-disk-utilisation-zfs-dedup)
+- [Conectar pares de forma segura con WireGuard](/es/operate/wax-infrastructure/wax-securely-peer-with-wireguard)
+- [Enrutar consultas de API](/es/operate/wax-infrastructure/wax-route-specific-api-queries)
+- [Usar WebSockets en un balanceador de carga](/es/operate/wax-infrastructure/wax-websocket-load-balancer)
+- [Nodos de API con archivo completo o parcial](/es/operate/wax-infrastructure/api-archive-guide)
+- [Crear un servicio de oráculo de precios de WAX](/es/operate/wax-infrastructure/creating-a-wax-price-oracle-service-bash-python)
+
+Si prefieres usar infraestructura gestionada, consulta los [servicios de API de WAX](/es/build/wax-api-services/).

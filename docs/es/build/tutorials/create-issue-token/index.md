@@ -1,110 +1,120 @@
 ---
-title: Crear y acuñar un token de activo fungible
+title: Crear y emitir un token fungible
 order: 10
 ---
 
-# Crear y acuñar un token de activo fungible
+# Crear y emitir un token fungible en WAX
 
-En este tutorial, aprenderás cómo crear y acuñar un token de activo fungible en la red principal de WAX.
+Esta guía muestra cómo compilar, desplegar y gestionar un contrato de token fungible en WAX.
 
-## Antes de Comenzar
+- [Repositorio de ejemplo](https://github.com/worldwide-asset-exchange/fungible-token-tutorial)
 
-* Necesitarás completar nuestro [Inicio Rápido con Docker](/es/build/dapp-development/docker-setup/) (recomendado) y usar la [Guía de desarrollo para la Blockchain de WAX](/es/build/dapp-development/) para construir desde el código fuente.
+## Requisitos
 
-* Para compilar y desplegar tu contrato inteligente, necesitarás utilizar el [Kit de Desarrollo de Contratos de WAX (WAX-CDT)](/es/build/dapp-development/wax-cdt/).
+- [WAX-CDT](https://github.com/worldwide-asset-exchange/wax-cdt) para compilar el contrato.
+- [Software de WAX](https://github.com/worldwide-asset-exchange/wax-blockchain), que incluye la herramienta `cleos`.
 
-* Para desplegar tu contrato inteligente en la red principal de WAX o en la red de pruebas de WAX, necesitarás crear una Cuenta de Blockchain de WAX autogestionada.
+## Compilar el contrato
 
-## Clonar el Contrato Inteligente desde GitHub
+El repositorio de ejemplo incluye una copia del [contrato eosio.token de WAX](https://github.com/worldwide-asset-exchange/wax-system-contracts/tree/develop/contracts/eosio.token/) y [archivos compilados](https://github.com/worldwide-asset-exchange/fungible-token-tutorial/tree/master/build). Para generar los archivos WASM y ABI desde el código fuente, ejecuta lo siguiente desde la raíz del repositorio:
 
-1. Clona el contrato inteligente de activo fungible desde el repositorio de GitHub de WAX:
-
-    ```shell
-    git clone https://github.com/worldwide-asset-exchange/wax-system-contracts.git
-    ```
-
-2. Navega al directorio del contrato inteligente:
-
-    ```shell
-    cd wax-system-contracts/contracts/eosio.token
-    ```
-
-:::warning IMPORTANTE
-Para las acciones que vamos a realizar a continuación es necesario desbloquear la wallet
-```shell
-cleos wallet unlock
+```bash
+$ cdt-cpp -abigen -R eosio.token/ricardian eosio.token/src/eosio.token.cpp -o ./build/eosio.token.wasm -I eosio.token/include --no-missing-ricardian-clause
 ```
-:::
 
-:::tip NOTA
-Sustituye estas variables por tus propios valores:
-- `<TOKEN_ACCOUNT_NAME>`: Nombre de la cuenta del token de activo fungible (Será el propietario del token de activo fungible).
-- `<OWNER_PUBLIC_KEY>`: Clave pública de la cuenta del token de activo fungible.
-- `<ACTIVE_PUBLIC_KEY>`: Clave pública activa de la cuenta del token de activo fungible.
-- `<ACTIVE_PRIVATE_KEY>`: Clave privada activa de la cuenta del token de activo fungible.
-- `<MAX_ISSUE>`: Cantidad máxima de tokens de activo fungible a acuñar.
-- `<SYMBOL>`: Símbolo del token de activo fungible.
-- `<AMOUNT>`: Cantidad de tokens de activo fungible a acuñar (issue) o a enviar (transfer). El total de tokens acuñados no puede exceder el valor de `<MAX_ISSUE>`.
-:::
+## Desplegar el contrato
 
+### 1. Crear la cuenta del contrato
 
-3. Crea una cuenta para el token de activo fungible:
+Reserva al menos 160 KB de RAM para almacenar el contrato y sus tablas. Sustituye los nombres y las claves públicas del ejemplo por los de tus propias cuentas.
 
-    ```shell
-    cleos create account eosio <TOKEN_ACCOUNT_NAME> <OWNER_PUBLIC_KEY> <ACTIVE_PUBLIC_KEY>
-    ```
+```bash
+$ cleos system newaccount eosio tokenexample EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV --stake-net "10.00000000 WAX" --stake-cpu "10.00000000 WAX" --buy-ram-kbytes 160 --transfer
+```
 
-4. Agrega la cuenta del token de activo fungible a la wallet:
+### 2. Desplegar el contrato
 
-    ```shell
-    cleos wallet import --private-key <ACTIVE_PRIVATE_KEY>
-    ```
+```bash
+$ cleos set contract tokenexample . build/eosio.token.wasm build/eosio.token.abi -p tokenexample
+```
 
-5. Compila el contrato inteligente:
+### 3. Verificar el despliegue
 
-    ```shell
-    mkdir build
-    cd build
-    cmake ..
-    make
-    ```
-6. Despliega el contrato inteligente en la red principal de WAX:
+Consulta el hash del contrato para comprobar el despliegue.
 
-    ```shell
-    cleos set contract eosio.token ../ --abi eosio.token.abi -p <TOKEN_ACCOUNT_NAME>@active
-    ```
-7. Acuña el token de activo fungible:
+```bash
+$ cleos get code tokenexample
+code hash: 64ac1483b2ff62a4d36173882dca2a278c50e11136b70370123da6775e63659b
+```
 
-    ```shell
-    cleos push action <TOKEN_ACCOUNT_NAME> create '["<TOKEN_ACCOUNT_NAME>", "<MAX_ISSUE> <SYMBOL>"]' -p <TOKEN_ACCOUNT_NAME>@active
-    ```
+## Configurar el token
 
-8. Verifica que el token de activo fungible se haya acuñado correctamente:
+### 1. Crear el token
 
-    ```shell
-    cleos get currency stats <TOKEN_ACCOUNT_NAME> <SYMBOL>
-    ```
-9. Acuñar tokens de activo fungible adicionales:
+La acción `create` requiere los permisos de la cuenta del contrato. Define la cuenta emisora y el suministro máximo. Comprueba la cantidad antes de enviar la acción, porque el suministro máximo queda fijado.
 
-    ```shell
-    cleos push action <TOKEN_ACCOUNT_NAME> issue '["<TOKEN_ACCOUNT_NAME>", "<AMOUNT> <SYMBOL>", "memo"]' -p <TOKEN_ACCOUNT_NAME>@active
-    ```
-10. Verifica que los tokens de activo fungible adicionales se hayan acuñado correctamente:
+```bash
+$ cleos push action tokenexample create '["tokenissuer", "1000000000.0000 EXP"]' -p tokenexample
+```
 
-    ```shell
-    cleos get currency stats <TOKEN_ACCOUNT_NAME> <SYMBOL>
-    ```
+### 2. Emitir tokens
 
-11. Transferir tokens de activo fungible a otra cuenta:
+La acción `issue` requiere los permisos de la cuenta emisora. Especifica el destinatario, la cantidad y la nota.
 
-    ```shell
-    cleos push action <TOKEN_ACCOUNT_NAME> transfer '["<TOKEN_ACCOUNT_NAME>", "<RECIPIENT_ACCOUNT_NAME>", "<AMOUNT> <SYMBOL>", "memo"]' -p <TOKEN_ACCOUNT_NAME>@active
-    ```
-  
-12. Verifica que los tokens de activo fungible se hayan transferido correctamente:
+```bash
+$ cleos push action tokenexample issue '["tokenissuer", "1000000.0000 EXP", "first issue"]' -p tokenissuer
+```
 
-    ```shell  
-    cleos get currency balance <TOKEN_ACCOUNT_NAME> <RECIPIENT_ACCOUNT_NAME> <SYMBOL>
-    ```
+Consulta la tabla `stat` para revisar el suministro emitido.
 
-¡Felicidades! Has creado y acuñado un token de activo fungible en la red principal de WAX.
+```bash
+$ cleos get table tokenexample EXP stat
+{
+  "rows": [{
+      "supply": "1000000.0000 EXP",
+      "max_supply": "1000000000.0000 EXP",
+      "issuer": "tokenexample"
+    }
+  ],
+  "more": false,
+  "next_key": ""
+}
+```
+
+Consulta la tabla `accounts` para revisar el saldo.
+
+```bash
+$ cleos get table tokenexample tokenissuer accounts
+{
+  "rows": [{
+      "balance": "1000000.0000 EXP"
+    }
+  ],
+  "more": false,
+  "next_key": ""
+}
+```
+
+### 3. Retirar tokens
+
+La acción `retire` requiere los permisos de la cuenta emisora y un saldo suficiente para retirar la cantidad indicada.
+
+```bash
+$ cleos push action tokenexample retire '["1.0000 EXP", "first burn"]' -p tokenissuer
+```
+
+Vuelve a consultar `stat` para comprobar el suministro restante.
+
+```bash
+$ cleos get table tokenexample EXP stat
+{
+  "rows": [{
+      "supply": "999999.0000 EXP",
+      "max_supply": "1000000000.0000 EXP",
+      "issuer": "tokenexample"
+    }
+  ],
+  "more": false,
+  "next_key": ""
+}
+```
