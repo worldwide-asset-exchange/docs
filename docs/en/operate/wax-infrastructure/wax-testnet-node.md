@@ -106,6 +106,8 @@ You will then be able to edit the newly created `config.ini` and see all the ava
 > nano config.ini
 ```
 
+Find current WAX Testnet P2P endpoints on [Antelope Tools](https://antelope-wax-testnet.eosphere.io/endpoints) or in the [HerdCheck P2P Seed list](https://herdcheck.blocdraig.com/wax-testnet/lists#p2p-seed).
+
 Now edit the `config.ini`and add the following configuration settings:
 
 ```
@@ -205,8 +207,6 @@ p2p-peer-address = seed1-wax-testnet.wecan.dev:9876
 
 # wecan: GB, London
 p2p-peer-address = seed2-wax-testnet.wecan.dev:9876
-
-# WAX Testnet peers published by EOSphere - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Testnet"
 

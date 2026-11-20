@@ -202,6 +202,8 @@ Luego podrá editar el `config.ini` recién creado y ver todos los parámetros d
 > cd ~/waxdata> nano config.ini
 ```
 
+Consulta los endpoints P2P actuales de WAX Mainnet en [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) o en la [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
+
 Ahora edite el `config.ini` y agregue la siguiente configuración:
 
 ```
@@ -314,8 +316,6 @@ p2p-peer-address = wax-seed.eosiomadrid.io:9876
 
 # waxswedenorg: SE, Sweden
 p2p-peer-address = p2p.waxsweden.org:35777
-
-# Lista de Pares - https://eosphere.io/services/
 
 agent-name = "<su nombre> Nodo de Estado-Historial WAX Mainnet"
 

@@ -132,7 +132,7 @@ let player_points = asset.mutable_data.player_points;
 player_points += 100;
 ```
 
-Set **ATOMIC_API** to a valid URL from the AtomicAssets API list on [HerdCheck](https://herdcheck.blocdraig.com/wax/lists).
+Set **ATOMIC_API** to a valid URL from the AtomicAssets API list on [HerdCheck](https://herdcheck.blocdraig.com/wax/lists). For chain API endpoints, see [Antelope Tools](https://antelope-wax.eosphere.io).
 
 Once we have read it, all there is left to do is to update the information with the desired values and save it in the NFT, as we saw in the previous step.
 

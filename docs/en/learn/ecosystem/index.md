@@ -41,6 +41,7 @@ The only official Anchor download locations are [anchorwallet.io](https://anchor
 ## Public Endpoint Discovery
 
 - [HerdCheck](https://herdcheck.blocdraig.com/wax)
+- [Antelope Tools](https://antelope-wax.eosphere.io)
 
 ## More Projects
 

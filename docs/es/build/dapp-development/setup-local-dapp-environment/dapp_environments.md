@@ -19,7 +19,7 @@ A continuación, encontrarás las versiones de WAX, URLs e información del ento
 | Servicio | URL | Descripción |
 |---------|-----|-------------|
 | URL de Blockchain | [chain-api-url](/es/operate/wax-infrastructure/#public-and-free-api-service-providers) | Utilizado para realizar llamadas API y desplegar tus contratos inteligentes en la red principal de WAX. |
-| P2P de Blockchain | [Pares de WAX Mainnet (EOSphere)](https://eosphere.io/services/) | Usa una dirección de la columna P2P en formato `host:puerto` para sincronizar un productor o un nodo completo. |
+| P2P de Blockchain | [Antelope Tools](https://antelope-wax.eosphere.io/endpoints), [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax/lists#p2p-seed) | Usa una dirección en formato `host:puerto` para sincronizar un productor o un nodo completo. |
 | Explorador de Blockchain | [https://waxblock.io](https://waxblock.io/) | Explorador de bloques waxblock.io. |
 | Cuenta WAX | (por ejemplo, Scatter) | Crea una cuenta de Blockchain de WAX. |
 
@@ -32,7 +32,7 @@ A continuación, encontrarás las versiones de WAX, URLs e información del ento
 | Sitio Testnet | [WAX Testnet](https://waxsweden.org/testnet/) | Utiliza el sitio de WAX sw/eden para crear cuentas de prueba, encontrar scripts de muestra y más. |
 | URL de Blockchain | [https://testnet.waxsweden.org](https://testnet.waxsweden.org) | Utilizado para realizar llamadas API y desplegar tus contratos inteligentes en el Testnet de WAX. |
 | Puntos finales públicos | [endpoints.json](https://github.com/eosswedenorg/waxtestnet/tree/master/endpoints) | URLs adicionales de puntos finales P2P y API. |
-| P2P de Blockchain | testnet.waxsweden.org:59876 | Punto final de conexión para sincronizar un productor o nodo completo (sin protocolo al frente). |
+| P2P de Blockchain | [Antelope Tools](https://antelope-wax-testnet.eosphere.io/endpoints), [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax-testnet/lists#p2p-seed) | Usa una dirección en formato `host:puerto` para sincronizar un productor o un nodo completo. |
 | Explorador de Blockchain | [WAXBlock Testnet](https://local.waxblock.io/?nodeUrl=testnet.waxsweden.org&coreSymbol=WAX&corePrecision=8&systemDomain=eosio&hyperionUrl=https%3A%2F%2Ftestnet.waxsweden.org) | Explorador de bloques Testnet. |
 | Cuenta de Prueba | [https://waxsweden.org/create-testnet-account/](https://waxsweden.org/create-testnet-account/) | Utiliza la herramienta "Crear cuenta testnet" en la página de inicio de [Testnet](https://waxsweden.org/testnet/) o visita el enlace directo. |
 

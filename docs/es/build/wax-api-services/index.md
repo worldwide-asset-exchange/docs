@@ -12,6 +12,7 @@ Usa esta sección para encontrar proveedores. Si necesitas diseñar tu integraci
 La disponibilidad de las APIs públicas cambia con el tiempo. Para encontrar endpoints actuales:
 
 - [Endpoints de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists)
+- [Antelope Tools](https://antelope-wax.eosphere.io)
 
 ## Servicios gestionados y comerciales
 

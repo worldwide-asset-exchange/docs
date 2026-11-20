@@ -32,7 +32,7 @@ Throughout our dApp Development section, we'll list various steps required to ru
 ```shell
 cleos -u https://wax-api-url get info
 ```
-*Check the [HerdCheck WAX Mainnet API list](https://herdcheck.blocdraig.com/wax/lists) for an updated endpoint URL.*
+*Check the [HerdCheck WAX Mainnet API list](https://herdcheck.blocdraig.com/wax/lists) or [Antelope Tools](https://antelope-wax.eosphere.io) for an updated endpoint URL.*
 <p>&nbsp;</p>
 
 When you start an interactive bash session, the *command line* is your Docker container bash prompt:

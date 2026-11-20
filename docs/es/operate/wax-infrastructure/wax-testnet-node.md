@@ -83,6 +83,8 @@ Luego podrás editar el nuevo `config.ini` y ver todos los parámetros disponibl
 > nano config.ini
 ```
 
+Consulta los endpoints P2P actuales de WAX Testnet en [Antelope Tools](https://antelope-wax-testnet.eosphere.io/endpoints) o en la [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax-testnet/lists#p2p-seed).
+
 Ahora edita el `config.ini` y agrega la siguiente configuración:
 
 ```ini
@@ -166,8 +168,6 @@ p2p-peer-address = seed1-wax-testnet.wecan.dev:9876
   
 # wecan: GB, Londres  
 p2p-peer-address = seed2-wax-testnet.wecan.dev:9876
-
-# Pares de WAX Testnet publicados por EOSphere - https://eosphere.io/services/
 
 agent-name = "<tu nombre> WAX Testnet"
 

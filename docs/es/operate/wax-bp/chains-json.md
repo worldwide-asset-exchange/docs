@@ -47,4 +47,5 @@ location ~ \.json {
 
 - Plantilla chains.json con ChainIds: [https://github.com/Blacklusion/chains.json](https://github.com/Blacklusion/chains.json)
 - Herramientas para validar tu chains.json: [HerdCheck](https://herdcheck.blocdraig.com/wax)
+- [Antelope Tools](https://antelope-wax.eosphere.io) para consultar los endpoints de la red.
 - [Tutorial de bp.json](/operate/wax-bp/bp-json)

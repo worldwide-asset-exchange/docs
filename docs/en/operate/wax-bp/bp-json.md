@@ -61,7 +61,7 @@ Hosting an Atomic Assets API would have the following features array:
 ```
 
 - **Endpoints**:<br />
-  Self-explanatory. However keep in mind that you may want to produce on multiple chains, therefore choosing domains such as “peer.waxproducer.io” is not suitable. Instead, use a domain containing the chain’s name. Such as “peer1.wax.waxproducer.io”. To get an idea, what domains to use, have a look at the endpoints on [HerdCheck](https://herdcheck.blocdraig.com/wax/lists) for other block producers.
+  Self-explanatory. However keep in mind that you may want to produce on multiple chains, therefore choosing domains such as “peer.waxproducer.io” is not suitable. Instead, use a domain containing the chain’s name. Such as “peer1.wax.waxproducer.io”. For examples of peer domains, see [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) or the [HerdCheck P2P Seed list](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
 
 ## bp.json for Mainnet AND Testnet
 
@@ -143,3 +143,4 @@ The following pictures will show you which information you have to fill in, in o
 
 - Official Repository: [https://github.com/eosrio/bp-info-standard](https://github.com/eosrio/bp-info-standard)
 - Tool to validate your bp.json: [HerdCheck producer metadata](https://herdcheck.blocdraig.com/wax/producers)
+- [Antelope Tools](https://antelope-wax.eosphere.io) for browsing producer endpoints.

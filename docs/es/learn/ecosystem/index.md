@@ -41,6 +41,7 @@ Las únicas descargas oficiales de Anchor son [anchorwallet.io](https://anchorwa
 ### Puntos finales de API gratuitos/públicos (cadena, historial y NFT)
 
 - [HerdCheck](https://herdcheck.blocdraig.com/wax)
+- [Antelope Tools](https://antelope-wax.eosphere.io)
 
 ### Más proyectos
 

@@ -136,7 +136,7 @@ _points;
 player_points += 100;
 ```
 
-Configura **ATOMIC_API** con una URL válida de la lista de API de AtomicAssets en [HerdCheck](https://herdcheck.blocdraig.com/wax/lists).
+Configura **ATOMIC_API** con una URL válida de la lista de API de AtomicAssets en [HerdCheck](https://herdcheck.blocdraig.com/wax/lists). Para consultar endpoints de la API de cadena, usa [Antelope Tools](https://antelope-wax.eosphere.io).
 
 Una vez que hemos leído, solo queda actualizar la información con los valores deseados y guardarla en el NFT, como vimos en el paso anterior.
 

@@ -1,7 +1,7 @@
 ---
 title: WAX Testnet Node aufsetzen
 nav_order: 142
-layout: default
+layout: doc
 parent: WAX Infrastructure/APIs
 lang-ref: Set Up a WAX Testnet Node
 lang: de
@@ -84,6 +84,8 @@ Sie können dann die neu erstellte `config.ini` bearbeiten und alle verfügbaren
 > nano config.ini
 ```
 
+Aktuelle P2P-Endpunkte für WAX Testnet finden Sie bei [Antelope Tools](https://antelope-wax-testnet.eosphere.io/endpoints) oder in der [P2P-Seed-Liste von HerdCheck](https://herdcheck.blocdraig.com/wax-testnet/lists#p2p-seed).
+
 Bearbeiten Sie nun die Datei `config.ini` und fügen Sie die folgenden Konfigurationseinstellungen hinzu:
 
 ```
@@ -165,8 +167,6 @@ p2p-peer-address = seed1-wax-testnet.wecan.dev:9876
   
 # wecan: GB, London  
 p2p-peer-address = seed2-wax-testnet.wecan.dev:9876
-
-# WAX-Testnet-Peers von EOSphere - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Testnet"
 

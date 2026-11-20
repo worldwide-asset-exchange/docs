@@ -1,7 +1,7 @@
 ---
 title: Einrichten eines WAX-Testnet-Blockproducer
 nav_order: 144
-layout: default
+layout: doc
 parent: WAX Infrastructure/APIs
 lang-ref: Set Up a WAX Testnet Block Producer Node
 lang: de
@@ -47,7 +47,7 @@ Dies ist die Node, der zum sicheren Signieren von Blöcken im WAX Testnet verwen
 
 Er muss mit dem aktuellen WAX Testnet Headblock synchronisiert werden.
 
-Konfigurieren Sie vertrauenswürdige Testnet-Peers, zum Beispiel aus den [öffentlichen Endpoints von EOSphere](https://eosphere.io/services/). Sie können Ihren Producer-Node auch mit einem eigenen öffentlichen Peer-Node oder Nur-Blöcke-Node verbinden.
+Konfigurieren Sie vertrauenswürdige Testnet-Peers, zum Beispiel von [Antelope Tools](https://antelope-wax-testnet.eosphere.io/endpoints) oder aus der [P2P-Seed-Liste von HerdCheck](https://herdcheck.blocdraig.com/wax-testnet/lists#p2p-seed). Sie können Ihren Producer-Node auch mit einem eigenen öffentlichen Peer-Node oder Nur-Blöcke-Node verbinden.
 
 
 **Cleos-Schnittstellennode**

@@ -12,6 +12,7 @@ This section is for service discovery. If you need architecture guidance, start 
 Public API availability changes over time. For current endpoint discovery, use:
 
 - [HerdCheck WAX Mainnet endpoints](https://herdcheck.blocdraig.com/wax/lists)
+- [Antelope Tools](https://antelope-wax.eosphere.io)
 
 ## Managed and Commercial Services
 

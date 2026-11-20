@@ -47,4 +47,5 @@ location ~ \.json {
 
 - Template chains.json with ChainIds: [https://github.com/Blacklusion/chains.json](https://github.com/Blacklusion/chains.json)
 - Tools to validate your chains.json: [HerdCheck](https://herdcheck.blocdraig.com/wax)
+- [Antelope Tools](https://antelope-wax.eosphere.io) for browsing network endpoints.
 - [bp.json tutorial](/operate/wax-bp/bp-json)

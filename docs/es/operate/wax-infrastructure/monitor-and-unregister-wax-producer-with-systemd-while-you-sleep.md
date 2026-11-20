@@ -117,7 +117,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-**WAX_API_URL**: Puedes encontrar una lista de Endpoints de API WAX aquí: [Lista de API de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists)
+**WAX_API_URL**: Puedes encontrar una lista de Endpoints de API WAX aquí: [Lista de API de WAX Mainnet en HerdCheck](https://herdcheck.blocdraig.com/wax/lists) o [Antelope Tools](https://antelope-wax.eosphere.io).
 
 **MAX_COUNT**: La justificación de 350 líneas es porque hay alrededor de otros 20 productores de bloques que producirán 12 bloques cada uno en 1 ronda, lo que equivale aproximadamente a 240 líneas en los logs. Así que 350 es solo un número mayor que 240 pero menor que 480, lo que implica que queremos desregistrar después de perder 1 ronda.
 

@@ -117,7 +117,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-**WAX_API_URL**: You can find a list of WAX API Endpoints here: [HerdCheck WAX Mainnet API list](https://herdcheck.blocdraig.com/wax/lists)
+**WAX_API_URL**: You can find a list of WAX API Endpoints here: [HerdCheck WAX Mainnet API list](https://herdcheck.blocdraig.com/wax/lists) or [Antelope Tools](https://antelope-wax.eosphere.io).
 
 **MAX_COUNT**: 350 lines rationale is because there’s about 20 other Block producers who will produce 12 blocks each in 1 round which ~= 240 lines in the logs. So 350 is just a number larger than 240 but less than 480 which implies that we want to unregister after 1 round missed.
 

@@ -166,6 +166,8 @@ mkdir /home/conf
 cd /home/data
 nano config.ini
 ```
+Consulta los endpoints P2P actuales de WAX Mainnet en [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) o en la [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
+
 Below is an example **mainnnet** config.ini file which is customized to setup state-history node, you can just copy and paste:
 
 ```
@@ -214,8 +216,6 @@ enable-account-queries = true
 plugin = eosio::chain_plugin
 plugin = eosio::chain_api_plugin
 plugin = eosio::http_plugin
-
-#Peers list - Refer this link for mainnet latest peers: https://eosphere.io/services/
 
 # alohaeosprod: US, Oregon
 p2p-peer-address = peer.wax.alohaeos.com:9876

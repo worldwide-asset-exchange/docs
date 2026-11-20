@@ -1,7 +1,7 @@
 ---
 title: WAX State-History Node aufsetzen
 nav_order: 148
-layout: default
+layout: doc
 parent: WAX Infrastructure/APIs
 lang-ref: How to Set Up a WAX State-History Node
 lang: de
@@ -206,6 +206,8 @@ Sie können dann die neu erstellte `config.ini` bearbeiten und alle verfügbaren
 > cd ~/waxdata> nano config.ini
 ```
 
+Aktuelle P2P-Endpunkte für WAX Mainnet finden Sie bei [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) oder in der [P2P-Seed-Liste von HerdCheck](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
+
 Bearbeiten Sie nun die Datei `config.ini` und fügen Sie die folgenden Konfigurationseinstellungen hinzu:
 
 ```
@@ -316,8 +318,6 @@ p2p-peer-address = wax-seed.eosiomadrid.io:9876
 
 # waxswedenorg: SE, Sweden
 p2p-peer-address = p2p.waxsweden.org:35777
-
-# WAX-Mainnet-Peers von EOSphere - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Mainnet State-History"
 

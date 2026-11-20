@@ -63,7 +63,7 @@ Atomic Assets tendría el siguiente arreglo de características:
 ```
 
 - **Puntos finales**:<br />
-  Autoexplicativo. Sin embargo, ten en cuenta que es posible que quieras producir en múltiples cadenas, por lo tanto, elegir dominios como “peer.waxproducer.io” no es adecuado. En su lugar, usa un dominio que contenga el nombre de la cadena. Como “peer1.wax.waxproducer.io”. Para tener una idea de qué dominios usar, echa un vistazo a los puntos finales en el [HerdCheck](https://herdcheck.blocdraig.com/wax/lists) de otros productores de bloques.
+  Autoexplicativo. Sin embargo, ten en cuenta que es posible que quieras producir en múltiples cadenas, por lo tanto, elegir dominios como “peer.waxproducer.io” no es adecuado. En su lugar, usa un dominio que contenga el nombre de la cadena. Como “peer1.wax.waxproducer.io”. Para ver ejemplos de dominios de pares, consulta [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) o la [lista de nodos semilla P2P de HerdCheck](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
 
 ## bp.json para la red principal Y la red de pruebas
 
@@ -147,3 +147,4 @@ Las siguientes imágenes te mostrarán qué información debes completar para co
 
 - Repositorio oficial: [https://github.com/eosrio/bp-info-standard](https://github.com/eosrio/bp-info-standard)
 - Herramienta para validar tu bp.json: [Metadatos de productores en HerdCheck](https://herdcheck.blocdraig.com/wax/producers)
+- [Antelope Tools](https://antelope-wax.eosphere.io) para consultar los endpoints de los productores.

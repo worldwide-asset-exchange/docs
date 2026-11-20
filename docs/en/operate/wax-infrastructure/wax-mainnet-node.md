@@ -202,6 +202,8 @@ You will then be able to edit the newly created  `config.ini`  and see all the a
 
 > nano config.ini
 ```
+Find current WAX Mainnet P2P endpoints on [Antelope Tools](https://antelope-wax.eosphere.io/endpoints) or in the [HerdCheck P2P Seed list](https://herdcheck.blocdraig.com/wax/lists#p2p-seed).
+
 Now edit the  `config.ini`and add the following configuration settings:
 
 ```
@@ -331,8 +333,6 @@ p2p-peer-address = wax-seed.eosiomadrid.io:9876
 
 # waxswedenorg: SE, Sweden
 p2p-peer-address = p2p.waxsweden.org:35777
-
-# PeerList - https://eosphere.io/services/
 
 agent-name = "<yourname> WAX Mainnet"  
 max-clients = 100  
